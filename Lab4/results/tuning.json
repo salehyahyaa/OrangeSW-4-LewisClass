@@ -1,0 +1,313 @@
+{
+  "AdaBoost": {
+    "tried": 60,
+    "default_rmse": 0.03572888455422813,
+    "best": {
+      "settings": {
+        "n_estimators": 25,
+        "learning_rate": 1.0,
+        "loss_index": 1,
+        "use_random_seed": true,
+        "random_seed": 0
+      },
+      "rmse": 0.032995970095652465
+    },
+    "worst": {
+      "settings": {
+        "n_estimators": 25,
+        "learning_rate": 2.0,
+        "loss_index": 1,
+        "use_random_seed": true,
+        "random_seed": 0
+      },
+      "rmse": 0.0813486716731054
+    },
+    "top5": [
+      {
+        "settings": {
+          "n_estimators": 25,
+          "learning_rate": 1.0,
+          "loss_index": 1,
+          "use_random_seed": true,
+          "random_seed": 0
+        },
+        "rmse": 0.032995970095652465
+      },
+      {
+        "settings": {
+          "n_estimators": 25,
+          "learning_rate": 1.0,
+          "loss_index": 0,
+          "use_random_seed": true,
+          "random_seed": 0
+        },
+        "rmse": 0.03402564739797119
+      },
+      {
+        "settings": {
+          "n_estimators": 200,
+          "learning_rate": 1.0,
+          "loss_index": 1,
+          "use_random_seed": true,
+          "random_seed": 0
+        },
+        "rmse": 0.03503554426153713
+      },
+      {
+        "settings": {
+          "n_estimators": 50,
+          "learning_rate": 1.0,
+          "loss_index": 2,
+          "use_random_seed": true,
+          "random_seed": 0
+        },
+        "rmse": 0.035112130412831115
+      },
+      {
+        "settings": {
+          "n_estimators": 50,
+          "learning_rate": 1.0,
+          "loss_index": 1,
+          "use_random_seed": true,
+          "random_seed": 0
+        },
+        "rmse": 0.03525258403083473
+      }
+    ]
+  },
+  "Random Forest": {
+    "tried": 32,
+    "default_rmse": 0.03978168003493652,
+    "best": {
+      "settings": {
+        "n_estimators": 50,
+        "use_max_features": true,
+        "max_features": 20,
+        "use_max_depth": false,
+        "use_min_samples_split": true,
+        "min_samples_split": 5,
+        "use_random_state": true
+      },
+      "rmse": 0.03251594774811354
+    },
+    "worst": {
+      "settings": {
+        "n_estimators": 10,
+        "use_max_features": true,
+        "max_features": 5,
+        "use_max_depth": false,
+        "use_min_samples_split": true,
+        "min_samples_split": 5,
+        "use_random_state": true
+      },
+      "rmse": 0.04382458037276146
+    },
+    "top5": [
+      {
+        "settings": {
+          "n_estimators": 50,
+          "use_max_features": true,
+          "max_features": 20,
+          "use_max_depth": false,
+          "use_min_samples_split": true,
+          "min_samples_split": 5,
+          "use_random_state": true
+        },
+        "rmse": 0.03251594774811354
+      },
+      {
+        "settings": {
+          "n_estimators": 100,
+          "use_max_features": true,
+          "max_features": 10,
+          "use_max_depth": false,
+          "use_min_samples_split": true,
+          "min_samples_split": 5,
+          "use_random_state": true
+        },
+        "rmse": 0.03284934014688326
+      },
+      {
+        "settings": {
+          "n_estimators": 200,
+          "use_max_features": true,
+          "max_features": 20,
+          "use_max_depth": false,
+          "use_min_samples_split": true,
+          "min_samples_split": 5,
+          "use_random_state": true
+        },
+        "rmse": 0.032885813183116695
+      },
+      {
+        "settings": {
+          "n_estimators": 200,
+          "use_max_features": true,
+          "max_features": 20,
+          "use_max_depth": false,
+          "use_min_samples_split": false,
+          "min_samples_split": 2,
+          "use_random_state": true
+        },
+        "rmse": 0.03298475724288931
+      },
+      {
+        "settings": {
+          "n_estimators": 200,
+          "use_max_features": true,
+          "max_features": 10,
+          "use_max_depth": false,
+          "use_min_samples_split": true,
+          "min_samples_split": 5,
+          "use_random_state": true
+        },
+        "rmse": 0.0332227889618136
+      }
+    ]
+  },
+  "Neural Network": {
+    "tried": 320,
+    "default_rmse": 0.271987716784275,
+    "best": {
+      "settings": {
+        "hidden_layers_input": "10,",
+        "activation_index": 1,
+        "solver_index": 0,
+        "alpha_index": 5,
+        "max_iterations": 200,
+        "replicable": true
+      },
+      "rmse": 0.04020321766227313
+    },
+    "worst": {
+      "settings": {
+        "hidden_layers_input": "10,",
+        "activation_index": 3,
+        "solver_index": 2,
+        "alpha_index": 1,
+        "max_iterations": 200,
+        "replicable": true
+      },
+      "rmse": 0.5918608752218238
+    },
+    "top5": [
+      {
+        "settings": {
+          "hidden_layers_input": "10,",
+          "activation_index": 1,
+          "solver_index": 0,
+          "alpha_index": 5,
+          "max_iterations": 200,
+          "replicable": true
+        },
+        "rmse": 0.04020321766227313
+      },
+      {
+        "settings": {
+          "hidden_layers_input": "10,",
+          "activation_index": 1,
+          "solver_index": 0,
+          "alpha_index": 5,
+          "max_iterations": 500,
+          "replicable": true
+        },
+        "rmse": 0.04020321766227313
+      },
+      {
+        "settings": {
+          "hidden_layers_input": "10,",
+          "activation_index": 1,
+          "solver_index": 0,
+          "alpha_index": 14,
+          "max_iterations": 200,
+          "replicable": true
+        },
+        "rmse": 0.04045619313282387
+      },
+      {
+        "settings": {
+          "hidden_layers_input": "10,",
+          "activation_index": 1,
+          "solver_index": 0,
+          "alpha_index": 14,
+          "max_iterations": 500,
+          "replicable": true
+        },
+        "rmse": 0.04045619313282387
+      },
+      {
+        "settings": {
+          "hidden_layers_input": "10,",
+          "activation_index": 1,
+          "solver_index": 0,
+          "alpha_index": 1,
+          "max_iterations": 200,
+          "replicable": true
+        },
+        "rmse": 0.04126974016851445
+      }
+    ]
+  },
+  "kNN": {
+    "tried": 66,
+    "default_rmse": 0.050509847365153106,
+    "best": {
+      "settings": {
+        "n_neighbors": 6,
+        "metric_index": 1,
+        "weight_index": 1
+      },
+      "rmse": 0.046317380960877653
+    },
+    "worst": {
+      "settings": {
+        "n_neighbors": 1,
+        "metric_index": 2,
+        "weight_index": 1
+      },
+      "rmse": 0.08435935040053355
+    },
+    "top5": [
+      {
+        "settings": {
+          "n_neighbors": 6,
+          "metric_index": 1,
+          "weight_index": 1
+        },
+        "rmse": 0.046317380960877653
+      },
+      {
+        "settings": {
+          "n_neighbors": 6,
+          "metric_index": 1,
+          "weight_index": 0
+        },
+        "rmse": 0.04652254848705621
+      },
+      {
+        "settings": {
+          "n_neighbors": 10,
+          "metric_index": 1,
+          "weight_index": 1
+        },
+        "rmse": 0.047002978224284876
+      },
+      {
+        "settings": {
+          "n_neighbors": 7,
+          "metric_index": 1,
+          "weight_index": 1
+        },
+        "rmse": 0.04712065249031518
+      },
+      {
+        "settings": {
+          "n_neighbors": 8,
+          "metric_index": 1,
+          "weight_index": 1
+        },
+        "rmse": 0.047263462278050915
+      }
+    ]
+  }
+}

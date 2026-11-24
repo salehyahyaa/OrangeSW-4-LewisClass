@@ -1,0 +1,301 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<title>Lab 4 - Regression Analysis</title>
+<style>
+@page { size: Letter; margin: 0.8in 0.85in; }
+body { font: 10.5pt/1.5 Helvetica, Arial, sans-serif; color: #0b0b0b; }
+h1 { font-size: 20pt; line-height: 1.2; margin: 0 0 4pt; }
+h2 { font-size: 13.5pt; margin: 20pt 0 6pt; padding-top: 8pt;
+      border-top: 1px solid #e1e0d9; break-after: avoid; }
+p { margin: 0 0 7pt; orphans: 3; widows: 3; }
+.meta { color: #52514e; margin-bottom: 12pt; }
+ul { margin: 0 0 7pt; padding-left: 16pt; }
+li { margin-bottom: 3pt; }
+table { border-collapse: collapse; width: 100%; margin: 6pt 0 12pt;
+         font-size: 9.5pt; break-inside: avoid; }
+caption { caption-side: top; text-align: left; color: #52514e;
+           font-size: 9pt; padding-bottom: 3pt; }
+th { text-align: left; color: #52514e; font-weight: 600;
+      border-bottom: 1.2px solid #898781; padding: 4pt 6pt; }
+td { border-bottom: 1px solid #e1e0d9; padding: 4pt 6pt; vertical-align: top; }
+.r { text-align: right; font-variant-numeric: tabular-nums; }
+figure { margin: 8pt 0 12pt; break-inside: avoid; text-align: center; }
+figcaption { color: #52514e; font-size: 9pt; margin-top: 3pt;
+              text-align: left; }
+.shot { border: 1px solid #e1e0d9; border-radius: 4px; }
+.q { background: #f4f3ef; border-radius: 6px; padding: 8pt 12pt;
+      margin: 8pt 0; break-inside: avoid; }
+.q p:last-child, .q ul:last-child { margin-bottom: 0; }
+.row { display: flex; gap: 10pt; align-items: flex-start; }
+.row figure { flex: 1; }
+.row .shot { width: 100% !important; }
+</style></head><body>
+
+<h1>Lab Exercise #4: Regression Analysis</h1>
+<div class="meta">DATA-20000 Introduction to Data Science &middot; Saleh Yahya
+&middot; workflow file: lab4_yahya.ows</div>
+
+<h2>Step 1: Loading and describing the HDI data</h2>
+<p>I used the Datasets widget and picked the dataset called HDI (Human
+Development Index).</p>
+<figure><img class="shot" style="width:100%" src="datasets.png" alt=""><figcaption><b>Figure 1.</b> Datasets widget with the HDI dataset selected.</figcaption></figure>
+<p>The Datasets list has more than one entry about human development (there
+is also an HDI-edu version and a Slovenian one), so I checked that I had the
+right one in three ways.</p>
+<table><caption><b>Table 1.</b> The three checks I did to be sure this is the right dataset.</caption><thead><tr><th class="l">Check</th><th class="l">What I looked at</th><th class="l">Result</th></tr></thead><tbody><tr><td class="l">1. The catalogue</td><td class="l">The entry in the Datasets widget list</td><td class="l">Title is HDI, and its description starts with "The Human Development Index (HDI)". Source: UNDP Human Development Reports, year 2015.</td></tr><tr><td class="l">2. What the widget loads</td><td class="l">The data coming out of the Datasets widget</td><td class="l">File HDI.tab with 188 rows, matching the 188 instances listed, and it has a column named HDI.</td></tr><tr><td class="l">3. The values</td><td class="l">HDI values in the data against the published UNDP 2015 figures</td><td class="l">All 10 countries I checked match, for example Norway 0.949 and Niger 0.353.</td></tr></tbody></table>
+<figure><img class="shot" style="width:100%" src="data_table.png" alt=""><figcaption><b>Figure 2.</b> Data Table with the HDI data as loaded.</figcaption></figure>
+<p><b>Describing the data.</b> Each row is a country, and there are
+188 of them. The HDI column is the Human Development Index for 2015,
+a number between 0 and 1 that the UN uses to summarize how developed a
+country is, based on health, education and income. Besides the country name
+and HDI there are 52 features, all numeric. They cover things
+like life expectancy, years of schooling, income per person, mortality
+rates, population and age structure, employment and unemployment, health
+spending, internet use and inequality.</p>
+<p>HDI goes from 0.352
+(Central African Republic) to 0.949
+(Norway), with a mean of 0.699 and a median
+of 0.728. The top five are
+Norway, Australia, Switzerland, Germany and Denmark, and the bottom five are
+Central African Republic, Niger, Chad, Burkina Faso and Burundi.</p>
+<figure><img class="shot" style="width:85%" src="explore_dist.png" alt=""><figcaption><b>Figure 3.</b> Distributions of HDI.</figcaption></figure>
+<figure><img class="shot" style="width:85%" src="explore_box.png" alt=""><figcaption><b>Figure 4.</b> Box Plot of HDI.</figcaption></figure>
+<p>The distribution is not a bell shape. It leans to the left, with most
+countries between about 0.65 and 0.9 and a tail of low values going down to
+0.35.</p>
+<p>The main problem with the data is missing values. About
+12% of all the cells are empty, and
+45 of the 52 features have at least
+one missing value. The worst ones are "Deaths due to Malria (per 100,000 people)" (missing for
+94 countries), "Unemployment Youth not in school or employment (% ages 15-24) 2010-2014" (84) and
+"HIV prevalence, adult (% ages 15-49)" (83). This ends up mattering in step 5.</p>
+<p>The target was not defined. HDI came in as a meta column, next to the
+country name, so I used Select Columns to move HDI to Target.</p>
+<figure><img class="shot" style="width:72%" src="select_columns.png" alt=""><figcaption><b>Figure 5.</b> Select Columns with HDI moved to Target.</figcaption></figure>
+
+<h2>Step 2: Normalizing and splitting the data</h2>
+<p>I connected Select Columns to a Preprocess widget and added Normalize
+Features, set to normalize to the interval [0, 1]. After this every feature
+runs from exactly 0 to 1. HDI itself is not changed, since it is the target
+and not a feature.</p>
+<figure><img class="shot" style="width:72%" src="preprocess.png" alt=""><figcaption><b>Figure 6.</b> Preprocess widget set to Normalize Features, normalize to interval [0, 1].</figcaption></figure>
+<p>Then I connected Preprocess to a Data Sampler set to a fixed proportion
+of 50%, and sent the Data Sample to a table I renamed Training set and the
+Remaining Data to a table I renamed Testing set. Each one has
+94 countries and no country is in both. In each table I
+selected all the rows, so that its Selected Data output passes the whole set
+on to the models, the way the sample workflow is wired.</p>
+<figure><img class="shot" style="width:34%" src="data_sampler.png" alt=""><figcaption><b>Figure 7.</b> Data Sampler set to a fixed proportion of 50%.</figcaption></figure>
+<figure><img class="shot" style="width:100%" src="training_set.png" alt=""><figcaption><b>Figure 8.</b> Training set (94 countries).</figcaption></figure>
+<figure><img class="shot" style="width:100%" src="testing_set.png" alt=""><figcaption><b>Figure 9.</b> Testing set (the other 94 countries).</figcaption></figure>
+
+<h2>Step 3: Three linear regression models</h2>
+<p>I added three Linear Regression widgets, connected the training set to
+each one, and renamed them after their settings.</p>
+<div class="row"><figure><img class="shot" style="width:46%" src="model_no_regularization.png" alt=""><figcaption><b>Figure 10.</b> No Regularization.</figcaption></figure><figure><img class="shot" style="width:46%" src="model_lasso_regression_l1.png" alt=""><figcaption><b>Figure 11.</b> Lasso Regression (L1) with the regularization strength at the lowest value (0.0001).</figcaption></figure><figure><img class="shot" style="width:46%" src="model_elastic_net_regression.png" alt=""><figcaption><b>Figure 12.</b> Elastic Net Regression with regularization strength 0.01 and mixing 0.24 : 0.76.</figcaption></figure></div>
+<p>I connected the three learners and the training set to Test and Score,
+selected cross-validation with 10 folds, and clicked the RMSE header to
+order the models from smallest to largest RMSE.</p>
+<figure><img class="shot" style="width:100%" src="test_and_score_cv.png" alt=""><figcaption><b>Figure 13.</b> Test and Score with 10-fold cross-validation, ordered from smallest to largest RMSE. The Elastic Net Regression (1) row is the model added in step 5.</figcaption></figure>
+<table><caption><b>Table 2.</b> Cross-validation scores of the three linear regression models (10 folds, training set).</caption><thead><tr><th class="l">Model</th><th class="r">MSE</th><th class="r">RMSE</th><th class="r">MAE</th><th class="r">R2</th></tr></thead><tbody><tr><td class="l">Lasso Regression (L1)</td><td class="r">0.0014</td><td class="r">0.0378</td><td class="r">0.0281</td><td class="r">0.940</td></tr><tr><td class="l">Elastic Net Regression</td><td class="r">0.0018</td><td class="r">0.0421</td><td class="r">0.0303</td><td class="r">0.926</td></tr><tr><td class="l">No Regularization</td><td class="r">0.0034</td><td class="r">0.0581</td><td class="r">0.0413</td><td class="r">0.858</td></tr></tbody></table>
+<p><b>Describing the results.</b> All three models predict HDI well. RMSE is
+in the same units as HDI, so an RMSE of
+0.038 means the Lasso model is typically
+off by about 0.04 on a scale that runs
+from 0 to 1. Its R2 of 0.94 means it
+explains about 94% of the
+differences in HDI between countries.</p>
+<p>The order is Lasso first (RMSE
+0.0378), then Elastic Net
+(0.0421), and No Regularization last
+(0.0581). The plain model is clearly the
+worst, with an error about
+54%
+higher than Lasso. I think that is because it has 52 features
+to fit and only 94 countries to learn from, and many of the
+features measure nearly the same thing. With nothing holding it back it fits
+the training countries too closely and does worse on the fold it has not
+seen. The two regularized models are forced to keep their coefficients
+small, which makes them more stable. Lasso did better than Elastic Net here
+even though its regularization is much weaker (0.0001 against 0.01), so on
+this data a light touch was enough.</p>
+
+<h2>Step 4: Coefficients</h2>
+<p>I connected the Coefficients output of each model to its own Data Table
+and clicked the coef column header to sort from the largest coefficient to the smallest. Each
+picture shows the top of the table, and the most negative ones are listed in
+the table after the pictures. The features were
+normalized to [0, 1] in step 2, so the coefficients can be compared with
+each other: a coefficient is how much the predicted HDI changes when that
+feature goes from its lowest value to its highest.</p>
+<figure><img class="shot" style="width:80%" src="coef_no_regularization.png" alt=""><figcaption><b>Figure 14.</b> Coefficients of No Regularization, sorted from largest to smallest.</figcaption></figure>
+<figure><img class="shot" style="width:80%" src="coef_lasso_regression_l1.png" alt=""><figcaption><b>Figure 15.</b> Coefficients of Lasso Regression (L1), sorted from largest to smallest.</figcaption></figure>
+<figure><img class="shot" style="width:80%" src="coef_elastic_net_regression.png" alt=""><figcaption><b>Figure 16.</b> Coefficients of Elastic Net Regression, sorted from largest to smallest.</figcaption></figure>
+<table><caption><b>Table 3.</b> How the three sets of coefficients compare.</caption><thead><tr><th class="l">Model</th><th class="r">Features kept (not zero)</th><th class="r">Features set to zero</th><th class="r">Largest coefficient (absolute)</th><th class="r">Intercept</th></tr></thead><tbody><tr><td class="l">No Regularization</td><td class="r">52</td><td class="r">0</td><td class="r">0.512</td><td class="r">0.421</td></tr><tr><td class="l">Lasso Regression (L1)</td><td class="r">32</td><td class="r">20</td><td class="r">0.319</td><td class="r">0.424</td></tr><tr><td class="l">Elastic Net Regression</td><td class="r">15</td><td class="r">37</td><td class="r">0.141</td><td class="r">0.471</td></tr></tbody></table>
+<table><caption><b>Table 4.</b> The three highest positive and three most negative coefficients in each model.</caption><thead><tr><th class="l">Model</th><th class="l">Highest positive</th><th class="r">Coef.</th><th class="l">Most negative</th><th class="r">Coef.</th></tr></thead><tbody><tr><td class="l">No Regularization</td><td class="l">Mean years of schooling</td><td class="r">+0.512</td><td class="l">Coefficient of human inequality</td><td class="r">-0.251</td></tr><tr><td class="l"></td><td class="l">Life expectancy</td><td class="r">+0.333</td><td class="l">Mortality rates Infant (per 1,000 live births) 2015</td><td class="r">-0.220</td></tr><tr><td class="l"></td><td class="l">Mortality rates Under-five (per 1,000 live births) 2015</td><td class="r">+0.329</td><td class="l">Inequality-adjusted life expectancy index</td><td class="r">-0.178</td></tr><tr><td class="l">Lasso Regression (L1)</td><td class="l">Mean years of schooling</td><td class="r">+0.319</td><td class="l">Mean years of schooling Female</td><td class="r">-0.063</td></tr><tr><td class="l"></td><td class="l">Gross national income (GNI) per capita</td><td class="r">+0.231</td><td class="l">Total Unemployment (% of labour force) 2015</td><td class="r">-0.047</td></tr><tr><td class="l"></td><td class="l">Life expectancy</td><td class="r">+0.170</td><td class="l">Mean years of schooling Male</td><td class="r">-0.044</td></tr><tr><td class="l">Elastic Net Regression</td><td class="l">Mean years of schooling</td><td class="r">+0.141</td><td class="l">Inequality in life expectancy (%) 2010-2015</td><td class="r">-0.063</td></tr><tr><td class="l"></td><td class="l">Population Urban 2015 %</td><td class="r">+0.088</td><td class="l">Dependency Ration Young age (0-14) /(per 100 people ages 15-6…</td><td class="r">-0.040</td></tr><tr><td class="l"></td><td class="l">Inequality-adjusted life expectancy index</td><td class="r">+0.082</td><td class="l">Inequality in education(%)</td><td class="r">-0.006</td></tr></tbody></table>
+<p><b>Comparing the three.</b></p>
+<ul>
+<li><b>No Regularization</b> uses all 52 features and has
+the largest coefficients, up to 0.51. Some of them make
+no sense on their own. Under-five mortality has a large positive
+coefficient and infant mortality has a large negative one, when both should
+push HDI down. Those two features are almost copies of each other, so the
+model can give them big opposite values that mostly cancel out. It is a sign
+of overfitting.</li>
+<li><b>Lasso</b> set 20 of the coefficients to exactly zero
+and kept 32. The ones it kept are smaller and easier to
+read.</li>
+<li><b>Elastic Net</b>, with the stronger regularization, went further. It
+kept only 15 features and its largest coefficient is
+0.14. Its intercept is higher (0.47)
+because less of the prediction comes from the features.</li>
+</ul>
+<div class="q">
+<p><b>Highest positive and negative coefficients.</b> The highest positive
+coefficient in all three models is Mean years of schooling
+(+0.51, +0.32
+and +0.14). Life expectancy and income per
+person (GNI per capita, or the estimated income columns) are also near the
+top each time. The most negative coefficients change from model to model:
+Coefficient of human inequality in the plain model
+(-0.25),
+Mean years of schooling Female in Lasso
+(-0.06) and
+Inequality in life expectancy (%) 2010-2015 in Elastic Net
+(-0.06).</p>
+<p><b>Which variables are most important in the model?</b> Mean years of
+schooling, life expectancy and income per person. They have the biggest
+positive coefficients, and they are the ones that stay large in every model
+even when regularization removes most of the others.</p>
+<p><b>Does this make sense?</b> Yes, completely. HDI is built from exactly
+three things: a long and healthy life (life expectancy), knowledge (years of
+schooling) and a decent standard of living (income per person). So the model
+has found the ingredients that HDI is calculated from. The negative ones in
+the regularized models also make sense: more inequality in life expectancy
+and a higher share of young dependents both go with less developed
+countries. The negative coefficients in the plain model make less sense, for
+the reason above, so I would trust the regularized models more when reading
+coefficients.</p>
+</div>
+
+<h2>Step 5: Rank and a one-feature Elastic Net</h2>
+<p>I duplicated the Elastic Net Regression widget (same settings: 0.01 and
+0.24 : 0.76), connected the training set to a Rank widget, ticked RReliefF
+as the scoring method and set it to select the best ranked 1 feature. The
+feature it picked is <b>HIV prevalence, adult (% ages 15-49)</b>.</p>
+<figure><img class="shot" style="width:80%" src="rank.png" alt=""><figcaption><b>Figure 17.</b> Rank widget scoring by RReliefF, with the best ranked 1 feature selected.</figcaption></figure>
+<figure><img class="shot" style="width:80%" src="reduced_data.png" alt=""><figcaption><b>Figure 18.</b> The reduced data coming out of Rank: one feature plus the HDI target.</figcaption></figure>
+<p>I connected the Rank output to the new Elastic Net widget, and sent its
+learner to Test and Score and its coefficients to a new Data Table.</p>
+<table><caption><b>Table 5.</b> Cross-validation scores with the duplicated Elastic Net model added.</caption><thead><tr><th class="l">Model</th><th class="r">MSE</th><th class="r">RMSE</th><th class="r">MAE</th><th class="r">R2</th></tr></thead><tbody><tr><td class="l">Lasso Regression (L1)</td><td class="r">0.0014</td><td class="r">0.0378</td><td class="r">0.0281</td><td class="r">0.940</td></tr><tr><td class="l">Elastic Net Regression</td><td class="r">0.0018</td><td class="r">0.0421</td><td class="r">0.0303</td><td class="r">0.926</td></tr><tr><td class="l">Elastic Net Regression (1)</td><td class="r">0.0018</td><td class="r">0.0421</td><td class="r">0.0303</td><td class="r">0.926</td></tr><tr><td class="l">No Regularization</td><td class="r">0.0034</td><td class="r">0.0581</td><td class="r">0.0413</td><td class="r">0.858</td></tr></tbody></table>
+<figure><img class="shot" style="width:72%" src="coef_elastic_net_regression_1.png" alt=""><figcaption><b>Figure 19.</b> Coefficients of Elastic Net Regression (1), the model trained on the one top feature.</figcaption></figure>
+<div class="q">
+<p><b>Comparing the scores.</b> In Test and Score, Elastic Net Regression
+(1) has exactly the same scores as Elastic Net Regression (RMSE
+0.0421, R2
+0.926). At first I expected it to be
+worse because it only gets one feature. The reason it is not is how Orange
+works: what goes from the model widget into Test and Score is the learner,
+meaning the method and its settings, not a model that has already been
+trained. Test and Score trains it again itself, on its own data, which is
+the full training set with all 52 features. The two widgets
+have the same settings, so they get the same score.</p>
+<p>The one-feature model does show up in the coefficients table, since that
+comes from the model the widget trained on the data from Rank. It has one
+feature, and its coefficient is 0. So the model
+ignores the feature and predicts the intercept, 0.707, for
+every country, which is just the average HDI of the training set. To see how
+a model like that would really score, I ran the same 10-fold
+cross-validation on the reduced data as an extra check (this is not part of
+the saved workflow). The RMSE is 0.157 and R2 is
+-0.04, about
+4 times worse than
+with all the features.</p>
+<p><b>Why this feature?</b> I did not expect HIV prevalence to be the single
+best feature for predicting HDI, so I looked at the Rank table more closely.
+The features at the top are the ones with the most missing values.</p>
+<table><caption><b>Table 6.</b> The top RReliefF features and how many of their values are missing in the 94 training rows.</caption><thead><tr><th class="r">Rank</th><th class="l">Feature</th><th class="r">RReliefF</th><th class="r">Missing values</th></tr></thead><tbody><tr><td class="r">1</td><td class="l">HIV prevalence, adult (% ages 15-49)</td><td class="r">0.674</td><td class="r">46</td></tr><tr><td class="r">2</td><td class="l">Unemployment Youth not in school or employment (% ages 15-24) 2010-2014</td><td class="r">0.668</td><td class="r">41</td></tr><tr><td class="r">3</td><td class="l">Child labour  (% ages 5-14) 2009-2015</td><td class="r">0.549</td><td class="r">42</td></tr><tr><td class="r">4</td><td class="l">Deaths due to Malria (per 100,000 people)</td><td class="r">0.533</td><td class="r">46</td></tr><tr><td class="r">5</td><td class="l">Working poor at PPP$3.10 a day (%) 2004-2013</td><td class="r">0.481</td><td class="r">40</td></tr><tr><td class="r">6</td><td class="l">Employment in agriculture (% of total employment) 2010-2014</td><td class="r">0.466</td><td class="r">29</td></tr></tbody></table>
+<p>HIV prevalence, adult (% ages 15-49) is missing for
+46 of the 94
+training countries. Across all the features, the RReliefF score and the
+number of missing values have a correlation of
+0.93. So it looks like RReliefF is being thrown
+off by the missing values instead of measuring how useful a feature is. As a
+check, when the gaps are filled in with the column average first, RReliefF
+puts "Old-age pension recipients  (% of statutory pension age population) 2004-2013" at the top instead. My takeaway is that picking one
+feature this way did not work on this data, and that a feature selection
+score needs to be checked against missing values before trusting it.</p>
+</div>
+
+<h2>Step 6: Test on test data</h2>
+<p>I connected the Testing set to the Test Data input of Test and Score and
+changed the setting to Test on test data. Now each model is trained on the
+whole training set (94 countries) and scored on the
+94 countries it has never seen.</p>
+<figure><img class="shot" style="width:100%" src="test_and_score_test.png" alt=""><figcaption><b>Figure 20.</b> Test and Score set to Test on test data.</figcaption></figure>
+<table><caption><b>Table 7.</b> Cross-validation against test on test data.</caption><thead><tr><th class="l">Model</th><th class="r">RMSE (cross-validation)</th><th class="r">RMSE (test data)</th><th class="r">R2 (cross-validation)</th><th class="r">R2 (test data)</th></tr></thead><tbody><tr><td class="l">Lasso Regression (L1)</td><td class="r">0.0378</td><td class="r">0.0329</td><td class="r">0.940</td><td class="r">0.955</td></tr><tr><td class="l">Elastic Net Regression</td><td class="r">0.0421</td><td class="r">0.0380</td><td class="r">0.926</td><td class="r">0.940</td></tr><tr><td class="l">Elastic Net Regression (1)</td><td class="r">0.0421</td><td class="r">0.0380</td><td class="r">0.926</td><td class="r">0.940</td></tr><tr><td class="l">No Regularization</td><td class="r">0.0581</td><td class="r">0.0501</td><td class="r">0.858</td><td class="r">0.895</td></tr></tbody></table>
+<div class="q">
+<p><b>Comparing to cross-validation.</b> The results agree. The order of the
+models is the same: Lasso is best, then Elastic Net, then No
+Regularization. The numbers are close too, with RMSE changing by
+0.004 to 0.008.
+Every model actually did a little better on the test data than in cross-validation.
+One reason is that in cross-validation each model learns from 9 of the 10
+folds, about 85 countries, and here it learns
+from all 94. The rest is just that these are two different
+sets of countries.</p>
+<p>What this tells me is that the cross-validation scores were an honest
+estimate. The models were not just memorizing the training countries,
+because they hold up on completely new ones. It also confirms that
+regularization helps on this data: the plain model is still the weakest on
+the test set.</p>
+</div>
+
+<h2>Step 7: AdaBoost, Random Forest, Neural Network and kNN</h2>
+<p>I added the four models and connected them to a second Test and Score
+with 10-fold cross-validation on the training set (through Training set (1),
+as in the sample workflow). For each model I tried different values for its
+settings and kept the combination with the lowest RMSE.</p>
+<table><caption><b>Table 8.</b> What I tried for each model and the settings with the lowest cross-validated RMSE.</caption><thead><tr><th class="l">Model</th><th class="r">Settings tried</th><th class="r">RMSE with default settings</th><th class="r">Best RMSE</th><th class="l">Best settings</th></tr></thead><tbody><tr><td class="l">AdaBoost</td><td class="r">60</td><td class="r">0.0357</td><td class="r">0.0330</td><td class="l">25 estimators, learning rate 1.0, square loss</td></tr><tr><td class="l">Random Forest</td><td class="r">32</td><td class="r">0.0398</td><td class="r">0.0325</td><td class="l">50 trees, 20 attributes per split, no subsets smaller than 5 split</td></tr><tr><td class="l">Neural Network</td><td class="r">320</td><td class="r">0.2720</td><td class="r">0.0402</td><td class="l">hidden layers 10, Logistic activation, L-BFGS-B solver, regularization 0.0005, 200 iterations</td></tr><tr><td class="l">kNN</td><td class="r">66</td><td class="r">0.0505</td><td class="r">0.0463</td><td class="l">6 neighbors, Manhattan metric, by distances weight</td></tr></tbody></table>
+<div class="row"><figure><img class="shot" style="width:44%" src="model_adaboost.png" alt=""><figcaption><b>Figure 21.</b> AdaBoost widget with the settings I ended up with.</figcaption></figure><figure><img class="shot" style="width:44%" src="model_random_forest.png" alt=""><figcaption><b>Figure 22.</b> Random Forest widget with the settings I ended up with.</figcaption></figure><figure><img class="shot" style="width:44%" src="model_neural_network.png" alt=""><figcaption><b>Figure 23.</b> Neural Network widget with the settings I ended up with.</figcaption></figure><figure><img class="shot" style="width:44%" src="model_knn.png" alt=""><figcaption><b>Figure 24.</b> kNN widget with the settings I ended up with.</figcaption></figure></div>
+<figure><img class="shot" style="width:100%" src="test_and_score_1_cv.png" alt=""><figcaption><b>Figure 25.</b> Test and Score (1): 10-fold cross-validation of the four models, ordered by RMSE.</figcaption></figure>
+<table><caption><b>Table 9.</b> All seven models ranked by cross-validated RMSE.</caption><thead><tr><th class="r">Rank</th><th class="l">Model</th><th class="l">Type</th><th class="r">RMSE</th><th class="r">R2</th></tr></thead><tbody><tr><td class="r">1</td><td class="l">Random Forest</td><td class="l">Step 7</td><td class="r">0.0325</td><td class="r">0.956</td></tr><tr><td class="r">2</td><td class="l">AdaBoost</td><td class="l">Step 7</td><td class="r">0.0330</td><td class="r">0.954</td></tr><tr><td class="r">3</td><td class="l">Lasso Regression (L1)</td><td class="l">Linear regression</td><td class="r">0.0378</td><td class="r">0.940</td></tr><tr><td class="r">4</td><td class="l">Neural Network</td><td class="l">Step 7</td><td class="r">0.0402</td><td class="r">0.932</td></tr><tr><td class="r">5</td><td class="l">Elastic Net Regression</td><td class="l">Linear regression</td><td class="r">0.0421</td><td class="r">0.926</td></tr><tr><td class="r">6</td><td class="l">kNN</td><td class="l">Step 7</td><td class="r">0.0463</td><td class="r">0.910</td></tr><tr><td class="r">7</td><td class="l">No Regularization</td><td class="l">Linear regression</td><td class="r">0.0581</td><td class="r">0.858</td></tr></tbody></table>
+<div class="q">
+<p><b>Describing the results.</b></p>
+<ul>
+<li><b>Random Forest</b> came out best of the four, with an RMSE of
+0.0325 and R2 of 0.956.
+It beats
+the best linear model from step 3 (Lasso, 0.0378).</li>
+<li>Compared with Lasso,
+Random Forest and AdaBoost are better and Neural Network and kNN are worse.
+The differences at the top are small though, a few thousandths of an HDI
+point.</li>
+<li><b>Tuning mattered most for the Neural Network.</b> With its default
+settings it had an RMSE of 0.272,
+far worse than everything else, and with the settings in the table it comes
+down to 0.0402. For the other three
+the settings made a smaller difference: AdaBoost went from
+0.0357 to
+0.0330, Random Forest from
+0.0398 to
+0.0325, and kNN from
+0.0505 to
+0.0463.</li>
+<li><b>kNN</b> is the weakest of the four even after
+tuning (0.0463).</li>
+</ul>
+<p>Overall, the more complicated models did not buy much. That fits with
+step 4: HDI is basically a formula made from a few of these features, so a
+linear model with a little regularization already captures most of it, and
+with only 94 training countries there is not much data for
+a flexible model to learn anything extra. One caution is that I picked these
+settings using the same cross-validation scores I am reporting, so they are
+probably a little optimistic. As a check, on the test set the four models
+score Random Forest 0.0355, AdaBoost 0.0369, Neural Network 0.0316 and kNN 0.0423.</p>
+</div>
+
+<h2>Step 8: The workflow</h2>
+<p>Every part of the workflow is labelled with a text box and an arrow, and
+the widgets are renamed to say what they are.</p>
+<figure><img class="shot" style="width:100%" src="canvas.png" alt=""><figcaption><b>Figure 26.</b> The finished Orange Canvas workflow.</figcaption></figure>
+</body></html>

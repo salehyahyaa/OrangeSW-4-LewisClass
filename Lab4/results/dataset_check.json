@@ -1,0 +1,194 @@
+{
+  "check1_catalogue": {
+    "datasets_on_server": 193,
+    "entries_about_human_development": {
+      "HDI.tab": {
+        "title": "HDI",
+        "language": "English",
+        "instances": 188,
+        "variables": 54
+      },
+      "hdi-edu.tab": {
+        "title": "HDI-edu",
+        "language": "English",
+        "instances": 188,
+        "variables": 53
+      },
+      "hdi-slo.tab": {
+        "title": "Indeks \u010dlove\u0161kega razvoja (HDI)",
+        "language": "Sloven\u0161\u010dina",
+        "instances": 188,
+        "variables": 53
+      }
+    },
+    "chosen": "HDI.tab",
+    "title": "HDI",
+    "description": "The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, knowledge, and decent living. The data includes HDI as reported in 2015 and selected related socioeconomic from countries worldwide. We have removed HDI-related variables and countries with a missing HDI score.",
+    "year": 2015,
+    "collection": "UNDP Human Development Reports",
+    "target": "none",
+    "instances": 188,
+    "variables": 54,
+    "ok": true
+  },
+  "check2_widget_output": {
+    "selected_title_in_widget": "HDI",
+    "file": "HDI.tab",
+    "rows": 188,
+    "features": 52,
+    "target": null,
+    "metas": [
+      "Country",
+      "HDI"
+    ],
+    "has_HDI_column": "HDI",
+    "ok": true
+  },
+  "check3_values": {
+    "country_column": "Country",
+    "hdi_min": 0.352,
+    "hdi_max": 0.949,
+    "top5": [
+      [
+        "Norway",
+        0.949
+      ],
+      [
+        "Australia",
+        0.939
+      ],
+      [
+        "Switzerland",
+        0.939
+      ],
+      [
+        "Germany",
+        0.926
+      ],
+      [
+        "Denmark",
+        0.925
+      ]
+    ],
+    "bottom5": [
+      [
+        "Burundi",
+        0.404
+      ],
+      [
+        "Burkina Faso",
+        0.402
+      ],
+      [
+        "Chad",
+        0.396
+      ],
+      [
+        "Niger",
+        0.353
+      ],
+      [
+        "Central African Republic",
+        0.352
+      ]
+    ],
+    "compared_with_undp": {
+      "Norway": {
+        "undp": 0.949,
+        "orange": 0.949
+      },
+      "Australia": {
+        "undp": 0.939,
+        "orange": 0.939
+      },
+      "Switzerland": {
+        "undp": 0.939,
+        "orange": 0.939
+      },
+      "Germany": {
+        "undp": 0.926,
+        "orange": 0.926
+      },
+      "United States": {
+        "undp": 0.92,
+        "orange": 0.92
+      },
+      "Japan": {
+        "undp": 0.903,
+        "orange": 0.903
+      },
+      "China": {
+        "undp": 0.738,
+        "orange": 0.738
+      },
+      "India": {
+        "undp": 0.624,
+        "orange": 0.624
+      },
+      "Niger": {
+        "undp": 0.353,
+        "orange": 0.353
+      },
+      "Central African Republic": {
+        "undp": 0.352,
+        "orange": 0.352
+      }
+    },
+    "ok": true
+  },
+  "all_feature_names": [
+    "Life expectancy",
+    "Mean years of schooling",
+    "Gross national income (GNI) per capita",
+    "Gender Development Index value",
+    "Mean years of schooling Female",
+    "Mean years of schooling Male",
+    "Estimated gross national income per capita Female",
+    "Estimated gross national income per capita Male",
+    "Share of seats in parliament (% held by women)",
+    "Population with at least some secondary education % (2005-2015) Female",
+    "Population with at least some secondary education % (2005-2015) Male",
+    "Labour force participation rate (% ages 15 and older) Female",
+    "Population Average annual growth 2000/2005 (%)",
+    "Population Average annual growth 2010/2015 (%)",
+    "Population Urban 2015 %",
+    "Population Median age (years) 2015",
+    "Dependency Ration Young age (0-14) /(per 100 people ages 15-64)",
+    "Dependency Ratio Old age (65 and older) /(per 100 people ages 15-64)",
+    "Total fertility rate (birth per woman) 2000/2005",
+    "Total fertility rate (birth per woman) 2000/2007",
+    "Infants exclusively breastfed (% ages 0-5 months) 2010-2015",
+    "Infants lacking immunization DTP (% of one-year-olds)",
+    "Infants lacking immunization Measles (% of one-year-olds)",
+    "Child malnutrition Stunting (moderate or severe) 2010-2015",
+    "Mortality rates Infant (per 1,000 live births) 2015",
+    "Mortality rates Under-five (per 1,000 live births) 2015",
+    "Mortality rates Female Adult (per 1,000 live births) 2014",
+    "Mortality rates Male Adult (per 1,000 live births) 2014",
+    "Deaths due to Malria (per 100,000 people)",
+    "Deaths due to Tuberculosis (per 100,000 people)",
+    "HIV prevalence, adult (% ages 15-49)",
+    "Life expectancy at age 59 (years) 2010/2015",
+    "Physicians  (per 10,000 people) 2001-2014",
+    "Public health expenditure (% of GDP) 2014",
+    "Employment to population ratio (% ages 15 and older)",
+    "Labour force participation rate (% ages 15 and older)",
+    "Employment in agriculture (% of total employment) 2010-2014",
+    "Employment in services (% of total employment) 2010- 2014",
+    "Total Unemployment (% of labour force) 2015",
+    "Unemployment Youth (% ages 15-24) 2010-2014",
+    "Unemployment Youth not in school or employment (% ages 15-24) 2010-2014",
+    "Vulnerable employment (% of total employment) 2005-2014",
+    "Working poor at PPP$3.10 a day (%) 2004-2013",
+    "Old-age pension recipients  (% of statutory pension age population) 2004-2013",
+    "Internet users (% 2010 -2015)",
+    "Coefficient of human inequality",
+    "Inequality in life expectancy (%) 2010-2015",
+    "Inequality-adjusted life expectancy index",
+    "Child labour  (% ages 5-14) 2009-2015",
+    "Inequality in education(%)",
+    "Inequality in income (%)",
+    "Mandatory paid maternity leave (days)"
+  ],
+  "VERIFIED": true
+}

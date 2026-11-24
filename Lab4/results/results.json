@@ -1,0 +1,1667 @@
+{
+  "orange_version": "3.40.0",
+  "explore": {
+    "dataset_title": "HDI",
+    "dataset_file": "HDI.tab",
+    "rows": 188,
+    "features": 52,
+    "metas": [
+      "Country",
+      "HDI"
+    ],
+    "target_as_loaded": null,
+    "all_numeric": true,
+    "missing_cells": 1137,
+    "missing_percent": 11.630523731587562,
+    "columns_with_missing": 45,
+    "most_missing": [
+      [
+        "Deaths due to Malria (per 100,000 people)",
+        94
+      ],
+      [
+        "Unemployment Youth not in school or employment (% ages 15-24) 2010-2014",
+        84
+      ],
+      [
+        "HIV prevalence, adult (% ages 15-49)",
+        83
+      ],
+      [
+        "Working poor at PPP$3.10 a day (%) 2004-2013",
+        78
+      ],
+      [
+        "Child labour  (% ages 5-14) 2009-2015",
+        77
+      ]
+    ],
+    "hdi": {
+      "min": 0.352,
+      "max": 0.949,
+      "mean": 0.6988351063829787,
+      "median": 0.7284999999999999
+    },
+    "top5": [
+      [
+        "Norway",
+        0.949
+      ],
+      [
+        "Australia",
+        0.939
+      ],
+      [
+        "Switzerland",
+        0.939
+      ],
+      [
+        "Germany",
+        0.926
+      ],
+      [
+        "Denmark",
+        0.925
+      ]
+    ],
+    "bottom5": [
+      [
+        "Central African Republic",
+        0.352
+      ],
+      [
+        "Niger",
+        0.353
+      ],
+      [
+        "Chad",
+        0.396
+      ],
+      [
+        "Burkina Faso",
+        0.402
+      ],
+      [
+        "Burundi",
+        0.404
+      ]
+    ],
+    "feature_names": [
+      "Life expectancy",
+      "Mean years of schooling",
+      "Gross national income (GNI) per capita",
+      "Gender Development Index value",
+      "Mean years of schooling Female",
+      "Mean years of schooling Male",
+      "Estimated gross national income per capita Female",
+      "Estimated gross national income per capita Male",
+      "Share of seats in parliament (% held by women)",
+      "Population with at least some secondary education % (2005-2015) Female",
+      "Population with at least some secondary education % (2005-2015) Male",
+      "Labour force participation rate (% ages 15 and older) Female",
+      "Population Average annual growth 2000/2005 (%)",
+      "Population Average annual growth 2010/2015 (%)",
+      "Population Urban 2015 %",
+      "Population Median age (years) 2015",
+      "Dependency Ration Young age (0-14) /(per 100 people ages 15-64)",
+      "Dependency Ratio Old age (65 and older) /(per 100 people ages 15-64)",
+      "Total fertility rate (birth per woman) 2000/2005",
+      "Total fertility rate (birth per woman) 2000/2007",
+      "Infants exclusively breastfed (% ages 0-5 months) 2010-2015",
+      "Infants lacking immunization DTP (% of one-year-olds)",
+      "Infants lacking immunization Measles (% of one-year-olds)",
+      "Child malnutrition Stunting (moderate or severe) 2010-2015",
+      "Mortality rates Infant (per 1,000 live births) 2015",
+      "Mortality rates Under-five (per 1,000 live births) 2015",
+      "Mortality rates Female Adult (per 1,000 live births) 2014",
+      "Mortality rates Male Adult (per 1,000 live births) 2014",
+      "Deaths due to Malria (per 100,000 people)",
+      "Deaths due to Tuberculosis (per 100,000 people)",
+      "HIV prevalence, adult (% ages 15-49)",
+      "Life expectancy at age 59 (years) 2010/2015",
+      "Physicians  (per 10,000 people) 2001-2014",
+      "Public health expenditure (% of GDP) 2014",
+      "Employment to population ratio (% ages 15 and older)",
+      "Labour force participation rate (% ages 15 and older)",
+      "Employment in agriculture (% of total employment) 2010-2014",
+      "Employment in services (% of total employment) 2010- 2014",
+      "Total Unemployment (% of labour force) 2015",
+      "Unemployment Youth (% ages 15-24) 2010-2014",
+      "Unemployment Youth not in school or employment (% ages 15-24) 2010-2014",
+      "Vulnerable employment (% of total employment) 2005-2014",
+      "Working poor at PPP$3.10 a day (%) 2004-2013",
+      "Old-age pension recipients  (% of statutory pension age population) 2004-2013",
+      "Internet users (% 2010 -2015)",
+      "Coefficient of human inequality",
+      "Inequality in life expectancy (%) 2010-2015",
+      "Inequality-adjusted life expectancy index",
+      "Child labour  (% ages 5-14) 2009-2015",
+      "Inequality in education(%)",
+      "Inequality in income (%)",
+      "Mandatory paid maternity leave (days)"
+    ]
+  },
+  "step2": {
+    "target_after_select_columns": "HDI",
+    "feature_min": 0.0,
+    "feature_max": 1.0,
+    "every_feature_spans_0_to_1": true,
+    "target_unchanged": true,
+    "train_rows": 94,
+    "test_rows": 94,
+    "overlap": 0,
+    "train_hdi_mean": 0.7069042553191489,
+    "test_hdi_mean": 0.6907659574468086
+  },
+  "as_saved": {
+    "test_and_score_mode": 5,
+    "test_and_score_1_mode": 0,
+    "folds": [
+      10,
+      10
+    ]
+  },
+  "cv_scores": [
+    {
+      "Model": "Lasso Regression (L1)",
+      "Train": "0.076",
+      "Test": "0.025",
+      "MSE": 0.0014273222164806107,
+      "RMSE": 0.03777991816402744,
+      "MAE": 0.02809722536335079,
+      "MAPE": 4.485114500125734,
+      "sMAPE": 4.422955985875184,
+      "R2": 0.9400789964913228,
+      "CVRMSE": 5.344417985851675
+    },
+    {
+      "Model": "Elastic Net Regression",
+      "Train": "0.054",
+      "Test": "0.025",
+      "MSE": 0.0017707608799584285,
+      "RMSE": 0.042080409693329136,
+      "MAE": 0.03026729337193223,
+      "MAPE": 4.975959436202184,
+      "sMAPE": 4.786981292981391,
+      "R2": 0.9256609561065717,
+      "CVRMSE": 5.952773572473535
+    },
+    {
+      "Model": "Elastic Net Regression (1)",
+      "Train": "0.057",
+      "Test": "0.025",
+      "MSE": 0.0017707608799584285,
+      "RMSE": 0.042080409693329136,
+      "MAE": 0.03026729337193223,
+      "MAPE": 4.975959436202184,
+      "sMAPE": 4.786981292981391,
+      "R2": 0.9256609561065717,
+      "CVRMSE": 5.952773572473535
+    },
+    {
+      "Model": "No Regularization",
+      "Train": "0.055",
+      "Test": "0.025",
+      "MSE": 0.0033745814006924555,
+      "RMSE": 0.058091147352177984,
+      "MAE": 0.041276202629289015,
+      "MAPE": 6.685644181020548,
+      "sMAPE": 6.729930763770213,
+      "R2": 0.8583303043864893,
+      "CVRMSE": 8.217682510052416
+    }
+  ],
+  "coefficients": {
+    "No Regularization": {
+      "intercept": 0.4214334812121796,
+      "n_features": 52,
+      "n_zero": 0,
+      "n_nonzero": 52,
+      "top_positive": [
+        {
+          "name": "Mean years of schooling",
+          "coef": 0.5119526972943321
+        },
+        {
+          "name": "Life expectancy",
+          "coef": 0.3330366465544939
+        },
+        {
+          "name": "Mortality rates Under-five (per 1,000 live births) 2015",
+          "coef": 0.32936565495334647
+        },
+        {
+          "name": "Estimated gross national income per capita Male",
+          "coef": 0.1843447027630118
+        },
+        {
+          "name": "Mortality rates Female Adult (per 1,000 live births) 2014",
+          "coef": 0.16168624745979726
+        }
+      ],
+      "top_negative": [
+        {
+          "name": "Coefficient of human inequality",
+          "coef": -0.25062425588518555
+        },
+        {
+          "name": "Mortality rates Infant (per 1,000 live births) 2015",
+          "coef": -0.220040571486034
+        },
+        {
+          "name": "Inequality-adjusted life expectancy index",
+          "coef": -0.17781719049949832
+        },
+        {
+          "name": "Labour force participation rate (% ages 15 and older)",
+          "coef": -0.15915200854173922
+        },
+        {
+          "name": "Mean years of schooling Female",
+          "coef": -0.15155590062629426
+        }
+      ],
+      "largest_abs": 0.5119526972943321,
+      "all": [
+        {
+          "name": "Mean years of schooling",
+          "coef": 0.5119526972943321
+        },
+        {
+          "name": "Life expectancy",
+          "coef": 0.3330366465544939
+        },
+        {
+          "name": "Mortality rates Under-five (per 1,000 live births) 2015",
+          "coef": 0.32936565495334647
+        },
+        {
+          "name": "Estimated gross national income per capita Male",
+          "coef": 0.1843447027630118
+        },
+        {
+          "name": "Mortality rates Female Adult (per 1,000 live births) 2014",
+          "coef": 0.16168624745979726
+        },
+        {
+          "name": "Inequality in education(%)",
+          "coef": 0.11277602636890018
+        },
+        {
+          "name": "Total Unemployment (% of labour force) 2015",
+          "coef": 0.11239440499665102
+        },
+        {
+          "name": "Employment to population ratio (% ages 15 and older)",
+          "coef": 0.11112263312026006
+        },
+        {
+          "name": "Inequality in income (%)",
+          "coef": 0.10060426061470767
+        },
+        {
+          "name": "Labour force participation rate (% ages 15 and older) Female",
+          "coef": 0.09604621961972598
+        },
+        {
+          "name": "Gross national income (GNI) per capita",
+          "coef": 0.09010369755623288
+        },
+        {
+          "name": "Population Median age (years) 2015",
+          "coef": 0.07966961565593275
+        },
+        {
+          "name": "Internet users (% 2010 -2015)",
+          "coef": 0.06867897213236003
+        },
+        {
+          "name": "Population Urban 2015 %",
+          "coef": 0.05409806783831947
+        },
+        {
+          "name": "Population Average annual growth 2000/2005 (%)",
+          "coef": 0.047221015665040646
+        },
+        {
+          "name": "Gender Development Index value",
+          "coef": 0.045137353838844124
+        },
+        {
+          "name": "Total fertility rate (birth per woman) 2000/2005",
+          "coef": 0.04004323835557613
+        },
+        {
+          "name": "Infants lacking immunization Measles (% of one-year-olds)",
+          "coef": 0.03651877465823736
+        },
+        {
+          "name": "Share of seats in parliament (% held by women)",
+          "coef": 0.03594054171251738
+        },
+        {
+          "name": "Total fertility rate (birth per woman) 2000/2007",
+          "coef": 0.023704540579575786
+        },
+        {
+          "name": "Dependency Ratio Old age (65 and older) /(per 100 people ages 15-64)",
+          "coef": 0.022871461753865903
+        },
+        {
+          "name": "Population with at least some secondary education % (2005-2015) Female",
+          "coef": 0.014900683100063504
+        },
+        {
+          "name": "Child malnutrition Stunting (moderate or severe) 2010-2015",
+          "coef": 0.013966031865446385
+        },
+        {
+          "name": "Deaths due to Tuberculosis (per 100,000 people)",
+          "coef": 0.01078829877081161
+        },
+        {
+          "name": "Old-age pension recipients  (% of statutory pension age population) 2004-2013",
+          "coef": 0.008891357913765524
+        },
+        {
+          "name": "Unemployment Youth not in school or employment (% ages 15-24) 2010-2014",
+          "coef": 0.006181207359223478
+        },
+        {
+          "name": "Infants exclusively breastfed (% ages 0-5 months) 2010-2015",
+          "coef": 0.004911041013088369
+        },
+        {
+          "name": "Population Average annual growth 2010/2015 (%)",
+          "coef": 0.004044136351305322
+        },
+        {
+          "name": "Vulnerable employment (% of total employment) 2005-2014",
+          "coef": 0.0013560639616163467
+        },
+        {
+          "name": "Mandatory paid maternity leave (days)",
+          "coef": -0.00828523236747359
+        },
+        {
+          "name": "HIV prevalence, adult (% ages 15-49)",
+          "coef": -0.012808612187737878
+        },
+        {
+          "name": "Child labour  (% ages 5-14) 2009-2015",
+          "coef": -0.020005719990267824
+        },
+        {
+          "name": "Dependency Ration Young age (0-14) /(per 100 people ages 15-64)",
+          "coef": -0.02132162450933918
+        },
+        {
+          "name": "Unemployment Youth (% ages 15-24) 2010-2014",
+          "coef": -0.023642342498433125
+        },
+        {
+          "name": "Population with at least some secondary education % (2005-2015) Male",
+          "coef": -0.027357713622439973
+        },
+        {
+          "name": "Estimated gross national income per capita Female",
+          "coef": -0.03263747241961906
+        },
+        {
+          "name": "Public health expenditure (% of GDP) 2014",
+          "coef": -0.032990302446561565
+        },
+        {
+          "name": "Infants lacking immunization DTP (% of one-year-olds)",
+          "coef": -0.03353410493021372
+        },
+        {
+          "name": "Physicians  (per 10,000 people) 2001-2014",
+          "coef": -0.03510202341850069
+        },
+        {
+          "name": "Employment in services (% of total employment) 2010- 2014",
+          "coef": -0.04774194822547456
+        },
+        {
+          "name": "Working poor at PPP$3.10 a day (%) 2004-2013",
+          "coef": -0.061264702253651715
+        },
+        {
+          "name": "Life expectancy at age 59 (years) 2010/2015",
+          "coef": -0.06685972125245684
+        },
+        {
+          "name": "Employment in agriculture (% of total employment) 2010-2014",
+          "coef": -0.06752015595067286
+        },
+        {
+          "name": "Inequality in life expectancy (%) 2010-2015",
+          "coef": -0.10113028230606985
+        },
+        {
+          "name": "Deaths due to Malria (per 100,000 people)",
+          "coef": -0.11001542963819101
+        },
+        {
+          "name": "Mean years of schooling Male",
+          "coef": -0.13768061940790444
+        },
+        {
+          "name": "Mortality rates Male Adult (per 1,000 live births) 2014",
+          "coef": -0.1379767726988989
+        },
+        {
+          "name": "Mean years of schooling Female",
+          "coef": -0.15155590062629426
+        },
+        {
+          "name": "Labour force participation rate (% ages 15 and older)",
+          "coef": -0.15915200854173922
+        },
+        {
+          "name": "Inequality-adjusted life expectancy index",
+          "coef": -0.17781719049949832
+        },
+        {
+          "name": "Mortality rates Infant (per 1,000 live births) 2015",
+          "coef": -0.220040571486034
+        },
+        {
+          "name": "Coefficient of human inequality",
+          "coef": -0.25062425588518555
+        }
+      ]
+    },
+    "Lasso Regression (L1)": {
+      "intercept": 0.4235677743943683,
+      "n_features": 52,
+      "n_zero": 20,
+      "n_nonzero": 32,
+      "top_positive": [
+        {
+          "name": "Mean years of schooling",
+          "coef": 0.31869242849663704
+        },
+        {
+          "name": "Gross national income (GNI) per capita",
+          "coef": 0.23055340981019293
+        },
+        {
+          "name": "Life expectancy",
+          "coef": 0.1701111202289678
+        },
+        {
+          "name": "Population Urban 2015 %",
+          "coef": 0.07226071953487416
+        },
+        {
+          "name": "Dependency Ratio Old age (65 and older) /(per 100 people ages 15-64)",
+          "coef": 0.04744142933421637
+        }
+      ],
+      "top_negative": [
+        {
+          "name": "Mean years of schooling Female",
+          "coef": -0.06303507999513736
+        },
+        {
+          "name": "Total Unemployment (% of labour force) 2015",
+          "coef": -0.04692460433672913
+        },
+        {
+          "name": "Mean years of schooling Male",
+          "coef": -0.04416689865591414
+        },
+        {
+          "name": "Dependency Ration Young age (0-14) /(per 100 people ages 15-64)",
+          "coef": -0.04003248903187864
+        },
+        {
+          "name": "Physicians  (per 10,000 people) 2001-2014",
+          "coef": -0.03652243404053938
+        }
+      ],
+      "largest_abs": 0.31869242849663704,
+      "all": [
+        {
+          "name": "Mean years of schooling",
+          "coef": 0.31869242849663704
+        },
+        {
+          "name": "Gross national income (GNI) per capita",
+          "coef": 0.23055340981019293
+        },
+        {
+          "name": "Life expectancy",
+          "coef": 0.1701111202289678
+        },
+        {
+          "name": "Population Urban 2015 %",
+          "coef": 0.07226071953487416
+        },
+        {
+          "name": "Dependency Ratio Old age (65 and older) /(per 100 people ages 15-64)",
+          "coef": 0.04744142933421637
+        },
+        {
+          "name": "Unemployment Youth (% ages 15-24) 2010-2014",
+          "coef": 0.03598412976787954
+        },
+        {
+          "name": "Gender Development Index value",
+          "coef": 0.027087425634889598
+        },
+        {
+          "name": "Unemployment Youth not in school or employment (% ages 15-24) 2010-2014",
+          "coef": 0.0184456872873753
+        },
+        {
+          "name": "Old-age pension recipients  (% of statutory pension age population) 2004-2013",
+          "coef": 0.012973449820024168
+        },
+        {
+          "name": "Share of seats in parliament (% held by women)",
+          "coef": 0.011505083605368276
+        },
+        {
+          "name": "Population Average annual growth 2000/2005 (%)",
+          "coef": 0.010748204309798644
+        },
+        {
+          "name": "Child malnutrition Stunting (moderate or severe) 2010-2015",
+          "coef": 0.01032738517602465
+        },
+        {
+          "name": "Deaths due to Tuberculosis (per 100,000 people)",
+          "coef": 0.009769695192795115
+        },
+        {
+          "name": "Estimated gross national income per capita Female",
+          "coef": 0.0
+        },
+        {
+          "name": "Estimated gross national income per capita Male",
+          "coef": 0.0
+        },
+        {
+          "name": "Population with at least some secondary education % (2005-2015) Male",
+          "coef": -0.0
+        },
+        {
+          "name": "Labour force participation rate (% ages 15 and older) Female",
+          "coef": -0.0
+        },
+        {
+          "name": "Population Average annual growth 2010/2015 (%)",
+          "coef": 0.0
+        },
+        {
+          "name": "Population Median age (years) 2015",
+          "coef": 0.0
+        },
+        {
+          "name": "Total fertility rate (birth per woman) 2000/2005",
+          "coef": 0.0
+        },
+        {
+          "name": "Total fertility rate (birth per woman) 2000/2007",
+          "coef": 0.0
+        },
+        {
+          "name": "Infants lacking immunization Measles (% of one-year-olds)",
+          "coef": 0.0
+        },
+        {
+          "name": "Mortality rates Infant (per 1,000 live births) 2015",
+          "coef": -0.0
+        },
+        {
+          "name": "Mortality rates Under-five (per 1,000 live births) 2015",
+          "coef": -0.0
+        },
+        {
+          "name": "Mortality rates Female Adult (per 1,000 live births) 2014",
+          "coef": 0.0
+        },
+        {
+          "name": "HIV prevalence, adult (% ages 15-49)",
+          "coef": 0.0
+        },
+        {
+          "name": "Public health expenditure (% of GDP) 2014",
+          "coef": -0.0
+        },
+        {
+          "name": "Employment to population ratio (% ages 15 and older)",
+          "coef": -0.0
+        },
+        {
+          "name": "Internet users (% 2010 -2015)",
+          "coef": -0.0
+        },
+        {
+          "name": "Inequality-adjusted life expectancy index",
+          "coef": 0.0
+        },
+        {
+          "name": "Inequality in education(%)",
+          "coef": 0.0
+        },
+        {
+          "name": "Inequality in income (%)",
+          "coef": 0.0
+        },
+        {
+          "name": "Mandatory paid maternity leave (days)",
+          "coef": -0.0
+        },
+        {
+          "name": "Inequality in life expectancy (%) 2010-2015",
+          "coef": -0.0004713089086647206
+        },
+        {
+          "name": "Employment in agriculture (% of total employment) 2010-2014",
+          "coef": -0.005761790640030397
+        },
+        {
+          "name": "Vulnerable employment (% of total employment) 2005-2014",
+          "coef": -0.005929851807899309
+        },
+        {
+          "name": "Infants exclusively breastfed (% ages 0-5 months) 2010-2015",
+          "coef": -0.006771756523778342
+        },
+        {
+          "name": "Population with at least some secondary education % (2005-2015) Female",
+          "coef": -0.007508091639728495
+        },
+        {
+          "name": "Infants lacking immunization DTP (% of one-year-olds)",
+          "coef": -0.008238911459806058
+        },
+        {
+          "name": "Child labour  (% ages 5-14) 2009-2015",
+          "coef": -0.009565222439561408
+        },
+        {
+          "name": "Labour force participation rate (% ages 15 and older)",
+          "coef": -0.009911029120057433
+        },
+        {
+          "name": "Employment in services (% of total employment) 2010- 2014",
+          "coef": -0.010693429811078629
+        },
+        {
+          "name": "Life expectancy at age 59 (years) 2010/2015",
+          "coef": -0.011692723463788326
+        },
+        {
+          "name": "Mortality rates Male Adult (per 1,000 live births) 2014",
+          "coef": -0.015498516394519355
+        },
+        {
+          "name": "Coefficient of human inequality",
+          "coef": -0.028888673352086402
+        },
+        {
+          "name": "Deaths due to Malria (per 100,000 people)",
+          "coef": -0.032469395280045554
+        },
+        {
+          "name": "Working poor at PPP$3.10 a day (%) 2004-2013",
+          "coef": -0.03650154527266997
+        },
+        {
+          "name": "Physicians  (per 10,000 people) 2001-2014",
+          "coef": -0.03652243404053938
+        },
+        {
+          "name": "Dependency Ration Young age (0-14) /(per 100 people ages 15-64)",
+          "coef": -0.04003248903187864
+        },
+        {
+          "name": "Mean years of schooling Male",
+          "coef": -0.04416689865591414
+        },
+        {
+          "name": "Total Unemployment (% of labour force) 2015",
+          "coef": -0.04692460433672913
+        },
+        {
+          "name": "Mean years of schooling Female",
+          "coef": -0.06303507999513736
+        }
+      ]
+    },
+    "Elastic Net Regression": {
+      "intercept": 0.4709982097260889,
+      "n_features": 52,
+      "n_zero": 37,
+      "n_nonzero": 15,
+      "top_positive": [
+        {
+          "name": "Mean years of schooling",
+          "coef": 0.1414852635079496
+        },
+        {
+          "name": "Population Urban 2015 %",
+          "coef": 0.08838997338396108
+        },
+        {
+          "name": "Inequality-adjusted life expectancy index",
+          "coef": 0.08164121231132475
+        },
+        {
+          "name": "Estimated gross national income per capita Female",
+          "coef": 0.0638506429372915
+        },
+        {
+          "name": "Life expectancy",
+          "coef": 0.053372585196632294
+        }
+      ],
+      "top_negative": [
+        {
+          "name": "Inequality in life expectancy (%) 2010-2015",
+          "coef": -0.06297735692861821
+        },
+        {
+          "name": "Dependency Ration Young age (0-14) /(per 100 people ages 15-64)",
+          "coef": -0.039924738078374274
+        },
+        {
+          "name": "Inequality in education(%)",
+          "coef": -0.006160323896790194
+        },
+        {
+          "name": "Working poor at PPP$3.10 a day (%) 2004-2013",
+          "coef": -0.004879522876963278
+        },
+        {
+          "name": "Total fertility rate (birth per woman) 2000/2005",
+          "coef": -0.0012976155995851413
+        }
+      ],
+      "largest_abs": 0.1414852635079496,
+      "all": [
+        {
+          "name": "Mean years of schooling",
+          "coef": 0.1414852635079496
+        },
+        {
+          "name": "Population Urban 2015 %",
+          "coef": 0.08838997338396108
+        },
+        {
+          "name": "Inequality-adjusted life expectancy index",
+          "coef": 0.08164121231132475
+        },
+        {
+          "name": "Estimated gross national income per capita Female",
+          "coef": 0.0638506429372915
+        },
+        {
+          "name": "Life expectancy",
+          "coef": 0.053372585196632294
+        },
+        {
+          "name": "Population Median age (years) 2015",
+          "coef": 0.031061200098617823
+        },
+        {
+          "name": "Old-age pension recipients  (% of statutory pension age population) 2004-2013",
+          "coef": 0.02432513467940719
+        },
+        {
+          "name": "Mean years of schooling Female",
+          "coef": 0.018841805353993445
+        },
+        {
+          "name": "Life expectancy at age 59 (years) 2010/2015",
+          "coef": 0.0038065599061524753
+        },
+        {
+          "name": "Population with at least some secondary education % (2005-2015) Female",
+          "coef": 0.0029869635228570186
+        },
+        {
+          "name": "Gross national income (GNI) per capita",
+          "coef": 0.0
+        },
+        {
+          "name": "Gender Development Index value",
+          "coef": 0.0
+        },
+        {
+          "name": "Mean years of schooling Male",
+          "coef": 0.0
+        },
+        {
+          "name": "Estimated gross national income per capita Male",
+          "coef": 0.0
+        },
+        {
+          "name": "Share of seats in parliament (% held by women)",
+          "coef": 0.0
+        },
+        {
+          "name": "Population with at least some secondary education % (2005-2015) Male",
+          "coef": 0.0
+        },
+        {
+          "name": "Labour force participation rate (% ages 15 and older) Female",
+          "coef": -0.0
+        },
+        {
+          "name": "Population Average annual growth 2000/2005 (%)",
+          "coef": -0.0
+        },
+        {
+          "name": "Population Average annual growth 2010/2015 (%)",
+          "coef": -0.0
+        },
+        {
+          "name": "Dependency Ratio Old age (65 and older) /(per 100 people ages 15-64)",
+          "coef": 0.0
+        },
+        {
+          "name": "Total fertility rate (birth per woman) 2000/2007",
+          "coef": -0.0
+        },
+        {
+          "name": "Infants exclusively breastfed (% ages 0-5 months) 2010-2015",
+          "coef": -0.0
+        },
+        {
+          "name": "Infants lacking immunization DTP (% of one-year-olds)",
+          "coef": -0.0
+        },
+        {
+          "name": "Infants lacking immunization Measles (% of one-year-olds)",
+          "coef": -0.0
+        },
+        {
+          "name": "Child malnutrition Stunting (moderate or severe) 2010-2015",
+          "coef": -0.0
+        },
+        {
+          "name": "Mortality rates Infant (per 1,000 live births) 2015",
+          "coef": -0.0
+        },
+        {
+          "name": "Mortality rates Under-five (per 1,000 live births) 2015",
+          "coef": -0.0
+        },
+        {
+          "name": "Mortality rates Female Adult (per 1,000 live births) 2014",
+          "coef": -0.0
+        },
+        {
+          "name": "Mortality rates Male Adult (per 1,000 live births) 2014",
+          "coef": -0.0
+        },
+        {
+          "name": "Deaths due to Malria (per 100,000 people)",
+          "coef": -0.0
+        },
+        {
+          "name": "Deaths due to Tuberculosis (per 100,000 people)",
+          "coef": -0.0
+        },
+        {
+          "name": "HIV prevalence, adult (% ages 15-49)",
+          "coef": -0.0
+        },
+        {
+          "name": "Physicians  (per 10,000 people) 2001-2014",
+          "coef": 0.0
+        },
+        {
+          "name": "Public health expenditure (% of GDP) 2014",
+          "coef": 0.0
+        },
+        {
+          "name": "Employment to population ratio (% ages 15 and older)",
+          "coef": -0.0
+        },
+        {
+          "name": "Labour force participation rate (% ages 15 and older)",
+          "coef": -0.0
+        },
+        {
+          "name": "Employment in agriculture (% of total employment) 2010-2014",
+          "coef": -0.0
+        },
+        {
+          "name": "Employment in services (% of total employment) 2010- 2014",
+          "coef": 0.0
+        },
+        {
+          "name": "Total Unemployment (% of labour force) 2015",
+          "coef": -0.0
+        },
+        {
+          "name": "Unemployment Youth (% ages 15-24) 2010-2014",
+          "coef": 0.0
+        },
+        {
+          "name": "Unemployment Youth not in school or employment (% ages 15-24) 2010-2014",
+          "coef": 0.0
+        },
+        {
+          "name": "Vulnerable employment (% of total employment) 2005-2014",
+          "coef": -0.0
+        },
+        {
+          "name": "Internet users (% 2010 -2015)",
+          "coef": -0.0
+        },
+        {
+          "name": "Coefficient of human inequality",
+          "coef": -0.0
+        },
+        {
+          "name": "Child labour  (% ages 5-14) 2009-2015",
+          "coef": -0.0
+        },
+        {
+          "name": "Inequality in income (%)",
+          "coef": -0.0
+        },
+        {
+          "name": "Mandatory paid maternity leave (days)",
+          "coef": -0.0
+        },
+        {
+          "name": "Total fertility rate (birth per woman) 2000/2005",
+          "coef": -0.0012976155995851413
+        },
+        {
+          "name": "Working poor at PPP$3.10 a day (%) 2004-2013",
+          "coef": -0.004879522876963278
+        },
+        {
+          "name": "Inequality in education(%)",
+          "coef": -0.006160323896790194
+        },
+        {
+          "name": "Dependency Ration Young age (0-14) /(per 100 people ages 15-64)",
+          "coef": -0.039924738078374274
+        },
+        {
+          "name": "Inequality in life expectancy (%) 2010-2015",
+          "coef": -0.06297735692861821
+        }
+      ]
+    },
+    "Elastic Net Regression (1)": {
+      "intercept": 0.7069042553191489,
+      "n_features": 1,
+      "n_zero": 1,
+      "n_nonzero": 0,
+      "top_positive": [
+        {
+          "name": "HIV prevalence, adult (% ages 15-49)",
+          "coef": -0.0
+        }
+      ],
+      "top_negative": [
+        {
+          "name": "HIV prevalence, adult (% ages 15-49)",
+          "coef": -0.0
+        }
+      ],
+      "largest_abs": 0.0,
+      "all": [
+        {
+          "name": "HIV prevalence, adult (% ages 15-49)",
+          "coef": -0.0
+        }
+      ]
+    }
+  },
+  "step5": {
+    "missing_effect": {
+      "widget_top_matches": true,
+      "top8": [
+        {
+          "name": "HIV prevalence, adult (% ages 15-49)",
+          "score": 0.6736781775781393,
+          "missing_in_training": 46
+        },
+        {
+          "name": "Unemployment Youth not in school or employment (% ages 15-24) 2010-2014",
+          "score": 0.6676094373456375,
+          "missing_in_training": 41
+        },
+        {
+          "name": "Child labour  (% ages 5-14) 2009-2015",
+          "score": 0.5486389258927981,
+          "missing_in_training": 42
+        },
+        {
+          "name": "Deaths due to Malria (per 100,000 people)",
+          "score": 0.5327664012435205,
+          "missing_in_training": 46
+        },
+        {
+          "name": "Working poor at PPP$3.10 a day (%) 2004-2013",
+          "score": 0.4810525325514792,
+          "missing_in_training": 40
+        },
+        {
+          "name": "Employment in agriculture (% of total employment) 2010-2014",
+          "score": 0.4655426545647355,
+          "missing_in_training": 29
+        },
+        {
+          "name": "Employment in services (% of total employment) 2010- 2014",
+          "score": 0.4535834488963048,
+          "missing_in_training": 27
+        },
+        {
+          "name": "Child malnutrition Stunting (moderate or severe) 2010-2015",
+          "score": 0.4378711258017837,
+          "missing_in_training": 25
+        }
+      ],
+      "corr_score_vs_missing": 0.9328920562474718,
+      "top5_after_filling_gaps": [
+        {
+          "name": "Old-age pension recipients  (% of statutory pension age population) 2004-2013",
+          "score": 0.2670705326990969
+        },
+        {
+          "name": "Working poor at PPP$3.10 a day (%) 2004-2013",
+          "score": 0.25667300711662033
+        },
+        {
+          "name": "Population Urban 2015 %",
+          "score": 0.2396546196409574
+        },
+        {
+          "name": "Mortality rates Under-five (per 1,000 live births) 2015",
+          "score": 0.23065155006286656
+        },
+        {
+          "name": "Child malnutrition Stunting (moderate or severe) 2010-2015",
+          "score": 0.227467525503564
+        }
+      ],
+      "training_rows": 94
+    },
+    "top_feature": "HIV prevalence, adult (% ages 15-49)",
+    "reduced_features": 1,
+    "rank_header": [
+      "",
+      "#",
+      "RReliefF"
+    ],
+    "rank_top": [
+      [
+        "HIV prevalence, adult (% ages 15-49)",
+        "",
+        0.6737
+      ],
+      [
+        "Unemployment Youth not in school or employment (% ages 15-24) 2010-2014",
+        "",
+        0.6676
+      ],
+      [
+        "Child labour  (% ages 5-14) 2009-2015",
+        "",
+        0.5486
+      ],
+      [
+        "Deaths due to Malria (per 100,000 people)",
+        "",
+        0.5328
+      ],
+      [
+        "Working poor at PPP$3.10 a day (%) 2004-2013",
+        "",
+        0.4811
+      ],
+      [
+        "Employment in agriculture (% of total employment) 2010-2014",
+        "",
+        0.4655
+      ],
+      [
+        "Employment in services (% of total employment) 2010- 2014",
+        "",
+        0.4536
+      ],
+      [
+        "Child malnutrition Stunting (moderate or severe) 2010-2015",
+        "",
+        0.4379
+      ]
+    ],
+    "one_feature_cv": {
+      "RMSE": 0.15737516287851677,
+      "MAE": 0.1325455986649979,
+      "R2": -0.039751217220932444
+    },
+    "all_features_cv_check": {
+      "RMSE": 0.042080409693329136,
+      "R2": 0.9256609561065717
+    },
+    "top_feature_missing_in_training": 46
+  },
+  "elastic_net_1_same_score_as_elastic_net": true,
+  "test_scores": [
+    {
+      "Model": "Lasso Regression (L1)",
+      "Train": "0.007",
+      "Test": "0.003",
+      "MSE": 0.0010843869885435854,
+      "RMSE": 0.03293003171185211,
+      "MAE": 0.02535002894545477,
+      "MAPE": 4.103257007381003,
+      "sMAPE": 4.160607047524607,
+      "R2": 0.9547012079826197,
+      "CVRMSE": 4.767176401333853
+    },
+    {
+      "Model": "Elastic Net Regression",
+      "Train": "0.007",
+      "Test": "0.003",
+      "MSE": 0.001444930965000574,
+      "RMSE": 0.0380122475657593,
+      "MAE": 0.026350894998603536,
+      "MAPE": 4.228293348639654,
+      "sMAPE": 4.186688571831546,
+      "R2": 0.9396399735937971,
+      "CVRMSE": 5.502912695098525
+    },
+    {
+      "Model": "Elastic Net Regression (1)",
+      "Train": "0.005",
+      "Test": "0.003",
+      "MSE": 0.001444930965000574,
+      "RMSE": 0.0380122475657593,
+      "MAE": 0.026350894998603536,
+      "MAPE": 4.228293348639654,
+      "sMAPE": 4.186688571831546,
+      "R2": 0.9396399735937971,
+      "CVRMSE": 5.502912695098525
+    },
+    {
+      "Model": "No Regularization",
+      "Train": "0.007",
+      "Test": "0.003",
+      "MSE": 0.0025056794582074323,
+      "RMSE": 0.05005676236241645,
+      "MAE": 0.0361926514869191,
+      "MAPE": 6.001515648490225,
+      "sMAPE": 6.12578227379441,
+      "R2": 0.8953286475781072,
+      "CVRMSE": 7.246558957166183
+    }
+  ],
+  "other_cv_scores": [
+    {
+      "Model": "Random Forest",
+      "Train": "0.726",
+      "Test": "0.054",
+      "MSE": 0.00105728685795805,
+      "RMSE": 0.03251594774811354,
+      "MAE": 0.023415569460681192,
+      "MAPE": 3.815480077769036,
+      "sMAPE": 3.705630020659377,
+      "R2": 0.9556136037161983,
+      "CVRMSE": 4.599766871318865
+    },
+    {
+      "Model": "AdaBoost",
+      "Train": "0.610",
+      "Test": "0.054",
+      "MSE": 0.0010887340425531917,
+      "RMSE": 0.032995970095652465,
+      "MAE": 0.023755319148936176,
+      "MAPE": 3.821163782925938,
+      "sMAPE": 3.73608200755306,
+      "R2": 0.954293406470821,
+      "CVRMSE": 4.667671731690969
+    },
+    {
+      "Model": "Neural Network",
+      "Train": "0.254",
+      "Test": "0.083",
+      "MSE": 0.0016162987104001102,
+      "RMSE": 0.04020321766227313,
+      "MAE": 0.030557665828464104,
+      "MAPE": 4.955336782357056,
+      "sMAPE": 4.898076218994806,
+      "R2": 0.9321454962455766,
+      "CVRMSE": 5.687222471750778
+    },
+    {
+      "Model": "kNN",
+      "Train": "0.076",
+      "Test": "0.114",
+      "MSE": 0.0021452997790750716,
+      "RMSE": 0.046317380960877653,
+      "MAE": 0.03396622262819402,
+      "MAPE": 5.745174168405233,
+      "sMAPE": 5.480213592762682,
+      "R2": 0.9099372838838817,
+      "CVRMSE": 6.552143463893362
+    }
+  ],
+  "other_test_scores": [
+    {
+      "Model": "Neural Network",
+      "Train": "0.018",
+      "Test": "0.006",
+      "MSE": 0.0010014602590926872,
+      "RMSE": 0.03164585690248705,
+      "MAE": 0.024197077201094448,
+      "MAPE": 3.8430179798426165,
+      "sMAPE": 3.850584854542296,
+      "R2": 0.9581653593508715,
+      "CVRMSE": 4.581270481170736
+    },
+    {
+      "Model": "Random Forest",
+      "Train": "0.052",
+      "Test": "0.004",
+      "MSE": 0.001261203687697596,
+      "RMSE": 0.03551342968086293,
+      "MAE": 0.02470544849712932,
+      "MAPE": 4.1984761986705275,
+      "sMAPE": 4.075687124196416,
+      "R2": 0.9473149307911765,
+      "CVRMSE": 5.141166743672018
+    },
+    {
+      "Model": "AdaBoost",
+      "Train": "0.046",
+      "Test": "0.004",
+      "MSE": 0.001361702127659574,
+      "RMSE": 0.0369012483211554,
+      "MAE": 0.02780851063829786,
+      "MAPE": 4.572498840257945,
+      "sMAPE": 4.421314721547569,
+      "R2": 0.9431167451083853,
+      "CVRMSE": 5.342076852997916
+    },
+    {
+      "Model": "kNN",
+      "Train": "0.005",
+      "Test": "0.004",
+      "MSE": 0.0017905032645432045,
+      "RMSE": 0.04231433875819406,
+      "MAE": 0.03148550581830944,
+      "MAPE": 5.149235370357659,
+      "sMAPE": 5.04598369275168,
+      "R2": 0.9252041606512479,
+      "CVRMSE": 6.125712812280912
+    }
+  ],
+  "tuned_settings": {
+    "AdaBoost": {
+      "n_estimators": 25,
+      "learning_rate": 1.0,
+      "loss_index": 1,
+      "use_random_seed": true,
+      "random_seed": 0
+    },
+    "Random Forest": {
+      "n_estimators": 50,
+      "use_random_state": true,
+      "use_max_features": true,
+      "max_features": 20,
+      "use_max_depth": false,
+      "use_min_samples_split": true,
+      "min_samples_split": 5
+    },
+    "Neural Network": {
+      "hidden_layers_input": "10,",
+      "activation_index": 1,
+      "solver_index": 0,
+      "alpha_index": 5,
+      "max_iterations": 200,
+      "replicable": true
+    },
+    "kNN": {
+      "n_neighbors": 6,
+      "metric_index": 1,
+      "weight_index": 1
+    }
+  },
+  "tuning": {
+    "AdaBoost": {
+      "tried": 60,
+      "default_rmse": 0.03572888455422813,
+      "best": {
+        "settings": {
+          "n_estimators": 25,
+          "learning_rate": 1.0,
+          "loss_index": 1,
+          "use_random_seed": true,
+          "random_seed": 0
+        },
+        "rmse": 0.032995970095652465
+      },
+      "worst": {
+        "settings": {
+          "n_estimators": 25,
+          "learning_rate": 2.0,
+          "loss_index": 1,
+          "use_random_seed": true,
+          "random_seed": 0
+        },
+        "rmse": 0.0813486716731054
+      },
+      "top5": [
+        {
+          "settings": {
+            "n_estimators": 25,
+            "learning_rate": 1.0,
+            "loss_index": 1,
+            "use_random_seed": true,
+            "random_seed": 0
+          },
+          "rmse": 0.032995970095652465
+        },
+        {
+          "settings": {
+            "n_estimators": 25,
+            "learning_rate": 1.0,
+            "loss_index": 0,
+            "use_random_seed": true,
+            "random_seed": 0
+          },
+          "rmse": 0.03402564739797119
+        },
+        {
+          "settings": {
+            "n_estimators": 200,
+            "learning_rate": 1.0,
+            "loss_index": 1,
+            "use_random_seed": true,
+            "random_seed": 0
+          },
+          "rmse": 0.03503554426153713
+        },
+        {
+          "settings": {
+            "n_estimators": 50,
+            "learning_rate": 1.0,
+            "loss_index": 2,
+            "use_random_seed": true,
+            "random_seed": 0
+          },
+          "rmse": 0.035112130412831115
+        },
+        {
+          "settings": {
+            "n_estimators": 50,
+            "learning_rate": 1.0,
+            "loss_index": 1,
+            "use_random_seed": true,
+            "random_seed": 0
+          },
+          "rmse": 0.03525258403083473
+        }
+      ]
+    },
+    "Random Forest": {
+      "tried": 32,
+      "default_rmse": 0.03978168003493652,
+      "best": {
+        "settings": {
+          "n_estimators": 50,
+          "use_max_features": true,
+          "max_features": 20,
+          "use_max_depth": false,
+          "use_min_samples_split": true,
+          "min_samples_split": 5,
+          "use_random_state": true
+        },
+        "rmse": 0.03251594774811354
+      },
+      "worst": {
+        "settings": {
+          "n_estimators": 10,
+          "use_max_features": true,
+          "max_features": 5,
+          "use_max_depth": false,
+          "use_min_samples_split": true,
+          "min_samples_split": 5,
+          "use_random_state": true
+        },
+        "rmse": 0.04382458037276146
+      },
+      "top5": [
+        {
+          "settings": {
+            "n_estimators": 50,
+            "use_max_features": true,
+            "max_features": 20,
+            "use_max_depth": false,
+            "use_min_samples_split": true,
+            "min_samples_split": 5,
+            "use_random_state": true
+          },
+          "rmse": 0.03251594774811354
+        },
+        {
+          "settings": {
+            "n_estimators": 100,
+            "use_max_features": true,
+            "max_features": 10,
+            "use_max_depth": false,
+            "use_min_samples_split": true,
+            "min_samples_split": 5,
+            "use_random_state": true
+          },
+          "rmse": 0.03284934014688326
+        },
+        {
+          "settings": {
+            "n_estimators": 200,
+            "use_max_features": true,
+            "max_features": 20,
+            "use_max_depth": false,
+            "use_min_samples_split": true,
+            "min_samples_split": 5,
+            "use_random_state": true
+          },
+          "rmse": 0.032885813183116695
+        },
+        {
+          "settings": {
+            "n_estimators": 200,
+            "use_max_features": true,
+            "max_features": 20,
+            "use_max_depth": false,
+            "use_min_samples_split": false,
+            "min_samples_split": 2,
+            "use_random_state": true
+          },
+          "rmse": 0.03298475724288931
+        },
+        {
+          "settings": {
+            "n_estimators": 200,
+            "use_max_features": true,
+            "max_features": 10,
+            "use_max_depth": false,
+            "use_min_samples_split": true,
+            "min_samples_split": 5,
+            "use_random_state": true
+          },
+          "rmse": 0.0332227889618136
+        }
+      ]
+    },
+    "Neural Network": {
+      "tried": 320,
+      "default_rmse": 0.271987716784275,
+      "best": {
+        "settings": {
+          "hidden_layers_input": "10,",
+          "activation_index": 1,
+          "solver_index": 0,
+          "alpha_index": 5,
+          "max_iterations": 200,
+          "replicable": true
+        },
+        "rmse": 0.04020321766227313
+      },
+      "worst": {
+        "settings": {
+          "hidden_layers_input": "10,",
+          "activation_index": 3,
+          "solver_index": 2,
+          "alpha_index": 1,
+          "max_iterations": 200,
+          "replicable": true
+        },
+        "rmse": 0.5918608752218238
+      },
+      "top5": [
+        {
+          "settings": {
+            "hidden_layers_input": "10,",
+            "activation_index": 1,
+            "solver_index": 0,
+            "alpha_index": 5,
+            "max_iterations": 200,
+            "replicable": true
+          },
+          "rmse": 0.04020321766227313
+        },
+        {
+          "settings": {
+            "hidden_layers_input": "10,",
+            "activation_index": 1,
+            "solver_index": 0,
+            "alpha_index": 5,
+            "max_iterations": 500,
+            "replicable": true
+          },
+          "rmse": 0.04020321766227313
+        },
+        {
+          "settings": {
+            "hidden_layers_input": "10,",
+            "activation_index": 1,
+            "solver_index": 0,
+            "alpha_index": 14,
+            "max_iterations": 200,
+            "replicable": true
+          },
+          "rmse": 0.04045619313282387
+        },
+        {
+          "settings": {
+            "hidden_layers_input": "10,",
+            "activation_index": 1,
+            "solver_index": 0,
+            "alpha_index": 14,
+            "max_iterations": 500,
+            "replicable": true
+          },
+          "rmse": 0.04045619313282387
+        },
+        {
+          "settings": {
+            "hidden_layers_input": "10,",
+            "activation_index": 1,
+            "solver_index": 0,
+            "alpha_index": 1,
+            "max_iterations": 200,
+            "replicable": true
+          },
+          "rmse": 0.04126974016851445
+        }
+      ]
+    },
+    "kNN": {
+      "tried": 66,
+      "default_rmse": 0.050509847365153106,
+      "best": {
+        "settings": {
+          "n_neighbors": 6,
+          "metric_index": 1,
+          "weight_index": 1
+        },
+        "rmse": 0.046317380960877653
+      },
+      "worst": {
+        "settings": {
+          "n_neighbors": 1,
+          "metric_index": 2,
+          "weight_index": 1
+        },
+        "rmse": 0.08435935040053355
+      },
+      "top5": [
+        {
+          "settings": {
+            "n_neighbors": 6,
+            "metric_index": 1,
+            "weight_index": 1
+          },
+          "rmse": 0.046317380960877653
+        },
+        {
+          "settings": {
+            "n_neighbors": 6,
+            "metric_index": 1,
+            "weight_index": 0
+          },
+          "rmse": 0.04652254848705621
+        },
+        {
+          "settings": {
+            "n_neighbors": 10,
+            "metric_index": 1,
+            "weight_index": 1
+          },
+          "rmse": 0.047002978224284876
+        },
+        {
+          "settings": {
+            "n_neighbors": 7,
+            "metric_index": 1,
+            "weight_index": 1
+          },
+          "rmse": 0.04712065249031518
+        },
+        {
+          "settings": {
+            "n_neighbors": 8,
+            "metric_index": 1,
+            "weight_index": 1
+          },
+          "rmse": 0.047263462278050915
+        }
+      ]
+    }
+  },
+  "checks": {
+    "widget_problems": {},
+    "dataset_is_HDI": true,
+    "hdi_is_target": true,
+    "features_normalized_0_1": true,
+    "target_not_normalized": true,
+    "split_is_50_50": true,
+    "tables_pass_on_every_row": true,
+    "cv_has_four_linear_models": true,
+    "cv_sorted_by_rmse": true,
+    "ten_folds": true,
+    "rank_selects_one_feature": true,
+    "one_feature_model_has_one_coefficient": true,
+    "saved_as_test_on_test_data": true,
+    "other_models_scored_by_cv": true,
+    "four_other_models": true,
+    "my_cv_matches_widget": true
+  }
+}
