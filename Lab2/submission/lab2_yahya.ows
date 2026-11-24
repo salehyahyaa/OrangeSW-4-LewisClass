@@ -195,11 +195,11 @@ jApob3JzZXBvd2VylEsCjAZ3ZWlnaHSUSwKMDGFjY2VsZXJhdGlvbpRLAowHbW9kZWxfMZRLAYwG
 b3JpZ2lulEsBaDJLAowIY2FyX21ha2WUSwF1jAVtZXRhc5R9lIwHbW9kZWxfMpRLA3N1YmF1Lg==
 </properties>
 		<properties node_id="14" format="literal">{'auto_commit': True, 'controlAreaVisible': True, 'outlier_method': 1, 'savedWidgetGeometry': None, 'cov_editor': {'cont': 10, 'empirical_covariance': False, 'support_fraction': 1}, 'isf_editor': {'cont': 10, 'replicable': False}, 'lof_editor': {'cont': 10, 'metric_index': 0, 'n_neighbors': 20}, 'svm_editor': {'gamma': 0.01, 'nu': 50}, '__version__': 2}</properties>
-		<properties node_id="15" format="pickle">gASVEgEAAAAAAAB9lCiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjAxjdXJyZW50SW5kZXiUSwCMC2Rl
+		<properties node_id="15" format="pickle">gASVEQEAAAAAAAB9lCiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjAxjdXJyZW50SW5kZXiUSwCMC2Rl
 c2NyaXB0b3JzlF2UjChPcmFuZ2Uud2lkZ2V0cy5kYXRhLm93ZmVhdHVyZWNvbnN0cnVjdG9ylIwU
 Q29udGludW91c0Rlc2NyaXB0b3KUk5QojAhMcGVyMTAwa5SMJDEwMCAqIDMuNzg1NDExNzg0IC8g
-KDEuNjA5MzQ0ICogbXBnKZRLA4l0lIGUYYwXZXhwcmVzc2lvbnNfd2l0aF92YWx1ZXOUiYwTc2F2
-ZWRXaWRnZXRHZW9tZXRyeZROjAtfX3ZlcnNpb25fX5RLBIwQY29udGV4dF9zZXR0aW5nc5RdlHUu
+KDEuNjA5MzQ0ICogbXBnKZROiXSUgZRhjBdleHByZXNzaW9uc193aXRoX3ZhbHVlc5SJjBNzYXZl
+ZFdpZGdldEdlb21ldHJ5lE6MC19fdmVyc2lvbl9flEsEjBBjb250ZXh0X3NldHRpbmdzlF2UdS4=
 </properties>
 		<properties node_id="16" format="pickle">gASVAQQAAAAAAAB9lCiMDWF0dHJfeF9pc19hYnOUiYwNYXR0cl95X2lzX2Fic5SJjAthdXRvX2Nv
 bW1pdJSIjAthdXRvX3NhbXBsZZSIjBJjb250cm9sQXJlYVZpc2libGWUiIwTc2F2ZWRXaWRnZXRH

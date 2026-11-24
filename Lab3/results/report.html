@@ -1,0 +1,252 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<title>Lab 3 - Correlations and Hypothesis Testing</title>
+<style>
+@page { size: Letter; margin: 0.8in 0.85in; }
+body { font: 10.5pt/1.5 Helvetica, Arial, sans-serif; color: #0b0b0b; }
+h1 { font-size: 20pt; line-height: 1.2; margin: 0 0 4pt; }
+h2 { font-size: 13.5pt; margin: 20pt 0 6pt; padding-top: 8pt;
+      border-top: 1px solid #e1e0d9; break-after: avoid; }
+p { margin: 0 0 7pt; orphans: 3; widows: 3; }
+.meta { color: #52514e; margin-bottom: 12pt; }
+ul { margin: 0 0 7pt; padding-left: 16pt; }
+li { margin-bottom: 3pt; }
+table { border-collapse: collapse; width: 100%; margin: 6pt 0 12pt;
+         font-size: 9.5pt; break-inside: avoid; }
+caption { caption-side: top; text-align: left; color: #52514e;
+           font-size: 9pt; padding-bottom: 3pt; }
+th { text-align: left; color: #52514e; font-weight: 600;
+      border-bottom: 1.2px solid #898781; padding: 4pt 6pt; }
+td { border-bottom: 1px solid #e1e0d9; padding: 4pt 6pt; vertical-align: top; }
+.r { text-align: right; font-variant-numeric: tabular-nums; }
+figure { margin: 8pt 0 12pt; break-inside: avoid; text-align: center; }
+figcaption { color: #52514e; font-size: 9pt; margin-top: 3pt;
+              text-align: left; }
+.shot { border: 1px solid #e1e0d9; border-radius: 4px; }
+.q { background: #f4f3ef; border-radius: 6px; padding: 8pt 12pt;
+      margin: 8pt 0; break-inside: avoid; }
+.q p:last-child, .q ul:last-child { margin-bottom: 0; }
+code { font-family: Menlo, monospace; font-size: 9.5pt; }
+</style></head><body>
+
+<h1>Lab Exercise #3: Correlations and Hypothesis Testing</h1>
+<div class="meta">DATA-20000 Introduction to Data Science &middot; Saleh Yahya
+&middot; workflow file: lab3_yahya.ows</div>
+
+<h2>Step 1: Loading and exploring the data</h2>
+<p>I loaded the Housing dataset that comes with Orange (housing.tab) in the
+File widget, the same way the sample workflow does. It has 506 rows,
+one per Boston area town, and 14 numeric columns with no missing
+values. MEDV, the median home value in $1000's, comes in as the target.</p>
+<p>The handout says this step doesn't need to be documented, so I'll keep it
+short. I looked at the data with a Data Table, a Box Plot and a Distributions
+widget, and marked those three on the canvas as the initial data
+exploration.</p>
+<figure><img class="shot" style="width:100%" src="data_table.png" alt=""><figcaption><b>Figure 1.</b> Data Table with the Housing dataset (506 rows, MEDV is the target).</figcaption></figure>
+<figure><img class="shot" style="width:85%" src="explore_box.png" alt=""><figcaption><b>Figure 2.</b> Box Plot of MEDV.</figcaption></figure>
+<figure><img class="shot" style="width:85%" src="explore_dist.png" alt=""><figcaption><b>Figure 3.</b> Distributions of MEDV.</figcaption></figure>
+<p>MEDV goes from 5 to 50 with a
+mean of 22.5. One thing that stood out is the bar at
+exactly 50: 16 towns have a MEDV of 50.0, which looks like
+the values were capped there. That comes up again in step 4.</p>
+
+<h2>Step 2: Select Columns</h2>
+<p>I connected File to Select Columns and moved MEDV from the Target box to
+the Features box, so MEDV and all the other columns are features. Then I
+connected Select Columns to Correlations, and Correlations to a Scatter
+Plot.</p>
+<figure><img class="shot" style="width:72%" src="select_columns.png" alt=""><figcaption><b>Figure 4.</b> Select Columns with MEDV moved from Target to Features, so all 14 columns are features.</figcaption></figure>
+
+<h2>Step 3: Pearson correlations with MEDV</h2>
+<p>In the Correlations widget I typed MEDV in the filter box so it only
+lists the pairs that include MEDV.</p>
+<figure><img class="shot" style="width:48%" src="correlations.png" alt=""><figcaption><b>Figure 5.</b> Correlations widget with MEDV typed in the filter box. The highest positive pair, MEDV and RM, is selected.</figcaption></figure>
+<table><caption><b>Table 1.</b> Pearson correlations between MEDV and every other attribute, highest to lowest.</caption><thead><tr><th class="l">Attribute</th><th class="l">What it is</th><th class="r">Correlation with MEDV</th></tr></thead><tbody><tr><td class="l">RM</td><td class="l">rooms per home</td><td class="r">+0.695</td></tr><tr><td class="l">ZN</td><td class="l">large-lot zoning</td><td class="r">+0.360</td></tr><tr><td class="l">B</td><td class="l">B index</td><td class="r">+0.333</td></tr><tr><td class="l">DIS</td><td class="l">distance to jobs</td><td class="r">+0.250</td></tr><tr><td class="l">CHAS</td><td class="l">on the Charles River</td><td class="r">+0.175</td></tr><tr><td class="l">AGE</td><td class="l">old homes</td><td class="r">-0.377</td></tr><tr><td class="l">RAD</td><td class="l">highway access</td><td class="r">-0.382</td></tr><tr><td class="l">CRIM</td><td class="l">crime rate</td><td class="r">-0.388</td></tr><tr><td class="l">NOX</td><td class="l">air pollution</td><td class="r">-0.427</td></tr><tr><td class="l">TAX</td><td class="l">property tax rate</td><td class="r">-0.469</td></tr><tr><td class="l">INDUS</td><td class="l">industry</td><td class="r">-0.484</td></tr><tr><td class="l">PTRATIO</td><td class="l">pupil-teacher ratio</td><td class="r">-0.508</td></tr><tr><td class="l">LSTAT</td><td class="l">% lower status</td><td class="r">-0.738</td></tr></tbody></table>
+<div class="q">
+<p><b>The pair with the highest positive correlation is MEDV and RM, with a
+Pearson correlation of +0.695.</b></p>
+<p>RM is the average number of rooms per home, so towns with bigger homes
+tend to have higher home values. I also noticed that the strongest
+correlation overall is negative: LSTAT and MEDV at -0.738.
+It is at the top of the list in Orange because the widget sorts by strength
+and ignores the sign.</p>
+</div>
+
+<h2>Step 4: Does Pearson capture the relationship?</h2>
+<p>With the MEDV and RM pair selected in Correlations, the Scatter Plot shows
+those two attributes.</p>
+<figure><img class="shot" style="width:88%" src="scatter_rm_medv.png" alt=""><figcaption><b>Figure 6.</b> Scatter Plot of the selected pair, MEDV (x) and RM (y), with the regression line.</figcaption></figure>
+<div class="q">
+<p><b>Do you think the Pearson correlation effectively captures the
+relationship between the two selected attributes? Why or why not?</b></p>
+<p>Mostly yes, but not completely. The points do follow a roughly straight,
+upward band, which is the kind of relationship Pearson is made to measure,
+and +0.70 is a fair summary of it: a clear positive
+relationship that is far from perfect. A few things in the plot are not
+captured by that one number though:</p>
+<ul>
+<li>There is a vertical line of points at MEDV = 50. Those are the
+16 capped towns, and their RM values run from about 5 to
+almost 9. Their real values are probably above 50, so they don't follow the
+trend and they pull the correlation down.</li>
+<li>There are a few outliers, like one town with almost 9 rooms but a MEDV
+of about 22, and two towns with under 4 rooms and average values. Pearson is
+sensitive to points like these.</li>
+<li>The spread is not even. The points are tight in the middle and much
+looser at low MEDV, so the line fits some parts better than others.</li>
+</ul>
+<p>So I'd say Pearson gives the right direction and a reasonable strength
+for this pair, but it hides the cap at 50 and the outliers, which you only
+see by looking at the plot.</p>
+</div>
+<p>For comparison I also clicked on the strongest pair in the list, LSTAT
+and MEDV. Here the answer is clearly no.</p>
+<figure><img class="shot" style="width:88%" src="scatter_lstat_medv.png" alt=""><figcaption><b>Figure 7.</b> Scatter Plot of LSTAT (x) and MEDV (y), the strongest pair overall.</figcaption></figure>
+<p>The points follow a curve, not a line. MEDV drops fast when LSTAT is low
+and then flattens out. Pearson only measures straight line relationships, so
+-0.74 understates how closely these two are tied together.
+The straight regression line misses at both ends. This is the pair I used
+for step 5.</p>
+
+<h2>Step 5: Formula (log base 2)</h2>
+<p>The handout says to take the log of the feature most correlated to MEDV.
+Going by strength, that is LSTAT (-0.738), so I connected
+Select Columns to a Formula widget and made a new numeric column:</p>
+<p><code>log2_LSTAT = log2(LSTAT)</code></p>
+<p>Since step 3 asked for the highest positive pair, which was RM, I also
+added <code>log2_RM = log2(RM)</code> in the same widget so I could compare
+both.</p>
+<figure><img class="shot" style="width:66%" src="formula.png" alt=""><figcaption><b>Figure 8.</b> Formula widget with the new log2 columns.</figcaption></figure>
+<p>Then I connected Formula to a second Correlations widget and a second
+Scatter Plot, filtered on MEDV again, and selected the most correlated pair
+that includes MEDV.</p>
+<figure><img class="shot" style="width:48%" src="correlations_log2.png" alt=""><figcaption><b>Figure 9.</b> Correlations after the Formula widget, filtered on MEDV. The most correlated pair, MEDV and log2_LSTAT, is selected.</figcaption></figure>
+<figure><img class="shot" style="width:88%" src="scatter_log2.png" alt=""><figcaption><b>Figure 10.</b> Scatter Plot of the selected pair, MEDV (x) and log2_LSTAT (y).</figcaption></figure>
+<table><caption><b>Table 2.</b> Correlation with MEDV before and after taking log2.</caption><thead><tr><th class="l">Feature</th><th class="r">Original</th><th class="r">log2 of it</th><th class="l">Change</th></tr></thead><tbody><tr><td class="l">LSTAT</td><td class="r">-0.738</td><td class="r">-0.815</td><td class="l">stronger</td></tr><tr><td class="l">RM</td><td class="r">+0.695</td><td class="r">+0.660</td><td class="l">weaker</td></tr></tbody></table>
+<div class="q">
+<p><b>What do you notice? Describe what you now see in both widgets compared
+to step 4 and explain the implications of the newly constructed
+feature.</b></p>
+<p><b>In Correlations:</b> the new feature goes straight to the top of the
+list. MEDV and log2_LSTAT have a correlation of
+-0.815, compared with -0.738 for plain
+LSTAT, which is now second. In step 4 nothing was above 0.74 in strength.
+The other pairs did not change, because I only added columns and did not
+touch the old ones. log2_RM went the other way: its correlation is
++0.660, a little lower than RM's +0.695.</p>
+<p><b>In the Scatter Plot:</b> the curve is gone. With plain LSTAT the points
+bent away from the line at both ends. With log2_LSTAT they fall along a
+fairly straight band from top left to bottom right, and the regression line
+runs through the middle of them the whole way. The capped towns at MEDV = 50
+are still there as a vertical line on the right.</p>
+<p><b>Implications:</b></p>
+<ul>
+<li>The relationship between LSTAT and MEDV was always strong. It just was
+not linear, so Pearson was underrating it. Taking the log straightened it
+out, and now Pearson describes it well.</li>
+<li>The log means that what matters is the percentage change in LSTAT, not
+the raw change. Going from 2% to 4% lower status population goes with about
+the same drop in home value as going from 10% to 20%.</li>
+<li>log2_LSTAT would be a better input than LSTAT for any method that
+assumes a straight line, like linear regression. It should predict MEDV
+better with the same data.</li>
+<li>A transformation only helps when the relationship is curved. RM was
+already close to linear, so taking its log made the correlation slightly
+worse. So it is worth checking the scatter plot first and not just applying
+a log to everything.</li>
+</ul>
+</div>
+
+<h2>Step 6: Discretize CRIM and look at MEDV</h2>
+<p>I connected File to a Discretize widget and set only CRIM to equal
+frequency with 2 intervals. All the other attributes are left as keep
+numeric. Equal frequency with 2 intervals splits at the median crime rate
+(0.25651), so each group has 253 towns.</p>
+<figure><img class="shot" style="width:72%" src="discretize_crim.png" alt=""><figcaption><b>Figure 11.</b> Discretize widget. Only CRIM is set to equal frequency with 2 intervals, everything else is kept numeric.</figcaption></figure>
+<p>Then I sent that to a Distributions widget and looked at MEDV split by
+CRIM.</p>
+<figure><img class="shot" style="width:88%" src="dist_medv_by_crim.png" alt=""><figcaption><b>Figure 12.</b> Distributions of MEDV split by the two CRIM groups.</figcaption></figure>
+<table><caption><b>Table 3.</b> MEDV in the two CRIM groups.</caption><thead><tr><th class="l">CRIM group</th><th class="r">Towns</th><th class="r">Mean MEDV</th><th class="r">Median MEDV</th><th class="r">Std. dev.</th></tr></thead><tbody><tr><td class="l">< 0.25651 (low crime)</td><td class="r">253</td><td class="r">24.95</td><td class="r">23.1</td><td class="r">7.23</td></tr><tr><td class="l">≥ 0.25651 (high crime)</td><td class="r">253</td><td class="r">20.12</td><td class="r">17.9</td><td class="r">10.27</td></tr></tbody></table>
+<div class="q">
+<p><b>What do you notice? How can one interpret this result?</b></p>
+<p>The two groups have clearly different distributions. The low crime towns
+(blue) sit further to the right, with a mean MEDV of 24.9
+against 20.1 for the high crime towns (red). That is a gap
+of about $4,800 in median
+home value. The low crime
+group is also narrower and looks more like a bell curve. The high crime
+group is more spread out (standard deviation 10.3 against
+7.2) and almost all of the cheapest towns, the ones under
+about 13, are in it.</p>
+<p>The interpretation is that towns with higher crime rates tend to have
+lower home values. It is not a clean split though. The two distributions
+overlap a lot, and some high crime towns are expensive, including most of
+the towns capped at 50. So crime rate tells you something about home value
+on average, but it does not decide it for any one town. It also does not
+prove that crime causes lower prices, since other things like LSTAT go along
+with both.</p>
+</div>
+
+<h2>Step 7: Box Plot and the t statistic</h2>
+<p>I connected the same Discretize widget to a Box Plot, chose MEDV as the
+variable, CRIM as the subgroup, and set it to compare means.</p>
+<figure><img class="shot" style="width:88%" src="box_medv_by_crim.png" alt=""><figcaption><b>Figure 13.</b> Box Plot of MEDV grouped by CRIM, comparing means. The t statistic is printed under the plot.</figcaption></figure>
+<div class="q">
+<p><b>What is the value of the t statistic? What does that tell us about the
+data? Assume alpha = 0.05.</b></p>
+<p><b>Student's t = 6.132</b>, with p = 0.000 as shown in
+Orange (so p &lt; 0.001) and N = 506.</p>
+<p>The null hypothesis is that the mean MEDV is the same in low crime and
+high crime towns. The p-value is far below 0.05, so I reject it. A t of
+6.13 means the difference between the two means
+(24.95 and 20.12) is about 6 standard errors
+wide, which would almost never happen by chance if the two groups really had
+the same mean. So the difference in home values between low and high crime
+towns is statistically significant. It tells us the gap is real, but like
+in step 6 it does not tell us that crime is the cause.</p>
+</div>
+
+<h2>Step 8: Discretize RM and test every attribute</h2>
+<p>I added a new Discretize widget connected to File, set only RM to equal
+frequency with 2 intervals and kept everything else numeric. The split is at
+6.2085 rooms, with 253 towns in each
+group. I fed that to a new Box Plot, grouped by RM, and clicked through
+every attribute to read its t and p-value.</p>
+<figure><img class="shot" style="width:72%" src="discretize_rm.png" alt=""><figcaption><b>Figure 14.</b> Second Discretize widget. Only RM is set to equal frequency with 2 intervals.</figcaption></figure>
+<figure><img class="shot" style="width:88%" src="box_rm_LSTAT.png" alt=""><figcaption><b>Figure 15.</b> Box Plot (by RM) for LSTAT, the attribute with the largest t.</figcaption></figure>
+<figure><img class="shot" style="width:88%" src="box_rm_MEDV.png" alt=""><figcaption><b>Figure 16.</b> Box Plot (by RM) for MEDV.</figcaption></figure>
+<figure><img class="shot" style="width:88%" src="box_rm_CHAS.png" alt=""><figcaption><b>Figure 17.</b> Box Plot (by RM) for CHAS, one of the attributes that is not significant.</figcaption></figure>
+<table><caption><b>Table 4.</b> Student's t and p-value from the Box Plot for every attribute, grouped by RM (< 6.2085 against ≥ 6.2085).</caption><thead><tr><th class="l">Attribute</th><th class="r">Mean, RM < 6.2085</th><th class="r">Mean, RM ≥ 6.2085</th><th class="r">Student's t</th><th class="r">p-value</th><th class="l">p &lt; 0.05?</th></tr></thead><tbody><tr><td class="l">LSTAT</td><td class="r">16.14</td><td class="r">9.17</td><td class="r">12.603</td><td class="r">&lt; 0.001</td><td class="l">Yes</td></tr><tr><td class="l">MEDV</td><td class="r">18.19</td><td class="r">26.88</td><td class="r">12.070</td><td class="r">&lt; 0.001</td><td class="l">Yes</td></tr><tr><td class="l">ZN</td><td class="r">4.52</td><td class="r">18.21</td><td class="r">6.910</td><td class="r">&lt; 0.001</td><td class="l">Yes</td></tr><tr><td class="l">INDUS</td><td class="r">12.96</td><td class="r">9.31</td><td class="r">6.221</td><td class="r">&lt; 0.001</td><td class="l">Yes</td></tr><tr><td class="l">PTRATIO</td><td class="r">18.93</td><td class="r">17.98</td><td class="r">5.081</td><td class="r">&lt; 0.001</td><td class="l">Yes</td></tr><tr><td class="l">NOX</td><td class="r">0.58</td><td class="r">0.53</td><td class="r">5.028</td><td class="r">&lt; 0.001</td><td class="l">Yes</td></tr><tr><td class="l">AGE</td><td class="r">74.44</td><td class="r">62.71</td><td class="r">4.801</td><td class="r">&lt; 0.001</td><td class="l">Yes</td></tr><tr><td class="l">DIS</td><td class="r">3.43</td><td class="r">4.16</td><td class="r">3.939</td><td class="r">&lt; 0.001</td><td class="l">Yes</td></tr><tr><td class="l">CRIM</td><td class="r">4.63</td><td class="r">2.60</td><td class="r">2.672</td><td class="r">0.008</td><td class="l">Yes</td></tr><tr><td class="l">TAX</td><td class="r">428.08</td><td class="r">388.40</td><td class="r">2.669</td><td class="r">0.008</td><td class="l">Yes</td></tr><tr><td class="l">B</td><td class="r">349.14</td><td class="r">364.21</td><td class="r">1.865</td><td class="r">0.063</td><td class="l">No</td></tr><tr><td class="l">RAD</td><td class="r">9.97</td><td class="r">9.13</td><td class="r">1.085</td><td class="r">0.279</td><td class="l">No</td></tr><tr><td class="l">CHAS</td><td class="r">0.06</td><td class="r">0.08</td><td class="r">0.526</td><td class="r">0.599</td><td class="l">No</td></tr></tbody></table>
+<div class="q">
+<p><b>Attributes with a p-value lower than 0.05:</b>
+LSTAT, MEDV, ZN, INDUS, PTRATIO, NOX, AGE, DIS, CRIM, TAX (10 of the
+13).</p>
+<p>The ones that are not below 0.05 are
+B (p = 0.063), RAD (p = 0.279), CHAS (p = 0.599).</p>
+<p><b>Can we say all these are statistically significant? Why or why
+not?</b></p>
+<p>Not all of them, at least not with the same confidence. Each one passes
+on its own, but I ran 13 tests, not one. With alpha = 0.05 every
+test has a 5% chance of a false positive, so across 13 tests
+the chance of getting at least one by luck is about
+49%, not 5%. This is the
+multiple comparisons problem.</p>
+<p>One way to fix it is the Bonferroni correction, which divides alpha by
+the number of tests: 0.05 / 13 =
+0.0038. With that stricter cutoff,
+CRIM and TAX (both p = 0.008) no longer
+pass. The other 8 still do, since their
+p-values are tiny, so I'm confident in those.</p>
+<p>Two more things to keep in mind. First, the groups were made from RM, and
+RM is closely related to several of these attributes (MEDV and LSTAT
+especially), so those results are expected and the tests are not independent
+of each other. Second, statistically significant does not mean important.
+With 506 towns even a small difference can pass the test, so I'd still look
+at the size of the difference in the table before reading much into it.</p>
+</div>
+
+<h2>The workflow</h2>
+<p>Every part of the workflow is labelled with a text box and an arrow, and
+I renamed the widgets that appear more than once so it's clear which is
+which.</p>
+<figure><img class="shot" style="width:100%" src="canvas.png" alt=""><figcaption><b>Figure 18.</b> The finished Orange Canvas workflow.</figcaption></figure>
+</body></html>
