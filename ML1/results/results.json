@@ -1,0 +1,846 @@
+{
+  "orange_version": "3.40.0",
+  "explore": {
+    "by_area": {
+      "0": {
+        "count": 2,
+        "arrest_rate": 0.0
+      },
+      "1": {
+        "count": 4023,
+        "arrest_rate": 0.16380810340541885
+      },
+      "2": {
+        "count": 3430,
+        "arrest_rate": 0.11924198250728862
+      },
+      "3": {
+        "count": 3323,
+        "arrest_rate": 0.18447186277460126
+      },
+      "4": {
+        "count": 1783,
+        "arrest_rate": 0.12002243409983174
+      },
+      "5": {
+        "count": 1263,
+        "arrest_rate": 0.09501187648456057
+      },
+      "6": {
+        "count": 5952,
+        "arrest_rate": 0.140625
+      },
+      "7": {
+        "count": 4289,
+        "arrest_rate": 0.07600839356493355
+      },
+      "8": {
+        "count": 12524,
+        "arrest_rate": 0.17246885978920473
+      },
+      "9": {
+        "count": 263,
+        "arrest_rate": 0.07224334600760456
+      },
+      "10": {
+        "count": 1147,
+        "arrest_rate": 0.11944202266782912
+      },
+      "11": {
+        "count": 957,
+        "arrest_rate": 0.14315569487983282
+      },
+      "12": {
+        "count": 460,
+        "arrest_rate": 0.07391304347826087
+      },
+      "13": {
+        "count": 789,
+        "arrest_rate": 0.07984790874524715
+      },
+      "14": {
+        "count": 2211,
+        "arrest_rate": 0.13251922207146088
+      },
+      "15": {
+        "count": 2861,
+        "arrest_rate": 0.1447046487242223
+      },
+      "16": {
+        "count": 2513,
+        "arrest_rate": 0.1070433744528452
+      },
+      "17": {
+        "count": 1325,
+        "arrest_rate": 0.13056603773584904
+      },
+      "18": {
+        "count": 545,
+        "arrest_rate": 0.09908256880733946
+      },
+      "19": {
+        "count": 4325,
+        "arrest_rate": 0.18312138728323699
+      },
+      "20": {
+        "count": 1296,
+        "arrest_rate": 0.20833333333333334
+      },
+      "21": {
+        "count": 2121,
+        "arrest_rate": 0.14898632720414898
+      },
+      "22": {
+        "count": 4854,
+        "arrest_rate": 0.15739596209311907
+      },
+      "23": {
+        "count": 7880,
+        "arrest_rate": 0.3766497461928934
+      },
+      "24": {
+        "count": 7249,
+        "arrest_rate": 0.1175334528900538
+      },
+      "25": {
+        "count": 14638,
+        "arrest_rate": 0.2434075693400738
+      },
+      "26": {
+        "count": 6103,
+        "arrest_rate": 0.45616909716532855
+      },
+      "27": {
+        "count": 4609,
+        "arrest_rate": 0.2952918203514862
+      },
+      "28": {
+        "count": 9289,
+        "arrest_rate": 0.17439982775325655
+      },
+      "29": {
+        "count": 8793,
+        "arrest_rate": 0.3937222790856363
+      },
+      "30": {
+        "count": 4424,
+        "arrest_rate": 0.2554249547920434
+      },
+      "31": {
+        "count": 2331,
+        "arrest_rate": 0.21063921063921065
+      },
+      "32": {
+        "count": 10544,
+        "arrest_rate": 0.1671092564491654
+      },
+      "33": {
+        "count": 1841,
+        "arrest_rate": 0.13633894622487777
+      },
+      "34": {
+        "count": 1014,
+        "arrest_rate": 0.15483234714003946
+      },
+      "35": {
+        "count": 2726,
+        "arrest_rate": 0.16617754952311078
+      },
+      "36": {
+        "count": 632,
+        "arrest_rate": 0.10443037974683544
+      },
+      "37": {
+        "count": 895,
+        "arrest_rate": 0.288268156424581
+      },
+      "38": {
+        "count": 3364,
+        "arrest_rate": 0.20095124851367419
+      },
+      "39": {
+        "count": 1377,
+        "arrest_rate": 0.10820624546114742
+      },
+      "40": {
+        "count": 2319,
+        "arrest_rate": 0.1927554980595084
+      },
+      "41": {
+        "count": 1713,
+        "arrest_rate": 0.09573847051955633
+      },
+      "42": {
+        "count": 3536,
+        "arrest_rate": 0.2055995475113122
+      },
+      "43": {
+        "count": 8621,
+        "arrest_rate": 0.20392065885628116
+      },
+      "44": {
+        "count": 6751,
+        "arrest_rate": 0.2319656347207821
+      },
+      "45": {
+        "count": 1298,
+        "arrest_rate": 0.24499229583975346
+      },
+      "46": {
+        "count": 4234,
+        "arrest_rate": 0.2751535191308455
+      },
+      "47": {
+        "count": 372,
+        "arrest_rate": 0.25806451612903225
+      },
+      "48": {
+        "count": 1426,
+        "arrest_rate": 0.2300140252454418
+      },
+      "49": {
+        "count": 6497,
+        "arrest_rate": 0.24919193473911036
+      },
+      "50": {
+        "count": 1156,
+        "arrest_rate": 0.31141868512110726
+      },
+      "51": {
+        "count": 1844,
+        "arrest_rate": 0.2635574837310195
+      },
+      "52": {
+        "count": 997,
+        "arrest_rate": 0.2477432296890672
+      },
+      "53": {
+        "count": 3832,
+        "arrest_rate": 0.21920668058455114
+      },
+      "54": {
+        "count": 1395,
+        "arrest_rate": 0.23799283154121864
+      },
+      "55": {
+        "count": 493,
+        "arrest_rate": 0.12981744421906694
+      },
+      "56": {
+        "count": 1836,
+        "arrest_rate": 0.17919389978213507
+      },
+      "57": {
+        "count": 798,
+        "arrest_rate": 0.13157894736842105
+      },
+      "58": {
+        "count": 2214,
+        "arrest_rate": 0.17570009033423667
+      },
+      "59": {
+        "count": 825,
+        "arrest_rate": 0.16727272727272727
+      },
+      "60": {
+        "count": 1437,
+        "arrest_rate": 0.18162839248434237
+      },
+      "61": {
+        "count": 4206,
+        "arrest_rate": 0.23989538754160722
+      },
+      "62": {
+        "count": 894,
+        "arrest_rate": 0.17002237136465326
+      },
+      "63": {
+        "count": 2144,
+        "arrest_rate": 0.20942164179104478
+      },
+      "64": {
+        "count": 920,
+        "arrest_rate": 0.1423913043478261
+      },
+      "65": {
+        "count": 1682,
+        "arrest_rate": 0.14387633769322236
+      },
+      "66": {
+        "count": 5491,
+        "arrest_rate": 0.19340739391731926
+      },
+      "67": {
+        "count": 6545,
+        "arrest_rate": 0.2508785332314744
+      },
+      "68": {
+        "count": 5962,
+        "arrest_rate": 0.2556189198255619
+      },
+      "69": {
+        "count": 6696,
+        "arrest_rate": 0.2307347670250896
+      },
+      "70": {
+        "count": 2324,
+        "arrest_rate": 0.12048192771084337
+      },
+      "71": {
+        "count": 7552,
+        "arrest_rate": 0.2615201271186441
+      },
+      "72": {
+        "count": 920,
+        "arrest_rate": 0.10543478260869565
+      },
+      "73": {
+        "count": 3198,
+        "arrest_rate": 0.2298311444652908
+      },
+      "74": {
+        "count": 464,
+        "arrest_rate": 0.1400862068965517
+      },
+      "75": {
+        "count": 1857,
+        "arrest_rate": 0.20140010770059236
+      },
+      "76": {
+        "count": 1600,
+        "arrest_rate": 0.20125
+      },
+      "77": {
+        "count": 2488,
+        "arrest_rate": 0.12379421221864952
+      }
+    },
+    "rows": 258506,
+    "columns": 22,
+    "column_types": {
+      "ID": "Continuous",
+      "Date": "Time",
+      "IUCR": "Discrete",
+      "Primary Type": "Discrete",
+      "Description": "Discrete",
+      "Location Description": "Discrete",
+      "Arrest": "Discrete",
+      "Domestic": "Discrete",
+      "Beat": "Continuous",
+      "District": "Continuous",
+      "Ward": "Continuous",
+      "Community Area": "Discrete",
+      "FBI Code": "Discrete",
+      "X Coordinate": "Continuous",
+      "Y Coordinate": "Continuous",
+      "Year": "Continuous",
+      "Updated On": "Time",
+      "Latitude": "Continuous",
+      "Longitude": "Continuous",
+      "Case Number": "String",
+      "Block": "String",
+      "Location": "String"
+    },
+    "missing": {
+      "ID": 0,
+      "Date": 0,
+      "IUCR": 0,
+      "Primary Type": 0,
+      "Description": 0,
+      "Location Description": 1019,
+      "Arrest": 0,
+      "Domestic": 0,
+      "Beat": 0,
+      "District": 0,
+      "Ward": 15,
+      "Community Area": 4,
+      "FBI Code": 0,
+      "X Coordinate": 1219,
+      "Y Coordinate": 1219,
+      "Year": 0,
+      "Updated On": 0,
+      "Latitude": 1219,
+      "Longitude": 1219,
+      "Case Number": 0,
+      "Block": 0,
+      "Location": 1219
+    },
+    "arrest_true": 54728,
+    "arrest_rate": 0.21170881913766024,
+    "domestic_true": 42987,
+    "arrest_rate_domestic": 0.17384325493753924,
+    "arrest_rate_not_domestic": 0.21926141082688766,
+    "duplicate_case_numbers": 22,
+    "community_area_zero": 2,
+    "community_area_distinct": 78,
+    "year_values": [
+      2019.0
+    ],
+    "primary_types": 31,
+    "by_type": [
+      {
+        "type": "THEFT",
+        "count": 62298,
+        "arrest_rate": 0.09743490962791743
+      },
+      {
+        "type": "BATTERY",
+        "count": 49460,
+        "arrest_rate": 0.20913869793772746
+      },
+      {
+        "type": "CRIMINAL DAMAGE",
+        "count": 26654,
+        "arrest_rate": 0.06257972536955053
+      },
+      {
+        "type": "ASSAULT",
+        "count": 20598,
+        "arrest_rate": 0.18123118749393144
+      },
+      {
+        "type": "DECEPTIVE PRACTICE",
+        "count": 18019,
+        "arrest_rate": 0.04622898052056163
+      },
+      {
+        "type": "OTHER OFFENSE",
+        "count": 16643,
+        "arrest_rate": 0.2215345791023253
+      },
+      {
+        "type": "NARCOTICS",
+        "count": 14086,
+        "arrest_rate": 0.9996450376260116
+      },
+      {
+        "type": "BURGLARY",
+        "count": 9623,
+        "arrest_rate": 0.052374519380650526
+      },
+      {
+        "type": "MOTOR VEHICLE THEFT",
+        "count": 8975,
+        "arrest_rate": 0.05749303621169916
+      },
+      {
+        "type": "ROBBERY",
+        "count": 7988,
+        "arrest_rate": 0.08312468703054582
+      },
+      {
+        "type": "CRIMINAL TRESPASS",
+        "count": 6816,
+        "arrest_rate": 0.5561913145539906
+      },
+      {
+        "type": "WEAPONS VIOLATION",
+        "count": 6323,
+        "arrest_rate": 0.667879171279456
+      },
+      {
+        "type": "OFFENSE INVOLVING CHILDREN",
+        "count": 2286,
+        "arrest_rate": 0.12248468941382328
+      },
+      {
+        "type": "CRIM SEXUAL ASSAULT",
+        "count": 1597,
+        "arrest_rate": 0.06261740763932373
+      },
+      {
+        "type": "INTERFERENCE WITH PUBLIC OFFICER",
+        "count": 1546,
+        "arrest_rate": 0.9605433376455369
+      },
+      {
+        "type": "PUBLIC PEACE VIOLATION",
+        "count": 1518,
+        "arrest_rate": 0.7042160737812911
+      },
+      {
+        "type": "SEX OFFENSE",
+        "count": 1275,
+        "arrest_rate": 0.11843137254901961
+      },
+      {
+        "type": "PROSTITUTION",
+        "count": 680,
+        "arrest_rate": 1.0
+      },
+      {
+        "type": "HOMICIDE",
+        "count": 504,
+        "arrest_rate": 0.23214285714285715
+      },
+      {
+        "type": "ARSON",
+        "count": 377,
+        "arrest_rate": 0.08488063660477453
+      },
+      {
+        "type": "LIQUOR LAW VIOLATION",
+        "count": 230,
+        "arrest_rate": 1.0
+      },
+      {
+        "type": "STALKING",
+        "count": 222,
+        "arrest_rate": 0.15315315315315314
+      },
+      {
+        "type": "CONCEALED CARRY LICENSE VIOLATION",
+        "count": 217,
+        "arrest_rate": 0.9769585253456221
+      },
+      {
+        "type": "KIDNAPPING",
+        "count": 173,
+        "arrest_rate": 0.06358381502890173
+      },
+      {
+        "type": "INTIMIDATION",
+        "count": 163,
+        "arrest_rate": 0.03680981595092025
+      },
+      {
+        "type": "GAMBLING",
+        "count": 142,
+        "arrest_rate": 1.0
+      },
+      {
+        "type": "OBSCENITY",
+        "count": 58,
+        "arrest_rate": 0.8275862068965517
+      },
+      {
+        "type": "HUMAN TRAFFICKING",
+        "count": 12,
+        "arrest_rate": 0.0
+      },
+      {
+        "type": "PUBLIC INDECENCY",
+        "count": 11,
+        "arrest_rate": 1.0
+      },
+      {
+        "type": "OTHER NARCOTIC VIOLATION",
+        "count": 8,
+        "arrest_rate": 0.625
+      },
+      {
+        "type": "NON-CRIMINAL",
+        "count": 4,
+        "arrest_rate": 0.25
+      }
+    ],
+    "rare_types": [
+      {
+        "type": "HUMAN TRAFFICKING",
+        "count": 12,
+        "arrest_rate": 0.0
+      },
+      {
+        "type": "PUBLIC INDECENCY",
+        "count": 11,
+        "arrest_rate": 1.0
+      },
+      {
+        "type": "OTHER NARCOTIC VIOLATION",
+        "count": 8,
+        "arrest_rate": 0.625
+      },
+      {
+        "type": "NON-CRIMINAL",
+        "count": 4,
+        "arrest_rate": 0.25
+      }
+    ]
+  },
+  "pipeline": {
+    "raw_rows": 258506,
+    "kept_columns": [
+      "Primary Type",
+      "Domestic",
+      "Community Area",
+      "Arrest"
+    ],
+    "community_area_levels": 78,
+    "rows_dropped_missing": 4,
+    "baseline_levels": [
+      "Primary Type=THEFT",
+      "Community Area=25"
+    ],
+    "model_columns": 108,
+    "clean_rows": 258502,
+    "dummy_columns": 110,
+    "dummy_column_names": [
+      "Primary Type=ARSON",
+      "Primary Type=ASSAULT",
+      "Primary Type=BATTERY",
+      "Primary Type=BURGLARY",
+      "Primary Type=CONCEALED CARRY LICENSE VIOLATION",
+      "Primary Type=CRIM SEXUAL ASSAULT",
+      "Primary Type=CRIMINAL DAMAGE",
+      "Primary Type=CRIMINAL TRESPASS",
+      "Primary Type=DECEPTIVE PRACTICE",
+      "Primary Type=GAMBLING",
+      "Primary Type=HOMICIDE",
+      "Primary Type=HUMAN TRAFFICKING",
+      "Primary Type=INTERFERENCE WITH PUBLIC OFFICER",
+      "Primary Type=INTIMIDATION",
+      "Primary Type=KIDNAPPING",
+      "Primary Type=LIQUOR LAW VIOLATION",
+      "Primary Type=MOTOR VEHICLE THEFT",
+      "Primary Type=NARCOTICS",
+      "Primary Type=NON-CRIMINAL",
+      "Primary Type=OBSCENITY",
+      "Primary Type=OFFENSE INVOLVING CHILDREN",
+      "Primary Type=OTHER NARCOTIC VIOLATION",
+      "Primary Type=OTHER OFFENSE",
+      "Primary Type=PROSTITUTION",
+      "Primary Type=PUBLIC INDECENCY",
+      "Primary Type=PUBLIC PEACE VIOLATION",
+      "Primary Type=ROBBERY",
+      "Primary Type=SEX OFFENSE",
+      "Primary Type=STALKING",
+      "Primary Type=THEFT",
+      "Primary Type=WEAPONS VIOLATION",
+      "Domestic=TRUE",
+      "Community Area=0",
+      "Community Area=1",
+      "Community Area=2",
+      "Community Area=3",
+      "Community Area=4",
+      "Community Area=5",
+      "Community Area=6",
+      "Community Area=7",
+      "Community Area=8",
+      "Community Area=9",
+      "Community Area=10",
+      "Community Area=11",
+      "Community Area=12",
+      "Community Area=13",
+      "Community Area=14",
+      "Community Area=15",
+      "Community Area=16",
+      "Community Area=17",
+      "Community Area=18",
+      "Community Area=19",
+      "Community Area=20",
+      "Community Area=21",
+      "Community Area=22",
+      "Community Area=23",
+      "Community Area=24",
+      "Community Area=25",
+      "Community Area=26",
+      "Community Area=27",
+      "Community Area=28",
+      "Community Area=29",
+      "Community Area=30",
+      "Community Area=31",
+      "Community Area=32",
+      "Community Area=33",
+      "Community Area=34",
+      "Community Area=35",
+      "Community Area=36",
+      "Community Area=37",
+      "Community Area=38",
+      "Community Area=39",
+      "Community Area=40",
+      "Community Area=41",
+      "Community Area=42",
+      "Community Area=43",
+      "Community Area=44",
+      "Community Area=45",
+      "Community Area=46",
+      "Community Area=47",
+      "Community Area=48",
+      "Community Area=49",
+      "Community Area=50",
+      "Community Area=51",
+      "Community Area=52",
+      "Community Area=53",
+      "Community Area=54",
+      "Community Area=55",
+      "Community Area=56",
+      "Community Area=57",
+      "Community Area=58",
+      "Community Area=59",
+      "Community Area=60",
+      "Community Area=61",
+      "Community Area=62",
+      "Community Area=63",
+      "Community Area=64",
+      "Community Area=65",
+      "Community Area=66",
+      "Community Area=67",
+      "Community Area=68",
+      "Community Area=69",
+      "Community Area=70",
+      "Community Area=71",
+      "Community Area=72",
+      "Community Area=73",
+      "Community Area=74",
+      "Community Area=75",
+      "Community Area=76",
+      "Community Area=77"
+    ],
+    "target": "Arrest=TRUE",
+    "train_rows": 206802,
+    "test_rows": 51700,
+    "train_arrest_rate": 0.21104728194118044,
+    "test_arrest_rate": 0.21435203094777563
+  },
+  "correlations_total": 110,
+  "top_correlations": [
+    {
+      "Correlation": 0.4632190799927717,
+      "uncorrected p": 0.0,
+      "FDR": 0.0,
+      "Feature 1": "Arrest=TRUE",
+      "Feature 2": "Primary Type=NARCOTICS"
+    },
+    {
+      "Correlation": 0.17850813563137624,
+      "uncorrected p": 0.0,
+      "FDR": 0.0,
+      "Feature 1": "Arrest=TRUE",
+      "Feature 2": "Primary Type=WEAPONS VIOLATION"
+    },
+    {
+      "Correlation": -0.15765941264596506,
+      "uncorrected p": 0.0,
+      "FDR": 0.0,
+      "Feature 1": "Arrest=TRUE",
+      "Feature 2": "Primary Type=THEFT"
+    },
+    {
+      "Correlation": 0.1397681290929514,
+      "uncorrected p": 0.0,
+      "FDR": 0.0,
+      "Feature 1": "Arrest=TRUE",
+      "Feature 2": "Primary Type=INTERFERENCE WITH PUBLIC OFFICER"
+    },
+    {
+      "Correlation": 0.13881315730169688,
+      "uncorrected p": 0.0,
+      "FDR": 0.0,
+      "Feature 1": "Arrest=TRUE",
+      "Feature 2": "Primary Type=CRIMINAL TRESPASS"
+    },
+    {
+      "Correlation": -0.12350630143861965,
+      "uncorrected p": 0.0,
+      "FDR": 0.0,
+      "Feature 1": "Arrest=TRUE",
+      "Feature 2": "Primary Type=CRIMINAL DAMAGE"
+    },
+    {
+      "Correlation": -0.11097534624272504,
+      "uncorrected p": 0.0,
+      "FDR": 0.0,
+      "Feature 1": "Arrest=TRUE",
+      "Feature 2": "Primary Type=DECEPTIVE PRACTICE"
+    },
+    {
+      "Correlation": 0.09883694753923393,
+      "uncorrected p": 0.0,
+      "FDR": 0.0,
+      "Feature 1": "Arrest=TRUE",
+      "Feature 2": "Primary Type=PROSTITUTION"
+    },
+    {
+      "Correlation": 0.09386246495383191,
+      "uncorrected p": 0.0,
+      "FDR": 0.0,
+      "Feature 1": "Arrest=TRUE",
+      "Feature 2": "Primary Type=PUBLIC PEACE VIOLATION"
+    },
+    {
+      "Correlation": 0.09167558182142954,
+      "uncorrected p": 0.0,
+      "FDR": 0.0,
+      "Feature 1": "Arrest=TRUE",
+      "Feature 2": "Community Area=26"
+    }
+  ],
+  "scores": {
+    "MSE": 0.10768483243760782,
+    "RMSE": 0.328153671985562,
+    "MAE": 0.21428729911004699,
+    "MAPE": Infinity,
+    "sMAPE": 175.21871150214963,
+    "R2": 0.3605612636548452,
+    "CVRMSE": 153.0910020001223
+  },
+  "baseline_scores": {
+    "RMSE": 0.4103853788115948,
+    "MAE": 0.3349224858687563
+  },
+  "classification_view": {
+    "threshold": 0.5,
+    "accuracy": 0.8652030947775629,
+    "majority_baseline": 0.7856479690522243,
+    "precision": 0.8237053360617032,
+    "recall": 0.4722071828189857,
+    "predicted_arrests": 6353,
+    "actual_arrests": 11082,
+    "prediction_min": -0.038217667925333015,
+    "prediction_max": 1.0943901720318452
+  },
+  "intercept": 0.09164966577319392,
+  "coefficients_total": 109,
+  "top_coefficients": [
+    {
+      "coef": 0.9096860244717175,
+      "name": "Primary Type=PUBLIC INDECENCY"
+    },
+    {
+      "coef": 0.899986533055599,
+      "name": "Primary Type=PROSTITUTION"
+    },
+    {
+      "coef": 0.8998160178946638,
+      "name": "Primary Type=LIQUOR LAW VIOLATION"
+    },
+    {
+      "coef": 0.8981109313548801,
+      "name": "Primary Type=GAMBLING"
+    },
+    {
+      "coef": 0.896269746264184,
+      "name": "Primary Type=NARCOTICS"
+    },
+    {
+      "coef": -0.11019597877005294,
+      "name": "Community Area=0"
+    },
+    {
+      "coef": -0.09917514225866234,
+      "name": "Primary Type=HUMAN TRAFFICKING"
+    },
+    {
+      "coef": -0.07382555542820446,
+      "name": "Community Area=9"
+    },
+    {
+      "coef": -0.06891171836748755,
+      "name": "Community Area=36"
+    },
+    {
+      "coef": -0.0678621349061216,
+      "name": "Community Area=12"
+    }
+  ],
+  "checks": {
+    "widget_problems": {},
+    "max_correlation_difference_vs_numpy": 8.298917109073045e-13,
+    "top10_matches_ranking": true,
+    "max_score_difference_vs_sklearn": 0.0,
+    "max_coefficient_difference_vs_sklearn": 0.0,
+    "largest_abs_coefficient": 0.9096860244717175,
+    "top_coefficients_match_ranking": true,
+    "train_plus_test_equals_clean": true
+  }
+}

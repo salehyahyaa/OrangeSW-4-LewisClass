@@ -1,0 +1,13 @@
+name,coef
+string,continuous
+meta,
+Primary Type=PUBLIC INDECENCY,0.909686
+Primary Type=PROSTITUTION,0.899987
+Primary Type=LIQUOR LAW VIOLATION,0.899816
+Primary Type=GAMBLING,0.898111
+Primary Type=NARCOTICS,0.89627
+Community Area=0,-0.110196
+Primary Type=HUMAN TRAFFICKING,-0.0991751
+Community Area=9,-0.0738256
+Community Area=36,-0.0689117
+Community Area=12,-0.0678621

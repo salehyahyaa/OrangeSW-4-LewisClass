@@ -1,0 +1,13 @@
+Feature 1,Feature 2,Correlation,uncorrected p,FDR
+string,string,continuous,continuous,continuous
+meta,meta,,,
+Arrest=TRUE,Primary Type=NARCOTICS,0.463219,0,0
+Arrest=TRUE,Primary Type=WEAPONS VIOLATION,0.178508,0,0
+Arrest=TRUE,Primary Type=THEFT,-0.157659,0,0
+Arrest=TRUE,Primary Type=INTERFERENCE WITH PUBLIC OFFICER,0.139768,0,0
+Arrest=TRUE,Primary Type=CRIMINAL TRESPASS,0.138813,0,0
+Arrest=TRUE,Primary Type=CRIMINAL DAMAGE,-0.123506,0,0
+Arrest=TRUE,Primary Type=DECEPTIVE PRACTICE,-0.110975,0,0
+Arrest=TRUE,Primary Type=PROSTITUTION,0.0988369,0,0
+Arrest=TRUE,Primary Type=PUBLIC PEACE VIOLATION,0.0938625,0,0
+Arrest=TRUE,Community Area=26,0.0916756,0,0

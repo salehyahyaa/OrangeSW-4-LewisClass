@@ -1,0 +1,230 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<title>MP1 - Chicago Crimes 2019</title>
+<style>
+@page { size: Letter; margin: 0.8in 0.85in; }
+body { font: 10.5pt/1.5 Helvetica, Arial, sans-serif; color: #0b0b0b; }
+h1 { font-size: 21pt; line-height: 1.2; margin: 0 0 4pt; }
+h2 { font-size: 13.5pt; margin: 20pt 0 6pt; padding-top: 8pt;
+      border-top: 1px solid #e1e0d9; break-after: avoid; }
+h3 { font-size: 10.5pt; margin: 12pt 0 3pt; break-after: avoid; }
+p { margin: 0 0 7pt; }
+.meta { color: #52514e; margin-bottom: 14pt; }
+.lead { background: #f4f3ef; border-radius: 6px; padding: 10pt 13pt;
+         margin: 10pt 0 4pt; }
+.lead p:last-child, .lead ul { margin-bottom: 0; }
+ul { margin: 0 0 7pt; padding-left: 16pt; }
+li { margin-bottom: 3pt; }
+table { border-collapse: collapse; width: 100%; margin: 6pt 0 10pt;
+         font-size: 9.5pt; break-inside: avoid; }
+th { text-align: left; color: #52514e; font-weight: 600;
+      border-bottom: 1.2px solid #898781; padding: 4pt 6pt; }
+td { border-bottom: 1px solid #e1e0d9; padding: 4pt 6pt; vertical-align: top; }
+.r { text-align: right; font-variant-numeric: tabular-nums; }
+figure { margin: 8pt 0 10pt; break-inside: avoid; }
+figure img { width: 100%; }
+figcaption { color: #52514e; font-size: 9pt; margin-top: 3pt; }
+.shot { border: 1px solid #e1e0d9; border-radius: 4px; }
+.note { color: #52514e; font-size: 9.5pt; }
+.pb { break-before: page; }
+</style></head><body>
+
+<h1>What predicts an arrest? Chicago crimes, 2019</h1>
+<div class="meta">MP1 &middot; Orange Canvas workflow report &middot; Saleh Yahya
+&middot; workflow file: mp1_yahya.ows &middot; Orange 3.40.0</div>
+
+<div class="lead">
+<p><b>Main findings.</b> The type of crime is by far the strongest signal of
+whether an arrest is made; the community area adds a little, and whether the
+incident was domestic adds very little.</p>
+<ul>
+<li>A narcotics report is the feature most related to an arrest
+(correlation +0.463):
+14,081 of 14,086 narcotics
+records ended in an arrest (99.96%), against
+21.2% of all records.</li>
+<li>Theft, criminal damage and deceptive practice are the features most related
+to <i>no</i> arrest; only 9.7% of 62,298
+thefts led to one.</li>
+<li>The linear regression explains 36% of the variation in Arrest
+on the test sample (R&sup2; = 0.361, RMSE = 0.328). It is
+useful but far from complete: three features cannot tell apart most cases
+within the same crime type.</li>
+</ul>
+</div>
+
+<h2>1. The workflow</h2>
+<p>The workflow runs left to right in seven labelled steps. Every widget is
+renamed for what it does, and text boxes with arrows mark each part.</p>
+<figure><img class="shot" src="canvas.png" alt="Orange canvas workflow">
+<figcaption>The Orange canvas of mp1_yahya.ows, drawn by Orange from the
+saved workflow file.</figcaption></figure>
+<table><thead><tr><th class="l">Step</th><th class="l">Widgets (as named on the canvas)</th><th class="l">Orange widget type</th><th class="l">Purpose</th></tr></thead><tbody><tr><td class="l">1</td><td class="l">Load ChicagoCrimes2019.csv</td><td class="l">CSV File Import</td><td class="l">Reads the file; a type is set for each column.</td></tr><tr><td class="l">2</td><td class="l">Raw Crime Data, Feature Statistics (Missing Values), Arrests by Crime Type</td><td class="l">Data Table, Feature Statistics, Distributions</td><td class="l">Explore the data and look for problems.</td></tr><tr><td class="l">2b</td><td class="l">Keep Model Columns, Drop Rows with Missing Values</td><td class="l">Select Columns, Impute</td><td class="l">Keep the 3 features and the target; drop incomplete rows.</td></tr><tr><td class="l">3</td><td class="l">Create Dummy Variables, Dummy-Coded Data</td><td class="l">Continuize, Data Table</td><td class="l">Turn the nominal columns into 0/1 dummy columns.</td></tr><tr><td class="l">4</td><td class="l">Split 80% Train / 20% Test, Train Sample (80%), Test Sample (20%)</td><td class="l">Data Sampler, Data Table</td><td class="l">Random 80/20 split, fixed seed.</td></tr><tr><td class="l">5</td><td class="l">Pearson Correlations vs Arrest, All Correlations, Pick Top 10 Correlations, Top Correlations</td><td class="l">Correlations, Data Table, Python Script, Data Table</td><td class="l">Correlation of every feature with Arrest; top 10 to its own table.</td></tr><tr><td class="l">6</td><td class="l">Drop Baseline Dummy Columns, Linear Regression (Arrest), Test and Score (Test Sample)</td><td class="l">Select Columns, Linear Regression, Test and Score</td><td class="l">Fit on the training sample, score on the test sample.</td></tr><tr><td class="l">7</td><td class="l">Model Coefficients, Pick Top 5 + / Top 5 - Coefficients, Top Coefficients</td><td class="l">Data Table, Python Script, Data Table</td><td class="l">All coefficients; top 5 positive and negative to their own table.</td></tr></tbody></table>
+<p class="note">Two <i>Python Script</i> widgets do the "pick the top rows"
+steps (a few lines each, visible inside the widget), so the top-10 and top-5
+tables are recomputed from the data every time the workflow runs rather than
+depending on a hand-made selection.</p>
+
+<h2>2. Exploring the data and its problems</h2>
+<p>The file has 258,506 records and 22 attributes, all from
+2019. 54,728 records
+(21.2%) have Arrest = TRUE and 42,987
+(16.6%) are domestic. The problems found:</p>
+<ul>
+<li><b>Missing values in 8 columns.</b> The location columns are
+the worst affected; see the table below. Community Area, which the model
+needs, is missing in 4 rows. Those rows are
+dropped in step 2b, leaving 258,502.</li>
+<li><b>Codes stored as numbers.</b> Community Area, Ward, District, Beat and
+IUCR are identifiers, not quantities. Treating Community Area 50 as "twice"
+area 25 would be meaningless, so it is loaded as a category and dummy-coded.</li>
+<li><b>Column types are not detected reliably.</b> Left on automatic, Orange's
+importer read Community Area and the four coordinate columns as text because
+of their blank cells, so the type of every column is set explicitly in the
+load widget.</li>
+<li><b>An invalid area code.</b> Chicago's community areas are numbered 1 to 77,
+but 2 records have Community Area 0. They are kept
+(two rows cannot move the results) but the code is flagged in section 6.</li>
+<li><b>Very rare categories.</b> 4 of the
+31 crime types have fewer than 50 records
+(Human Trafficking: 12, Public Indecency: 11, Other Narcotic Violation: 8, Non-Criminal: 4).
+Anything estimated for them rests on a handful of cases.</li>
+<li><b>Unbalanced target.</b> Only about one record in five is an arrest, so a
+model that always says "no arrest" is already right
+78.6% of the time. Accuracy alone would flatter
+any model.</li>
+<li><b>Duplicate case numbers.</b> 22 case numbers
+appear more than once, although every record ID is unique. A case can involve
+several offences, so these were left in.</li>
+<li><b>Columns with no information for this task.</b> Year is the same in every
+row; ID, Case Number, Block and Location are near-unique identifiers; and
+several columns repeat each other (the coordinates, Latitude/Longitude and
+Location; IUCR, FBI Code and Description all refine Primary Type).</li>
+</ul>
+<table><thead><tr><th class="l">Column</th><th class="r">Missing rows</th><th class="r">Share of all rows</th></tr></thead><tbody><tr><td class="l">X Coordinate</td><td class="r">1,219</td><td class="r">0.47%</td></tr><tr><td class="l">Y Coordinate</td><td class="r">1,219</td><td class="r">0.47%</td></tr><tr><td class="l">Latitude</td><td class="r">1,219</td><td class="r">0.47%</td></tr><tr><td class="l">Longitude</td><td class="r">1,219</td><td class="r">0.47%</td></tr><tr><td class="l">Location</td><td class="r">1,219</td><td class="r">0.47%</td></tr><tr><td class="l">Location Description</td><td class="r">1,019</td><td class="r">0.39%</td></tr><tr><td class="l">Ward</td><td class="r">15</td><td class="r">0.01%</td></tr><tr><td class="l">Community Area</td><td class="r">4</td><td class="r">0.00%</td></tr></tbody></table>
+<figure><img src="chart_arrest_rate.svg" alt="Arrest rate by crime type">
+<figcaption>Arrest rate by crime type, for types with at least 1,000 records
+(record count in brackets). The spread from 5% to 100% is why crime type
+dominates everything that follows.</figcaption></figure>
+
+<h2>3. Dummy variables and the train / test split</h2>
+<p>The <i>Continuize</i> widget turns the four nominal attributes into numeric
+dummy variables: one 0/1 column for each of the 31 crime
+types and each of the 78 community-area codes, and
+a single 0/1 column each for Domestic and Arrest (1 = TRUE). That gives
+110 feature columns plus the target.</p>
+<p>The <i>Data Sampler</i> then splits the 258,502 rows at random
+into 206,802 training rows (80%) and 51,700 test
+rows (20%), with a fixed seed so the split is repeatable. The arrest rate is
+21.1% in the training sample and
+21.4% in the test sample, so the two are
+comparable.</p>
+
+<h2>4. Correlations with Arrest</h2>
+<p>Pearson correlations between Arrest and each of the 110
+features were computed on the training sample. "Highest" is taken as strongest
+in either direction, so strong negative correlations are included.</p>
+<table><thead><tr><th class="r">Rank</th><th class="l">Feature</th><th class="r">Correlation with Arrest</th><th class="l">Direction</th></tr></thead><tbody><tr><td class="r">1</td><td class="l">Crime type: Narcotics</td><td class="r">+0.463</td><td class="l">more arrests</td></tr><tr><td class="r">2</td><td class="l">Crime type: Weapons Violation</td><td class="r">+0.179</td><td class="l">more arrests</td></tr><tr><td class="r">3</td><td class="l">Crime type: Theft</td><td class="r">-0.158</td><td class="l">fewer arrests</td></tr><tr><td class="r">4</td><td class="l">Crime type: Interference With Public Officer</td><td class="r">+0.140</td><td class="l">more arrests</td></tr><tr><td class="r">5</td><td class="l">Crime type: Criminal Trespass</td><td class="r">+0.139</td><td class="l">more arrests</td></tr><tr><td class="r">6</td><td class="l">Crime type: Criminal Damage</td><td class="r">-0.124</td><td class="l">fewer arrests</td></tr><tr><td class="r">7</td><td class="l">Crime type: Deceptive Practice</td><td class="r">-0.111</td><td class="l">fewer arrests</td></tr><tr><td class="r">8</td><td class="l">Crime type: Prostitution</td><td class="r">+0.099</td><td class="l">more arrests</td></tr><tr><td class="r">9</td><td class="l">Crime type: Public Peace Violation</td><td class="r">+0.094</td><td class="l">more arrests</td></tr><tr><td class="r">10</td><td class="l">Community area 26 (West Garfield Park)</td><td class="r">+0.092</td><td class="l">more arrests</td></tr></tbody></table>
+<figure><img src="chart_correlations.svg" alt="Top 10 correlations">
+<figcaption>The ten strongest correlations with Arrest. Blue bars point to
+more arrests, orange bars to fewer.</figcaption></figure>
+<ul>
+<li>Nine of the ten are crime types. Narcotics stands far above the rest;
+weapons violations, interference with a public officer and criminal trespass
+follow. These are offences usually recorded <i>because</i> an officer caught
+someone, so an arrest is almost built into the report.</li>
+<li>Theft, criminal damage and deceptive practice are negative: they are
+typically reported after the fact, with no suspect present.</li>
+<li>Only one community area makes the list: area 26 (West Garfield Park), at
++0.092.</li>
+<li>Domestic is weak: -0.041.
+17.4% of domestic records ended in an arrest
+against 21.9% of the others.</li>
+</ul>
+<p class="note">Even the largest value, +0.463, is a moderate
+correlation, and most are small. With over 200,000 rows they are all
+statistically significant, but significance is not strength. If only positive
+correlations were counted, the three negative entries would be replaced by
+Community area 29 (North Lawndale) (+0.084), Community area 23 (Humboldt Park) (+0.072), Crime type: Liquor Law Violation (+0.058).</p>
+
+<h2>5. Linear regression: test results</h2>
+<p>A linear regression (ordinary least squares, no regularization) was trained
+on the training sample with Arrest as the dependent variable, and scored by
+<i>Test and Score</i> on the 51,700 test rows it had not seen.</p>
+<table><thead><tr><th class="l">Score</th><th class="r">Linear regression</th><th class="r">Always predict the average</th><th class="l">Meaning</th></tr></thead><tbody><tr><td class="l">RMSE</td><td class="r">0.328</td><td class="r">0.410</td><td class="l">typical size of the error, on the 0&ndash;1 arrest scale</td></tr><tr><td class="l">MAE</td><td class="r">0.214</td><td class="r">0.335</td><td class="l">average absolute error</td></tr><tr><td class="l">MSE</td><td class="r">0.108</td><td class="r">0.168</td><td class="l">average squared error</td></tr><tr><td class="l">R&sup2;</td><td class="r">0.361</td><td class="r">0.000</td><td class="l">share of the variation in Arrest that the model explains</td></tr></tbody></table>
+<p>The model beats the no-information baseline clearly (RMSE 0.328
+against 0.410) and explains about 36% of the
+variation in Arrest. The other 64% is not explained by
+crime type, community area and the domestic flag.</p>
+<p><b>Read as a yes/no prediction.</b> Calling an arrest whenever the model's
+output is 0.5 or more gives 86.5% accuracy on the test
+sample, against 78.6% for always answering "no
+arrest". When it predicts an arrest it is right 82%
+of the time, but it finds only 47% of the actual arrests
+(6,353 predicted, 11,082 actual). In
+practice the model recognises the crime types that almost always end in an
+arrest and misses arrests for everyday types such as battery and assault.
+<span class="note">(This paragraph was calculated from the same model and test
+sample outside Orange; the table above is Orange's Test and Score output.)</span></p>
+<p class="note">Two limits of the method: Arrest is a yes/no outcome, and a
+linear regression is not bounded, so its predictions ran from
+-0.04 to 1.09 rather than staying
+between 0 and 1. A logistic regression would be the natural next model. Orange
+also reports MAPE for regression; it is left out because it divides by the true
+value, which is 0 for every non-arrest.</p>
+
+<h2>6. Model coefficients</h2>
+<p>With a dummy column for every crime type and every community area, each
+group of columns adds up to 1 and duplicates the intercept, which leaves the
+coefficients undefined (in a first run they came out in the hundreds of
+millions). So one dummy per group, the most common level, is removed before
+the model is fitted: <b>Theft</b> and <b>community area
+25</b> (Austin). The model therefore has
+108 features, and each coefficient is the change in the
+predicted chance of arrest <i>compared with a non-domestic theft in area
+25</i>, whose predicted chance is the intercept,
+0.092. Predictions and test scores are the same either way.</p>
+<h3>Top 5 most positive</h3>
+<table><thead><tr><th class="l">Feature</th><th class="r">Coefficient</th><th class="l">In the raw data</th></tr></thead><tbody><tr><td class="l">Crime type: Public Indecency</td><td class="r">+0.910</td><td class="l">11 records, 100.0% arrested</td></tr><tr><td class="l">Crime type: Prostitution</td><td class="r">+0.900</td><td class="l">680 records, 100.0% arrested</td></tr><tr><td class="l">Crime type: Liquor Law Violation</td><td class="r">+0.900</td><td class="l">230 records, 100.0% arrested</td></tr><tr><td class="l">Crime type: Gambling</td><td class="r">+0.898</td><td class="l">142 records, 100.0% arrested</td></tr><tr><td class="l">Crime type: Narcotics</td><td class="r">+0.896</td><td class="l">14,086 records, 99.96% arrested</td></tr></tbody></table>
+<h3>Top 5 most negative</h3>
+<table><thead><tr><th class="l">Feature</th><th class="r">Coefficient</th><th class="l">In the raw data</th></tr></thead><tbody><tr><td class="l">Community area 0</td><td class="r">-0.110</td><td class="l">2 records, 0.0% arrested; 0 is not a valid area number</td></tr><tr><td class="l">Crime type: Human Trafficking</td><td class="r">-0.099</td><td class="l">12 records, 0.0% arrested</td></tr><tr><td class="l">Community area 9 (Edison Park)</td><td class="r">-0.074</td><td class="l">263 records, 7.2% arrested</td></tr><tr><td class="l">Community area 36 (Oakland)</td><td class="r">-0.069</td><td class="l">632 records, 10.4% arrested</td></tr><tr><td class="l">Community area 12 (Forest Glen)</td><td class="r">-0.068</td><td class="l">460 records, 7.4% arrested</td></tr></tbody></table>
+<ul>
+<li>The positive side is all crime types with arrest rates at or near 100%.
+A coefficient of about +0.90 on top of the 0.09 intercept gives
+a prediction close to 1.</li>
+<li>The negative coefficients are much smaller, because the baseline (theft)
+already has a low arrest rate, so there is little room below it.</li>
+<li><b>Treat the smallest groups with caution.</b> Public Indecency
+(11 records), Human Trafficking
+(12 records) and community area 0
+(2 records, an invalid code) reach the top of the
+lists on almost no data. The other entries rest on hundreds or thousands of
+records each, as the right-hand column shows.</li>
+<li>Domestic has a coefficient of -0.022: once the crime
+type is known, a domestic incident is about
+2 percentage points less likely to end in
+an arrest.</li>
+</ul>
+<p class="note">Correlations and coefficients answer different questions.
+Narcotics has the highest correlation because it is both common and almost
+always an arrest; Public Indecency has the highest coefficient but is too rare
+to correlate with anything.</p>
+
+<h2>7. Conclusions</h2>
+<ul>
+<li><b>What is most related to an arrest:</b> the type of crime. Offences that
+are discovered by police action (narcotics, weapons, prostitution, gambling,
+liquor, trespass, interference with an officer) nearly always end in an
+arrest; offences reported afterwards by a victim (theft, criminal damage,
+burglary, deceptive practice) rarely do.</li>
+<li><b>Community area matters a little,</b> with West Garfield Park the one
+area in the top ten, and <b>the domestic flag matters least.</b></li>
+<li><b>Can arrests be predicted from these three features?</b> Partly. The
+model explains 36% of the variation and is
+86.5% accurate as a yes/no rule, a real gain over the
+78.6% baseline, but it misses about half of the
+actual arrests.</li>
+<li><b>These are associations, not causes.</b> A high arrest rate for narcotics
+reflects how those crimes come to be recorded, not that the category itself
+makes an arrest more likely.</li>
+</ul>
+</body></html>
