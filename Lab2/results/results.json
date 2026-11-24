@@ -1,0 +1,806 @@
+{
+  "orange_version": "3.40.0",
+  "explore": {
+    "rows": 398,
+    "columns": 9,
+    "types": {
+      "cylinders": "Discrete",
+      "displacement": "Continuous",
+      "horsepower": "Continuous",
+      "weight": "Continuous",
+      "acceleration": "Continuous",
+      "model_1": "Discrete",
+      "origin": "Discrete",
+      "mpg": "Continuous",
+      "model_2": "String"
+    },
+    "stats": {
+      "displacement": {
+        "min": 68.0,
+        "max": 455.0,
+        "mean": 193.42587939698493,
+        "median": 148.5,
+        "missing": 0
+      },
+      "horsepower": {
+        "min": 46.0,
+        "max": 230.0,
+        "mean": 104.46938775510205,
+        "median": 93.5,
+        "missing": 6
+      },
+      "weight": {
+        "min": 1613.0,
+        "max": 5140.0,
+        "mean": 2970.424623115578,
+        "median": 2803.5,
+        "missing": 0
+      },
+      "acceleration": {
+        "min": 8.0,
+        "max": 24.8,
+        "mean": 15.568090452261307,
+        "median": 15.5,
+        "missing": 0
+      },
+      "mpg": {
+        "min": 9.0,
+        "max": 46.6,
+        "mean": 23.514572864321607,
+        "median": 23.0,
+        "missing": 0
+      }
+    },
+    "categories": {
+      "cylinders": {
+        "3": 4,
+        "4": 204,
+        "5": 3,
+        "6": 84,
+        "8": 103
+      },
+      "origin": {
+        "1": 249,
+        "2": 70,
+        "3": 79
+      },
+      "model_1": {
+        "70": 29,
+        "71": 28,
+        "72": 28,
+        "73": 40,
+        "74": 27,
+        "75": 30,
+        "76": 34,
+        "77": 28,
+        "78": 36,
+        "79": 29,
+        "80": 29,
+        "81": 29,
+        "82": 31
+      }
+    },
+    "first_words": [
+      "amc",
+      "audi",
+      "bmw",
+      "buick",
+      "cadillac",
+      "capri",
+      "chevroelt",
+      "chevrolet",
+      "chevy",
+      "chrysler",
+      "datsun",
+      "dodge",
+      "fiat",
+      "ford",
+      "hi",
+      "honda",
+      "maxda",
+      "mazda",
+      "mercedes",
+      "mercedes-benz",
+      "mercury",
+      "nissan",
+      "oldsmobile",
+      "opel",
+      "peugeot",
+      "plymouth",
+      "pontiac",
+      "renault",
+      "saab",
+      "subaru",
+      "toyota",
+      "toyouta",
+      "triumph",
+      "vokswagen",
+      "volkswagen",
+      "volvo",
+      "vw"
+    ],
+    "duplicate_car_names": 93,
+    "median_mpg_by_origin": {
+      "1": 18.5,
+      "2": 26.5,
+      "3": 31.6
+    },
+    "mean_mpg_by_cylinders": {
+      "3": 20.55,
+      "4": 29.28676470588235,
+      "5": 27.366666666666664,
+      "6": 19.985714285714284,
+      "8": 14.963106796116506
+    },
+    "corr_weight_mpg": -0.8317409332443351,
+    "lowest_mpg": [
+      {
+        "model_2": "ford f250",
+        "mpg": 10.0,
+        "displacement": 360.0
+      },
+      {
+        "model_2": "chevy c20",
+        "mpg": 10.0,
+        "displacement": 307.0
+      },
+      {
+        "model_2": "hi 1200d",
+        "mpg": 9.0,
+        "displacement": 304.0
+      }
+    ]
+  },
+  "make_counts": {
+    "FORD": 51,
+    "CHEVY": 47,
+    "VW": 21,
+    "OTHER": 279
+  },
+  "missing_hp_cars": [
+    {
+      "model_2": "ford pinto",
+      "cylinders": "4",
+      "displacement": 98.0,
+      "weight": 2046.0,
+      "horsepower": null
+    },
+    {
+      "model_2": "ford maverick",
+      "cylinders": "6",
+      "displacement": 200.0,
+      "weight": 2875.0,
+      "horsepower": null
+    },
+    {
+      "model_2": "renault lecar deluxe",
+      "cylinders": "4",
+      "displacement": 85.0,
+      "weight": 1835.0,
+      "horsepower": null
+    },
+    {
+      "model_2": "ford mustang cobra",
+      "cylinders": "4",
+      "displacement": 140.0,
+      "weight": 2905.0,
+      "horsepower": null
+    },
+    {
+      "model_2": "renault 18i",
+      "cylinders": "4",
+      "displacement": 100.0,
+      "weight": 2320.0,
+      "horsepower": null
+    },
+    {
+      "model_2": "amc concord dl",
+      "cylinders": "4",
+      "displacement": 151.0,
+      "weight": 3035.0,
+      "horsepower": null
+    }
+  ],
+  "impute_trials": {
+    "Average/Most frequent": [
+      {
+        "model_2": "ford pinto",
+        "cylinders": "4",
+        "displacement": 98.0,
+        "weight": 2046.0,
+        "horsepower": 104.469
+      },
+      {
+        "model_2": "ford maverick",
+        "cylinders": "6",
+        "displacement": 200.0,
+        "weight": 2875.0,
+        "horsepower": 104.469
+      },
+      {
+        "model_2": "renault lecar deluxe",
+        "cylinders": "4",
+        "displacement": 85.0,
+        "weight": 1835.0,
+        "horsepower": 104.469
+      },
+      {
+        "model_2": "ford mustang cobra",
+        "cylinders": "4",
+        "displacement": 140.0,
+        "weight": 2905.0,
+        "horsepower": 104.469
+      },
+      {
+        "model_2": "renault 18i",
+        "cylinders": "4",
+        "displacement": 100.0,
+        "weight": 2320.0,
+        "horsepower": 104.469
+      },
+      {
+        "model_2": "amc concord dl",
+        "cylinders": "4",
+        "displacement": 151.0,
+        "weight": 3035.0,
+        "horsepower": 104.469
+      }
+    ],
+    "Model-based imputer (simple tree)": [
+      {
+        "model_2": "ford pinto",
+        "cylinders": "4",
+        "displacement": 98.0,
+        "weight": 2046.0,
+        "horsepower": 66.222
+      },
+      {
+        "model_2": "ford maverick",
+        "cylinders": "6",
+        "displacement": 200.0,
+        "weight": 2875.0,
+        "horsepower": 91.9
+      },
+      {
+        "model_2": "renault lecar deluxe",
+        "cylinders": "4",
+        "displacement": 85.0,
+        "weight": 1835.0,
+        "horsepower": 65.667
+      },
+      {
+        "model_2": "ford mustang cobra",
+        "cylinders": "4",
+        "displacement": 140.0,
+        "weight": 2905.0,
+        "horsepower": 85.667
+      },
+      {
+        "model_2": "renault 18i",
+        "cylinders": "4",
+        "displacement": 100.0,
+        "weight": 2320.0,
+        "horsepower": 71.875
+      },
+      {
+        "model_2": "amc concord dl",
+        "cylinders": "4",
+        "displacement": 151.0,
+        "weight": 3035.0,
+        "horsepower": 79.667
+      }
+    ],
+    "Random values": [
+      {
+        "model_2": "ford pinto",
+        "cylinders": "4",
+        "displacement": 98.0,
+        "weight": 2046.0,
+        "horsepower": 90.0
+      },
+      {
+        "model_2": "ford maverick",
+        "cylinders": "6",
+        "displacement": 200.0,
+        "weight": 2875.0,
+        "horsepower": 140.0
+      },
+      {
+        "model_2": "renault lecar deluxe",
+        "cylinders": "4",
+        "displacement": 85.0,
+        "weight": 1835.0,
+        "horsepower": 225.0
+      },
+      {
+        "model_2": "ford mustang cobra",
+        "cylinders": "4",
+        "displacement": 140.0,
+        "weight": 2905.0,
+        "horsepower": 130.0
+      },
+      {
+        "model_2": "renault 18i",
+        "cylinders": "4",
+        "displacement": 100.0,
+        "weight": 2320.0,
+        "horsepower": 112.0
+      },
+      {
+        "model_2": "amc concord dl",
+        "cylinders": "4",
+        "displacement": 151.0,
+        "weight": 3035.0,
+        "horsepower": 116.0
+      }
+    ]
+  },
+  "impute_reference": {
+    "overall_mean_hp": 104.46938775510205,
+    "mean_hp_4cyl": 78.28140703517587,
+    "mean_hp_6cyl": 101.50602409638554
+  },
+  "outlier_car": {
+    "cylinders": "6",
+    "displacement": 262.0,
+    "horsepower": 85.0,
+    "weight": 3015.0,
+    "acceleration": 17.0,
+    "model_1": "82",
+    "origin": "1",
+    "mpg": 38.0,
+    "car_make": "OTHER",
+    "model_2": "oldsmobile cutlass ciera (diesel)",
+    "Group": "G1"
+  },
+  "outliers_flagged": 40,
+  "inliers": 358,
+  "flagged_cars": [
+    {
+      "model_2": "ford galaxie 500",
+      "displacement": 429.0,
+      "mpg": 15.0,
+      "horsepower": 198.0,
+      "weight": 4341.0
+    },
+    {
+      "model_2": "chevrolet impala",
+      "displacement": 454.0,
+      "mpg": 14.0,
+      "horsepower": 220.0,
+      "weight": 4354.0
+    },
+    {
+      "model_2": "plymouth fury iii",
+      "displacement": 440.0,
+      "mpg": 14.0,
+      "horsepower": 215.0,
+      "weight": 4312.0
+    },
+    {
+      "model_2": "pontiac catalina",
+      "displacement": 455.0,
+      "mpg": 14.0,
+      "horsepower": 225.0,
+      "weight": 4425.0
+    },
+    {
+      "model_2": "buick estate wagon (sw)",
+      "displacement": 455.0,
+      "mpg": 14.0,
+      "horsepower": 225.0,
+      "weight": 3086.0
+    },
+    {
+      "model_2": "volkswagen 1131 deluxe sedan",
+      "displacement": 97.0,
+      "mpg": 26.0,
+      "horsepower": 46.0,
+      "weight": 1835.0
+    },
+    {
+      "model_2": "ford f250",
+      "displacement": 360.0,
+      "mpg": 10.0,
+      "horsepower": 215.0,
+      "weight": 4615.0
+    },
+    {
+      "model_2": "chevy c20",
+      "displacement": 307.0,
+      "mpg": 10.0,
+      "horsepower": 200.0,
+      "weight": 4376.0
+    },
+    {
+      "model_2": "dodge d200",
+      "displacement": 318.0,
+      "mpg": 11.0,
+      "horsepower": 210.0,
+      "weight": 4382.0
+    },
+    {
+      "model_2": "hi 1200d",
+      "displacement": 304.0,
+      "mpg": 9.0,
+      "horsepower": 193.0,
+      "weight": 4732.0
+    },
+    {
+      "model_2": "mazda rx2 coupe",
+      "displacement": 70.0,
+      "mpg": 19.0,
+      "horsepower": 97.0,
+      "weight": 2330.0
+    },
+    {
+      "model_2": "buick electra 225 custom",
+      "displacement": 455.0,
+      "mpg": 12.0,
+      "horsepower": 225.0,
+      "weight": 4951.0
+    },
+    {
+      "model_2": "maxda rx3",
+      "displacement": 70.0,
+      "mpg": 18.0,
+      "horsepower": 90.0,
+      "weight": 2124.0
+    },
+    {
+      "model_2": "pontiac grand prix",
+      "displacement": 400.0,
+      "mpg": 16.0,
+      "horsepower": 230.0,
+      "weight": 4278.0
+    },
+    {
+      "model_2": "toyota mark ii",
+      "displacement": 156.0,
+      "mpg": 20.0,
+      "horsepower": 122.0,
+      "weight": 2807.0
+    },
+    {
+      "model_2": "mercedes-benz 280s",
+      "displacement": 168.0,
+      "mpg": 16.5,
+      "horsepower": 120.0,
+      "weight": 3820.0
+    },
+    {
+      "model_2": "mazda rx-4",
+      "displacement": 80.0,
+      "mpg": 21.5,
+      "horsepower": 110.0,
+      "weight": 2720.0
+    },
+    {
+      "model_2": "volkswagen rabbit custom diesel",
+      "displacement": 90.0,
+      "mpg": 43.1,
+      "horsepower": 48.0,
+      "weight": 1985.0
+    },
+    {
+      "model_2": "buick regal sport coupe (turbo)",
+      "displacement": 231.0,
+      "mpg": 17.7,
+      "horsepower": 165.0,
+      "weight": 3445.0
+    },
+    {
+      "model_2": "peugeot 604sl",
+      "displacement": 163.0,
+      "mpg": 16.2,
+      "horsepower": 133.0,
+      "weight": 3410.0
+    },
+    {
+      "model_2": "peugeot 504",
+      "displacement": 141.0,
+      "mpg": 27.2,
+      "horsepower": 71.0,
+      "weight": 3190.0
+    },
+    {
+      "model_2": "oldsmobile cutlass salon brougham",
+      "displacement": 260.0,
+      "mpg": 23.9,
+      "horsepower": 90.0,
+      "weight": 3420.0
+    },
+    {
+      "model_2": "vw rabbit",
+      "displacement": 98.0,
+      "mpg": 41.5,
+      "horsepower": 76.0,
+      "weight": 2144.0
+    },
+    {
+      "model_2": "amc concord",
+      "displacement": 151.0,
+      "mpg": 24.3,
+      "horsepower": 90.0,
+      "weight": 3003.0
+    },
+    {
+      "model_2": "mazda glc",
+      "displacement": 86.0,
+      "mpg": 46.6,
+      "horsepower": 65.0,
+      "weight": 2110.0
+    },
+    {
+      "model_2": "vw rabbit c (diesel)",
+      "displacement": 90.0,
+      "mpg": 44.3,
+      "horsepower": 48.0,
+      "weight": 2085.0
+    },
+    {
+      "model_2": "vw dasher (diesel)",
+      "displacement": 90.0,
+      "mpg": 43.4,
+      "horsepower": 48.0,
+      "weight": 2335.0
+    },
+    {
+      "model_2": "audi 5000s (diesel)",
+      "displacement": 121.0,
+      "mpg": 36.4,
+      "horsepower": 67.0,
+      "weight": 2950.0
+    },
+    {
+      "model_2": "mercedes-benz 240d",
+      "displacement": 146.0,
+      "mpg": 30.0,
+      "horsepower": 67.0,
+      "weight": 3250.0
+    },
+    {
+      "model_2": "renault lecar deluxe",
+      "displacement": 85.0,
+      "mpg": 40.9,
+      "horsepower": 65.667,
+      "weight": 1835.0
+    },
+    {
+      "model_2": "vokswagen rabbit",
+      "displacement": 89.0,
+      "mpg": 29.8,
+      "horsepower": 62.0,
+      "weight": 1845.0
+    },
+    {
+      "model_2": "datsun 280-zx",
+      "displacement": 168.0,
+      "mpg": 32.7,
+      "horsepower": 132.0,
+      "weight": 2910.0
+    },
+    {
+      "model_2": "mazda rx-7 gs",
+      "displacement": 70.0,
+      "mpg": 23.7,
+      "horsepower": 100.0,
+      "weight": 2420.0
+    },
+    {
+      "model_2": "ford mustang cobra",
+      "displacement": 140.0,
+      "mpg": 23.6,
+      "horsepower": 85.667,
+      "weight": 2905.0
+    },
+    {
+      "model_2": "volvo diesel",
+      "displacement": 145.0,
+      "mpg": 30.7,
+      "horsepower": 76.0,
+      "weight": 3160.0
+    },
+    {
+      "model_2": "toyota cressida",
+      "displacement": 168.0,
+      "mpg": 25.4,
+      "horsepower": 116.0,
+      "weight": 2900.0
+    },
+    {
+      "model_2": "datsun 810 maxima",
+      "displacement": 146.0,
+      "mpg": 24.2,
+      "horsepower": 120.0,
+      "weight": 2930.0
+    },
+    {
+      "model_2": "oldsmobile cutlass ls",
+      "displacement": 350.0,
+      "mpg": 26.6,
+      "horsepower": 105.0,
+      "weight": 3725.0
+    },
+    {
+      "model_2": "oldsmobile cutlass ciera (diesel)",
+      "displacement": 262.0,
+      "mpg": 38.0,
+      "horsepower": 85.0,
+      "weight": 3015.0
+    },
+    {
+      "model_2": "vw pickup",
+      "displacement": 97.0,
+      "mpg": 44.0,
+      "horsepower": 52.0,
+      "weight": 2130.0
+    }
+  ],
+  "outlier_methods": {
+    "One Class SVM": {
+      "flagged": 196,
+      "catches_the_diesel": true
+    },
+    "Covariance Estimator": {
+      "flagged": 40,
+      "catches_the_diesel": true
+    },
+    "Local Outlier Factor": {
+      "flagged": 39,
+      "catches_the_diesel": false
+    },
+    "Isolation Forest": {
+      "flagged": 40,
+      "catches_the_diesel": true
+    }
+  },
+  "step5": {
+    "rows": 358,
+    "r_hp_mpg": -0.7942029626229421,
+    "r_hp_lper100k": 0.8626227983414954,
+    "formula_max_error": 0.0,
+    "example": [
+      {
+        "model_2": "chevrolet chevelle malibu",
+        "mpg": 18.0,
+        "Lper100k": 13.067
+      },
+      {
+        "model_2": "buick skylark 320",
+        "mpg": 15.0,
+        "Lper100k": 15.681
+      },
+      {
+        "model_2": "plymouth satellite",
+        "mpg": 18.0,
+        "Lper100k": 13.067
+      }
+    ],
+    "lper100k_min": 5.273869581464872,
+    "lper100k_max": 21.383143939393936
+  },
+  "by_make": {
+    "FORD": {
+      "count": 50,
+      "displacement": {
+        "mean": 231.34,
+        "sd": 96.69974779951494
+      },
+      "horsepower": {
+        "mean": 108.31578000000002,
+        "sd": 34.027716290856496
+      },
+      "weight": {
+        "mean": 3274.94,
+        "sd": 803.3955340189742
+      },
+      "acceleration": {
+        "mean": 15.405999999999999,
+        "sd": 2.462818196576385
+      },
+      "mpg": {
+        "mean": 19.887999999999998,
+        "sd": 5.728327034330782
+      },
+      "Lper100k": {
+        "mean": 12.759163599999999,
+        "sd": 3.4482669239120627
+      }
+    },
+    "CHEVY": {
+      "count": 44,
+      "displacement": {
+        "mean": 234.54545454545453,
+        "sd": 99.82390414787166
+      },
+      "horsepower": {
+        "mean": 110.29545454545455,
+        "sd": 32.063584753274924
+      },
+      "weight": {
+        "mean": 3286.181818181818,
+        "sd": 792.0907944411915
+      },
+      "acceleration": {
+        "mean": 15.645454545454545,
+        "sd": 2.9922733479051526
+      },
+      "mpg": {
+        "mean": 20.397727272727273,
+        "sd": 6.2519388113315895
+      },
+      "Lper100k": {
+        "mean": 12.590981363636361,
+        "sd": 3.679744906314422
+      }
+    },
+    "VW": {
+      "count": 17,
+      "displacement": {
+        "mean": 96.17647058823529,
+        "sd": 8.987736743179891
+      },
+      "horsepower": {
+        "mean": 67.82352941176471,
+        "sd": 10.223962625357444
+      },
+      "weight": {
+        "mean": 2036.9411764705883,
+        "sd": 185.7486442037449
+      },
+      "acceleration": {
+        "mean": 16.241176470588236,
+        "sd": 3.0840433734647386
+      },
+      "mpg": {
+        "mean": 29.170588235294115,
+        "sd": 4.808295527767916
+      },
+      "Lper100k": {
+        "mean": 8.256848823529412,
+        "sd": 1.2748905955849816
+      }
+    },
+    "OTHER": {
+      "count": 247,
+      "displacement": {
+        "mean": 181.42712550607288,
+        "sd": 98.65910323664914
+      },
+      "horsepower": {
+        "mean": 100.79841700404857,
+        "sd": 34.196689944893635
+      },
+      "weight": {
+        "mean": 2875.481781376518,
+        "sd": 821.356684716525
+      },
+      "acceleration": {
+        "mean": 15.587854251012146,
+        "sd": 2.3842842176853414
+      },
+      "mpg": {
+        "mean": 24.258704453441293,
+        "sd": 7.554387834266159
+      },
+      "Lper100k": {
+        "mean": 10.751121457489878,
+        "sd": 3.59390563539454
+      }
+    }
+  },
+  "checks": {
+    "widget_problems": {},
+    "make_counts_match_handout": true,
+    "six_unknown_horsepower_selected": true,
+    "select_by_index_returns_those_six": true,
+    "imputed_has_no_missing_hp": true,
+    "scatter_selection_is_the_diesel": true,
+    "diesel_flagged_as_outlier": true,
+    "diesel_not_in_inliers": true,
+    "lper100k_formula_correct": true,
+    "saved_csv_reloaded": true,
+    "car_make_is_target_in_file1": true
+  }
+}

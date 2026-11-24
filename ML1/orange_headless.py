@@ -15,7 +15,7 @@ from AnyQt.QtCore import QThreadPool  # noqa: E402
 from AnyQt.QtWidgets import QApplication  # noqa: E402
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SUBMISSION = os.path.join(REPO, "submission")
+SUBMISSION = os.path.join(REPO, "ML1", "submission")
 DATA_NAME = "ChicagoCrimes2019.csv"
 WORKFLOW = os.path.join(SUBMISSION, "mp1_yahya.ows")
 RESULTS = os.path.join(REPO, "ML1", "results")

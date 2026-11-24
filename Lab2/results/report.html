@@ -1,0 +1,263 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<title>Lab 2 - Data Exploration and Processing</title>
+<style>
+@page { size: Letter; margin: 0.8in 0.85in; }
+body { font: 10.5pt/1.5 Helvetica, Arial, sans-serif; color: #0b0b0b; }
+h1 { font-size: 20pt; line-height: 1.2; margin: 0 0 4pt; }
+h2 { font-size: 13.5pt; margin: 20pt 0 6pt; padding-top: 8pt;
+      border-top: 1px solid #e1e0d9; break-after: avoid; }
+h3 { font-size: 10.5pt; margin: 12pt 0 3pt; break-after: avoid; }
+p { margin: 0 0 7pt; orphans: 3; widows: 3; }
+.meta { color: #52514e; margin-bottom: 12pt; }
+ul { margin: 0 0 7pt; padding-left: 16pt; }
+li { margin-bottom: 3pt; }
+table { border-collapse: collapse; width: 100%; margin: 6pt 0 12pt;
+         font-size: 9.5pt; break-inside: avoid; }
+caption { caption-side: top; text-align: left; color: #52514e;
+           font-size: 9pt; padding-bottom: 3pt; }
+th { text-align: left; color: #52514e; font-weight: 600;
+      border-bottom: 1.2px solid #898781; padding: 4pt 6pt; }
+td { border-bottom: 1px solid #e1e0d9; padding: 4pt 6pt; vertical-align: top; }
+.r { text-align: right; font-variant-numeric: tabular-nums; }
+figure { margin: 8pt 0 12pt; break-inside: avoid; text-align: center; }
+figcaption { color: #52514e; font-size: 9pt; margin-top: 3pt;
+              text-align: left; }
+.shot { border: 1px solid #e1e0d9; border-radius: 4px; }
+.q { background: #f4f3ef; border-radius: 6px; padding: 8pt 12pt;
+      margin: 8pt 0; break-inside: avoid; }
+.q p:last-child { margin-bottom: 0; }
+code { font-family: Menlo, monospace; font-size: 9.5pt; }
+</style></head><body>
+
+<h1>Lab Assignment #2: Data Exploration and Processing</h1>
+<div class="meta">DATA-20000 Introduction to Data Science &middot; Saleh Yahya
+&middot; workflow file: lab2_yahya.ows</div>
+
+<h2>Step 1: Loading and exploring the data</h2>
+<p>I loaded auto-mpg.csv with the File widget. It has 398 cars and
+9 columns. I set the column types to match the list in the
+handout: cylinders, model_1 and origin are categorical, model_2 is text, and
+the rest are numeric.</p>
+<figure><img class="shot" style="width:62%" src="file.png" alt=""><figcaption><b>Figure 1.</b> The File widget with auto-mpg.csv loaded. cylinders, model_1 and origin are set to categorical and model_2 is a text (meta) column.</figcaption></figure>
+<h3>Data Table</h3>
+<figure><img class="shot" style="width:100%" src="data_table.png" alt=""><figcaption><b>Figure 2.</b> Data Table showing the first rows of the 398 cars.</figcaption></figure>
+<p>Each row is one car. Looking down the table, the cars from the early
+1970s are mostly big 8 cylinder American cars with low mpg. I also noticed
+that horsepower has a few cells with a "?" where the value is missing, and
+that the same car name shows up more than once.</p>
+<h3>Feature Statistics</h3>
+<figure><img class="shot" style="width:100%" src="feature_statistics.png" alt=""><figcaption><b>Figure 3.</b> Feature Statistics. The Missing column shows 6 missing values for horsepower and none anywhere else.</figcaption></figure>
+<p>This gives a quick summary of every column. mpg goes from
+9 to 46.6 with a mean of
+23.5. Weight goes from 1613 to
+5140. Displacement, horsepower and weight are all skewed
+to the right, meaning most cars are on the smaller side with a tail of big
+ones. Horsepower is the only column with missing data
+(6 values, about 2%). For cylinders,
+204 cars have 4, 103 have 8, 84 have 6, and only
+4 have 3 and 3 have 5.</p>
+<h3>Box Plot</h3>
+<figure><img class="shot" style="width:88%" src="box_mpg_origin.png" alt=""><figcaption><b>Figure 4.</b> Box Plot of mpg grouped by origin.</figcaption></figure>
+<p>I grouped mpg by origin. Origin 1 has the lowest mpg (median
+18.5), origin 2 is in the middle
+(26.5) and origin 3 is the highest
+(31.6). Going by the car names, origin 1 is
+American cars, 2 is European and 3 is Japanese, so the American cars in this
+data use the most fuel. Origin 1 is also the biggest group with
+249 of the 398 cars.</p>
+<h3>Distributions</h3>
+<figure><img class="shot" style="width:88%" src="dist_mpg.png" alt=""><figcaption><b>Figure 5.</b> Distributions widget showing mpg.</figcaption></figure>
+<p>mpg is not symmetric. Most cars sit between about 13 and 30 mpg, and there
+is a longer tail on the right going up past 40. So there are a few very
+efficient cars but not many.</p>
+<h3>Scatter Plot</h3>
+<figure><img class="shot" style="width:88%" src="scatter_weight_mpg.png" alt=""><figcaption><b>Figure 6.</b> Scatter Plot of weight (x) against mpg (y), coloured by cylinders.</figcaption></figure>
+<p>Heavier cars get lower mpg, and the relationship is strong (the
+correlation is -0.83). The colours show that the 8
+cylinder cars are the heavy, low mpg group and the 4 cylinder cars are the
+light, high mpg group. The trend is curved rather than a straight line: mpg
+drops quickly at first and then levels off for the heaviest cars.</p>
+<div style="break-inside: avoid">
+<h3>Potential problems with the data</h3>
+<p>These are the things I found that would need cleaning:</p>
+<table><caption><b>Table 1.</b> Data problems I found in auto-mpg.csv.</caption><thead><tr><th class="l">Problem</th><th class="l">What I saw</th><th class="l">Why it matters</th></tr></thead><tbody><tr><td class="l">Missing values</td><td class="l">6 cars have no horsepower (shown as ? in the table)</td><td class="l">They need to be filled in or dropped before any analysis that uses horsepower</td></tr><tr><td class="l">Misspelled makes</td><td class="l">chevroelt, vokswagen, maxda, toyouta</td><td class="l">The same make gets counted as different ones</td></tr><tr><td class="l">Same make written different ways</td><td class="l">chevrolet / chevy, volkswagen / vw, mercedes / mercedes-benz</td><td class="l">Same issue, so I needed two rows for VW in step 2</td></tr><tr><td class="l">Names that are not really a make</td><td class="l">hi 1200d, capri</td><td class="l">Can't be matched to a manufacturer from the name alone</td></tr><tr><td class="l">Car names repeat</td><td class="l">93 rows share a name with another row (for example several ford pinto rows from different years)</td><td class="l">The handout says model_2 is unique, but it is not, so it can't be used as an ID</td></tr><tr><td class="l">Codes with no labels</td><td class="l">origin is 1, 2 or 3 and model_1 is a two digit year</td><td class="l">They look like numbers but they are categories, so I set them to categorical in the File widget</td></tr><tr><td class="l">Unclear column names</td><td class="l">model_1 is the year and model_2 is the car name</td><td class="l">Easy to mix up</td></tr><tr><td class="l">Possible outliers</td><td class="l">Three trucks at 9 to 10 mpg, and a few cars with very high mpg for their engine size</td><td class="l">Looked at more closely in step 4</td></tr></tbody></table>
+</div>
+
+<h2>Step 2: Creating the car_make class</h2>
+<p>I used Create Class on the model_2 column to make a new class called
+car_make. For Chevy I used the substring "chev" because it matches
+chevrolet, chevy and the misspelled chevroelt all at once. VW needed two rows
+with the same class name, one for "volkswagen" and one for "vw". Everything
+that didn't match went into OTHER.</p>
+<figure><img class="shot" style="width:66%" src="create_class.png" alt=""><figcaption><b>Figure 7.</b> Create Class widget. The Count column matches the numbers in the handout: FORD 51, CHEVY 47, VW 15 + 6 = 21, OTHER 279.</figcaption></figure>
+<table><caption><b>Table 2.</b> Number of cars in each car_make class.</caption><thead><tr><th class="l">Class</th><th class="l">Substring used</th><th class="r">Cars</th></tr></thead><tbody><tr><td class="l">FORD</td><td class="l">ford</td><td class="r">51</td></tr><tr><td class="l">CHEVY</td><td class="l">chev</td><td class="r">47</td></tr><tr><td class="l">VW</td><td class="l">volkswagen, vw (two rows)</td><td class="r">21</td></tr><tr><td class="l">OTHER</td><td class="l">(remaining instances)</td><td class="r">279</td></tr></tbody></table>
+<p>The counts match the handout exactly. One thing I noticed is that the
+misspelled "vokswagen" car ends up in OTHER, since it doesn't contain either
+VW substring. The handout's count of 21 for VW only works if that car is left
+out, so I kept it that way.</p>
+
+<h2>Step 3: Imputing the missing horsepower</h2>
+<p>I sent the Create Class output to Data Table (1) and to Impute. In Data
+Table (1) I sorted by horsepower so the unknown values came to the top, and
+selected those 6 rows.</p>
+<figure><img class="shot" style="width:100%" src="table1_selected.png" alt=""><figcaption><b>Figure 8.</b> Data Table (1) sorted by horsepower, with the 6 cars that have unknown horsepower selected.</figcaption></figure>
+<p>The selected rows go into the Data Subset input of Select by Data Index,
+and the Impute output goes into its Data input. That way Data Table (2) shows
+only those same 6 cars, but with whatever value Impute filled in. I tried the
+three options one at a time.</p>
+<figure><img class="shot" style="width:92%" src="table2_average.png" alt=""><figcaption><b>Figure 9.</b> Data Table (2) with Average/Most frequent.</figcaption></figure>
+<figure><img class="shot" style="width:92%" src="table2_model.png" alt=""><figcaption><b>Figure 10.</b> Data Table (2) with Model-based imputer (simple tree).</figcaption></figure>
+<figure><img class="shot" style="width:92%" src="table2_random.png" alt=""><figcaption><b>Figure 11.</b> Data Table (2) with Random values.</figcaption></figure>
+<table><caption><b>Table 3.</b> Horsepower filled in for the 6 cars by each Impute option.</caption><thead><tr><th class="l">Car</th><th class="r">Cylinders</th><th class="r">Displacement</th><th class="r">Weight</th><th class="r">Average</th><th class="r">Model-based</th><th class="r">Random</th></tr></thead><tbody><tr><td class="l">ford pinto</td><td class="r">4</td><td class="r">98</td><td class="r">2046</td><td class="r">104.5</td><td class="r">66.2</td><td class="r">90</td></tr><tr><td class="l">ford maverick</td><td class="r">6</td><td class="r">200</td><td class="r">2875</td><td class="r">104.5</td><td class="r">91.9</td><td class="r">140</td></tr><tr><td class="l">renault lecar deluxe</td><td class="r">4</td><td class="r">85</td><td class="r">1835</td><td class="r">104.5</td><td class="r">65.7</td><td class="r">225</td></tr><tr><td class="l">ford mustang cobra</td><td class="r">4</td><td class="r">140</td><td class="r">2905</td><td class="r">104.5</td><td class="r">85.7</td><td class="r">130</td></tr><tr><td class="l">renault 18i</td><td class="r">4</td><td class="r">100</td><td class="r">2320</td><td class="r">104.5</td><td class="r">71.9</td><td class="r">112</td></tr><tr><td class="l">amc concord dl</td><td class="r">4</td><td class="r">151</td><td class="r">3035</td><td class="r">104.5</td><td class="r">79.7</td><td class="r">116</td></tr></tbody></table>
+<p>The model-based option worked for me without connecting a Tree widget,
+because Impute already uses a simple tree by default, so I did not need to
+add one.</p>
+<div class="q">
+<p><b>Which option seems to generate the most appropriate values to be
+filled in for the missing ones?</b></p>
+<p>The model-based imputer (simple tree). It gives each car its own value
+based on the rest of that car's data, so the small 4 cylinder cars get lower
+numbers (the Ford Pinto gets 66.2) and the 6 cylinder
+Ford Maverick gets a higher one (91.9). That makes
+sense for these cars.</p>
+<p>Average gives every car the same value, 104.5, which
+is the mean of the whole dataset including the big V8s. Five of the six cars
+are 4 cylinder, and the average horsepower for 4 cylinder cars in this data
+is only 78.3, so 104.5 is too high
+for them.</p>
+<p>Random just picks an existing horsepower value by chance, so it has
+nothing to do with the car. In my run the Renault LeCar, the smallest car of
+the six, got 225. The values also change every time
+it runs.</p>
+</div>
+
+<h2>Step 4: Outliers</h2>
+<p>I connected the Impute output to Scatter Plot (1) and looked at
+displacement against mpg. Most of the points follow a curve going down: the
+bigger the engine, the lower the mpg. One point sits well above everything
+around it, at a displacement of 262 and
+38 mpg. Other cars with engines that size get roughly 15 to 25
+mpg.</p>
+<figure><img class="shot" style="width:88%" src="scatter1_outlier.png" alt=""><figcaption><b>Figure 12.</b> Scatter Plot (1), displacement against mpg after imputing. The outlier is the selected point (orange ring) near displacement 262 and 38 mpg.</figcaption></figure>
+<p>I selected that point and sent it to Data Table (3) to see which car it
+is.</p>
+<figure><img class="shot" style="width:100%" src="table3_outlier.png" alt=""><figcaption><b>Figure 13.</b> Data Table (3) showing the selected outlier.</figcaption></figure>
+<p>It is the <b>oldsmobile cutlass ciera (diesel)</b>, a 1982 car with
+6 cylinders, 85 horsepower and a weight
+of 3015.</p>
+<div class="q">
+<p><b>Do you think this outlier is due to data entry errors or just a vehicle
+with unusual characteristics?</b></p>
+<p>I think it is a vehicle with unusual characteristics, not a data entry
+error. The name says it is a diesel, and diesel engines get much better
+mileage than gas engines of the same size. Its other numbers back that up:
+85 horsepower is low for a 262 engine, which is normal
+for a diesel. The other diesels in the data (the VW Rabbit and Dasher
+diesels, for example) also have very high mpg. It is also a 1982 car, and the
+newer cars in this data are more efficient in general. So the values look
+real, the car is just different from the gas cars around it.</p>
+</div>
+<p>Next I fed the Impute output into the Outliers widget. With the default
+method, Local Outlier Factor, my outlier was <i>not</i> flagged, so it stayed
+in the inliers. I tried the other methods and switched to Covariance
+Estimator, which does catch it.</p>
+<table><caption><b>Table 4.</b> What each method in the Outliers widget did with my outlier.</caption><thead><tr><th class="l">Method</th><th class="r">Cars flagged</th><th class="l">Flags the Oldsmobile diesel?</th></tr></thead><tbody><tr><td class="l">One Class SVM</td><td class="r">196</td><td class="l">Yes</td></tr><tr><td class="l">Covariance Estimator</td><td class="r">40</td><td class="l">Yes</td></tr><tr><td class="l">Local Outlier Factor</td><td class="r">39</td><td class="l">No</td></tr><tr><td class="l">Isolation Forest</td><td class="r">40</td><td class="l">Yes</td></tr></tbody></table>
+<figure><img class="shot" style="width:40%" src="outliers_widget.png" alt=""><figcaption><b>Figure 14.</b> Outliers widget settings.</figcaption></figure>
+<p>With Covariance Estimator at 10% contamination the widget splits the data
+into 40 outliers and 358 inliers. Following
+the sample workflow, Scatter Plot (2) is connected to the Outliers output, so
+it shows the cars that were taken out.</p>
+<figure><img class="shot" style="width:88%" src="scatter2_outliers.png" alt=""><figcaption><b>Figure 15.</b> Scatter Plot (2), fed from the Outliers output of the Outliers widget. It shows the 40 cars that were flagged, and my outlier is one of them (displacement 262, 38 mpg).</figcaption></figure>
+<p>To double check that it is really gone from the data that continues on,
+I also looked at displacement against mpg for the inliers.</p>
+<figure><img class="shot" style="width:88%" src="scatter3_inliers_disp_mpg.png" alt=""><figcaption><b>Figure 16.</b> Displacement against mpg for the 358 inliers only. The point at 262 / 38 is gone.</figcaption></figure>
+<p>So yes, the outlier I found is eliminated. One thing to keep in mind is
+that the widget always removes about 10% of the data, so it also took out
+cars I would not have called outliers by eye, like the pickup trucks, the
+rotary Mazdas and the other diesels.</p>
+
+<h2>Step 5: Lper100k</h2>
+<p>I sent the inliers to Feature Constructor and made a new numeric column
+called Lper100k using the formula from the handout:</p>
+<p><code>Lper100k = 100 * 3.785411784 / (1.609344 * mpg)</code></p>
+<figure><img class="shot" style="width:66%" src="feature_constructor.png" alt=""><figcaption><b>Figure 17.</b> Feature Constructor with the Lper100k formula.</figcaption></figure>
+<p>I put brackets around the bottom part so that mpg is divided, not
+multiplied. A quick check: chevrolet chevelle malibu has
+18 mpg, which comes out as
+13.07 L per 100 km. The values go from
+5.3 to 21.4, which is a realistic
+range.</p>
+<figure><img class="shot" style="width:88%" src="scatter3_hp_mpg.png" alt=""><figcaption><b>Figure 18.</b> Scatter Plot (3): horsepower (x) against mpg (y), with the regression line.</figcaption></figure>
+<figure><img class="shot" style="width:88%" src="scatter3_hp_lper100k.png" alt=""><figcaption><b>Figure 19.</b> Scatter Plot (3): horsepower (x) against Lper100k (y), with the regression line.</figcaption></figure>
+<p>The two plots show the same cars but they tell the story differently.
+With mpg, the points curve. At low horsepower mpg is spread out a lot and
+falls fast, and at high horsepower it flattens out, because mpg can't go
+below zero. With Lper100k the direction flips, since it measures fuel used
+instead of distance travelled: more horsepower means more fuel burned. The
+points also line up along the line much better. Each extra bit of horsepower
+adds about the same amount of fuel use across the whole range.</p>
+<div class="q">
+<p><b>Which of the graphs appears more linear in nature? What are the
+implications?</b></p>
+<p>Horsepower against Lper100k is more linear. Orange's regression line
+gives r = 0.86 for Lper100k and
+r = -0.79 for mpg, so the Lper100k relationship is stronger,
+and the mpg points bend away from their line at both ends.</p>
+<p>The implication is that fuel use per distance is the better thing to work
+with if I want to use a straight line method, like linear regression or a
+correlation. A straight line would describe Lper100k well, but for mpg it
+would predict too high in the middle and too low at the ends. It also
+means mpg can be misleading when comparing cars. Going from 10 to 15 mpg
+saves a lot more fuel than going from 30 to 35 mpg, even though both are a 5
+mpg improvement. Lper100k shows that difference directly.</p>
+</div>
+<p>Last, I saved this dataset with the Save Data widget as
+auto-mpg-lper100k.csv.</p>
+<figure><img class="shot" style="width:38%" src="save_data.png" alt=""><figcaption><b>Figure 20.</b> Save Data widget, saving to auto-mpg-lper100k.csv.</figcaption></figure>
+
+<h2>Step 6: Distributions by car make</h2>
+<p>I opened the saved csv with a new File widget and set car_make as the
+target.</p>
+<figure><img class="shot" style="width:62%" src="file1.png" alt=""><figcaption><b>Figure 21.</b> File (1) with the saved csv loaded and car_make set as the target.</figcaption></figure>
+<p>Then I connected it to a Distributions widget (named Step 6), set the
+fitted distribution to Normal and split by car_make. This file has the
+358 inliers from step 4, so the class sizes are a little smaller
+than in step 2.</p>
+<table><caption><b>Table 5.</b> Mean (standard deviation) of each variable by car_make, from the saved file.</caption><thead><tr><th class="l">car_make</th><th class="r">Cars</th><th class="r">mpg</th><th class="r">Lper100k</th><th class="r">displacement</th><th class="r">horsepower</th><th class="r">weight</th><th class="r">acceleration</th></tr></thead><tbody><tr><td class="l">FORD</td><td class="r">50</td><td class="r">19.9 (5.7)</td><td class="r">12.8 (3.4)</td><td class="r">231.3 (95.7)</td><td class="r">108.3 (33.7)</td><td class="r">3274.9 (795.3)</td><td class="r">15.4 (2.4)</td></tr><tr><td class="l">CHEVY</td><td class="r">44</td><td class="r">20.4 (6.2)</td><td class="r">12.6 (3.6)</td><td class="r">234.5 (98.7)</td><td class="r">110.3 (31.7)</td><td class="r">3286.2 (783.0)</td><td class="r">15.6 (3.0)</td></tr><tr><td class="l">VW</td><td class="r">17</td><td class="r">29.2 (4.7)</td><td class="r">8.3 (1.2)</td><td class="r">96.2 (8.7)</td><td class="r">67.8 (9.9)</td><td class="r">2036.9 (180.2)</td><td class="r">16.2 (3.0)</td></tr><tr><td class="l">OTHER</td><td class="r">247</td><td class="r">24.3 (7.5)</td><td class="r">10.8 (3.6)</td><td class="r">181.4 (98.5)</td><td class="r">100.8 (34.1)</td><td class="r">2875.5 (819.7)</td><td class="r">15.6 (2.4)</td></tr></tbody></table>
+<figure><img class="shot" style="width:88%" src="step6_mpg.png" alt=""><figcaption><b>Figure 22.</b> Step 6 Distributions for mpg, fitted with Normal and split by car_make.</figcaption></figure>
+<figure><img class="shot" style="width:88%" src="step6_Lper100k.png" alt=""><figcaption><b>Figure 23.</b> Step 6 Distributions for Lper100k, fitted with Normal and split by car_make.</figcaption></figure>
+<figure><img class="shot" style="width:88%" src="step6_displacement.png" alt=""><figcaption><b>Figure 24.</b> Step 6 Distributions for displacement, fitted with Normal and split by car_make.</figcaption></figure>
+<figure><img class="shot" style="width:88%" src="step6_horsepower.png" alt=""><figcaption><b>Figure 25.</b> Step 6 Distributions for horsepower, fitted with Normal and split by car_make.</figcaption></figure>
+<figure><img class="shot" style="width:88%" src="step6_weight.png" alt=""><figcaption><b>Figure 26.</b> Step 6 Distributions for weight, fitted with Normal and split by car_make.</figcaption></figure>
+<figure><img class="shot" style="width:88%" src="step6_acceleration.png" alt=""><figcaption><b>Figure 27.</b> Step 6 Distributions for acceleration, fitted with Normal and split by car_make.</figcaption></figure>
+<p><b>What I noticed about the differences between the classes:</b></p>
+<ul>
+<li><b>VW stands apart from the others.</b> Its curve is shifted toward
+better fuel economy (mean 29.2 mpg against about 20 for
+Ford and Chevy), and toward small engines, low horsepower and low weight.
+Its curves are also much narrower. For displacement the VW standard
+deviation is only 9, compared with
+96 for Ford. VW basically made one type of car,
+a small 4 cylinder.</li>
+<li><b>Ford and Chevy are almost the same.</b> Their curves sit nearly on top
+of each other for every variable. Both have low average mpg
+(19.9 and 20.4) and are wide,
+because both sold everything from small 4 cylinder cars to big V8s.</li>
+<li><b>OTHER is in the middle and is the widest.</b> That makes sense
+because it mixes a lot of different makes, from small Japanese and European
+cars to big American ones.</li>
+<li><b>The normal curve doesn't fit every class well.</b> For Ford and Chevy
+the bars for displacement and weight have two bumps (small cars and big
+cars), so one bell curve smooths over that. It fits VW better since VW is one
+tight group.</li>
+<li><b>Acceleration is the one variable where the classes look alike.</b>
+All four are centred around 15 to 16 and overlap almost completely, so car
+make doesn't tell you much about acceleration.</li>
+<li><b>VW has few cars.</b> With only 17 VWs, its curve is based
+on a lot less data than the others.</li>
+</ul>
+
+<h2>Step 7: The workflow</h2>
+<p>I labelled each part of the workflow with a text box and an arrow.</p>
+<figure><img class="shot" style="width:100%" src="canvas.png" alt=""><figcaption><b>Figure 28.</b> The finished Orange Canvas workflow.</figcaption></figure>
+</body></html>

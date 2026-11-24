@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 RESULTS = os.path.join(HERE, "results")
-PDF = os.path.join(REPO, "submission", "mp1_yahya.pdf")
+PDF = os.path.join(HERE, "submission", "mp1_yahya.pdf")
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
 BLUE, ORANGE = "#2a78d6", "#eb6834"      # positive / negative
