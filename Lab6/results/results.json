@@ -1,0 +1,2102 @@
+{
+  "warnings": {
+    "k-Means (k=3)": [
+      "Warning: Sparse data cannot be normalized"
+    ]
+  },
+  "step2": {
+    "rows": 14640,
+    "columns": [
+      "name",
+      "text",
+      "tweet_coord",
+      "tweet_created",
+      "tweet_location"
+    ],
+    "filled": {
+      "name": 14640,
+      "text": 14640,
+      "tweet_coord": 1019,
+      "tweet_created": 14640,
+      "tweet_location": 9907
+    },
+    "sample_rows": [
+      [
+        "cairdin",
+        "@VirginAmerica What @dhepburn said.",
+        "?",
+        "2015-02-24 11:35:52 -0800",
+        "?"
+      ],
+      [
+        "jnardino",
+        "@VirginAmerica plus you've added commercials to the experience... tacky.",
+        "?",
+        "2015-02-24 11:15:59 -0800",
+        "?"
+      ],
+      [
+        "yvonnalynn",
+        "@VirginAmerica I didn't today... Must mean I need to take another trip!",
+        "?",
+        "2015-02-24 11:15:48 -0800",
+        "Lets Play"
+      ],
+      [
+        "jnardino",
+        "@VirginAmerica it's really aggressive to blast obnoxious \"entertainment\" in your guests' faces &amp; they have little recourse",
+        "?",
+        "2015-02-24 11:15:36 -0800",
+        "?"
+      ],
+      [
+        "jnardino",
+        "@VirginAmerica and it's a really big bad thing about it",
+        "?",
+        "2015-02-24 11:14:45 -0800",
+        "?"
+      ],
+      [
+        "jnardino",
+        "@VirginAmerica seriously would pay $30 a flight for seats that didn't have this playing.\nit's really the only bad thing about flying VA",
+        "?",
+        "2015-02-24 11:14:33 -0800",
+        "?"
+      ]
+    ]
+  },
+  "step3": {
+    "sample": 1464,
+    "used": [
+      "text"
+    ],
+    "language": "en",
+    "cloud": [
+      [
+        "@",
+        1619.0
+      ],
+      [
+        ".",
+        1489.0
+      ],
+      [
+        "to",
+        915.0
+      ],
+      [
+        "i",
+        670.0
+      ],
+      [
+        "the",
+        624.0
+      ],
+      [
+        "'",
+        529.0
+      ],
+      [
+        "you",
+        460.0
+      ],
+      [
+        "a",
+        458.0
+      ],
+      [
+        ",",
+        438.0
+      ],
+      [
+        "for",
+        409.0
+      ],
+      [
+        "united",
+        403.0
+      ],
+      [
+        "flight",
+        397.0
+      ],
+      [
+        "?",
+        391.0
+      ],
+      [
+        "on",
+        382.0
+      ],
+      [
+        "#",
+        381.0
+      ],
+      [
+        "and",
+        355.0
+      ],
+      [
+        "t",
+        343.0
+      ],
+      [
+        "!",
+        324.0
+      ],
+      [
+        "my",
+        312.0
+      ],
+      [
+        "usairways",
+        302.0
+      ],
+      [
+        "americanair",
+        291.0
+      ],
+      [
+        "is",
+        289.0
+      ],
+      [
+        "jetblue",
+        252.0
+      ],
+      [
+        "it",
+        249.0
+      ],
+      [
+        "in",
+        249.0
+      ]
+    ]
+  },
+  "step4": {
+    "tokens": 6035,
+    "types": 100,
+    "bigram_types": 2412,
+    "empty_docs": 0,
+    "top_tokens": [
+      [
+        "united",
+        403
+      ],
+      [
+        "flight",
+        397
+      ],
+      [
+        "usairways",
+        302
+      ],
+      [
+        "americanair",
+        291
+      ],
+      [
+        "jetblue",
+        252
+      ],
+      [
+        "southwestair",
+        243
+      ],
+      [
+        "get",
+        144
+      ],
+      [
+        "thanks",
+        123
+      ],
+      [
+        "cancelled",
+        119
+      ],
+      [
+        "service",
+        106
+      ],
+      [
+        "help",
+        93
+      ],
+      [
+        "2",
+        91
+      ],
+      [
+        "customer",
+        82
+      ],
+      [
+        "time",
+        80
+      ],
+      [
+        "amp",
+        74
+      ],
+      [
+        "hours",
+        70
+      ],
+      [
+        "us",
+        68
+      ],
+      [
+        "flights",
+        64
+      ],
+      [
+        "thank",
+        63
+      ],
+      [
+        "hold",
+        61
+      ],
+      [
+        "still",
+        60
+      ],
+      [
+        "virginamerica",
+        59
+      ],
+      [
+        "need",
+        59
+      ],
+      [
+        "plane",
+        58
+      ],
+      [
+        "one",
+        57
+      ],
+      [
+        "gate",
+        56
+      ],
+      [
+        "flightled",
+        55
+      ],
+      [
+        "delayed",
+        55
+      ],
+      [
+        "please",
+        55
+      ],
+      [
+        "hour",
+        55
+      ],
+      [
+        "would",
+        54
+      ],
+      [
+        "like",
+        54
+      ],
+      [
+        "phone",
+        52
+      ],
+      [
+        "late",
+        51
+      ],
+      [
+        "call",
+        50
+      ],
+      [
+        "today",
+        46
+      ],
+      [
+        "back",
+        46
+      ],
+      [
+        "got",
+        44
+      ],
+      [
+        "going",
+        43
+      ],
+      [
+        "3",
+        42
+      ],
+      [
+        "airline",
+        41
+      ],
+      [
+        "day",
+        40
+      ],
+      [
+        "last",
+        40
+      ],
+      [
+        "great",
+        38
+      ],
+      [
+        "ever",
+        38
+      ],
+      [
+        "go",
+        38
+      ],
+      [
+        "u",
+        38
+      ],
+      [
+        "4",
+        37
+      ],
+      [
+        "bags",
+        37
+      ],
+      [
+        "waiting",
+        36
+      ],
+      [
+        "never",
+        36
+      ],
+      [
+        "fly",
+        36
+      ],
+      [
+        "want",
+        35
+      ],
+      [
+        "minutes",
+        35
+      ],
+      [
+        "know",
+        35
+      ],
+      [
+        "change",
+        34
+      ],
+      [
+        "way",
+        34
+      ],
+      [
+        "weather",
+        34
+      ],
+      [
+        "guys",
+        34
+      ],
+      [
+        "1",
+        34
+      ],
+      [
+        "airport",
+        33
+      ],
+      [
+        "first",
+        33
+      ],
+      [
+        "two",
+        33
+      ],
+      [
+        "tomorrow",
+        32
+      ],
+      [
+        "another",
+        32
+      ],
+      [
+        "even",
+        32
+      ],
+      [
+        "ticket",
+        31
+      ],
+      [
+        "people",
+        31
+      ],
+      [
+        "delay",
+        31
+      ],
+      [
+        "flying",
+        30
+      ],
+      [
+        "trying",
+        30
+      ],
+      [
+        "best",
+        29
+      ],
+      [
+        "could",
+        29
+      ],
+      [
+        "bag",
+        29
+      ],
+      [
+        "wait",
+        29
+      ],
+      [
+        "email",
+        29
+      ],
+      [
+        "check",
+        29
+      ],
+      [
+        "good",
+        28
+      ],
+      [
+        "luggage",
+        28
+      ],
+      [
+        "new",
+        28
+      ],
+      [
+        "told",
+        28
+      ],
+      [
+        "yes",
+        27
+      ],
+      [
+        "days",
+        27
+      ],
+      [
+        "lost",
+        27
+      ],
+      [
+        "next",
+        27
+      ],
+      [
+        "w",
+        27
+      ],
+      [
+        "6",
+        27
+      ],
+      [
+        "make",
+        27
+      ],
+      [
+        "getting",
+        26
+      ],
+      [
+        "home",
+        26
+      ],
+      [
+        "5",
+        26
+      ],
+      [
+        "see",
+        26
+      ],
+      [
+        "times",
+        26
+      ],
+      [
+        "let",
+        26
+      ],
+      [
+        "dm",
+        25
+      ],
+      [
+        "work",
+        25
+      ],
+      [
+        "trip",
+        25
+      ],
+      [
+        "love",
+        25
+      ],
+      [
+        "system",
+        25
+      ],
+      [
+        "baggage",
+        24
+      ]
+    ],
+    "cloud": [
+      [
+        "united",
+        403.0
+      ],
+      [
+        "flight",
+        397.0
+      ],
+      [
+        "usairways",
+        302.0
+      ],
+      [
+        "americanair",
+        291.0
+      ],
+      [
+        "jetblue",
+        252.0
+      ],
+      [
+        "southwestair",
+        243.0
+      ],
+      [
+        "get",
+        144.0
+      ],
+      [
+        "thanks",
+        123.0
+      ],
+      [
+        "cancelled",
+        119.0
+      ],
+      [
+        "service",
+        106.0
+      ],
+      [
+        "help",
+        93.0
+      ],
+      [
+        "2",
+        91.0
+      ],
+      [
+        "customer",
+        82.0
+      ],
+      [
+        "time",
+        80.0
+      ],
+      [
+        "amp",
+        74.0
+      ],
+      [
+        "hours",
+        70.0
+      ],
+      [
+        "us",
+        68.0
+      ],
+      [
+        "flights",
+        64.0
+      ],
+      [
+        "thank",
+        63.0
+      ],
+      [
+        "hold",
+        61.0
+      ],
+      [
+        "still",
+        60.0
+      ],
+      [
+        "customer service",
+        60.0
+      ],
+      [
+        "virginamerica",
+        59.0
+      ],
+      [
+        "need",
+        59.0
+      ],
+      [
+        "plane",
+        58.0
+      ]
+    ]
+  },
+  "step5": {
+    "with_location": 982,
+    "located": 0,
+    "states": []
+  },
+  "step6": {
+    "rows": 1464,
+    "features": 2512
+  },
+  "step7": [
+    {
+      "size": 190,
+      "empty": 0,
+      "mean_tokens": 9.41,
+      "share": [
+        [
+          "americanair",
+          1.0
+        ],
+        [
+          "flight",
+          0.126
+        ],
+        [
+          "thanks",
+          0.1
+        ],
+        [
+          "get",
+          0.095
+        ],
+        [
+          "call",
+          0.089
+        ],
+        [
+          "amp",
+          0.079
+        ],
+        [
+          "2",
+          0.074
+        ],
+        [
+          "time",
+          0.074
+        ],
+        [
+          "americanair thanks",
+          0.063
+        ],
+        [
+          "thank",
+          0.058
+        ],
+        [
+          "want",
+          0.053
+        ],
+        [
+          "phone",
+          0.053
+        ]
+      ],
+      "examples": [
+        "@AmericanAir @yvonneokaka When do I get my personal response and apology for your crew's having forgotten to load baggage onto my flight?",
+        "@AmericanAir and btwn gate a8 &amp; a15 I lost a diamond earring #dayjustgotWORSE! Pls have maintenance look for it!! http://t.co/UieSR3GHHO",
+        "@AmericanAir the ticket is a poor gesture of goodwill (for missed trip) to a top status flyer - I may not next time (AA91 LHR-ORD 2/16)",
+        "@AmericanAir ahhhh your silence is golden now.  This tops it all.  Anyone get fired?"
+      ],
+      "cloud": [
+        [
+          "americanair",
+          1.822
+        ],
+        [
+          "call",
+          0.37
+        ],
+        [
+          "americanair thanks",
+          0.29
+        ],
+        [
+          "americanair thank",
+          0.263
+        ],
+        [
+          "amp",
+          0.261
+        ],
+        [
+          "thanks",
+          0.258
+        ],
+        [
+          "flight",
+          0.24
+        ],
+        [
+          "get",
+          0.23
+        ],
+        [
+          "2",
+          0.221
+        ],
+        [
+          "time",
+          0.22
+        ],
+        [
+          "got",
+          0.211
+        ],
+        [
+          "want",
+          0.199
+        ],
+        [
+          "email",
+          0.188
+        ],
+        [
+          "thank",
+          0.187
+        ],
+        [
+          "u",
+          0.187
+        ]
+      ]
+    },
+    {
+      "size": 144,
+      "empty": 0,
+      "mean_tokens": 7.9,
+      "share": [
+        [
+          "southwestair",
+          1.0
+        ],
+        [
+          "flight",
+          0.174
+        ],
+        [
+          "get",
+          0.132
+        ],
+        [
+          "southwestair flight",
+          0.069
+        ],
+        [
+          "best",
+          0.056
+        ],
+        [
+          "time",
+          0.056
+        ],
+        [
+          "hold",
+          0.056
+        ],
+        [
+          "gate",
+          0.049
+        ],
+        [
+          "amp",
+          0.049
+        ],
+        [
+          "help",
+          0.049
+        ],
+        [
+          "cancelled",
+          0.042
+        ],
+        [
+          "thanks",
+          0.042
+        ]
+      ],
+      "examples": [
+        "@SouthwestAir you're my early frontrunner for best airline! #oscars2016",
+        "@SouthwestAir I DM'd you",
+        "@SouthwestAir it was 3472",
+        "@SouthwestAir Ahhhh! Sorry, just followed."
+      ],
+      "cloud": [
+        [
+          "southwestair",
+          1.953
+        ],
+        [
+          "flight",
+          0.34
+        ],
+        [
+          "get",
+          0.32
+        ],
+        [
+          "southwestair flight",
+          0.31
+        ],
+        [
+          "best",
+          0.219
+        ],
+        [
+          "hold",
+          0.203
+        ],
+        [
+          "love",
+          0.201
+        ],
+        [
+          "southwestair best",
+          0.197
+        ],
+        [
+          "southwestair love",
+          0.197
+        ],
+        [
+          "southwestair great",
+          0.197
+        ],
+        [
+          "southwestair get",
+          0.191
+        ],
+        [
+          "southwestair know",
+          0.191
+        ],
+        [
+          "great",
+          0.183
+        ],
+        [
+          "thank",
+          0.18
+        ],
+        [
+          "time",
+          0.166
+        ]
+      ]
+    },
+    {
+      "size": 1130,
+      "empty": 0,
+      "mean_tokens": 10.58,
+      "share": [
+        [
+          "united",
+          0.336
+        ],
+        [
+          "usairways",
+          0.261
+        ],
+        [
+          "flight",
+          0.25
+        ],
+        [
+          "jetblue",
+          0.207
+        ],
+        [
+          "get",
+          0.093
+        ],
+        [
+          "americanair",
+          0.088
+        ],
+        [
+          "cancelled",
+          0.087
+        ],
+        [
+          "southwestair",
+          0.087
+        ],
+        [
+          "thanks",
+          0.084
+        ],
+        [
+          "service",
+          0.083
+        ],
+        [
+          "customer",
+          0.065
+        ],
+        [
+          "help",
+          0.064
+        ]
+      ],
+      "examples": [
+        "@USAirways how is it that my flt to EWR was Cancelled Flightled yet flts to NYC from USAirways are still flying?",
+        "@JetBlue what is going on with your BDL to DCA flights yesterday and today?! Why is every single one getting delayed?",
+        "@JetBlue do they have to depart from Washington, D.C.??",
+        "@JetBlue I can probably find some of them. Are the ticket #s on there?"
+      ],
+      "cloud": [
+        [
+          "united",
+          0.561
+        ],
+        [
+          "flight",
+          0.51
+        ],
+        [
+          "usairways",
+          0.47
+        ],
+        [
+          "jetblue",
+          0.439
+        ],
+        [
+          "service",
+          0.244
+        ],
+        [
+          "cancelled",
+          0.243
+        ],
+        [
+          "get",
+          0.23
+        ],
+        [
+          "thanks",
+          0.224
+        ],
+        [
+          "customer",
+          0.192
+        ],
+        [
+          "help",
+          0.192
+        ],
+        [
+          "2",
+          0.188
+        ],
+        [
+          "hours",
+          0.175
+        ],
+        [
+          "southwestair",
+          0.171
+        ],
+        [
+          "virginamerica",
+          0.171
+        ],
+        [
+          "customer service",
+          0.166
+        ]
+      ]
+    }
+  ],
+  "step8": [
+    {
+      "size": 1391,
+      "empty": 0,
+      "mean_tokens": 9.66,
+      "share": [
+        [
+          "united",
+          0.261
+        ],
+        [
+          "usairways",
+          0.204
+        ],
+        [
+          "flight",
+          0.197
+        ],
+        [
+          "americanair",
+          0.194
+        ],
+        [
+          "jetblue",
+          0.168
+        ],
+        [
+          "southwestair",
+          0.157
+        ],
+        [
+          "get",
+          0.086
+        ],
+        [
+          "thanks",
+          0.084
+        ],
+        [
+          "service",
+          0.069
+        ],
+        [
+          "customer",
+          0.056
+        ],
+        [
+          "time",
+          0.055
+        ],
+        [
+          "help",
+          0.054
+        ]
+      ],
+      "examples": [
+        "@SouthwestAir you're my early frontrunner for best airline! #oscars2016",
+        "@JetBlue what is going on with your BDL to DCA flights yesterday and today?! Why is every single one getting delayed?",
+        "@JetBlue do they have to depart from Washington, D.C.??",
+        "@JetBlue I can probably find some of them. Are the ticket #s on there?"
+      ],
+      "cloud": [
+        [
+          "united",
+          0.433
+        ],
+        [
+          "flight",
+          0.39
+        ],
+        [
+          "usairways",
+          0.367
+        ],
+        [
+          "jetblue",
+          0.357
+        ],
+        [
+          "americanair",
+          0.352
+        ],
+        [
+          "southwestair",
+          0.306
+        ],
+        [
+          "thanks",
+          0.223
+        ],
+        [
+          "get",
+          0.213
+        ],
+        [
+          "service",
+          0.204
+        ],
+        [
+          "time",
+          0.167
+        ],
+        [
+          "customer",
+          0.165
+        ],
+        [
+          "help",
+          0.16
+        ],
+        [
+          "2",
+          0.159
+        ],
+        [
+          "amp",
+          0.156
+        ],
+        [
+          "hours",
+          0.147
+        ]
+      ]
+    },
+    {
+      "size": 65,
+      "empty": 0,
+      "mean_tokens": 20.42,
+      "share": [
+        [
+          "cancelled",
+          0.969
+        ],
+        [
+          "cancelled flightled",
+          0.831
+        ],
+        [
+          "flightled",
+          0.831
+        ],
+        [
+          "flight",
+          0.785
+        ],
+        [
+          "southwestair",
+          0.338
+        ],
+        [
+          "flight cancelled",
+          0.338
+        ],
+        [
+          "get",
+          0.292
+        ],
+        [
+          "flight cancelled cancelled flightled",
+          0.292
+        ],
+        [
+          "americanair",
+          0.262
+        ],
+        [
+          "united",
+          0.246
+        ],
+        [
+          "usairways",
+          0.2
+        ],
+        [
+          "hold",
+          0.2
+        ]
+      ],
+      "examples": [
+        "@USAirways how is it that my flt to EWR was Cancelled Flightled yet flts to NYC from USAirways are still flying?",
+        "@SouthwestAir been on hold  for 2 1/2 hrs. Can't get 2 airport 4 flight icy country backroads! Help pls? Can a human answer? #BNA",
+        "@SouthwestAir I need to Cancelled Flight one leg of a flight, but can't seem to do this online. Been on hold on the phone for 10 minutes. Any help?",
+        "@AmericanAir Thanks for the response.Tough night for all involved. Our flight got Cancelled Flightled as we started taxiing down the runway."
+      ],
+      "cloud": [
+        [
+          "cancelled flightled",
+          2.823
+        ],
+        [
+          "flightled",
+          2.823
+        ],
+        [
+          "cancelled",
+          2.717
+        ],
+        [
+          "flight",
+          1.769
+        ],
+        [
+          "flight cancelled",
+          1.383
+        ],
+        [
+          "flightled flight",
+          0.829
+        ],
+        [
+          "2",
+          0.784
+        ],
+        [
+          "get",
+          0.709
+        ],
+        [
+          "southwestair",
+          0.691
+        ],
+        [
+          "hold",
+          0.65
+        ],
+        [
+          "help",
+          0.616
+        ],
+        [
+          "hold 2",
+          0.481
+        ],
+        [
+          "southwestair flight",
+          0.481
+        ],
+        [
+          "americanair",
+          0.471
+        ],
+        [
+          "cancelled flight",
+          0.454
+        ]
+      ]
+    },
+    {
+      "size": 8,
+      "empty": 0,
+      "mean_tokens": 15.12,
+      "share": [
+        [
+          "still",
+          1.0
+        ],
+        [
+          "flight",
+          0.75
+        ],
+        [
+          "flight still",
+          0.75
+        ],
+        [
+          "still get",
+          0.375
+        ],
+        [
+          "get",
+          0.375
+        ],
+        [
+          "united",
+          0.25
+        ],
+        [
+          "americanair flight",
+          0.25
+        ],
+        [
+          "americanair",
+          0.25
+        ],
+        [
+          "americanair flight flight still",
+          0.25
+        ],
+        [
+          "southwestair",
+          0.25
+        ],
+        [
+          "still ticket",
+          0.125
+        ],
+        [
+          "united flight",
+          0.125
+        ]
+      ],
+      "examples": [
+        "@united hey, I missed my outbound flight - can I still use my return ticket?",
+        "@AmericanAir I made my flight but then still had no update emails when I landed, no info ever sent on that or second flight. Losing my biz.",
+        "@SouthwestAir looks like you are up and running for the day. Still can't get through on the phone. Can you follow so I can dm you my info",
+        "@united time for a rant...you delayed my flight and still forgot my luggage...then delayed on the Tarmac, moments I love you United"
+      ],
+      "cloud": [
+        [
+          "flight still",
+          4.126
+        ],
+        [
+          "still",
+          3.235
+        ],
+        [
+          "still get",
+          2.322
+        ],
+        [
+          "flight",
+          1.691
+        ],
+        [
+          "americanair flight",
+          0.994
+        ],
+        [
+          "bags us",
+          0.911
+        ],
+        [
+          "delayed love",
+          0.911
+        ],
+        [
+          "get thanks",
+          0.911
+        ],
+        [
+          "hours people",
+          0.911
+        ],
+        [
+          "like day",
+          0.911
+        ],
+        [
+          "love united",
+          0.911
+        ],
+        [
+          "luggage delayed",
+          0.911
+        ],
+        [
+          "people please",
+          0.911
+        ],
+        [
+          "phone dm",
+          0.911
+        ],
+        [
+          "still ticket",
+          0.911
+        ]
+      ]
+    }
+  ],
+  "cross": [
+    [
+      189,
+      1,
+      0
+    ],
+    [
+      143,
+      0,
+      1
+    ],
+    [
+      1059,
+      64,
+      7
+    ]
+  ],
+  "step9": [
+    {
+      "metric": "Jaccard",
+      "linkage": "Single",
+      "picture": null,
+      "sizes": [
+        1,
+        1,
+        1462
+      ],
+      "empty": [
+        0,
+        0,
+        0
+      ],
+      "share": [
+        [
+          [
+            "days",
+            1.0
+          ],
+          [
+            "days work",
+            1.0
+          ],
+          [
+            "2",
+            1.0
+          ],
+          [
+            "days work work back",
+            1.0
+          ],
+          [
+            "work back",
+            1.0
+          ],
+          [
+            "back americanair getting",
+            1.0
+          ]
+        ],
+        [
+          [
+            "usairways",
+            1.0
+          ],
+          [
+            "help fly fly w",
+            1.0
+          ],
+          [
+            "even 2",
+            1.0
+          ],
+          [
+            "w",
+            1.0
+          ],
+          [
+            "w usairways help",
+            1.0
+          ],
+          [
+            "usairways help",
+            1.0
+          ]
+        ],
+        [
+          [
+            "united",
+            0.261
+          ],
+          [
+            "flight",
+            0.226
+          ],
+          [
+            "usairways",
+            0.203
+          ],
+          [
+            "americanair",
+            0.197
+          ],
+          [
+            "southwestair",
+            0.166
+          ],
+          [
+            "jetblue",
+            0.161
+          ]
+        ]
+      ]
+    },
+    {
+      "metric": "Jaccard",
+      "linkage": "Average",
+      "picture": null,
+      "sizes": [
+        45,
+        219,
+        1200
+      ],
+      "empty": [
+        0,
+        0,
+        0
+      ],
+      "share": [
+        [
+          [
+            "virginamerica",
+            0.956
+          ],
+          [
+            "help",
+            0.111
+          ],
+          [
+            "fly",
+            0.111
+          ],
+          [
+            "first",
+            0.089
+          ],
+          [
+            "airline",
+            0.089
+          ],
+          [
+            "guys",
+            0.067
+          ]
+        ],
+        [
+          [
+            "jetblue",
+            0.959
+          ],
+          [
+            "flight",
+            0.137
+          ],
+          [
+            "jetblue flight",
+            0.078
+          ],
+          [
+            "thank",
+            0.073
+          ],
+          [
+            "would",
+            0.073
+          ],
+          [
+            "jetblue thank",
+            0.068
+          ]
+        ],
+        [
+          [
+            "united",
+            0.317
+          ],
+          [
+            "flight",
+            0.249
+          ],
+          [
+            "usairways",
+            0.246
+          ],
+          [
+            "americanair",
+            0.237
+          ],
+          [
+            "southwestair",
+            0.2
+          ],
+          [
+            "get",
+            0.11
+          ]
+        ]
+      ]
+    },
+    {
+      "metric": "Jaccard",
+      "linkage": "Ward",
+      "picture": "exp_jaccard_ward",
+      "sizes": [
+        214,
+        192,
+        1058
+      ],
+      "empty": [
+        0,
+        0,
+        0
+      ],
+      "share": [
+        [
+          [
+            "jetblue",
+            0.963
+          ],
+          [
+            "flight",
+            0.14
+          ],
+          [
+            "thank",
+            0.075
+          ],
+          [
+            "jetblue flight",
+            0.075
+          ],
+          [
+            "jetblue thank",
+            0.07
+          ],
+          [
+            "new",
+            0.065
+          ]
+        ],
+        [
+          [
+            "southwestair",
+            0.938
+          ],
+          [
+            "flight",
+            0.151
+          ],
+          [
+            "thanks",
+            0.13
+          ],
+          [
+            "southwestair thanks",
+            0.099
+          ],
+          [
+            "get",
+            0.073
+          ],
+          [
+            "best",
+            0.062
+          ]
+        ],
+        [
+          [
+            "united",
+            0.353
+          ],
+          [
+            "usairways",
+            0.277
+          ],
+          [
+            "americanair",
+            0.271
+          ],
+          [
+            "flight",
+            0.257
+          ],
+          [
+            "get",
+            0.112
+          ],
+          [
+            "cancelled",
+            0.096
+          ]
+        ]
+      ]
+    },
+    {
+      "metric": "Cosine",
+      "linkage": "Complete",
+      "picture": "exp_cosine_complete",
+      "sizes": [
+        22,
+        12,
+        1430
+      ],
+      "empty": [
+        0,
+        0,
+        0
+      ],
+      "share": [
+        [
+          [
+            "americanair",
+            1.0
+          ],
+          [
+            "americanair united americanair",
+            0.045
+          ],
+          [
+            "united americanair",
+            0.045
+          ],
+          [
+            "united",
+            0.045
+          ],
+          [
+            "americanair americanair americanair",
+            0.045
+          ],
+          [
+            "americanair americanair",
+            0.045
+          ]
+        ],
+        [
+          [
+            "call",
+            1.0
+          ],
+          [
+            "americanair",
+            0.5
+          ],
+          [
+            "americanair call",
+            0.417
+          ],
+          [
+            "day",
+            0.25
+          ],
+          [
+            "united",
+            0.25
+          ],
+          [
+            "service",
+            0.25
+          ]
+        ],
+        [
+          [
+            "united",
+            0.264
+          ],
+          [
+            "flight",
+            0.23
+          ],
+          [
+            "usairways",
+            0.208
+          ],
+          [
+            "americanair",
+            0.183
+          ],
+          [
+            "southwestair",
+            0.168
+          ],
+          [
+            "jetblue",
+            0.164
+          ]
+        ]
+      ]
+    },
+    {
+      "metric": "Cosine",
+      "linkage": "Ward",
+      "picture": null,
+      "sizes": [
+        57,
+        31,
+        1376
+      ],
+      "empty": [
+        0,
+        0,
+        0
+      ],
+      "share": [
+        [
+          [
+            "jetblue",
+            1.0
+          ],
+          [
+            "jetblue flight",
+            0.211
+          ],
+          [
+            "flight",
+            0.211
+          ],
+          [
+            "flight jetblue flight",
+            0.14
+          ],
+          [
+            "jetblue jetblue",
+            0.035
+          ],
+          [
+            "flying",
+            0.035
+          ]
+        ],
+        [
+          [
+            "united",
+            1.0
+          ]
+        ],
+        [
+          [
+            "united",
+            0.254
+          ],
+          [
+            "flight",
+            0.232
+          ],
+          [
+            "usairways",
+            0.217
+          ],
+          [
+            "americanair",
+            0.21
+          ],
+          [
+            "southwestair",
+            0.176
+          ],
+          [
+            "jetblue",
+            0.129
+          ]
+        ]
+      ]
+    },
+    {
+      "metric": "Euclidean",
+      "linkage": "Complete",
+      "picture": null,
+      "sizes": [
+        1,
+        1,
+        1462
+      ],
+      "empty": [
+        0,
+        0,
+        0
+      ],
+      "share": [
+        [
+          [
+            "u us",
+            1.0
+          ],
+          [
+            "thank",
+            1.0
+          ],
+          [
+            "3",
+            1.0
+          ],
+          [
+            "would 3",
+            1.0
+          ],
+          [
+            "us",
+            1.0
+          ],
+          [
+            "3 southwestair thank",
+            1.0
+          ]
+        ],
+        [
+          [
+            "days",
+            1.0
+          ],
+          [
+            "usairways",
+            1.0
+          ],
+          [
+            "cancelled bags",
+            1.0
+          ],
+          [
+            "bags lost",
+            1.0
+          ],
+          [
+            "lost 4 4 days",
+            1.0
+          ],
+          [
+            "lost 4",
+            1.0
+          ]
+        ],
+        [
+          [
+            "united",
+            0.261
+          ],
+          [
+            "flight",
+            0.226
+          ],
+          [
+            "usairways",
+            0.203
+          ],
+          [
+            "americanair",
+            0.198
+          ],
+          [
+            "southwestair",
+            0.165
+          ],
+          [
+            "jetblue",
+            0.161
+          ]
+        ]
+      ]
+    },
+    {
+      "metric": "Euclidean",
+      "linkage": "Ward",
+      "picture": null,
+      "sizes": [
+        1329,
+        43,
+        92
+      ],
+      "empty": [
+        0,
+        0,
+        0
+      ],
+      "share": [
+        [
+          [
+            "united",
+            0.268
+          ],
+          [
+            "americanair",
+            0.2
+          ],
+          [
+            "flight",
+            0.199
+          ],
+          [
+            "usairways",
+            0.193
+          ],
+          [
+            "jetblue",
+            0.169
+          ],
+          [
+            "southwestair",
+            0.154
+          ]
+        ],
+        [
+          [
+            "cancelled",
+            0.93
+          ],
+          [
+            "flight",
+            0.837
+          ],
+          [
+            "cancelled flightled",
+            0.698
+          ],
+          [
+            "flightled",
+            0.698
+          ],
+          [
+            "southwestair",
+            0.419
+          ],
+          [
+            "flight cancelled cancelled flightled",
+            0.349
+          ]
+        ],
+        [
+          [
+            "2",
+            0.467
+          ],
+          [
+            "usairways",
+            0.359
+          ],
+          [
+            "hold",
+            0.337
+          ],
+          [
+            "flight",
+            0.326
+          ],
+          [
+            "hour",
+            0.25
+          ],
+          [
+            "help",
+            0.217
+          ]
+        ]
+      ]
+    }
+  ]
+}
