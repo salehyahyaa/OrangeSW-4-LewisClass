@@ -1,0 +1,458 @@
+{
+  "Logistic Regression": {
+    "tried": 20,
+    "default_ca": 0.9689213893967094,
+    "best": {
+      "settings": {
+        "penalty_type": 0,
+        "C_index": 66
+      },
+      "ca": 0.9725776965265083,
+      "auc": 0.993455497382199
+    },
+    "worst": {
+      "settings": {
+        "penalty_type": 0,
+        "C_index": 106
+      },
+      "ca": 0.6508226691042047,
+      "auc": 0.5034781457732808
+    },
+    "top5": [
+      {
+        "settings": {
+          "penalty_type": 0,
+          "C_index": 66
+        },
+        "ca": 0.9725776965265083,
+        "auc": 0.993455497382199
+      },
+      {
+        "settings": {
+          "penalty_type": 0,
+          "C_index": 61
+        },
+        "ca": 0.9707495429616088,
+        "auc": 0.9932201894229072
+      },
+      {
+        "settings": {
+          "penalty_type": 1,
+          "C_index": 66
+        },
+        "ca": 0.9689213893967094,
+        "auc": 0.9931907759279958
+      },
+      {
+        "settings": {
+          "penalty_type": 1,
+          "C_index": 61
+        },
+        "ca": 0.9689213893967094,
+        "auc": 0.9928966409788811
+      },
+      {
+        "settings": {
+          "penalty_type": 0,
+          "C_index": 57
+        },
+        "ca": 0.9689213893967094,
+        "auc": 0.992852520736514
+      }
+    ]
+  },
+  "kNN": {
+    "tried": 54,
+    "default_ca": 0.9689213893967094,
+    "best": {
+      "settings": {
+        "n_neighbors": 5,
+        "metric_index": 0,
+        "weight_index": 1
+      },
+      "ca": 0.9707495429616088,
+      "auc": 0.9839769986469793
+    },
+    "worst": {
+      "settings": {
+        "n_neighbors": 1,
+        "metric_index": 2,
+        "weight_index": 1
+      },
+      "ca": 0.9414990859232175,
+      "auc": 0.9320033531384198
+    },
+    "top5": [
+      {
+        "settings": {
+          "n_neighbors": 5,
+          "metric_index": 0,
+          "weight_index": 1
+        },
+        "ca": 0.9707495429616088,
+        "auc": 0.9839769986469793
+      },
+      {
+        "settings": {
+          "n_neighbors": 5,
+          "metric_index": 0,
+          "weight_index": 0
+        },
+        "ca": 0.9689213893967094,
+        "auc": 0.984212306606271
+      },
+      {
+        "settings": {
+          "n_neighbors": 11,
+          "metric_index": 0,
+          "weight_index": 0
+        },
+        "ca": 0.9670932358318098,
+        "auc": 0.987131595976234
+      },
+      {
+        "settings": {
+          "n_neighbors": 31,
+          "metric_index": 2,
+          "weight_index": 1
+        },
+        "ca": 0.9652650822669104,
+        "auc": 0.9908818165774457
+      },
+      {
+        "settings": {
+          "n_neighbors": 21,
+          "metric_index": 2,
+          "weight_index": 0
+        },
+        "ca": 0.9652650822669104,
+        "auc": 0.9908303429613506
+      }
+    ]
+  },
+  "SVM": {
+    "tried": 40,
+    "default_ca": 0.9707495429616088,
+    "best": {
+      "settings": {
+        "kernel_type": 0,
+        "C": 1.0,
+        "max_iter": 1000
+      },
+      "ca": 0.9744058500914077,
+      "auc": 0.9940290605329726
+    },
+    "worst": {
+      "settings": {
+        "kernel_type": 0,
+        "C": 10.0,
+        "max_iter": 100
+      },
+      "ca": 0.8190127970749543,
+      "auc": 0.8432260721218895
+    },
+    "top5": [
+      {
+        "settings": {
+          "kernel_type": 0,
+          "C": 1.0,
+          "max_iter": 1000
+        },
+        "ca": 0.9744058500914077,
+        "auc": 0.9940290605329726
+      },
+      {
+        "settings": {
+          "kernel_type": 0,
+          "C": 5.0,
+          "max_iter": 1000
+        },
+        "ca": 0.9744058500914077,
+        "auc": 0.993617271604212
+      },
+      {
+        "settings": {
+          "kernel_type": 0,
+          "C": 10.0,
+          "max_iter": 1000
+        },
+        "ca": 0.9725776965265083,
+        "auc": 0.9941025942702512
+      },
+      {
+        "settings": {
+          "kernel_type": 0,
+          "C": 0.5,
+          "max_iter": 1000
+        },
+        "ca": 0.9725776965265083,
+        "auc": 0.9934849108771104
+      },
+      {
+        "settings": {
+          "kernel_type": 0,
+          "C": 0.5,
+          "max_iter": 100
+        },
+        "ca": 0.9725776965265083,
+        "auc": 0.9934702041296547
+      }
+    ]
+  },
+  "Tree": {
+    "tried": 160,
+    "default_ca": 0.926873857404022,
+    "best": {
+      "settings": {
+        "min_leaf": 10,
+        "min_internal": 2,
+        "max_depth": 5,
+        "sufficient_majority": 100
+      },
+      "ca": 0.9488117001828154,
+      "auc": 0.9806679804694394
+    },
+    "worst": {
+      "settings": {
+        "min_leaf": 5,
+        "min_internal": 20,
+        "max_depth": 3,
+        "sufficient_majority": 95
+      },
+      "ca": 0.923217550274223,
+      "auc": 0.9302385434437319
+    },
+    "top5": [
+      {
+        "settings": {
+          "min_leaf": 10,
+          "min_internal": 2,
+          "max_depth": 5,
+          "sufficient_majority": 100
+        },
+        "ca": 0.9488117001828154,
+        "auc": 0.9806679804694394
+      },
+      {
+        "settings": {
+          "min_leaf": 10,
+          "min_internal": 2,
+          "max_depth": 7,
+          "sufficient_majority": 100
+        },
+        "ca": 0.9488117001828154,
+        "auc": 0.9806679804694394
+      },
+      {
+        "settings": {
+          "min_leaf": 10,
+          "min_internal": 2,
+          "max_depth": 100,
+          "sufficient_majority": 100
+        },
+        "ca": 0.9488117001828154,
+        "auc": 0.9806679804694394
+      },
+      {
+        "settings": {
+          "min_leaf": 10,
+          "min_internal": 5,
+          "max_depth": 5,
+          "sufficient_majority": 100
+        },
+        "ca": 0.9488117001828154,
+        "auc": 0.9806679804694394
+      },
+      {
+        "settings": {
+          "min_leaf": 10,
+          "min_internal": 5,
+          "max_depth": 7,
+          "sufficient_majority": 100
+        },
+        "ca": 0.9488117001828154,
+        "auc": 0.9806679804694394
+      }
+    ]
+  },
+  "Random Forest": {
+    "tried": 48,
+    "default_ca": 0.9634369287020109,
+    "best": {
+      "settings": {
+        "n_estimators": 200,
+        "use_max_features": true,
+        "max_features": 2,
+        "use_min_samples_split": true,
+        "min_samples_split": 10,
+        "use_random_state": true
+      },
+      "ca": 0.9725776965265083,
+      "auc": 0.9882051885405023
+    },
+    "worst": {
+      "settings": {
+        "n_estimators": 10,
+        "use_max_features": true,
+        "max_features": 5,
+        "use_min_samples_split": true,
+        "min_samples_split": 10,
+        "use_random_state": true
+      },
+      "ca": 0.9506398537477148,
+      "auc": 0.983381375375022
+    },
+    "top5": [
+      {
+        "settings": {
+          "n_estimators": 200,
+          "use_max_features": true,
+          "max_features": 2,
+          "use_min_samples_split": true,
+          "min_samples_split": 10,
+          "use_random_state": true
+        },
+        "ca": 0.9725776965265083,
+        "auc": 0.9882051885405023
+      },
+      {
+        "settings": {
+          "n_estimators": 200,
+          "use_max_features": true,
+          "max_features": 2,
+          "use_min_samples_split": true,
+          "min_samples_split": 5,
+          "use_random_state": true
+        },
+        "ca": 0.9707495429616088,
+        "auc": 0.9883522560150597
+      },
+      {
+        "settings": {
+          "n_estimators": 50,
+          "use_max_features": true,
+          "max_features": 2,
+          "use_min_samples_split": true,
+          "min_samples_split": 10,
+          "use_random_state": true
+        },
+        "ca": 0.9707495429616088,
+        "auc": 0.987896346843932
+      },
+      {
+        "settings": {
+          "n_estimators": 100,
+          "use_max_features": true,
+          "max_features": 2,
+          "use_min_samples_split": true,
+          "min_samples_split": 5,
+          "use_random_state": true
+        },
+        "ca": 0.9689213893967094,
+        "auc": 0.9882713689040532
+      },
+      {
+        "settings": {
+          "n_estimators": 100,
+          "use_max_features": true,
+          "max_features": 2,
+          "use_min_samples_split": true,
+          "min_samples_split": 10,
+          "use_random_state": true
+        },
+        "ca": 0.9689213893967094,
+        "auc": 0.9877051591270075
+      }
+    ]
+  },
+  "Neural Network": {
+    "tried": 240,
+    "default_ca": 0.9689213893967094,
+    "best": {
+      "settings": {
+        "hidden_layers_input": "100,50",
+        "activation_index": 2,
+        "solver_index": 2,
+        "alpha_index": 14,
+        "max_iterations": 200,
+        "replicable": true
+      },
+      "ca": 0.9762340036563071,
+      "auc": 0.991690687687511
+    },
+    "worst": {
+      "settings": {
+        "hidden_layers_input": "20,10",
+        "activation_index": 1,
+        "solver_index": 0,
+        "alpha_index": 1,
+        "max_iterations": 500,
+        "replicable": true
+      },
+      "ca": 0.9396709323583181,
+      "auc": 0.9702776633919642
+    },
+    "top5": [
+      {
+        "settings": {
+          "hidden_layers_input": "100,50",
+          "activation_index": 2,
+          "solver_index": 2,
+          "alpha_index": 14,
+          "max_iterations": 200,
+          "replicable": true
+        },
+        "ca": 0.9762340036563071,
+        "auc": 0.991690687687511
+      },
+      {
+        "settings": {
+          "hidden_layers_input": "100,50",
+          "activation_index": 2,
+          "solver_index": 2,
+          "alpha_index": 1,
+          "max_iterations": 200,
+          "replicable": true
+        },
+        "ca": 0.9762340036563071,
+        "auc": 0.9916318606976882
+      },
+      {
+        "settings": {
+          "hidden_layers_input": "100,50",
+          "activation_index": 2,
+          "solver_index": 2,
+          "alpha_index": 5,
+          "max_iterations": 200,
+          "replicable": true
+        },
+        "ca": 0.9762340036563071,
+        "auc": 0.9916318606976882
+      },
+      {
+        "settings": {
+          "hidden_layers_input": "100,50",
+          "activation_index": 2,
+          "solver_index": 2,
+          "alpha_index": 10,
+          "max_iterations": 200,
+          "replicable": true
+        },
+        "ca": 0.9762340036563071,
+        "auc": 0.9916318606976882
+      },
+      {
+        "settings": {
+          "hidden_layers_input": "20,10",
+          "activation_index": 1,
+          "solver_index": 2,
+          "alpha_index": 14,
+          "max_iterations": 500,
+          "replicable": true
+        },
+        "ca": 0.9762340036563071,
+        "auc": 0.9897493970233543
+      }
+    ]
+  }
+}

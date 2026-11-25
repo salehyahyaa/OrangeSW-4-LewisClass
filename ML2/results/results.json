@@ -1,0 +1,898 @@
+{
+  "orange_version": "3.40.0",
+  "as_saved": {
+    "dataset": "Breast Cancer Wisconsin",
+    "kmeans_k": 2,
+    "kmeans_optimize_k": false,
+    "hier_selection_method": 2,
+    "hier_top_n": 2,
+    "pivots": {
+      "k-Means Pivot Table": [
+        "type",
+        "Cluster",
+        "Clump thickness",
+        [
+          0
+        ]
+      ],
+      "Hierarchical Pivot Table": [
+        "type",
+        "Cluster",
+        "Clump thickness",
+        [
+          0
+        ]
+      ]
+    },
+    "box": [
+      "Clump thickness",
+      "Cluster"
+    ],
+    "scatter": [
+      "Clump thickness",
+      "Unif_Cell_Size",
+      "type",
+      "Cluster"
+    ],
+    "sampler_percent": 80,
+    "test_mode": 5,
+    "folds": 10
+  },
+  "rows": 683,
+  "features": 9,
+  "class_counts": {
+    "benign": 444,
+    "malign": 239
+  },
+  "kmeans": {
+    "counts": {
+      "benign": {
+        "C1": 9,
+        "C2": 435
+      },
+      "malign": {
+        "C1": 219,
+        "C2": 20
+      }
+    },
+    "home": {
+      "benign": "C2",
+      "malign": "C1"
+    },
+    "agree": 654,
+    "n": 683,
+    "agree_percent": 95.75402635431918,
+    "sizes": {
+      "C1": 228,
+      "C2": 455
+    }
+  },
+  "hierarchical": {
+    "counts": {
+      "benign": {
+        "C1": 422,
+        "C2": 22
+      },
+      "malign": {
+        "C1": 2,
+        "C2": 237
+      }
+    },
+    "home": {
+      "benign": "C1",
+      "malign": "C2"
+    },
+    "agree": 659,
+    "n": 683,
+    "agree_percent": 96.48609077598829,
+    "sizes": {
+      "C1": 424,
+      "C2": 259
+    }
+  },
+  "box": {
+    "C1": {
+      "n": 424,
+      "mean": 2.4050235849056603,
+      "sd": 1.6246241971447881,
+      "median": 2.34,
+      "q1": 0.8374999999999999,
+      "q3": 3.8099999999999996,
+      "min": 0.0,
+      "max": 7.96
+    },
+    "C2": {
+      "n": 259,
+      "mean": 6.507413127413128,
+      "sd": 2.5235760946340413,
+      "median": 6.84,
+      "q1": 4.545,
+      "q3": 9.08,
+      "min": 0.31,
+      "max": 10.0
+    }
+  },
+  "scatter": {
+    "cell_size_mean": {
+      "benign": 0.7961936936936936,
+      "malign": 6.098117154811715
+    },
+    "clump_mean": {
+      "benign": 2.483986486486486,
+      "malign": 6.704016736401672
+    },
+    "benign_small_cells_percent": 91.44144144144144
+  },
+  "train_rows": 547,
+  "test_rows": 136,
+  "train_class_counts": [
+    356,
+    191
+  ],
+  "test_class_counts": [
+    88,
+    48
+  ],
+  "tuned_settings": {
+    "Logistic Regression": {
+      "penalty_type": 0,
+      "C_index": 66
+    },
+    "kNN": {
+      "n_neighbors": 5,
+      "metric_index": 0,
+      "weight_index": 1
+    },
+    "SVM": {
+      "kernel_type": 0,
+      "C": 1.0,
+      "limit_iter": true,
+      "max_iter": 1000
+    },
+    "Tree": {
+      "limit_min_leaf": true,
+      "min_leaf": 10,
+      "limit_min_internal": true,
+      "min_internal": 2,
+      "limit_depth": true,
+      "max_depth": 5,
+      "limit_majority": true,
+      "sufficient_majority": 100
+    },
+    "Random Forest": {
+      "n_estimators": 200,
+      "use_max_features": true,
+      "max_features": 2,
+      "use_min_samples_split": true,
+      "min_samples_split": 10,
+      "use_random_state": true
+    },
+    "Neural Network": {
+      "hidden_layers_input": "100,50",
+      "activation_index": 2,
+      "solver_index": 2,
+      "alpha_index": 14,
+      "max_iterations": 200,
+      "replicable": true
+    }
+  },
+  "settings_text": {
+    "Logistic Regression": "Lasso (L1) regularization, C = 0.5",
+    "kNN": "5 neighbors, Euclidean distance, weight by distances",
+    "SVM": "linear kernel, cost C = 1.0, iteration limit 1000",
+    "Tree": "at least 10 samples in a leaf, maximum depth 5, stop splitting when majority reaches 100%",
+    "Random Forest": "200 trees, 2 features considered at each split, do not split subsets smaller than 10",
+    "Neural Network": "hidden layers 100,50, tanh activation, Adam solver, regularization alpha = 0.005"
+  },
+  "tuning": {
+    "Logistic Regression": {
+      "tried": 20,
+      "default_ca": 0.9689213893967094,
+      "best": {
+        "settings": {
+          "penalty_type": 0,
+          "C_index": 66
+        },
+        "ca": 0.9725776965265083,
+        "auc": 0.993455497382199
+      },
+      "worst": {
+        "settings": {
+          "penalty_type": 0,
+          "C_index": 106
+        },
+        "ca": 0.6508226691042047,
+        "auc": 0.5034781457732808
+      },
+      "top5": [
+        {
+          "settings": {
+            "penalty_type": 0,
+            "C_index": 66
+          },
+          "ca": 0.9725776965265083,
+          "auc": 0.993455497382199
+        },
+        {
+          "settings": {
+            "penalty_type": 0,
+            "C_index": 61
+          },
+          "ca": 0.9707495429616088,
+          "auc": 0.9932201894229072
+        },
+        {
+          "settings": {
+            "penalty_type": 1,
+            "C_index": 66
+          },
+          "ca": 0.9689213893967094,
+          "auc": 0.9931907759279958
+        },
+        {
+          "settings": {
+            "penalty_type": 1,
+            "C_index": 61
+          },
+          "ca": 0.9689213893967094,
+          "auc": 0.9928966409788811
+        },
+        {
+          "settings": {
+            "penalty_type": 0,
+            "C_index": 57
+          },
+          "ca": 0.9689213893967094,
+          "auc": 0.992852520736514
+        }
+      ]
+    },
+    "kNN": {
+      "tried": 54,
+      "default_ca": 0.9689213893967094,
+      "best": {
+        "settings": {
+          "n_neighbors": 5,
+          "metric_index": 0,
+          "weight_index": 1
+        },
+        "ca": 0.9707495429616088,
+        "auc": 0.9839769986469793
+      },
+      "worst": {
+        "settings": {
+          "n_neighbors": 1,
+          "metric_index": 2,
+          "weight_index": 1
+        },
+        "ca": 0.9414990859232175,
+        "auc": 0.9320033531384198
+      },
+      "top5": [
+        {
+          "settings": {
+            "n_neighbors": 5,
+            "metric_index": 0,
+            "weight_index": 1
+          },
+          "ca": 0.9707495429616088,
+          "auc": 0.9839769986469793
+        },
+        {
+          "settings": {
+            "n_neighbors": 5,
+            "metric_index": 0,
+            "weight_index": 0
+          },
+          "ca": 0.9689213893967094,
+          "auc": 0.984212306606271
+        },
+        {
+          "settings": {
+            "n_neighbors": 11,
+            "metric_index": 0,
+            "weight_index": 0
+          },
+          "ca": 0.9670932358318098,
+          "auc": 0.987131595976234
+        },
+        {
+          "settings": {
+            "n_neighbors": 31,
+            "metric_index": 2,
+            "weight_index": 1
+          },
+          "ca": 0.9652650822669104,
+          "auc": 0.9908818165774457
+        },
+        {
+          "settings": {
+            "n_neighbors": 21,
+            "metric_index": 2,
+            "weight_index": 0
+          },
+          "ca": 0.9652650822669104,
+          "auc": 0.9908303429613506
+        }
+      ]
+    },
+    "SVM": {
+      "tried": 40,
+      "default_ca": 0.9707495429616088,
+      "best": {
+        "settings": {
+          "kernel_type": 0,
+          "C": 1.0,
+          "max_iter": 1000
+        },
+        "ca": 0.9744058500914077,
+        "auc": 0.9940290605329726
+      },
+      "worst": {
+        "settings": {
+          "kernel_type": 0,
+          "C": 10.0,
+          "max_iter": 100
+        },
+        "ca": 0.8190127970749543,
+        "auc": 0.8432260721218895
+      },
+      "top5": [
+        {
+          "settings": {
+            "kernel_type": 0,
+            "C": 1.0,
+            "max_iter": 1000
+          },
+          "ca": 0.9744058500914077,
+          "auc": 0.9940290605329726
+        },
+        {
+          "settings": {
+            "kernel_type": 0,
+            "C": 5.0,
+            "max_iter": 1000
+          },
+          "ca": 0.9744058500914077,
+          "auc": 0.993617271604212
+        },
+        {
+          "settings": {
+            "kernel_type": 0,
+            "C": 10.0,
+            "max_iter": 1000
+          },
+          "ca": 0.9725776965265083,
+          "auc": 0.9941025942702512
+        },
+        {
+          "settings": {
+            "kernel_type": 0,
+            "C": 0.5,
+            "max_iter": 1000
+          },
+          "ca": 0.9725776965265083,
+          "auc": 0.9934849108771104
+        },
+        {
+          "settings": {
+            "kernel_type": 0,
+            "C": 0.5,
+            "max_iter": 100
+          },
+          "ca": 0.9725776965265083,
+          "auc": 0.9934702041296547
+        }
+      ]
+    },
+    "Tree": {
+      "tried": 160,
+      "default_ca": 0.926873857404022,
+      "best": {
+        "settings": {
+          "min_leaf": 10,
+          "min_internal": 2,
+          "max_depth": 5,
+          "sufficient_majority": 100
+        },
+        "ca": 0.9488117001828154,
+        "auc": 0.9806679804694394
+      },
+      "worst": {
+        "settings": {
+          "min_leaf": 5,
+          "min_internal": 20,
+          "max_depth": 3,
+          "sufficient_majority": 95
+        },
+        "ca": 0.923217550274223,
+        "auc": 0.9302385434437319
+      },
+      "top5": [
+        {
+          "settings": {
+            "min_leaf": 10,
+            "min_internal": 2,
+            "max_depth": 5,
+            "sufficient_majority": 100
+          },
+          "ca": 0.9488117001828154,
+          "auc": 0.9806679804694394
+        },
+        {
+          "settings": {
+            "min_leaf": 10,
+            "min_internal": 2,
+            "max_depth": 7,
+            "sufficient_majority": 100
+          },
+          "ca": 0.9488117001828154,
+          "auc": 0.9806679804694394
+        },
+        {
+          "settings": {
+            "min_leaf": 10,
+            "min_internal": 2,
+            "max_depth": 100,
+            "sufficient_majority": 100
+          },
+          "ca": 0.9488117001828154,
+          "auc": 0.9806679804694394
+        },
+        {
+          "settings": {
+            "min_leaf": 10,
+            "min_internal": 5,
+            "max_depth": 5,
+            "sufficient_majority": 100
+          },
+          "ca": 0.9488117001828154,
+          "auc": 0.9806679804694394
+        },
+        {
+          "settings": {
+            "min_leaf": 10,
+            "min_internal": 5,
+            "max_depth": 7,
+            "sufficient_majority": 100
+          },
+          "ca": 0.9488117001828154,
+          "auc": 0.9806679804694394
+        }
+      ]
+    },
+    "Random Forest": {
+      "tried": 48,
+      "default_ca": 0.9634369287020109,
+      "best": {
+        "settings": {
+          "n_estimators": 200,
+          "use_max_features": true,
+          "max_features": 2,
+          "use_min_samples_split": true,
+          "min_samples_split": 10,
+          "use_random_state": true
+        },
+        "ca": 0.9725776965265083,
+        "auc": 0.9882051885405023
+      },
+      "worst": {
+        "settings": {
+          "n_estimators": 10,
+          "use_max_features": true,
+          "max_features": 5,
+          "use_min_samples_split": true,
+          "min_samples_split": 10,
+          "use_random_state": true
+        },
+        "ca": 0.9506398537477148,
+        "auc": 0.983381375375022
+      },
+      "top5": [
+        {
+          "settings": {
+            "n_estimators": 200,
+            "use_max_features": true,
+            "max_features": 2,
+            "use_min_samples_split": true,
+            "min_samples_split": 10,
+            "use_random_state": true
+          },
+          "ca": 0.9725776965265083,
+          "auc": 0.9882051885405023
+        },
+        {
+          "settings": {
+            "n_estimators": 200,
+            "use_max_features": true,
+            "max_features": 2,
+            "use_min_samples_split": true,
+            "min_samples_split": 5,
+            "use_random_state": true
+          },
+          "ca": 0.9707495429616088,
+          "auc": 0.9883522560150597
+        },
+        {
+          "settings": {
+            "n_estimators": 50,
+            "use_max_features": true,
+            "max_features": 2,
+            "use_min_samples_split": true,
+            "min_samples_split": 10,
+            "use_random_state": true
+          },
+          "ca": 0.9707495429616088,
+          "auc": 0.987896346843932
+        },
+        {
+          "settings": {
+            "n_estimators": 100,
+            "use_max_features": true,
+            "max_features": 2,
+            "use_min_samples_split": true,
+            "min_samples_split": 5,
+            "use_random_state": true
+          },
+          "ca": 0.9689213893967094,
+          "auc": 0.9882713689040532
+        },
+        {
+          "settings": {
+            "n_estimators": 100,
+            "use_max_features": true,
+            "max_features": 2,
+            "use_min_samples_split": true,
+            "min_samples_split": 10,
+            "use_random_state": true
+          },
+          "ca": 0.9689213893967094,
+          "auc": 0.9877051591270075
+        }
+      ]
+    },
+    "Neural Network": {
+      "tried": 240,
+      "default_ca": 0.9689213893967094,
+      "best": {
+        "settings": {
+          "hidden_layers_input": "100,50",
+          "activation_index": 2,
+          "solver_index": 2,
+          "alpha_index": 14,
+          "max_iterations": 200,
+          "replicable": true
+        },
+        "ca": 0.9762340036563071,
+        "auc": 0.991690687687511
+      },
+      "worst": {
+        "settings": {
+          "hidden_layers_input": "20,10",
+          "activation_index": 1,
+          "solver_index": 0,
+          "alpha_index": 1,
+          "max_iterations": 500,
+          "replicable": true
+        },
+        "ca": 0.9396709323583181,
+        "auc": 0.9702776633919642
+      },
+      "top5": [
+        {
+          "settings": {
+            "hidden_layers_input": "100,50",
+            "activation_index": 2,
+            "solver_index": 2,
+            "alpha_index": 14,
+            "max_iterations": 200,
+            "replicable": true
+          },
+          "ca": 0.9762340036563071,
+          "auc": 0.991690687687511
+        },
+        {
+          "settings": {
+            "hidden_layers_input": "100,50",
+            "activation_index": 2,
+            "solver_index": 2,
+            "alpha_index": 1,
+            "max_iterations": 200,
+            "replicable": true
+          },
+          "ca": 0.9762340036563071,
+          "auc": 0.9916318606976882
+        },
+        {
+          "settings": {
+            "hidden_layers_input": "100,50",
+            "activation_index": 2,
+            "solver_index": 2,
+            "alpha_index": 5,
+            "max_iterations": 200,
+            "replicable": true
+          },
+          "ca": 0.9762340036563071,
+          "auc": 0.9916318606976882
+        },
+        {
+          "settings": {
+            "hidden_layers_input": "100,50",
+            "activation_index": 2,
+            "solver_index": 2,
+            "alpha_index": 10,
+            "max_iterations": 200,
+            "replicable": true
+          },
+          "ca": 0.9762340036563071,
+          "auc": 0.9916318606976882
+        },
+        {
+          "settings": {
+            "hidden_layers_input": "20,10",
+            "activation_index": 1,
+            "solver_index": 2,
+            "alpha_index": 14,
+            "max_iterations": 500,
+            "replicable": true
+          },
+          "ca": 0.9762340036563071,
+          "auc": 0.9897493970233543
+        }
+      ]
+    }
+  },
+  "cv_scores": [
+    {
+      "Model": "Neural Network",
+      "Train": "2.885",
+      "Test": "0.014",
+      "AUC": 0.991690687687511,
+      "CA": 0.9762340036563071,
+      "F1": 0.9763034925878662,
+      "Prec": 0.9765495644968091,
+      "Recall": 0.9762340036563071,
+      "MCC": 0.9482149408980821,
+      "Spec": 0.9775426890903249,
+      "LogLoss": 0.09404518162132947
+    },
+    {
+      "Model": "SVM",
+      "Train": "0.093",
+      "Test": "0.014",
+      "AUC": 0.9929701747161597,
+      "CA": 0.9744058500914077,
+      "F1": 0.974466162408601,
+      "Prec": 0.9746394830032855,
+      "Recall": 0.9744058500914077,
+      "MCC": 0.9440808630864961,
+      "Spec": 0.9741352405609836,
+      "LogLoss": 0.11279604420909649
+    },
+    {
+      "Model": "Logistic Regression",
+      "Train": "0.742",
+      "Test": "0.008",
+      "AUC": 0.993455497382199,
+      "CA": 0.9725776965265083,
+      "F1": 0.9725942115579965,
+      "Prec": 0.9726178214932497,
+      "Recall": 0.9725776965265083,
+      "MCC": 0.9397462676480526,
+      "Spec": 0.9683011787014463,
+      "LogLoss": 0.09779973454997917
+    },
+    {
+      "Model": "Random Forest",
+      "Train": "1.810",
+      "Test": "0.090",
+      "AUC": 0.9882051885405023,
+      "CA": 0.9725776965265083,
+      "F1": 0.9726882876681578,
+      "Prec": 0.9731419737888991,
+      "Recall": 0.9725776965265083,
+      "MCC": 0.940540314096765,
+      "Spec": 0.975581018692034,
+      "LogLoss": 0.11921815911461618
+    },
+    {
+      "Model": "kNN",
+      "Train": "0.020",
+      "Test": "0.017",
+      "AUC": 0.9839769986469793,
+      "CA": 0.9707495429616088,
+      "F1": 0.9708184713241155,
+      "Prec": 0.970999901987105,
+      "Recall": 0.9707495429616088,
+      "MCC": 0.9360740994834089,
+      "Spec": 0.9697469568324968,
+      "LogLoss": 0.5085444870422325
+    },
+    {
+      "Model": "Tree",
+      "Train": "0.041",
+      "Test": "0.001",
+      "AUC": 0.9806679804694394,
+      "CA": 0.9488117001828154,
+      "F1": 0.9489323248172021,
+      "Prec": 0.949162415890021,
+      "Recall": 0.9488117001828154,
+      "MCC": 0.8880335178648858,
+      "Spec": 0.9434172544615755,
+      "LogLoss": 0.4839369540254699
+    }
+  ],
+  "test_scores": [
+    {
+      "Model": "kNN",
+      "Train": "0.003",
+      "Test": "0.003",
+      "AUC": 0.9886363636363636,
+      "CA": 0.9852941176470589,
+      "F1": 0.9852202894067023,
+      "Prec": 0.9856209150326796,
+      "Recall": 0.9852941176470589,
+      "MCC": 0.9680067339833113,
+      "Spec": 0.9730392156862746,
+      "LogLoss": 0.30663160491824326
+    },
+    {
+      "Model": "Random Forest",
+      "Train": "0.190",
+      "Test": "0.010",
+      "AUC": 0.9969223484848486,
+      "CA": 0.9779411764705882,
+      "F1": 0.9778873904601985,
+      "Prec": 0.9779499655468212,
+      "Recall": 0.9779411764705882,
+      "MCC": 0.9515992789170127,
+      "Spec": 0.9690285204991087,
+      "LogLoss": 0.0803629881771091
+    },
+    {
+      "Model": "SVM",
+      "Train": "0.011",
+      "Test": "0.003",
+      "AUC": 0.9985795454545455,
+      "CA": 0.9705882352941176,
+      "F1": 0.9705882352941176,
+      "Prec": 0.9705882352941176,
+      "Recall": 0.9705882352941176,
+      "MCC": 0.9356060606060606,
+      "Spec": 0.965017825311943,
+      "LogLoss": 0.05938891930462783
+    },
+    {
+      "Model": "Logistic Regression",
+      "Train": "0.079",
+      "Test": "0.001",
+      "AUC": 0.9981060606060607,
+      "CA": 0.9632352941176471,
+      "F1": 0.9631456507669973,
+      "Prec": 0.9631702549535234,
+      "Recall": 0.9632352941176471,
+      "MCC": 0.9192449034338342,
+      "Spec": 0.9515374331550803,
+      "LogLoss": 0.06274653658404114
+    },
+    {
+      "Model": "Neural Network",
+      "Train": "0.301",
+      "Test": "0.002",
+      "AUC": 0.9976325757575758,
+      "CA": 0.9632352941176471,
+      "F1": 0.9631456507669973,
+      "Prec": 0.9631702549535234,
+      "Recall": 0.9632352941176471,
+      "MCC": 0.9192449034338342,
+      "Spec": 0.9515374331550803,
+      "LogLoss": 0.06415221280014091
+    },
+    {
+      "Model": "Tree",
+      "Train": "0.004",
+      "Test": "0.000",
+      "AUC": 0.978811553030303,
+      "CA": 0.9411764705882353,
+      "F1": 0.9416689466484269,
+      "Prec": 0.9438698556345614,
+      "Recall": 0.9411764705882353,
+      "MCC": 0.875355722690862,
+      "Spec": 0.9489750445632799,
+      "LogLoss": 0.3644100792067062
+    }
+  ],
+  "test_confusion": {
+    "Logistic Regression": {
+      "benign": {
+        "benign": 86,
+        "malign": 2
+      },
+      "malign": {
+        "benign": 3,
+        "malign": 45
+      }
+    },
+    "kNN": {
+      "benign": {
+        "benign": 88,
+        "malign": 0
+      },
+      "malign": {
+        "benign": 2,
+        "malign": 46
+      }
+    },
+    "SVM": {
+      "benign": {
+        "benign": 86,
+        "malign": 2
+      },
+      "malign": {
+        "benign": 2,
+        "malign": 46
+      }
+    },
+    "Tree": {
+      "benign": {
+        "benign": 82,
+        "malign": 6
+      },
+      "malign": {
+        "benign": 2,
+        "malign": 46
+      }
+    },
+    "Random Forest": {
+      "benign": {
+        "benign": 87,
+        "malign": 1
+      },
+      "malign": {
+        "benign": 2,
+        "malign": 46
+      }
+    },
+    "Neural Network": {
+      "benign": {
+        "benign": 86,
+        "malign": 2
+      },
+      "malign": {
+        "benign": 3,
+        "malign": 45
+      }
+    }
+  },
+  "checks": {
+    "widget_problems": {},
+    "dataset": true,
+    "two_clusters_each": true,
+    "clustering_on_whole_data": true,
+    "pivots_as_asked": true,
+    "box_plot_as_asked": true,
+    "scatter_as_asked": true,
+    "split_80_20": true,
+    "ten_folds": true,
+    "saved_as_test_on_test_data": true,
+    "six_models": true,
+    "my_cv_matches_widget": true,
+    "cv_matches_tuning": true
+  },
+  "comments": {
+    "kmeans": "Step 2, k-Means. This table comes from the k-Means widget. I set the number of clusters to 2 and left \"Normalize columns\" on. k-Means picks 2 center points, puts every sample with the center it is closest to, moves each center to the middle of its group, and repeats until nothing changes. It only looks at the 9 measurements. It never sees the type column.\n\nThe rows are the real label (type) and the columns are the cluster. Cluster C2 is mostly benign: 435 benign and only 20 malign. Cluster C1 is mostly malign: 219 malign and only 9 benign. So yes, the clusters match the labels closely. 654 of the 683 samples (95.8%) are in the cluster that goes with their type. The 29 samples that do not fit are 20 malign tumors that look like benign ones and 9 benign tumors that look like malign ones.",
+    "hierarchical": "Step 2, hierarchical clustering. This table comes from the Distances widget (normalized Euclidean distance between rows) followed by Hierarchical Clustering with Ward linkage. This method starts with every sample as its own cluster and keeps joining the two closest clusters until everything is one tree. I set Selection to \"Top N\" with N = 2, which cuts the tree into 2 clusters. Like k-Means, it does not use the type column.\n\nCluster C1 is almost all benign: 422 benign and 2 malign. Cluster C2 is mostly malign: 237 malign and 22 benign. So these clusters also correspond to the labels. 659 of 683 samples (96.5%) are in the matching cluster, which is a little better than k-Means (95.8%). The mistakes are different though. Hierarchical clustering puts only 2 malign tumors in the benign cluster, where k-Means put 20. But it puts 22 benign tumors in the malign cluster, where k-Means put 9. Missing a malign tumor is the worse mistake, so I would trust the hierarchical result more here.",
+    "box": "Step 3, box plot. This shows Clump thickness for each of the 2 hierarchical clusters. Each box holds the middle half of the samples in that cluster. The yellow line is the median and the dark blue line is the mean.\n\nCluster C1 (the mostly benign one, 424 samples) has thin clumps: the mean is 2.41 and the median is 2.34. Cluster C2 (the mostly malign one, 259 samples) has much thicker clumps: the mean is 6.51 and the median is 6.84. The two boxes do not overlap. The top of the first box is at 3.81 and the bottom of the second is at 4.54. The t-test under the plot gives p = 0.000, so the difference is not down to chance. The dotted lines, which run from the smallest to the largest value, do overlap though (0.00 to 7.96 against 0.31 to 10.00). Some samples in the malign cluster have thin clumps and a few in the benign cluster have thick ones. So Clump thickness separates the clusters well, but not perfectly on its own. Cluster C2 is also more spread out (standard deviation 2.52 against 1.62).",
+    "scatter": "Step 4, scatter plot. Each point is one sample. Clump thickness is on the x axis and Unif_Cell_Size is on the y axis. The color shows the real type and the shape shows the hierarchical cluster.\n\nThe benign points sit in the bottom left corner, with thin clumps and small, uniform cells. 91% of the benign samples have a cell size below 2. The malign points are spread over the rest of the plot, mostly higher up and further right. Cell size separates the two types even more clearly than clump thickness: the average cell size is 0.80 for benign and 6.10 for malign.\n\nColor and shape agree for almost every point. Nearly all blue (benign) points are circles, the shape for cluster C1, and nearly all red (malign) points are crosses, the shape for cluster C2. The 24 points where they disagree are mostly in the area where the two groups meet. Those are the samples the clustering got wrong.",
+    "cv": "Step 6, cross-validation. I split the data into 547 training samples (80%) and 136 test samples (20%). This table uses only the training sample, with stratified 10-fold cross-validation. I made 6 models that predict type and changed the settings of each one until the CA stopped going up. I sorted the table by CA. These are the settings I ended up with:\n- Logistic Regression: Lasso (L1) regularization, C = 0.5\n- kNN: 5 neighbors, Euclidean distance, weight by distances\n- SVM: linear kernel, cost C = 1.0, iteration limit 1000\n- Tree: at least 10 samples in a leaf, maximum depth 5, stop splitting when majority reaches 100%\n- Random Forest: 200 trees, 2 features considered at each split, do not split subsets smaller than 10\n- Neural Network: hidden layers 100,50, tanh activation, Adam solver, regularization alpha = 0.005\n\nNeural Network has the highest CA, 0.976. That means it gets about 534 of the 547 training samples right. SVM is next with 0.974. Tree is last with 0.949. The top 5 models are within 0.005 of each other, which is only about 3 samples, so they are close to a tie. The AUC is at least 0.981 for every model, so all of them rank malign above benign very well. Tuning helped the most for the Tree (CA from 0.927 with the default settings to 0.949) and the least for kNN (0.969 to 0.971). This data is easy to classify, so there was not much left to gain.",
+    "test": "Step 7, test on test data. I connected the 20% test sample (136 samples the models never saw) to the Test Data input and chose \"Test on test data\". Each model is now trained on all 547 training samples and scored on the test sample.\n\nkNN has the highest CA on the test data, 0.985, which is 134 of 136 right. Tree is last with 0.941. Every model scores between 0.941 and 0.985, so the test results are about the same as the cross-validation results. For example Neural Network got 0.976 in cross-validation and 0.963 here. That tells me the models did not overfit the training sample, and that cross-validation gave an honest estimate.\n\nThe order of the models changed, though. kNN was only number 5 in cross-validation and is first here, while Neural Network was first in cross-validation and is down at number 4 here. One test sample is worth about 0.7 percentage points, so these small gaps are just a few samples and do not mean much.\n\nkNN made 2 mistakes on the test data: 2 malign tumors called benign and 0 benign tumors called malign. Calling a malign tumor benign is the dangerous kind of mistake, and every model made only 2 or 3 of those out of 48 malign test samples. Overall, type can be predicted from these 9 measurements with about 94 to 99% accuracy."
+  },
+  "report_sections": [
+    "Pivot Table",
+    "Pivot Table",
+    "Box Plot - Clump thickness",
+    "Scatter Plot - Clump thickness vs Unif_Cell_Size",
+    "Test and Score",
+    "Test and Score"
+  ]
+}
