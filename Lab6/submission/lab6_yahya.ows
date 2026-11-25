@@ -52,11 +52,11 @@
 	<annotations>
 		<text id="0" type="text/markdown" rect="(-60, 20, 300, 60)" font-family="Helvetica" font-size="14">**Lab 6**  
 Text Mining and Clustering</text>
-		<text id="1" type="text/markdown" rect="(-60, 400, 250, 110)" font-family="Helvetica" font-size="14">**Step 2: Load the tweets**  
+		<text id="1" type="text/markdown" rect="(-60, 400, 230, 130)" font-family="Helvetica" font-size="14">**Step 2: Load the tweets**  
 Only the text columns are kept (name, text, tweet_coord, tweet_created, tweet_location).</text>
 		<text id="2" type="text/markdown" rect="(160, 20, 220, 70)" font-family="Helvetica" font-size="14">**Step 2: Data Table**  
 A look at the loaded tweets.</text>
-		<text id="3" type="text/markdown" rect="(160, 420, 240, 110)" font-family="Helvetica" font-size="14">**Step 3: Sample and corpus**  
+		<text id="3" type="text/markdown" rect="(210, 420, 240, 110)" font-family="Helvetica" font-size="14">**Step 3: Sample and corpus**  
 10% of the tweets, then a corpus that uses only the text column.</text>
 		<text id="4" type="text/markdown" rect="(520, 400, 240, 150)" font-family="Helvetica" font-size="14">**Step 4: Preprocess Text**  
 Lowercase, no accents, no URLs, stop words and RegExp filters, 100 most frequent tokens, n-grams 1 to 2.</text>
@@ -64,7 +64,7 @@ Lowercase, no accents, no URLs, stop words and RegExp filters, 100 most frequent
 The most common words.</text>
 		<text id="6" type="text/markdown" rect="(720, 550, 230, 90)" font-family="Helvetica" font-size="14">**Step 5: Document Map**  
 Tweets per US state, from tweet_location.</text>
-		<text id="7" type="text/markdown" rect="(900, 330, 230, 90)" font-family="Helvetica" font-size="14">**Step 6: Bag of Words**  
+		<text id="7" type="text/markdown" rect="(1010, 330, 250, 90)" font-family="Helvetica" font-size="14">**Step 6: Bag of Words**  
 Count for term frequency, Smooth IDF for document frequency.</text>
 		<text id="8" type="text/markdown" rect="(1010, 20, 300, 110)" font-family="Helvetica" font-size="14">**Step 7: Hierarchical clustering**  
 Jaccard distances, complete linkage, Top N = 3. One Select Rows and one Word Cloud for each cluster.</text>
@@ -78,12 +78,13 @@ k-Means clusters C1, C2 and C3.</text>
 		<arrow id="13" start="(250, 90)" end="(250, 115)" fill="#C1272D" />
 		<arrow id="14" start="(250, 420)" end="(250, 385)" fill="#C1272D" />
 		<arrow id="15" start="(630, 400)" end="(630, 365)" fill="#1F77B4" />
-		<arrow id="16" start="(820, 90)" end="(820, 115)" fill="#1F77B4" />
-		<arrow id="17" start="(820, 550)" end="(820, 520)" fill="#1F77B4" />
-		<arrow id="18" start="(1105, 130)" end="(1105, 195)" fill="#39B54A" />
-		<arrow id="19" start="(1200, 860)" end="(1200, 835)" fill="#39B54A" />
-		<arrow id="20" start="(1740, 230)" end="(1690, 230)" fill="#39B54A" />
-		<arrow id="21" start="(1740, 770)" end="(1690, 770)" fill="#39B54A" />
+		<arrow id="16" start="(1005, 352)" end="(880, 322)" fill="#1F77B4" />
+		<arrow id="17" start="(820, 90)" end="(820, 115)" fill="#1F77B4" />
+		<arrow id="18" start="(820, 550)" end="(820, 520)" fill="#1F77B4" />
+		<arrow id="19" start="(1105, 130)" end="(1105, 195)" fill="#39B54A" />
+		<arrow id="20" start="(1200, 860)" end="(1200, 835)" fill="#39B54A" />
+		<arrow id="21" start="(1740, 230)" end="(1690, 230)" fill="#39B54A" />
+		<arrow id="22" start="(1740, 770)" end="(1690, 770)" fill="#39B54A" />
 	</annotations>
 	<thumbnail />
 	<node_properties>

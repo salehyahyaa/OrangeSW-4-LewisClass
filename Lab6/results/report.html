@@ -1,0 +1,145 @@
+<!doctype html><html><head><meta charset="utf-8">
+<title>Lab 6 - Saleh Yahya</title>
+<style>
+@page { size: Letter; margin: 0.8in 0.85in; }
+body { font: 10.5pt/1.5 Helvetica, Arial, sans-serif; color: #0b0b0b; }
+h1 { font-size: 20pt; line-height: 1.2; margin: 0 0 4pt; }
+h2 { font-size: 13.5pt; margin: 20pt 0 6pt; padding-top: 8pt;
+      border-top: 1px solid #e1e0d9; break-after: avoid; }
+p { margin: 0 0 7pt; orphans: 3; widows: 3; }
+.meta { color: #52514e; margin-bottom: 12pt; }
+ul { margin: 0 0 7pt; padding-left: 16pt; }
+li { margin-bottom: 3pt; }
+table { border-collapse: collapse; width: 100%; margin: 6pt 0 12pt;
+         font-size: 9pt; break-inside: avoid; }
+caption { caption-side: top; text-align: left; color: #52514e;
+           font-size: 9pt; padding-bottom: 3pt; }
+th { text-align: left; color: #52514e; font-weight: 600;
+      border-bottom: 1.2px solid #898781; padding: 4pt 6pt; }
+td { border-bottom: 1px solid #e1e0d9; padding: 4pt 6pt; vertical-align: top;
+      overflow-wrap: anywhere; }
+td:first-child { white-space: nowrap; }
+.r { text-align: right; font-variant-numeric: tabular-nums; }
+figure { margin: 8pt 0 12pt; break-inside: avoid; text-align: center; }
+figcaption { color: #52514e; font-size: 9pt; margin-top: 3pt;
+              text-align: left; }
+.shot { border: 1px solid #e1e0d9; border-radius: 4px; }
+.q { background: #f4f3ef; border-radius: 6px; padding: 8pt 12pt;
+      margin: 8pt 0; }
+.q p:last-child, .q ul:last-child { margin-bottom: 0; }
+.row { break-inside: avoid; display: flex; gap: 10pt; align-items: flex-start; }
+.row figure { flex: 1; }
+.row .shot { width: 100% !important; }
+</style></head><body>
+
+<h1>Lab Exercise #6: Text Mining and Clustering</h1>
+<div class="meta">DATA-20000 Introduction to Data Science &middot; Saleh Yahya
+&middot; workflow file: lab6_yahya.ows</div>
+
+<h2>Step 1: Installing the Text add-on</h2>
+<p>I downloaded Tweets.csv and installed the Text add-on for Orange. After restarting Orange the Text Mining widgets (Corpus, Preprocess Text, Word Cloud, Bag of Words, Document Map) showed up in the widget list.</p>
+
+<h2>Step 2: Loading the tweets</h2>
+<p>I opened Tweets.csv with the File widget. The file has 14,640 tweets about airlines and 15 columns. I set every column to skip except the five text columns: name, text, tweet_coord, tweet_created and tweet_location. Then I connected the File widget to a Data Table.</p>
+<figure><img class="shot" style="width:52%" src="file.png" alt=""><figcaption><b>Figure 1.</b> The File widget. The five text columns are kept as meta and every other column is set to skip.</figcaption></figure>
+<figure><img class="shot" style="width:100%" src="data_table.png" alt=""><figcaption><b>Figure 2.</b> The Data Table with the first tweets.</figcaption></figure>
+<table><caption><b>Table 1.</b> A small sample of the data (first rows of the file).</caption><thead><tr><th class="l">name</th><th class="l">text</th><th class="l">tweet_coord</th><th class="l">tweet_created</th><th class="l">tweet_location</th></tr></thead><tbody><tr><td class="l">cairdin</td><td class="l">@VirginAmerica What @dhepburn said.</td><td class="l">(empty)</td><td class="l">2015-02-24 11:35:52 -0800</td><td class="l">(empty)</td></tr><tr><td class="l">jnardino</td><td class="l">@VirginAmerica plus you&#x27;ve added commercials to the experience... tacky.</td><td class="l">(empty)</td><td class="l">2015-02-24 11:15:59 -0800</td><td class="l">(empty)</td></tr><tr><td class="l">yvonnalynn</td><td class="l">@VirginAmerica I didn&#x27;t today... Must mean I need to take another trip!</td><td class="l">(empty)</td><td class="l">2015-02-24 11:15:48 -0800</td><td class="l">Lets Play</td></tr><tr><td class="l">jnardino</td><td class="l">@VirginAmerica it&#x27;s really aggressive to blast obnoxious &quot;entertainment&quot; in your guests&#x27; faces &amp;amp; they have little recourse</td><td class="l">(empty)</td><td class="l">2015-02-24 11:15:36 -0800</td><td class="l">(empty)</td></tr><tr><td class="l">jnardino</td><td class="l">@VirginAmerica and it&#x27;s a really big bad thing about it</td><td class="l">(empty)</td><td class="l">2015-02-24 11:14:45 -0800</td><td class="l">(empty)</td></tr></tbody></table>
+<p>Looking at the table, every tweet has a name, a text and a time. The other two columns are mostly empty. Only 1,019 tweets have coordinates and 9,907 have a location. The location is whatever the user typed in their profile, so it is not always a real place (for example "Lets Play").</p>
+
+<h2>Step 3: Sample, corpus and the first word cloud</h2>
+<p>I connected the File widget to a Data Sampler and set it to a fixed proportion of 10%. That gives 1,464 tweets. Then I connected it to the Corpus widget. When I opened the Corpus widget it had picked the name column as the text feature, so I moved name out and put text in. Now text is the only column under Used text features.</p>
+<figure><img class="shot" style="width:34%" src="data_sampler.png" alt=""><figcaption><b>Figure 3.</b> Data Sampler set to 10% of the data.</figcaption></figure>
+<figure><img class="shot" style="width:60%" src="corpus.png" alt=""><figcaption><b>Figure 4.</b> Corpus widget. Only text is under Used text features.</figcaption></figure>
+<p>Then I connected the Corpus to a Word Cloud.</p>
+<figure><img class="shot" style="width:88%" src="word_cloud_raw.png" alt=""><figcaption><b>Figure 5.</b> Word cloud straight from the Corpus widget, before any preprocessing.</figcaption></figure>
+<div class="q">
+<p><b>What I see.</b> The word cloud is mostly noise. The biggest things are not really words. The top one is the @ sign (1619 times) and then the period (1489). After that it is small common words like to (915), i (670), the (624), you, a and for. There are also pieces of links like http, t and co, and other symbols like # and ?.</p>
+<p>The only useful words I can find are the airline names (united, usairways, americanair, southwestair, jetblue) and flight. The airline names are there because every tweet starts with @ and the airline. So without cleaning the text, the word cloud does not tell me much about what people are saying.</p>
+</div>
+
+<h2>Step 4: Preprocess Text</h2>
+<p>I put a Preprocess Text widget between the Corpus and the Word Cloud. In Transformation I checked Lowercase, Remove accents and Remove urls. I left Tokenization the way it was. In Filtering I kept Stopwords, added Regexp with its default pattern, and checked Most frequent tokens with 100. Then I added N-grams Range and set it to 1 to 2.</p>
+<figure><img class="shot" style="width:70%" src="preprocess_text.png" alt=""><figcaption><b>Figure 6.</b> My Preprocess Text settings.</figcaption></figure>
+<p>After this the corpus has 6,035 tokens and 100 different words.</p>
+<figure><img class="shot" style="width:88%" src="word_cloud_preprocessed.png" alt=""><figcaption><b>Figure 7.</b> Word cloud after Preprocess Text.</figcaption></figure>
+<div class="q">
+<p><b>What I see.</b> This word cloud is a lot easier to read. The symbols, the links and the small words like "to" and "the" are gone. The biggest words are still the airline names: united (403), usairways (302), americanair (291), jetblue (252), southwestair (243), virginamerica (59). United is the airline people tweet at the most in my sample.</p>
+<p>The other big word is flight (397). After that the words are about problems and customer service: cancelled (119), service (106), help (93), customer (82), time (80), hours (70), hold (61). There are polite words too, like thanks (123) and thank. So most of these tweets look like people asking an airline for help or complaining about a flight.</p>
+<p>Because the n-grams range is 1 to 2, there are also two word phrases, like "customer service" (60), "cancelled flightled" and "united flight". A few things are still not clean. "amp" is left over from the &amp;amp; code for the &amp; sign, "flightled" is a strange word that is in the data itself ("Cancelled Flightled"), and "2" is used as a short way to write "to".</p>
+</div>
+
+<h2>Step 5: Document Map</h2>
+<p>I connected Preprocess Text to the Document Map widget. I picked tweet_location as the Region attribute and USA as the Map type.</p>
+<figure><img class="shot" style="width:88%" src="document_map.png" alt=""><figcaption><b>Figure 8.</b> Document Map with tweet_location as the region attribute and USA as the map type.</figcaption></figure>
+<table><caption><b>Table 2.</b> States with the most tweets in my sample.</caption><thead><tr><th class="l">State</th><th class="r">Tweets</th></tr></thead><tbody><tr><td class="l">Texas</td><td class="r">66</td></tr><tr><td class="l">New York</td><td class="r">65</td></tr><tr><td class="l">California</td><td class="r">53</td></tr><tr><td class="l">Washington</td><td class="r">38</td></tr><tr><td class="l">Massachusetts</td><td class="r">37</td></tr><tr><td class="l">Illinois</td><td class="r">26</td></tr><tr><td class="l">Ohio</td><td class="r">26</td></tr><tr><td class="l">Florida</td><td class="r">25</td></tr></tbody></table>
+<div class="q">
+<p><b>Describing the map.</b> The map colors each state by how many tweets came from there. Darker red means more tweets. The darkest states are Texas (66), New York (65) and California (53), then Washington, Massachusetts, Illinois, Ohio and Florida. These are states with a lot of people and big airports, so that makes sense. The states in the middle north, like Montana, Wyoming and the Dakotas, are white because no tweet in my sample matched them.</p>
+<p>The map only shows part of the data. Out of the 1,464 tweets in my sample, 982 have a location and only 505 of them could be matched to one of 41 states. The rest are empty, outside the US, or not a real place. Also the widget matches by name, so I would not trust every count. For example Washington is high, and some of those are probably Washington, D.C. and not the state.</p>
+</div>
+
+<h2>Step 6: Bag of Words</h2>
+<p>I connected Preprocess Text to the Bag of Words widget. I picked Count for Term Frequency and Smooth IDF for Document Frequency. The output is a table with one row for each of the 1,464 tweets and 2,512 columns, one for each word or two word phrase. Count means the number is how many times the word is in the tweet, and Smooth IDF makes words that are in a lot of tweets count less.</p>
+<figure><img class="shot" style="width:36%" src="bag_of_words.png" alt=""><figcaption><b>Figure 9.</b> Bag of Words settings.</figcaption></figure>
+
+<h2>Step 7: Hierarchical clustering</h2>
+<p>I connected Bag of Words to the Distances widget and picked Jaccard. Then I connected Distances to Hierarchical Clustering, set the linkage to Complete, and picked Top N with N = 3.</p>
+<figure><img class="shot" style="width:38%" src="distances.png" alt=""><figcaption><b>Figure 10.</b> Distances set to Jaccard.</figcaption></figure>
+<figure><img class="shot" style="width:88%" src="hierarchical_clustering.png" alt=""><figcaption><b>Figure 11.</b> Hierarchical Clustering with complete linkage and Top N = 3.</figcaption></figure>
+<figure><img class="shot" style="width:62%" src="select_hc_c1.png" alt=""><figcaption><b>Figure 12.</b> One of the Select Rows widgets. This one keeps the rows where Cluster is C1.</figcaption></figure>
+<p>I connected the Selected Data output to three Select Rows widgets. Each one has the condition "Cluster is" C1, C2 or C3. Then each Select Rows goes into its own Word Cloud. The word clouds here show the bag of words weights and not plain counts, so the numbers on the left are small.</p>
+<figure><img class="shot" style="width:80%" src="cloud_hc_c1.png" alt=""><figcaption><b>Figure 13.</b> Hierarchical clustering, cluster C1 (190 tweets).</figcaption></figure><figure><img class="shot" style="width:80%" src="cloud_hc_c2.png" alt=""><figcaption><b>Figure 14.</b> Hierarchical clustering, cluster C2 (144 tweets).</figcaption></figure><figure><img class="shot" style="width:80%" src="cloud_hc_c3.png" alt=""><figcaption><b>Figure 15.</b> Hierarchical clustering, cluster C3 (1130 tweets).</figcaption></figure>
+<table><caption><b>Table 3.</b> Hierarchical clusters. The percentage is the share of the tweets in the cluster that have the word.</caption><thead><tr><th class="l">Cluster</th><th class="r">Tweets</th><th class="l">Most common words</th></tr></thead><tbody><tr><td class="l">C1</td><td class="r">190</td><td class="l">americanair (100%), flight (13%), thanks (10%), get (10%), call (9%), amp (8%), time (7%)</td></tr><tr><td class="l">C2</td><td class="r">144</td><td class="l">southwestair (100%), flight (17%), get (13%), southwestair flight (7%), best (6%), time (6%), hold (6%)</td></tr><tr><td class="l">C3</td><td class="r">1130</td><td class="l">united (34%), usairways (26%), flight (25%), jetblue (21%), get (9%), americanair (9%), cancelled (9%)</td></tr></tbody></table>
+<div class="q">
+<p><b>Describing the word clouds.</b></p>
+<ul>
+<li><b>C1 (190 tweets)</b> is the American Airlines cluster. Every tweet in it has americanair. Most of the other things in the cloud are phrases that start with it, like "americanair thanks", "americanair call" and "americanair flight".</li>
+<li><b>C2 (144 tweets)</b> is the Southwest cluster. Every tweet has southwestair, and the cloud has "southwestair flight", "southwestair best" and "love".</li>
+<li><b>C3 (1,130 tweets)</b> is everything else. It has united (34% of the tweets), usairways (26%) and jetblue (21%), plus the general words like flight, cancelled, service and thanks.</li>
+</ul>
+<p><b>Compare and contrast.</b> What is the same is that all three clouds have the same everyday words: flight, get, thanks, help, time. What is different is the airline. C1 and C2 each have one airline name that is much bigger than everything else, and C3 is a mix of the other airlines. So the clustering split the tweets by which airline they were sent to, not by what the tweet is about. I think this is because Jaccard distance only looks at which words two tweets share. The tweets are short, so the airline name is usually the main word two tweets have in common. The clusters are also not even. C3 has 77% of the tweets.</p>
+</div>
+
+<h2>Step 8: k-Means</h2>
+<p>I connected Bag of Words to a k-Means widget and set the number of clusters to 3. The widget shows a warning that sparse data cannot be normalized, which is normal for bag of words data. Then I did the same thing as in step 7, with three Select Rows widgets and three Word Clouds.</p>
+<figure><img class="shot" style="width:40%" src="kmeans.png" alt=""><figcaption><b>Figure 16.</b> k-Means with 3 clusters.</figcaption></figure>
+<figure><img class="shot" style="width:80%" src="cloud_km_c1.png" alt=""><figcaption><b>Figure 17.</b> k-Means, cluster C1 (1391 tweets).</figcaption></figure><figure><img class="shot" style="width:80%" src="cloud_km_c2.png" alt=""><figcaption><b>Figure 18.</b> k-Means, cluster C2 (65 tweets).</figcaption></figure><figure><img class="shot" style="width:80%" src="cloud_km_c3.png" alt=""><figcaption><b>Figure 19.</b> k-Means, cluster C3 (8 tweets).</figcaption></figure>
+<table><caption><b>Table 4.</b> k-Means clusters.</caption><thead><tr><th class="l">Cluster</th><th class="r">Tweets</th><th class="l">Most common words</th></tr></thead><tbody><tr><td class="l">C1</td><td class="r">1391</td><td class="l">united (26%), usairways (20%), flight (20%), americanair (19%), jetblue (17%), southwestair (16%), get (9%)</td></tr><tr><td class="l">C2</td><td class="r">65</td><td class="l">cancelled (97%), flightled (83%), cancelled flightled (83%), flight (78%), southwestair (34%), flight cancelled (34%), get (29%)</td></tr><tr><td class="l">C3</td><td class="r">8</td><td class="l">still (100%), flight (75%), flight still (75%), get (38%), still get (38%), united (25%), americanair flight (25%)</td></tr></tbody></table>
+<div class="q">
+<p><b>Describing the word clouds.</b></p>
+<ul>
+<li><b>C1 (1,391 tweets)</b> has almost all the tweets. Its cloud looks like the word cloud from step 4. All the airline names are there at about the same size, with flight, thanks and service.</li>
+<li><b>C2 (65 tweets)</b> is about cancelled flights. 97% of the tweets have cancelled and 83% have "cancelled flightled". The airline names are small in this cloud, because the tweets are to different airlines.</li>
+<li><b>C3 (8 tweets)</b> is tiny. All 8 tweets have the word still, and most have "flight still". For example one says "I missed my outbound flight - can I still use my return ticket?".</li>
+</ul>
+<p><b>Compare and contrast.</b> C1 is a general cloud with no topic. C2 and C3 are small but they each have a clear topic, and the topic is a word or phrase, not an airline. The sizes are very uneven. 95% of the tweets are in C1, so k-Means mostly pulled out two small groups and left everything else together.</p>
+<p><b>Hierarchical clustering compared to k-Means.</b></p>
+<table><caption><b>Table 5.</b> The same tweets in both clusterings. Rows are the hierarchical clusters and columns are the k-Means clusters.</caption><thead><tr><th class="l"></th><th class="r">k-Means C1</th><th class="r">k-Means C2</th><th class="r">k-Means C3</th></tr></thead><tbody><tr><td class="l">Hierarchical C1</td><td class="r">189</td><td class="r">1</td><td class="r">0</td></tr><tr><td class="l">Hierarchical C2</td><td class="r">143</td><td class="r">0</td><td class="r">1</td></tr><tr><td class="l">Hierarchical C3</td><td class="r">1059</td><td class="r">64</td><td class="r">7</td></tr></tbody></table>
+<ul>
+<li>They found different things. Hierarchical clustering grouped the tweets by airline (American, Southwest, the rest). k-Means grouped by a repeated phrase (cancelled flights, "still") and ignored the airline.</li>
+<li>The two do not agree. Almost all of the tweets in the two small k-Means clusters (71 of 73) are inside hierarchical C3, and the American and Southwest tweets are all in k-Means C1.</li>
+<li>I think the reason is how each one measures distance. Jaccard only checks if a word is in the tweet or not. k-Means uses the real numbers in the table, so a tweet that repeats a rare phrase like "cancelled flightled" gets big values and ends up far from the others.</li>
+<li>Both have one big cluster, but hierarchical clustering is more balanced (190, 144, 1130) than k-Means (1391, 65, 8).</li>
+<li>For this data I think the hierarchical clusters are easier to explain, but the k-Means C2 cluster is the most interesting one because it is about a real topic.</li>
+</ul>
+</div>
+
+<h2>Step 9: Trying other settings</h2>
+<p>I changed the distance in the Distances widget and the linkage in Hierarchical Clustering, and looked at the three word clouds each time. I kept Top N = 3 the whole time.</p>
+<table><caption><b>Table 6.</b> What I tried in Hierarchical Clustering. The first row is the setting from step 7.</caption><thead><tr><th class="l">Distance</th><th class="l">Linkage</th><th class="l">Cluster sizes (C1, C2, C3)</th><th class="l">Top word in each cluster</th></tr></thead><tbody><tr><td class="l">Jaccard</td><td class="l">Complete</td><td class="l">190, 144, 1130</td><td class="l">americanair, southwestair, united</td></tr><tr><td class="l">Jaccard</td><td class="l">Single</td><td class="l">1, 1, 1462</td><td class="l">getting 2, help fly, united</td></tr><tr><td class="l">Jaccard</td><td class="l">Average</td><td class="l">45, 219, 1200</td><td class="l">virginamerica, jetblue, united</td></tr><tr><td class="l">Jaccard</td><td class="l">Ward</td><td class="l">214, 192, 1058</td><td class="l">jetblue, southwestair, united</td></tr><tr><td class="l">Cosine</td><td class="l">Complete</td><td class="l">22, 12, 1430</td><td class="l">americanair, call, united</td></tr><tr><td class="l">Cosine</td><td class="l">Ward</td><td class="l">57, 31, 1376</td><td class="l">jetblue, united, united</td></tr><tr><td class="l">Euclidean</td><td class="l">Complete</td><td class="l">1, 1, 1462</td><td class="l">us, 4 days, united</td></tr><tr><td class="l">Euclidean</td><td class="l">Ward</td><td class="l">1329, 43, 92</td><td class="l">united, cancelled, 2</td></tr></tbody></table>
+<figure><img class="shot" style="width:100%" src="exp_jaccard_ward.png" alt=""><figcaption><b>Figure 20.</b> Jaccard distance with Ward linkage.</figcaption></figure>
+<figure><img class="shot" style="width:100%" src="exp_cosine_complete.png" alt=""><figcaption><b>Figure 21.</b> Cosine distance with complete linkage.</figcaption></figure>
+<div class="q">
+<p><b>What I noticed.</b></p>
+<ul>
+<li><b>The linkage changes the result a lot.</b> With single linkage I get two clusters with just 1 tweet each and one cluster with the other 1,462, so the word clouds are useless. Average linkage is better (45, 219, 1200) and it finds a Virgin America cluster and a JetBlue cluster. Ward gives the most even clusters (214, 192, 1058), with a JetBlue cluster, a Southwest cluster and the rest.</li>
+<li><b>With Jaccard the clusters are always about airlines.</b> Which airlines get their own cluster changes with the linkage (American and Southwest with complete, JetBlue and Southwest with Ward), but it is always the airline name that decides.</li>
+<li><b>The distance matters too.</b> With Cosine and complete linkage the two small clusters only have 22 and 12 tweets. With Euclidean and complete linkage it is like single linkage, with two clusters of one tweet. Euclidean with Ward (1329, 43, 92) finds a "cancelled" cluster, which looks a lot like what k-Means found. That makes sense because k-Means also uses Euclidean distance.</li>
+<li><b>One big cluster every time.</b> No matter what I picked, one cluster had most of the tweets. I think tweets are too short and have too few words in common for the clustering to make three clear groups. Keeping only the 100 most frequent words probably adds to this.</li>
+</ul>
+<p>So the clusters depend a lot on the settings. Different settings gave me different stories about the same tweets, so I would not trust one clustering without checking the word clouds.</p>
+</div>
+
+<h2>The workflow</h2>
+<p>This is my whole workflow. I labelled each part with a text box and an arrow, and renamed the widgets so it is clear what each one does.</p>
+<figure><img class="shot" style="width:100%" src="canvas.png" alt=""><figcaption><b>Figure 22.</b> The finished Orange Canvas workflow.</figcaption></figure>
+</body></html>

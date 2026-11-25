@@ -96,7 +96,7 @@ def top_words(cloud, n=15):
 def describe_cluster(corpus, n=12, examples=4):
     """Share of the tweets in a cluster that contain each token."""
     docs = [set(tokens) for tokens in corpus.ngrams]
-    counts = Counter(t for d in docs for t in d)
+    counts = Counter(t for d in docs for t in d if t.count(" ") < 2)
     size = len(docs)
     texts = [str(t) for t in corpus.get_column(corpus.domain[bw.TEXT])]
     return {
@@ -190,7 +190,12 @@ def main():
     n_bigrams = len({t for d in ngram_docs for t in d if " " in t})
 
     # ---- Step 5 ----
+    # The Document Map does not remember its two settings: every time it
+    # gets data it goes back to the first text column. So they are set
+    # again here, the same way as when the workflow was built.
     docmap = W(bw.DOCMAP)
+    bw.set_map(docmap, bw.LOCATION, bw.USA_MAP)
+    pump(0.5)
     check("map: tweet_location on USA", docmap.selected_attr == bw.LOCATION
           and docmap.map_combo.itemData(docmap.selected_map) == "us_aea_en",
           (docmap.selected_attr, docmap.selected_map))
@@ -245,8 +250,13 @@ def main():
 
     # ---- pictures ----
     keep = render_canvas(scheme, os.path.join(oh.RESULTS, "canvas.png"))
-    grab(W(bw.FILE), "file", (620, 700))
-    grab(W(bw.TABLE), "data_table", (1500, 520))
+    grab(W(bw.FILE), "file", (620, 900))
+    table = W(bw.TABLE)
+    table.show()
+    pump(0.3)
+    for column, width in enumerate((130, 620, 210, 200, 190)):
+        table.view.horizontalHeader().resizeSection(column, width)
+    grab(table, "data_table", (1680, 520))
     grab(W(bw.SAMPLER), "data_sampler", (300, 520))
     grab(corpus_widget, "corpus", (560, 420))
     grab(pre, "preprocess_text", (900, 900))

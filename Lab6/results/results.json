@@ -686,8 +686,630 @@
   },
   "step5": {
     "with_location": 982,
-    "located": 0,
-    "states": []
+    "located": 505,
+    "states": [
+      [
+        [
+          "TX",
+          "Texas",
+          "Houston",
+          "San Antonio",
+          "Dallas",
+          "Austin",
+          "Fort Worth",
+          "El Paso",
+          "Arlington",
+          "Corpus Christi",
+          "Plano",
+          "Laredo",
+          "Lubbock",
+          "Garland",
+          "Irving",
+          "Amarillo",
+          "Grand Prairie",
+          "Brownsville",
+          "McKinney",
+          "Pasadena",
+          "Frisco",
+          "Mesquite",
+          "McAllen",
+          "Killeen",
+          "Waco",
+          "Carrollton",
+          "Denton",
+          "Midland",
+          "Abilene",
+          "Beaumont",
+          "Odessa",
+          "Round Rock",
+          "Richardson",
+          "Wichita Falls",
+          "College Station",
+          "Pearland",
+          "Lewisville",
+          "Tyler"
+        ],
+        "US-TX",
+        66
+      ],
+      [
+        [
+          "NY",
+          "New York",
+          "New York City",
+          "Buffalo",
+          "Rochester",
+          "Yonkers",
+          "Syracuse"
+        ],
+        "US-NY",
+        65
+      ],
+      [
+        [
+          "CA",
+          "California",
+          "Los Angeles",
+          "San Diego",
+          "San Jose",
+          "San Francisco",
+          "Fresno",
+          "Sacramento",
+          "Long Beach",
+          "Oakland",
+          "Bakersfield",
+          "Anaheim",
+          "Santa Ana",
+          "Riverside",
+          "Stockton",
+          "Chula Vista",
+          "Irvine",
+          "Fremont",
+          "San Bernardino",
+          "Modesto",
+          "Oxnard",
+          "Fontana",
+          "Moreno Valley",
+          "Huntington Beach",
+          "Glendale",
+          "Santa Clarita",
+          "Garden Grove",
+          "Oceanside",
+          "Rancho Cucamonga",
+          "Santa Rosa",
+          "Ontario",
+          "Elk Grove",
+          "Corona",
+          "Lancaster",
+          "Palmdale",
+          "Salinas",
+          "Hayward",
+          "Pomona",
+          "Escondido",
+          "Sunnyvale",
+          "Torrance",
+          "Pasadena",
+          "Orange",
+          "Fullerton",
+          "Thousand Oaks",
+          "Visalia",
+          "Roseville",
+          "Concord",
+          "Simi Valley",
+          "Santa Clara",
+          "Victorville",
+          "Vallejo",
+          "Berkeley",
+          "El Monte",
+          "Downey",
+          "Costa Mesa",
+          "Carlsbad",
+          "Inglewood",
+          "Fairfield",
+          "Ventura",
+          "Temecula",
+          "Antioch",
+          "Richmond",
+          "West Covina",
+          "Murrieta",
+          "Norwalk",
+          "Daly City",
+          "Burbank",
+          "Santa Maria",
+          "El Cajon",
+          "San Mateo",
+          "Rialto",
+          "Clovis",
+          "East Los Angeles"
+        ],
+        "US-CA",
+        53
+      ],
+      [
+        [
+          "WA",
+          "Washington",
+          "Seattle",
+          "Spokane",
+          "Tacoma",
+          "Vancouver",
+          "Bellevue",
+          "Kent",
+          "Everett"
+        ],
+        "US-WA",
+        38
+      ],
+      [
+        [
+          "MA",
+          "Massachusetts",
+          "Boston",
+          "Worcester",
+          "Springfield",
+          "Lowell",
+          "Cambridge"
+        ],
+        "US-MA",
+        37
+      ],
+      [
+        [
+          "IL",
+          "Illinois",
+          "Chicago",
+          "Aurora",
+          "Rockford",
+          "Joliet",
+          "Naperville",
+          "Springfield",
+          "Peoria",
+          "Elgin"
+        ],
+        "US-IL",
+        26
+      ],
+      [
+        [
+          "OH",
+          "Ohio",
+          "Columbus",
+          "Cleveland",
+          "Cincinnati",
+          "Toledo",
+          "Akron",
+          "Dayton"
+        ],
+        "US-OH",
+        26
+      ],
+      [
+        [
+          "FL",
+          "Florida",
+          "Jacksonville",
+          "Miami",
+          "Tampa",
+          "Orlando",
+          "St. Petersburg",
+          "Hialeah",
+          "Tallahassee",
+          "Fort Lauderdale",
+          "Port St. Lucie",
+          "Cape Coral",
+          "Pembroke Pines",
+          "Hollywood",
+          "Miramar",
+          "Gainesville",
+          "Coral Springs",
+          "Miami Gardens",
+          "Clearwater",
+          "Pompano Beach",
+          "Palm Bay",
+          "West Palm Beach",
+          "Lakeland",
+          "Brandon"
+        ],
+        "US-FL",
+        25
+      ],
+      [
+        [
+          "TN",
+          "Tennessee",
+          "Memphis",
+          "Nashville",
+          "Knoxville",
+          "Chattanooga",
+          "Clarksville",
+          "Murfreesboro"
+        ],
+        "US-TN",
+        14
+      ],
+      [
+        [
+          "CO",
+          "Colorado",
+          "Denver",
+          "Colorado Springs",
+          "Aurora",
+          "Fort Collins",
+          "Lakewood",
+          "Thornton",
+          "Arvada",
+          "Westminster",
+          "Pueblo",
+          "Centennial",
+          "Boulder"
+        ],
+        "US-CO",
+        13
+      ],
+      [
+        [
+          "NJ",
+          "New Jersey",
+          "Newark",
+          "Jersey City",
+          "Paterson",
+          "Elizabeth"
+        ],
+        "US-NJ",
+        12
+      ],
+      [
+        [
+          "AZ",
+          "Arizona",
+          "Phoenix",
+          "Tucson",
+          "Mesa",
+          "Chandler",
+          "Gilbert",
+          "Glendale",
+          "Scottsdale",
+          "Tempe",
+          "Peoria",
+          "Surprise"
+        ],
+        "US-AZ",
+        12
+      ],
+      [
+        [
+          "GA",
+          "Georgia",
+          "Atlanta",
+          "Columbus",
+          "Augusta",
+          "Macon",
+          "Savannah",
+          "Athens",
+          "Sandy Springs"
+        ],
+        "US-GA",
+        11
+      ],
+      [
+        [
+          "NV",
+          "Nevada",
+          "Las Vegas",
+          "Henderson",
+          "Reno",
+          "North Las Vegas",
+          "Paradise",
+          "Sunrise Manor",
+          "Spring Valley",
+          "Enterprise"
+        ],
+        "US-NV",
+        9
+      ],
+      [
+        [
+          "VA",
+          "Virginia",
+          "Virginia Beach",
+          "Norfolk",
+          "Chesapeake",
+          "Richmond",
+          "Newport News",
+          "Alexandria",
+          "Hampton",
+          "Arlington County"
+        ],
+        "US-VA",
+        9
+      ],
+      [
+        [
+          "CT",
+          "Connecticut",
+          "Bridgeport",
+          "New Haven",
+          "Stamford",
+          "Hartford",
+          "Waterbury"
+        ],
+        "US-CT",
+        8
+      ],
+      [
+        [
+          "OR",
+          "Oregon",
+          "Portland",
+          "Salem",
+          "Eugene",
+          "Gresham"
+        ],
+        "US-OR",
+        8
+      ],
+      [
+        [
+          "PA",
+          "Pennsylvania",
+          "Philadelphia",
+          "Pittsburgh",
+          "Allentown"
+        ],
+        "US-PA",
+        8
+      ],
+      [
+        [
+          "AR",
+          "Arkansas",
+          "Little Rock"
+        ],
+        "US-AR",
+        7
+      ],
+      [
+        [
+          "NC",
+          "North Carolina",
+          "N. Carolina",
+          "Charlotte",
+          "Raleigh",
+          "Greensboro",
+          "Durham",
+          "Winston\u2013Salem",
+          "Fayetteville",
+          "Cary",
+          "Wilmington",
+          "High Point"
+        ],
+        "US-NC",
+        7
+      ],
+      [
+        [
+          "KY",
+          "Kentucky",
+          "Louisville",
+          "Lexington"
+        ],
+        "US-KY",
+        6
+      ],
+      [
+        [
+          "MI",
+          "Michigan",
+          "Detroit",
+          "Grand Rapids",
+          "Warren",
+          "Sterling Heights",
+          "Ann Arbor",
+          "Lansing"
+        ],
+        "US-MI",
+        6
+      ],
+      [
+        [
+          "MO",
+          "Missouri",
+          "Kansas City",
+          "St. Louis",
+          "Springfield",
+          "Independence",
+          "Columbia"
+        ],
+        "US-MO",
+        6
+      ],
+      [
+        [
+          "WI",
+          "Wisconsin",
+          "Milwaukee",
+          "Madison",
+          "Green Bay"
+        ],
+        "US-WI",
+        5
+      ],
+      [
+        [
+          "ME",
+          "Maine"
+        ],
+        "US-ME",
+        5
+      ],
+      [
+        [
+          "IN",
+          "Indiana",
+          "Indianapolis",
+          "Fort Wayne",
+          "Evansville",
+          "South Bend"
+        ],
+        "US-IN",
+        5
+      ],
+      [
+        [
+          "MN",
+          "Minnesota",
+          "Minneapolis",
+          "St. Paul",
+          "Rochester"
+        ],
+        "US-MN",
+        5
+      ],
+      [
+        [
+          "MD",
+          "Maryland",
+          "Baltimore"
+        ],
+        "US-MD",
+        4
+      ],
+      [
+        [
+          "UT",
+          "Utah",
+          "Salt Lake City",
+          "West Valley City",
+          "Provo",
+          "West Jordan"
+        ],
+        "US-UT",
+        4
+      ],
+      [
+        [
+          "NE",
+          "Nebraska",
+          "Omaha",
+          "Lincoln"
+        ],
+        "US-NE",
+        3
+      ],
+      [
+        [
+          "OK",
+          "Oklahoma",
+          "Oklahoma City",
+          "Tulsa",
+          "Norman",
+          "Broken Arrow"
+        ],
+        "US-OK",
+        3
+      ],
+      [
+        [
+          "AL",
+          "Alabama",
+          "Birmingham",
+          "Montgomery",
+          "Mobile",
+          "Huntsville"
+        ],
+        "US-AL",
+        3
+      ],
+      [
+        [
+          "DC",
+          "District of Columbia",
+          "Washington"
+        ],
+        "US-DC",
+        3
+      ],
+      [
+        [
+          "SC",
+          "South Carolina",
+          "S. Carolina",
+          "Columbia",
+          "Charleston",
+          "North Charleston"
+        ],
+        "US-SC",
+        2
+      ],
+      [
+        [
+          "RI",
+          "Rhode Island",
+          "Providence"
+        ],
+        "US-RI",
+        2
+      ],
+      [
+        [
+          "VT",
+          "Vermont"
+        ],
+        "US-VT",
+        2
+      ],
+      [
+        [
+          "LA",
+          "Louisiana",
+          "New Orleans",
+          "Baton Rouge",
+          "Shreveport",
+          "Lafayette",
+          "Metairie"
+        ],
+        "US-LA",
+        2
+      ],
+      [
+        [
+          "NH",
+          "New Hampshire",
+          "Manchester"
+        ],
+        "US-NH",
+        1
+      ],
+      [
+        [
+          "NM",
+          "New Mexico",
+          "Albuquerque",
+          "Las Cruces"
+        ],
+        "US-NM",
+        1
+      ],
+      [
+        [
+          "IA",
+          "Iowa",
+          "Des Moines",
+          "Cedar Rapids",
+          "Davenport"
+        ],
+        "US-IA",
+        1
+      ],
+      [
+        [
+          "DE",
+          "Delaware"
+        ],
+        "US-DE",
+        1
+      ]
+    ]
   },
   "step6": {
     "rows": 1464,
@@ -724,11 +1346,11 @@
           0.079
         ],
         [
-          "2",
+          "time",
           0.074
         ],
         [
-          "time",
+          "2",
           0.074
         ],
         [
@@ -1198,11 +1820,11 @@
           0.969
         ],
         [
-          "cancelled flightled",
+          "flightled",
           0.831
         ],
         [
-          "flightled",
+          "cancelled flightled",
           0.831
         ],
         [
@@ -1222,10 +1844,6 @@
           0.292
         ],
         [
-          "flight cancelled cancelled flightled",
-          0.292
-        ],
-        [
           "americanair",
           0.262
         ],
@@ -1239,6 +1857,10 @@
         ],
         [
           "hold",
+          0.2
+        ],
+        [
+          "help",
           0.2
         ]
       ],
@@ -1329,11 +1951,11 @@
           0.75
         ],
         [
-          "still get",
+          "get",
           0.375
         ],
         [
-          "get",
+          "still get",
           0.375
         ],
         [
@@ -1349,10 +1971,6 @@
           0.25
         ],
         [
-          "americanair flight flight still",
-          0.25
-        ],
-        [
           "southwestair",
           0.25
         ],
@@ -1362,6 +1980,10 @@
         ],
         [
           "united flight",
+          0.125
+        ],
+        [
+          "ticket",
           0.125
         ]
       ],
@@ -1470,19 +2092,19 @@
       "share": [
         [
           [
-            "days",
+            "getting 2",
             1.0
           ],
           [
-            "days work",
+            "getting",
             1.0
           ],
           [
-            "2",
+            "back",
             1.0
           ],
           [
-            "days work work back",
+            "americanair getting",
             1.0
           ],
           [
@@ -1490,21 +2112,21 @@
             1.0
           ],
           [
-            "back americanair getting",
+            "work",
             1.0
           ]
         ],
         [
           [
-            "usairways",
+            "help fly",
             1.0
           ],
           [
-            "help fly fly w",
+            "2 fly",
             1.0
           ],
           [
-            "even 2",
+            "u",
             1.0
           ],
           [
@@ -1512,11 +2134,11 @@
             1.0
           ],
           [
-            "w usairways help",
+            "even",
             1.0
           ],
           [
-            "usairways help",
+            "fly w",
             1.0
           ]
         ],
@@ -1577,11 +2199,11 @@
             0.111
           ],
           [
-            "first",
+            "airline",
             0.089
           ],
           [
-            "airline",
+            "first",
             0.089
           ],
           [
@@ -1759,19 +2381,11 @@
             1.0
           ],
           [
-            "americanair united americanair",
-            0.045
-          ],
-          [
             "united americanair",
             0.045
           ],
           [
             "united",
-            0.045
-          ],
-          [
-            "americanair americanair americanair",
             0.045
           ],
           [
@@ -1862,16 +2476,16 @@
             0.211
           ],
           [
-            "flight jetblue flight",
-            0.14
-          ],
-          [
             "jetblue jetblue",
             0.035
           ],
           [
             "flying",
             0.035
+          ],
+          [
+            "change want",
+            0.018
           ]
         ],
         [
@@ -1925,15 +2539,15 @@
       "share": [
         [
           [
+            "us",
+            1.0
+          ],
+          [
+            "u",
+            1.0
+          ],
+          [
             "u us",
-            1.0
-          ],
-          [
-            "thank",
-            1.0
-          ],
-          [
-            "3",
             1.0
           ],
           [
@@ -1941,21 +2555,21 @@
             1.0
           ],
           [
-            "us",
+            "would",
             1.0
           ],
           [
-            "3 southwestair thank",
+            "southwestair thank",
             1.0
           ]
         ],
         [
           [
-            "days",
+            "4 days",
             1.0
           ],
           [
-            "usairways",
+            "cancelled",
             1.0
           ],
           [
@@ -1963,15 +2577,15 @@
             1.0
           ],
           [
-            "bags lost",
+            "4",
             1.0
           ],
           [
-            "lost 4 4 days",
+            "last",
             1.0
           ],
           [
-            "lost 4",
+            "service last",
             1.0
           ]
         ],
@@ -2066,7 +2680,7 @@
             0.419
           ],
           [
-            "flight cancelled cancelled flightled",
+            "flight cancelled",
             0.349
           ]
         ],

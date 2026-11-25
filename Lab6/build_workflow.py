@@ -134,12 +134,12 @@ RED, BLUE, GREEN = "#C1272D", "#1F77B4", "#39B54A"
 TEXTS = [
     (-60, 20, 300, 60,
      "**Lab 6**  \nText Mining and Clustering"),
-    (-60, 400, 250, 110,
+    (-60, 400, 230, 130,
      "**Step 2: Load the tweets**  \nOnly the text columns are kept "
      "(name, text, tweet_coord, tweet_created, tweet_location)."),
     (160, 20, 220, 70,
      "**Step 2: Data Table**  \nA look at the loaded tweets."),
-    (160, 420, 240, 110,
+    (210, 420, 240, 110,
      "**Step 3: Sample and corpus**  \n10% of the tweets, then a corpus "
      "that uses only the text column."),
     (520, 400, 240, 150,
@@ -151,7 +151,7 @@ TEXTS = [
     (720, 550, 230, 90,
      "**Step 5: Document Map**  \nTweets per US state, from "
      "tweet_location."),
-    (900, 330, 230, 90,
+    (1010, 330, 250, 90,
      "**Step 6: Bag of Words**  \nCount for term frequency, Smooth IDF "
      "for document frequency."),
     (1010, 20, 300, 110,
@@ -171,6 +171,7 @@ ARROWS = [
     ((250, 90), (250, 115), RED),           # Data Table
     ((250, 420), (250, 385), RED),          # Sampler
     ((630, 400), (630, 365), BLUE),         # Preprocess Text
+    ((1005, 352), (880, 322), BLUE),        # Bag of Words
     ((820, 90), (820, 115), BLUE),          # Word Cloud
     ((820, 550), (820, 520), BLUE),         # Document Map
     ((1105, 130), (1105, 195), GREEN),      # Distances + Hierarchical
