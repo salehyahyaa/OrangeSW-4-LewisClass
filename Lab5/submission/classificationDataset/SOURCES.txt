@@ -1,0 +1,52 @@
+Lab 5 picture dataset: cats and dogs
+All pictures are from Wikimedia Commons (commons.wikimedia.org),
+resized to 640 pixels wide. Source, author and license of each:
+
+train/cats/cat_train_01.jpg | File:Cat sleeping in the Ngọc Sơn Temple in Hanoi, 20240204 1309 5747.jpg | Jakub Hałun | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Cat_sleeping_in_the_Ng%E1%BB%8Dc_S%C6%A1n_Temple_in_Hanoi,_20240204_1309_5747.jpg
+train/cats/cat_train_02.jpg | File:Chartreux-cat-edouard-marie.jpg | Stephanemartin | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Chartreux-cat-edouard-marie.jpg
+train/cats/cat_train_03.jpg | File:Colossus the Cat 2.JPG | Collard | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Colossus_the_Cat_2.JPG
+train/cats/cat_train_04.jpg | File:Gato (2) REFON.jpg | José Reynaldo da Fonseca | CC BY 2.5 | https://commons.wikimedia.org/wiki/File:Gato_(2)_REFON.jpg
+train/cats/cat_train_05.jpg | File:Kittyply edit1.jpg | David Corby Edited by: Arad | CC BY 2.5 | https://commons.wikimedia.org/wiki/File:Kittyply_edit1.jpg
+train/cats/cat_train_06.jpg | File:Taska-model-6.jpg | Ralf Roletschek (talk) | GFDL 1.2 | https://commons.wikimedia.org/wiki/File:Taska-model-6.jpg
+train/cats/cat_train_07.jpg | File:Calico cat, - Assisi, Italy.jpg | Terragio67 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Calico_cat,_-_Assisi,_Italy.jpg
+train/cats/cat_train_08.jpg | File:Cat November 2010-1a.jpg | Alvesgaspar | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Cat_November_2010-1a.jpg
+train/cats/cat_train_09.jpg | File:June odd-eyed-cat cropped.jpg | Keith Kissel | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:June_odd-eyed-cat_cropped.jpg
+train/cats/cat_train_10.jpg | File:Tired 20-year-old cat.jpg | Dimitri “Diti” Torterat | CC BY 2.0 fr | https://commons.wikimedia.org/wiki/File:Tired_20-year-old_cat.jpg
+train/cats/cat_train_11.jpg | File:Black-Cat-Sitia-Crete-Greece-3.jpg | Petro Stelte | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Black-Cat-Sitia-Crete-Greece-3.jpg
+train/cats/cat_train_12.jpg | File:Cat-Sitia-Crete.jpg | Petro Stelte | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Cat-Sitia-Crete.jpg
+test/cats/cat_test_01.jpg | File:20160729 - Stray cat - Mandalay Hill - Mandalay, Myanmar - 5862.jpg | Jakub Hałun | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:20160729_-_Stray_cat_-_Mandalay_Hill_-_Mandalay,_Myanmar_-_5862.jpg
+test/cats/cat_test_02.jpg | File:CatWithOcularProsthetic.jpeg | Aqwis | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:CatWithOcularProsthetic.jpeg
+test/cats/cat_test_03.jpg | File:Cat in Piran, Slovenia, 20240504 1600 8594.jpg | Jakub Hałun | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Cat_in_Piran,_Slovenia,_20240504_1600_8594.jpg
+test/cats/cat_test_04.jpg | File:Gatta randagia Livorno.JPG | Lucarelli | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Gatta_randagia_Livorno.JPG
+test/cats/cat_test_05.jpg | File:Golden tabby and white kitten n01.jpg | Marie-Lan Nguyen | CC BY 2.5 | https://commons.wikimedia.org/wiki/File:Golden_tabby_and_white_kitten_n01.jpg
+test/cats/cat_test_06.jpg | File:BEN Bengalian kitten (4492540155).jpg | Nickolas Titkov from Moscow, Russian Federation | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:BEN_Bengalian_kitten_(4492540155).jpg
+test/cats/cat_test_07.jpg | File:Cat Sphynx. Kittens. img 11.jpg | Dmitry Makeev | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Cat_Sphynx._Kittens._img_11.jpg
+test/cats/cat_test_08.jpg | File:Cat in Efremov, Russia1.jpg | Юрий Д.К. | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Cat_in_Efremov,_Russia1.jpg
+test/cats/cat_test_09.jpg | File:Felis catus-black tabby cat on snow (cropped).jpg | Von.grzanka | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Felis_catus-black_tabby_cat_on_snow_(cropped).jpg
+test/cats/cat_test_10.jpg | File:Felis silvestris catus lying on rice straw.jpg | Basile Morin | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Felis_silvestris_catus_lying_on_rice_straw.jpg
+test/cats/cat_test_11.jpg | File:Six weeks old cat (aka).jpg | André Karwath aka Aka | CC BY-SA 2.5 | https://commons.wikimedia.org/wiki/File:Six_weeks_old_cat_(aka).jpg
+test/cats/cat_test_12.jpg | File:Tabby cat with blue eyes-3336579.jpg | AdinaVoicu | CC0 | https://commons.wikimedia.org/wiki/File:Tabby_cat_with_blue_eyes-3336579.jpg
+train/dogs/dog_train_01.jpg | File:Dalmatian fetching a stick.jpg | Lucasbosch | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Dalmatian_fetching_a_stick.jpg
+train/dogs/dog_train_02.jpg | File:Toy Poodle wearing clothes in Tokyo.jpg | Basile Morin | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Toy_Poodle_wearing_clothes_in_Tokyo.jpg
+train/dogs/dog_train_03.jpg | File:20110425 German Shepherd Dog 8505.jpg | Jakub Hałun | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:20110425_German_Shepherd_Dog_8505.jpg
+train/dogs/dog_train_04.jpg | File:20160327 pies nierasowy 3691.jpg | Jakub Hałun | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:20160327_pies_nierasowy_3691.jpg
+train/dogs/dog_train_05.jpg | File:Beagle sleeping in Hautmont (DSC07212).jpg | Trougnouf (Benoit Brummer) | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Beagle_sleeping_in_Hautmont_(DSC07212).jpg
+train/dogs/dog_train_06.jpg | File:Cane corso głowa profil 493o.jpg | Pleple2000 | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Cane_corso_g%C5%82owa_profil_493o.jpg
+train/dogs/dog_train_07.jpg | File:Chart perski ucho 098i.jpg | Pleple2000 | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Chart_perski_ucho_098i.jpg
+train/dogs/dog_train_08.jpg | File:English Setter R 01.JPG | Lilly M real name: Małgorzata Miłaszewska | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:English_Setter_R_01.JPG
+train/dogs/dog_train_09.jpg | File:French bulldog in life jacket.jpg | W.carter | CC0 | https://commons.wikimedia.org/wiki/File:French_bulldog_in_life_jacket.jpg
+train/dogs/dog_train_10.jpg | File:Münster, Wolbeck, Wolbecker Tiergarten, Hund -- 2014 -- 7130.jpg | Dietmar Rabich | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_Wolbeck,_Wolbecker_Tiergarten,_Hund_--_2014_--_7130.jpg
+train/dogs/dog_train_11.jpg | File:Petcon (81233).jpg | Rhododendrites | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Petcon_(81233).jpg
+train/dogs/dog_train_12.jpg | File:Pies nierasowy, 20201003 0930 4295.jpg | Jakub Hałun | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Pies_nierasowy,_20201003_0930_4295.jpg
+test/dogs/dog_test_01.jpg | File:Alaskan Malamute R Bartz.jpg | Richard Bartz | CC BY-SA 2.5 | https://commons.wikimedia.org/wiki/File:Alaskan_Malamute_R_Bartz.jpg
+test/dogs/dog_test_02.jpg | File:Dülmen, Hausdülmen, Golden Retriever -- 2022 -- 5945.jpg | Dietmar Rabich | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Hausd%C3%BClmen,_Golden_Retriever_--_2022_--_5945.jpg
+test/dogs/dog_test_03.jpg | File:Fawn and white Welsh Corgi puppy standing on rear legs and sticking out the tongue.jpg | Huoadg5888Minor edits made by Subsidiary account | CC0 | https://commons.wikimedia.org/wiki/File:Fawn_and_white_Welsh_Corgi_puppy_standing_on_rear_legs_and_sticking_out_the_tongue.jpg
+test/dogs/dog_test_04.jpg | File:Liver yellow dog in the water looking at viewer at golden hour in Don Det Laos.jpg | Basile Morin | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Liver_yellow_dog_in_the_water_looking_at_viewer_at_golden_hour_in_Don_Det_Laos.jpg
+test/dogs/dog_test_05.jpg | File:Sara - Perro Pastor 01.jpg | Basotxerri | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Sara_-_Perro_Pastor_01.jpg
+test/dogs/dog_test_06.jpg | File:Chartpolski67u7uuu.jpg | Pleple2000 | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Chartpolski67u7uuu.jpg
+test/dogs/dog_test_07.jpg | File:Clyde The Bulldog.jpg | Asmadeus | Public domain | https://commons.wikimedia.org/wiki/File:Clyde_The_Bulldog.jpg
+test/dogs/dog_test_08.jpg | File:Dog, Helgafell, Snæfellsnes peninsula, Iceland, 20230505 1507 5224.jpg | Jakub Hałun | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Dog,_Helgafell,_Sn%C3%A6fellsnes_peninsula,_Iceland,_20230505_1507_5224.jpg
+test/dogs/dog_test_09.jpg | File:Dülmen, Hausdülmen, Golden Retriever -- 2022 -- 5767.jpg | Dietmar Rabich | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Hausd%C3%BClmen,_Golden_Retriever_--_2022_--_5767.jpg
+test/dogs/dog_test_10.jpg | File:French bulldog head, Josselin 02.jpg | Tsaag Valren | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:French_bulldog_head,_Josselin_02.jpg
+test/dogs/dog_test_11.jpg | File:Juvenile Siberian Husky.jpg | MrPanyGoff | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Juvenile_Siberian_Husky.jpg
+test/dogs/dog_test_12.jpg | File:Shar Pei × American Staffordshire Terrier dog in Parc naturel régional des Ardennes (DSC05743).jpg | Trougnouf (Benoit Brummer) | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Shar_Pei_%C3%97_American_Staffordshire_Terrier_dog_in_Parc_naturel_r%C3%A9gional_des_Ardennes_(DSC05743).jpg

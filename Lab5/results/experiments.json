@@ -1,0 +1,972 @@
+{
+  "features": {
+    "SqueezeNet": 1000,
+    "Inception v3": 2048,
+    "VGG-16": 4096,
+    "VGG-19": 4096,
+    "Painters": 2048,
+    "DeepLoc": 512
+  },
+  "rows": [
+    {
+      "embedder": "SqueezeNet",
+      "model": "Logistic Regression",
+      "setting": "Ridge (L2), C=1 (default)",
+      "ca": 0.7916666666666666,
+      "auc": 0.9236111111111112,
+      "f1": 0.7913043478260869
+    },
+    {
+      "embedder": "SqueezeNet",
+      "model": "Logistic Regression",
+      "setting": "Lasso (L1), C=1",
+      "ca": 0.7916666666666666,
+      "auc": 0.9166666666666667,
+      "f1": 0.7913043478260869
+    },
+    {
+      "embedder": "SqueezeNet",
+      "model": "Logistic Regression",
+      "setting": "Ridge (L2), C=0.01",
+      "ca": 0.7916666666666666,
+      "auc": 0.9444444444444444,
+      "f1": 0.7913043478260869
+    },
+    {
+      "embedder": "SqueezeNet",
+      "model": "Logistic Regression",
+      "setting": "Ridge (L2), C=100",
+      "ca": 0.7916666666666666,
+      "auc": 0.9097222222222222,
+      "f1": 0.7913043478260869
+    },
+    {
+      "embedder": "SqueezeNet",
+      "model": "Neural Network",
+      "setting": "100 neurons, ReLu, Adam (default)",
+      "ca": 0.7916666666666666,
+      "auc": 0.9444444444444444,
+      "f1": 0.7913043478260869
+    },
+    {
+      "embedder": "SqueezeNet",
+      "model": "Neural Network",
+      "setting": "10 neurons, ReLu, Adam",
+      "ca": 0.7916666666666666,
+      "auc": 0.9374999999999999,
+      "f1": 0.7913043478260869
+    },
+    {
+      "embedder": "SqueezeNet",
+      "model": "Neural Network",
+      "setting": "100,50 neurons, ReLu, Adam",
+      "ca": 0.7916666666666666,
+      "auc": 0.9305555555555556,
+      "f1": 0.7913043478260869
+    },
+    {
+      "embedder": "SqueezeNet",
+      "model": "Neural Network",
+      "setting": "100 neurons, tanh, Adam",
+      "ca": 0.8333333333333334,
+      "auc": 0.9305555555555556,
+      "f1": 0.8321678321678322
+    },
+    {
+      "embedder": "SqueezeNet",
+      "model": "Neural Network",
+      "setting": "100 neurons, ReLu, L-BFGS-B",
+      "ca": 0.7916666666666666,
+      "auc": 0.9444444444444444,
+      "f1": 0.7913043478260869
+    },
+    {
+      "embedder": "SqueezeNet",
+      "model": "Random Forest",
+      "setting": "10 trees (default)",
+      "ca": 0.75,
+      "auc": 0.7847222222222223,
+      "f1": 0.7482517482517483
+    },
+    {
+      "embedder": "SqueezeNet",
+      "model": "Random Forest",
+      "setting": "50 trees",
+      "ca": 0.75,
+      "auc": 0.8854166666666666,
+      "f1": 0.7482517482517483
+    },
+    {
+      "embedder": "SqueezeNet",
+      "model": "Random Forest",
+      "setting": "100 trees",
+      "ca": 0.75,
+      "auc": 0.9270833333333333,
+      "f1": 0.7482517482517483
+    },
+    {
+      "embedder": "SqueezeNet",
+      "model": "Random Forest",
+      "setting": "200 trees",
+      "ca": 0.7916666666666666,
+      "auc": 0.9166666666666667,
+      "f1": 0.7913043478260869
+    },
+    {
+      "embedder": "SqueezeNet",
+      "model": "kNN",
+      "setting": "5 neighbors, Euclidean (default)",
+      "ca": 0.8333333333333334,
+      "auc": 0.9409722222222223,
+      "f1": 0.8321678321678322
+    },
+    {
+      "embedder": "SqueezeNet",
+      "model": "kNN",
+      "setting": "1 neighbor, Euclidean",
+      "ca": 0.7916666666666666,
+      "auc": 0.7916666666666667,
+      "f1": 0.7913043478260869
+    },
+    {
+      "embedder": "SqueezeNet",
+      "model": "kNN",
+      "setting": "3 neighbors, Euclidean",
+      "ca": 0.7916666666666666,
+      "auc": 0.8819444444444444,
+      "f1": 0.7883597883597883
+    },
+    {
+      "embedder": "SqueezeNet",
+      "model": "kNN",
+      "setting": "5 neighbors, Manhattan, by distances",
+      "ca": 0.8333333333333334,
+      "auc": 0.9131944444444443,
+      "f1": 0.8321678321678322
+    },
+    {
+      "embedder": "SqueezeNet",
+      "model": "SVM",
+      "setting": "RBF kernel, C=1 (default)",
+      "ca": 0.875,
+      "auc": 0.9027777777777778,
+      "f1": 0.8747826086956522
+    },
+    {
+      "embedder": "SqueezeNet",
+      "model": "SVM",
+      "setting": "Linear kernel, C=1",
+      "ca": 0.875,
+      "auc": 0.9305555555555556,
+      "f1": 0.8747826086956522
+    },
+    {
+      "embedder": "SqueezeNet",
+      "model": "SVM",
+      "setting": "RBF kernel, C=10",
+      "ca": 0.875,
+      "auc": 0.923611111111111,
+      "f1": 0.8747826086956522
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "Logistic Regression",
+      "setting": "Ridge (L2), C=1 (default)",
+      "ca": 1.0,
+      "auc": 1.0,
+      "f1": 1.0
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "Logistic Regression",
+      "setting": "Lasso (L1), C=1",
+      "ca": 1.0,
+      "auc": 1.0,
+      "f1": 1.0
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "Logistic Regression",
+      "setting": "Ridge (L2), C=0.01",
+      "ca": 1.0,
+      "auc": 1.0,
+      "f1": 1.0
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "Logistic Regression",
+      "setting": "Ridge (L2), C=100",
+      "ca": 1.0,
+      "auc": 1.0,
+      "f1": 1.0
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "Neural Network",
+      "setting": "100 neurons, ReLu, Adam (default)",
+      "ca": 1.0,
+      "auc": 1.0,
+      "f1": 1.0
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "Neural Network",
+      "setting": "10 neurons, ReLu, Adam",
+      "ca": 1.0,
+      "auc": 1.0,
+      "f1": 1.0
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "Neural Network",
+      "setting": "100,50 neurons, ReLu, Adam",
+      "ca": 1.0,
+      "auc": 1.0,
+      "f1": 1.0
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "Neural Network",
+      "setting": "100 neurons, tanh, Adam",
+      "ca": 1.0,
+      "auc": 1.0,
+      "f1": 1.0
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "Neural Network",
+      "setting": "100 neurons, ReLu, L-BFGS-B",
+      "ca": 1.0,
+      "auc": 1.0,
+      "f1": 1.0
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "Random Forest",
+      "setting": "10 trees (default)",
+      "ca": 0.9583333333333334,
+      "auc": 0.9965277777777778,
+      "f1": 0.9582608695652174
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "Random Forest",
+      "setting": "50 trees",
+      "ca": 1.0,
+      "auc": 1.0,
+      "f1": 1.0
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "Random Forest",
+      "setting": "100 trees",
+      "ca": 1.0,
+      "auc": 1.0,
+      "f1": 1.0
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "Random Forest",
+      "setting": "200 trees",
+      "ca": 1.0,
+      "auc": 1.0,
+      "f1": 1.0
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "kNN",
+      "setting": "5 neighbors, Euclidean (default)",
+      "ca": 1.0,
+      "auc": 1.0,
+      "f1": 1.0
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "kNN",
+      "setting": "1 neighbor, Euclidean",
+      "ca": 1.0,
+      "auc": 1.0,
+      "f1": 1.0
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "kNN",
+      "setting": "3 neighbors, Euclidean",
+      "ca": 1.0,
+      "auc": 1.0,
+      "f1": 1.0
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "kNN",
+      "setting": "5 neighbors, Manhattan, by distances",
+      "ca": 1.0,
+      "auc": 1.0,
+      "f1": 1.0
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "SVM",
+      "setting": "RBF kernel, C=1 (default)",
+      "ca": 0.9583333333333334,
+      "auc": 1.0,
+      "f1": 0.9582608695652174
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "SVM",
+      "setting": "Linear kernel, C=1",
+      "ca": 1.0,
+      "auc": 1.0,
+      "f1": 1.0
+    },
+    {
+      "embedder": "Inception v3",
+      "model": "SVM",
+      "setting": "RBF kernel, C=10",
+      "ca": 0.9583333333333334,
+      "auc": 1.0,
+      "f1": 0.9582608695652174
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "Logistic Regression",
+      "setting": "Ridge (L2), C=1 (default)",
+      "ca": 0.9583333333333334,
+      "auc": 0.9861111111111112,
+      "f1": 0.9582608695652174
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "Logistic Regression",
+      "setting": "Lasso (L1), C=1",
+      "ca": 0.8333333333333334,
+      "auc": 0.9722222222222223,
+      "f1": 0.8333333333333334
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "Logistic Regression",
+      "setting": "Ridge (L2), C=0.01",
+      "ca": 0.875,
+      "auc": 0.9861111111111112,
+      "f1": 0.8747826086956522
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "Logistic Regression",
+      "setting": "Ridge (L2), C=100",
+      "ca": 0.9166666666666666,
+      "auc": 0.9861111111111112,
+      "f1": 0.9166666666666666
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "Neural Network",
+      "setting": "100 neurons, ReLu, Adam (default)",
+      "ca": 0.9583333333333334,
+      "auc": 0.9930555555555555,
+      "f1": 0.9582608695652174
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "Neural Network",
+      "setting": "10 neurons, ReLu, Adam",
+      "ca": 0.8333333333333334,
+      "auc": 0.8958333333333333,
+      "f1": 0.8321678321678322
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "Neural Network",
+      "setting": "100,50 neurons, ReLu, Adam",
+      "ca": 0.9583333333333334,
+      "auc": 0.9791666666666666,
+      "f1": 0.9582608695652174
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "Neural Network",
+      "setting": "100 neurons, tanh, Adam",
+      "ca": 0.9166666666666666,
+      "auc": 0.9652777777777778,
+      "f1": 0.9166666666666666
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "Neural Network",
+      "setting": "100 neurons, ReLu, L-BFGS-B",
+      "ca": 0.9166666666666666,
+      "auc": 0.9583333333333334,
+      "f1": 0.9166666666666666
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "Random Forest",
+      "setting": "10 trees (default)",
+      "ca": 0.6666666666666666,
+      "auc": 0.8611111111111112,
+      "f1": 0.6444444444444444
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "Random Forest",
+      "setting": "50 trees",
+      "ca": 0.875,
+      "auc": 0.9791666666666667,
+      "f1": 0.8747826086956522
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "Random Forest",
+      "setting": "100 trees",
+      "ca": 0.875,
+      "auc": 0.9861111111111112,
+      "f1": 0.8747826086956522
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "Random Forest",
+      "setting": "200 trees",
+      "ca": 0.9583333333333334,
+      "auc": 0.986111111111111,
+      "f1": 0.9582608695652174
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "kNN",
+      "setting": "5 neighbors, Euclidean (default)",
+      "ca": 0.75,
+      "auc": 0.9236111111111112,
+      "f1": 0.7333333333333334
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "kNN",
+      "setting": "1 neighbor, Euclidean",
+      "ca": 0.6666666666666666,
+      "auc": 0.6666666666666666,
+      "f1": 0.625
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "kNN",
+      "setting": "3 neighbors, Euclidean",
+      "ca": 0.7083333333333334,
+      "auc": 0.875,
+      "f1": 0.6812144212523719
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "kNN",
+      "setting": "5 neighbors, Manhattan, by distances",
+      "ca": 0.7083333333333334,
+      "auc": 0.9652777777777778,
+      "f1": 0.6812144212523719
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "SVM",
+      "setting": "RBF kernel, C=1 (default)",
+      "ca": 0.8333333333333334,
+      "auc": 0.9444444444444444,
+      "f1": 0.8285714285714286
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "SVM",
+      "setting": "Linear kernel, C=1",
+      "ca": 0.7916666666666666,
+      "auc": 0.9166666666666666,
+      "f1": 0.7883597883597883
+    },
+    {
+      "embedder": "VGG-16",
+      "model": "SVM",
+      "setting": "RBF kernel, C=10",
+      "ca": 0.8333333333333334,
+      "auc": 0.9166666666666667,
+      "f1": 0.8285714285714286
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "Logistic Regression",
+      "setting": "Ridge (L2), C=1 (default)",
+      "ca": 1.0,
+      "auc": 1.0,
+      "f1": 1.0
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "Logistic Regression",
+      "setting": "Lasso (L1), C=1",
+      "ca": 0.9583333333333334,
+      "auc": 0.986111111111111,
+      "f1": 0.9582608695652174
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "Logistic Regression",
+      "setting": "Ridge (L2), C=0.01",
+      "ca": 0.9583333333333334,
+      "auc": 1.0,
+      "f1": 0.9582608695652174
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "Logistic Regression",
+      "setting": "Ridge (L2), C=100",
+      "ca": 0.9583333333333334,
+      "auc": 1.0,
+      "f1": 0.9582608695652174
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "Neural Network",
+      "setting": "100 neurons, ReLu, Adam (default)",
+      "ca": 0.9166666666666666,
+      "auc": 0.9166666666666666,
+      "f1": 0.9166666666666666
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "Neural Network",
+      "setting": "10 neurons, ReLu, Adam",
+      "ca": 0.9583333333333334,
+      "auc": 0.9166666666666666,
+      "f1": 0.9582608695652174
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "Neural Network",
+      "setting": "100,50 neurons, ReLu, Adam",
+      "ca": 0.875,
+      "auc": 0.9097222222222221,
+      "f1": 0.8747826086956522
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "Neural Network",
+      "setting": "100 neurons, tanh, Adam",
+      "ca": 0.9166666666666666,
+      "auc": 0.9930555555555555,
+      "f1": 0.9166666666666666
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "Neural Network",
+      "setting": "100 neurons, ReLu, L-BFGS-B",
+      "ca": 0.9166666666666666,
+      "auc": 0.9166666666666666,
+      "f1": 0.9166666666666666
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "Random Forest",
+      "setting": "10 trees (default)",
+      "ca": 0.7916666666666666,
+      "auc": 0.923611111111111,
+      "f1": 0.7913043478260869
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "Random Forest",
+      "setting": "50 trees",
+      "ca": 0.9583333333333334,
+      "auc": 0.9861111111111112,
+      "f1": 0.9582608695652174
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "Random Forest",
+      "setting": "100 trees",
+      "ca": 0.9583333333333334,
+      "auc": 1.0,
+      "f1": 0.9582608695652174
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "Random Forest",
+      "setting": "200 trees",
+      "ca": 0.9166666666666666,
+      "auc": 0.9930555555555555,
+      "f1": 0.9166666666666666
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "kNN",
+      "setting": "5 neighbors, Euclidean (default)",
+      "ca": 0.8333333333333334,
+      "auc": 1.0,
+      "f1": 0.8285714285714286
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "kNN",
+      "setting": "1 neighbor, Euclidean",
+      "ca": 0.7916666666666666,
+      "auc": 0.7916666666666666,
+      "f1": 0.7883597883597883
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "kNN",
+      "setting": "3 neighbors, Euclidean",
+      "ca": 0.7916666666666666,
+      "auc": 0.9826388888888888,
+      "f1": 0.7822141560798549
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "kNN",
+      "setting": "5 neighbors, Manhattan, by distances",
+      "ca": 0.8333333333333334,
+      "auc": 1.0,
+      "f1": 0.8285714285714286
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "SVM",
+      "setting": "RBF kernel, C=1 (default)",
+      "ca": 0.7916666666666666,
+      "auc": 0.8472222222222222,
+      "f1": 0.7822141560798549
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "SVM",
+      "setting": "Linear kernel, C=1",
+      "ca": 0.9166666666666666,
+      "auc": 0.9513888888888888,
+      "f1": 0.9160839160839161
+    },
+    {
+      "embedder": "VGG-19",
+      "model": "SVM",
+      "setting": "RBF kernel, C=10",
+      "ca": 0.7916666666666666,
+      "auc": 0.8680555555555556,
+      "f1": 0.7822141560798549
+    },
+    {
+      "embedder": "Painters",
+      "model": "Logistic Regression",
+      "setting": "Ridge (L2), C=1 (default)",
+      "ca": 0.6666666666666666,
+      "auc": 0.6527777777777779,
+      "f1": 0.6571428571428571
+    },
+    {
+      "embedder": "Painters",
+      "model": "Logistic Regression",
+      "setting": "Lasso (L1), C=1",
+      "ca": 0.5833333333333334,
+      "auc": 0.6041666666666666,
+      "f1": 0.5804195804195804
+    },
+    {
+      "embedder": "Painters",
+      "model": "Logistic Regression",
+      "setting": "Ridge (L2), C=0.01",
+      "ca": 0.6666666666666666,
+      "auc": 0.5833333333333333,
+      "f1": 0.6571428571428571
+    },
+    {
+      "embedder": "Painters",
+      "model": "Logistic Regression",
+      "setting": "Ridge (L2), C=100",
+      "ca": 0.6666666666666666,
+      "auc": 0.6180555555555557,
+      "f1": 0.6643356643356643
+    },
+    {
+      "embedder": "Painters",
+      "model": "Neural Network",
+      "setting": "100 neurons, ReLu, Adam (default)",
+      "ca": 0.5833333333333334,
+      "auc": 0.6736111111111112,
+      "f1": 0.5804195804195804
+    },
+    {
+      "embedder": "Painters",
+      "model": "Neural Network",
+      "setting": "10 neurons, ReLu, Adam",
+      "ca": 0.7916666666666666,
+      "auc": 0.736111111111111,
+      "f1": 0.7913043478260869
+    },
+    {
+      "embedder": "Painters",
+      "model": "Neural Network",
+      "setting": "100,50 neurons, ReLu, Adam",
+      "ca": 0.5416666666666666,
+      "auc": 0.6319444444444445,
+      "f1": 0.5343915343915343
+    },
+    {
+      "embedder": "Painters",
+      "model": "Neural Network",
+      "setting": "100 neurons, tanh, Adam",
+      "ca": 0.7083333333333334,
+      "auc": 0.6458333333333334,
+      "f1": 0.7037037037037037
+    },
+    {
+      "embedder": "Painters",
+      "model": "Neural Network",
+      "setting": "100 neurons, ReLu, L-BFGS-B",
+      "ca": 0.5833333333333334,
+      "auc": 0.6388888888888888,
+      "f1": 0.5804195804195804
+    },
+    {
+      "embedder": "Painters",
+      "model": "Random Forest",
+      "setting": "10 trees (default)",
+      "ca": 0.5833333333333334,
+      "auc": 0.6875000000000001,
+      "f1": 0.5804195804195804
+    },
+    {
+      "embedder": "Painters",
+      "model": "Random Forest",
+      "setting": "50 trees",
+      "ca": 0.5833333333333334,
+      "auc": 0.5381944444444444,
+      "f1": 0.5714285714285715
+    },
+    {
+      "embedder": "Painters",
+      "model": "Random Forest",
+      "setting": "100 trees",
+      "ca": 0.625,
+      "auc": 0.5694444444444445,
+      "f1": 0.6079854809437387
+    },
+    {
+      "embedder": "Painters",
+      "model": "Random Forest",
+      "setting": "200 trees",
+      "ca": 0.5833333333333334,
+      "auc": 0.5277777777777778,
+      "f1": 0.5555555555555555
+    },
+    {
+      "embedder": "Painters",
+      "model": "kNN",
+      "setting": "5 neighbors, Euclidean (default)",
+      "ca": 0.5833333333333334,
+      "auc": 0.6805555555555556,
+      "f1": 0.4957983193277311
+    },
+    {
+      "embedder": "Painters",
+      "model": "kNN",
+      "setting": "1 neighbor, Euclidean",
+      "ca": 0.625,
+      "auc": 0.6249999999999999,
+      "f1": 0.5901328273244781
+    },
+    {
+      "embedder": "Painters",
+      "model": "kNN",
+      "setting": "3 neighbors, Euclidean",
+      "ca": 0.625,
+      "auc": 0.59375,
+      "f1": 0.5636363636363636
+    },
+    {
+      "embedder": "Painters",
+      "model": "kNN",
+      "setting": "5 neighbors, Manhattan, by distances",
+      "ca": 0.5416666666666666,
+      "auc": 0.6805555555555556,
+      "f1": 0.4666666666666666
+    },
+    {
+      "embedder": "Painters",
+      "model": "SVM",
+      "setting": "RBF kernel, C=1 (default)",
+      "ca": 0.6666666666666666,
+      "auc": 0.375,
+      "f1": 0.6571428571428571
+    },
+    {
+      "embedder": "Painters",
+      "model": "SVM",
+      "setting": "Linear kernel, C=1",
+      "ca": 0.6666666666666666,
+      "auc": 0.4375,
+      "f1": 0.6643356643356643
+    },
+    {
+      "embedder": "Painters",
+      "model": "SVM",
+      "setting": "RBF kernel, C=10",
+      "ca": 0.5833333333333334,
+      "auc": 0.4652777777777778,
+      "f1": 0.5555555555555555
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "Logistic Regression",
+      "setting": "Ridge (L2), C=1 (default)",
+      "ca": 0.4166666666666667,
+      "auc": 0.4305555555555556,
+      "f1": 0.41258741258741255
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "Logistic Regression",
+      "setting": "Lasso (L1), C=1",
+      "ca": 0.5,
+      "auc": 0.375,
+      "f1": 0.4965034965034965
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "Logistic Regression",
+      "setting": "Ridge (L2), C=0.01",
+      "ca": 0.5833333333333334,
+      "auc": 0.4722222222222222,
+      "f1": 0.5833333333333334
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "Logistic Regression",
+      "setting": "Ridge (L2), C=100",
+      "ca": 0.4166666666666667,
+      "auc": 0.4375,
+      "f1": 0.41258741258741255
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "Neural Network",
+      "setting": "100 neurons, ReLu, Adam (default)",
+      "ca": 0.3333333333333333,
+      "auc": 0.33333333333333337,
+      "f1": 0.3286713286713287
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "Neural Network",
+      "setting": "10 neurons, ReLu, Adam",
+      "ca": 0.4166666666666667,
+      "auc": 0.4305555555555556,
+      "f1": 0.41258741258741255
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "Neural Network",
+      "setting": "100,50 neurons, ReLu, Adam",
+      "ca": 0.375,
+      "auc": 0.4027777777777778,
+      "f1": 0.37391304347826093
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "Neural Network",
+      "setting": "100 neurons, tanh, Adam",
+      "ca": 0.2916666666666667,
+      "auc": 0.3333333333333333,
+      "f1": 0.2804232804232804
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "Neural Network",
+      "setting": "100 neurons, ReLu, L-BFGS-B",
+      "ca": 0.2916666666666667,
+      "auc": 0.2986111111111111,
+      "f1": 0.2804232804232804
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "Random Forest",
+      "setting": "10 trees (default)",
+      "ca": 0.4583333333333333,
+      "auc": 0.4583333333333333,
+      "f1": 0.4573913043478261
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "Random Forest",
+      "setting": "50 trees",
+      "ca": 0.5,
+      "auc": 0.4930555555555556,
+      "f1": 0.5
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "Random Forest",
+      "setting": "100 trees",
+      "ca": 0.4166666666666667,
+      "auc": 0.44444444444444453,
+      "f1": 0.4166666666666667
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "Random Forest",
+      "setting": "200 trees",
+      "ca": 0.5416666666666666,
+      "auc": 0.5,
+      "f1": 0.5408695652173913
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "kNN",
+      "setting": "5 neighbors, Euclidean (default)",
+      "ca": 0.3333333333333333,
+      "auc": 0.33333333333333337,
+      "f1": 0.3286713286713287
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "kNN",
+      "setting": "1 neighbor, Euclidean",
+      "ca": 0.20833333333333334,
+      "auc": 0.20833333333333334,
+      "f1": 0.2069565217391304
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "kNN",
+      "setting": "3 neighbors, Euclidean",
+      "ca": 0.3333333333333333,
+      "auc": 0.3229166666666667,
+      "f1": 0.3286713286713287
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "kNN",
+      "setting": "5 neighbors, Manhattan, by distances",
+      "ca": 0.375,
+      "auc": 0.3263888888888889,
+      "f1": 0.37391304347826093
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "SVM",
+      "setting": "RBF kernel, C=1 (default)",
+      "ca": 0.25,
+      "auc": 0.6388888888888888,
+      "f1": 0.25
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "SVM",
+      "setting": "Linear kernel, C=1",
+      "ca": 0.375,
+      "auc": 0.4375,
+      "f1": 0.36507936507936506
+    },
+    {
+      "embedder": "DeepLoc",
+      "model": "SVM",
+      "setting": "RBF kernel, C=10",
+      "ca": 0.2916666666666667,
+      "auc": 0.6111111111111112,
+      "f1": 0.29043478260869565
+    }
+  ]
+}

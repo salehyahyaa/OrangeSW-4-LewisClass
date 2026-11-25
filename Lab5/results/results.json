@@ -1,0 +1,1784 @@
+{
+  "orange_version": "3.40.0",
+  "as_saved": {
+    "mode": 0,
+    "mode_1": 5,
+    "folds": [
+      10,
+      10
+    ],
+    "embedder": "squeezenet",
+    "embedder_best": "inception-v3",
+    "embedder_test": "inception-v3",
+    "import_paths": [
+      "classificationDataset/train",
+      "classificationDataset/test"
+    ]
+  },
+  "folders": {
+    "train/cats": 12,
+    "train/dogs": 12,
+    "test/cats": 12,
+    "test/dogs": 12
+  },
+  "import_columns": [
+    "category",
+    "image name",
+    "image",
+    "size",
+    "width",
+    "height"
+  ],
+  "squeezenet": {
+    "rows": 24,
+    "features": 1000,
+    "first_features": [
+      "n0",
+      "n1",
+      "n2"
+    ],
+    "last_feature": "n999",
+    "all_numeric": true,
+    "metas": [
+      "image name",
+      "image",
+      "size",
+      "width",
+      "height"
+    ],
+    "target": "category",
+    "classes": [
+      "cats",
+      "dogs"
+    ],
+    "class_counts": [
+      12,
+      12
+    ],
+    "min": -15.318808781089443,
+    "max": 43.5377901081241,
+    "mean": 8.815731456144766,
+    "share_zero": 0.0,
+    "first_row": {
+      "picture": "dog_train_01",
+      "values": [
+        -1.1898,
+        -0.4807,
+        11.1116,
+        11.6365,
+        9.0724,
+        12.4887
+      ]
+    }
+  },
+  "best_train": {
+    "rows": 24,
+    "features": 2048,
+    "first_features": [
+      "n0",
+      "n1",
+      "n2"
+    ],
+    "last_feature": "n2047",
+    "all_numeric": true,
+    "metas": [
+      "image name",
+      "image",
+      "size",
+      "width",
+      "height"
+    ],
+    "target": "category",
+    "classes": [
+      "cats",
+      "dogs"
+    ],
+    "class_counts": [
+      12,
+      12
+    ],
+    "min": 0.0,
+    "max": 3.8691389560699463,
+    "mean": 0.27288923808616933,
+    "share_zero": 0.012247721354166666,
+    "first_row": {
+      "picture": "dog_train_01",
+      "values": [
+        0.0635,
+        0.3174,
+        0.0835,
+        0.1357,
+        0.1252,
+        0.3677
+      ]
+    }
+  },
+  "best_test": {
+    "rows": 24,
+    "features": 2048,
+    "first_features": [
+      "n0",
+      "n1",
+      "n2"
+    ],
+    "last_feature": "n2047",
+    "all_numeric": true,
+    "metas": [
+      "image name",
+      "image",
+      "size",
+      "width",
+      "height"
+    ],
+    "target": "category",
+    "classes": [
+      "cats",
+      "dogs"
+    ],
+    "class_counts": [
+      12,
+      12
+    ],
+    "min": 0.0,
+    "max": 3.4974045753479004,
+    "mean": 0.2550342244588431,
+    "share_zero": 0.0152587890625,
+    "first_row": {
+      "picture": "dog_test_08",
+      "values": [
+        0.2986,
+        0.361,
+        0.1419,
+        0.0473,
+        0.4965,
+        0.2103
+      ]
+    }
+  },
+  "cv_scores": [
+    {
+      "Model": "SVM",
+      "Train": "1.974",
+      "Test": "0.956",
+      "AUC": 0.9166666666666666,
+      "CA": 0.875,
+      "F1": 0.8747826086956522,
+      "Prec": 0.8776223776223775,
+      "Recall": 0.875,
+      "MCC": 0.7526178090063816,
+      "Spec": 0.875,
+      "LogLoss": 0.412916429865096
+    },
+    {
+      "Model": "kNN",
+      "Train": "0.701",
+      "Test": "0.593",
+      "AUC": 0.9409722222222223,
+      "CA": 0.8333333333333334,
+      "F1": 0.8321678321678322,
+      "Prec": 0.8428571428571429,
+      "Recall": 0.8333333333333334,
+      "MCC": 0.6761234037828132,
+      "Spec": 0.8333333333333333,
+      "LogLoss": 0.3301164778249893
+    },
+    {
+      "Model": "Neural Network",
+      "Train": "1.565",
+      "Test": "1.503",
+      "AUC": 0.9444444444444444,
+      "CA": 0.7916666666666666,
+      "F1": 0.7913043478260869,
+      "Prec": 0.7937062937062938,
+      "Recall": 0.7916666666666666,
+      "MCC": 0.5853694070049635,
+      "Spec": 0.7916666666666667,
+      "LogLoss": 0.6539301315794168
+    },
+    {
+      "Model": "Logistic Regression",
+      "Train": "0.668",
+      "Test": "0.426",
+      "AUC": 0.9236111111111112,
+      "CA": 0.7916666666666666,
+      "F1": 0.7913043478260869,
+      "Prec": 0.7937062937062938,
+      "Recall": 0.7916666666666666,
+      "MCC": 0.5853694070049635,
+      "Spec": 0.7916666666666667,
+      "LogLoss": 0.6748780144320131
+    },
+    {
+      "Model": "Random Forest",
+      "Train": "0.846",
+      "Test": "0.429",
+      "AUC": 0.7916666666666666,
+      "CA": 0.75,
+      "F1": 0.7428571428571429,
+      "Prec": 0.78125,
+      "Recall": 0.75,
+      "MCC": 0.5303300858899107,
+      "Spec": 0.75,
+      "LogLoss": 3.3202820611596144
+    }
+  ],
+  "confusion_cv": {
+    "Neural Network": {
+      "classes": [
+        "cats",
+        "dogs"
+      ],
+      "counts": [
+        [
+          10,
+          2
+        ],
+        [
+          3,
+          9
+        ]
+      ],
+      "wrong": [
+        {
+          "picture": "dog_train_04",
+          "actual": "dogs",
+          "predicted": "cats"
+        },
+        {
+          "picture": "cat_train_01",
+          "actual": "cats",
+          "predicted": "dogs"
+        },
+        {
+          "picture": "cat_train_11",
+          "actual": "cats",
+          "predicted": "dogs"
+        },
+        {
+          "picture": "dog_train_03",
+          "actual": "dogs",
+          "predicted": "cats"
+        },
+        {
+          "picture": "dog_train_05",
+          "actual": "dogs",
+          "predicted": "cats"
+        }
+      ]
+    },
+    "Random Forest": {
+      "classes": [
+        "cats",
+        "dogs"
+      ],
+      "counts": [
+        [
+          11,
+          1
+        ],
+        [
+          5,
+          7
+        ]
+      ],
+      "wrong": [
+        {
+          "picture": "dog_train_02",
+          "actual": "dogs",
+          "predicted": "cats"
+        },
+        {
+          "picture": "dog_train_04",
+          "actual": "dogs",
+          "predicted": "cats"
+        },
+        {
+          "picture": "cat_train_01",
+          "actual": "cats",
+          "predicted": "dogs"
+        },
+        {
+          "picture": "dog_train_10",
+          "actual": "dogs",
+          "predicted": "cats"
+        },
+        {
+          "picture": "dog_train_03",
+          "actual": "dogs",
+          "predicted": "cats"
+        },
+        {
+          "picture": "dog_train_05",
+          "actual": "dogs",
+          "predicted": "cats"
+        }
+      ]
+    },
+    "Logistic Regression": {
+      "classes": [
+        "cats",
+        "dogs"
+      ],
+      "counts": [
+        [
+          10,
+          2
+        ],
+        [
+          3,
+          9
+        ]
+      ],
+      "wrong": [
+        {
+          "picture": "dog_train_04",
+          "actual": "dogs",
+          "predicted": "cats"
+        },
+        {
+          "picture": "cat_train_01",
+          "actual": "cats",
+          "predicted": "dogs"
+        },
+        {
+          "picture": "cat_train_11",
+          "actual": "cats",
+          "predicted": "dogs"
+        },
+        {
+          "picture": "dog_train_03",
+          "actual": "dogs",
+          "predicted": "cats"
+        },
+        {
+          "picture": "dog_train_05",
+          "actual": "dogs",
+          "predicted": "cats"
+        }
+      ]
+    },
+    "kNN": {
+      "classes": [
+        "cats",
+        "dogs"
+      ],
+      "counts": [
+        [
+          11,
+          1
+        ],
+        [
+          3,
+          9
+        ]
+      ],
+      "wrong": [
+        {
+          "picture": "dog_train_02",
+          "actual": "dogs",
+          "predicted": "cats"
+        },
+        {
+          "picture": "dog_train_04",
+          "actual": "dogs",
+          "predicted": "cats"
+        },
+        {
+          "picture": "cat_train_01",
+          "actual": "cats",
+          "predicted": "dogs"
+        },
+        {
+          "picture": "dog_train_05",
+          "actual": "dogs",
+          "predicted": "cats"
+        }
+      ]
+    },
+    "SVM": {
+      "classes": [
+        "cats",
+        "dogs"
+      ],
+      "counts": [
+        [
+          10,
+          2
+        ],
+        [
+          1,
+          11
+        ]
+      ],
+      "wrong": [
+        {
+          "picture": "cat_train_01",
+          "actual": "cats",
+          "predicted": "dogs"
+        },
+        {
+          "picture": "cat_train_11",
+          "actual": "cats",
+          "predicted": "dogs"
+        },
+        {
+          "picture": "dog_train_05",
+          "actual": "dogs",
+          "predicted": "cats"
+        }
+      ]
+    }
+  },
+  "best_cv_scores": [
+    {
+      "Model": "Neural Network",
+      "Train": "3.668",
+      "Test": "2.249",
+      "AUC": 1.0,
+      "CA": 1.0,
+      "F1": 1.0,
+      "Prec": 1.0,
+      "Recall": 1.0,
+      "MCC": 1.0,
+      "Spec": 1.0,
+      "LogLoss": 7.665358038724364e-05
+    },
+    {
+      "Model": "Random Forest",
+      "Train": "2.041",
+      "Test": "1.125",
+      "AUC": 1.0,
+      "CA": 1.0,
+      "F1": 1.0,
+      "Prec": 1.0,
+      "Recall": 1.0,
+      "MCC": 1.0,
+      "Spec": 1.0,
+      "LogLoss": 0.2725723646663251
+    },
+    {
+      "Model": "Logistic Regression",
+      "Train": "1.542",
+      "Test": "1.133",
+      "AUC": 1.0,
+      "CA": 1.0,
+      "F1": 1.0,
+      "Prec": 1.0,
+      "Recall": 1.0,
+      "MCC": 1.0,
+      "Spec": 1.0,
+      "LogLoss": 0.029039880922215777
+    },
+    {
+      "Model": "kNN",
+      "Train": "1.525",
+      "Test": "1.107",
+      "AUC": 1.0,
+      "CA": 1.0,
+      "F1": 1.0,
+      "Prec": 1.0,
+      "Recall": 1.0,
+      "MCC": 1.0,
+      "Spec": 1.0,
+      "LogLoss": 0.055785887828552594
+    },
+    {
+      "Model": "SVM",
+      "Train": "3.210",
+      "Test": "2.480",
+      "AUC": 1.0,
+      "CA": 1.0,
+      "F1": 1.0,
+      "Prec": 1.0,
+      "Recall": 1.0,
+      "MCC": 1.0,
+      "Spec": 1.0,
+      "LogLoss": 0.06644163241462887
+    }
+  ],
+  "confusion_best_cv": {
+    "Neural Network": {
+      "classes": [
+        "cats",
+        "dogs"
+      ],
+      "counts": [
+        [
+          12,
+          0
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "wrong": []
+    },
+    "Random Forest": {
+      "classes": [
+        "cats",
+        "dogs"
+      ],
+      "counts": [
+        [
+          12,
+          0
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "wrong": []
+    },
+    "Logistic Regression": {
+      "classes": [
+        "cats",
+        "dogs"
+      ],
+      "counts": [
+        [
+          12,
+          0
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "wrong": []
+    },
+    "kNN": {
+      "classes": [
+        "cats",
+        "dogs"
+      ],
+      "counts": [
+        [
+          12,
+          0
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "wrong": []
+    },
+    "SVM": {
+      "classes": [
+        "cats",
+        "dogs"
+      ],
+      "counts": [
+        [
+          12,
+          0
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "wrong": []
+    }
+  },
+  "test_scores": [
+    {
+      "Model": "Neural Network",
+      "Train": "0.291",
+      "Test": "0.362",
+      "AUC": 1.0,
+      "CA": 0.9583333333333334,
+      "F1": 0.9582608695652174,
+      "Prec": 0.9615384615384616,
+      "Recall": 0.9583333333333334,
+      "MCC": 0.9198662110077999,
+      "Spec": 0.9583333333333333,
+      "LogLoss": 0.17588623058053943
+    },
+    {
+      "Model": "Random Forest",
+      "Train": "0.160",
+      "Test": "0.097",
+      "AUC": 1.0,
+      "CA": 0.9583333333333334,
+      "F1": 0.9582608695652174,
+      "Prec": 0.9615384615384616,
+      "Recall": 0.9583333333333334,
+      "MCC": 0.9198662110077999,
+      "Spec": 0.9583333333333333,
+      "LogLoss": 0.2907090488603918
+    },
+    {
+      "Model": "Logistic Regression",
+      "Train": "0.236",
+      "Test": "0.095",
+      "AUC": 1.0,
+      "CA": 0.9583333333333334,
+      "F1": 0.9582608695652174,
+      "Prec": 0.9615384615384616,
+      "Recall": 0.9583333333333334,
+      "MCC": 0.9198662110077999,
+      "Spec": 0.9583333333333333,
+      "LogLoss": 0.1143778289014617
+    },
+    {
+      "Model": "kNN",
+      "Train": "0.127",
+      "Test": "0.202",
+      "AUC": 0.9791666666666666,
+      "CA": 0.9583333333333334,
+      "F1": 0.9582608695652174,
+      "Prec": 0.9615384615384616,
+      "Recall": 0.9583333333333334,
+      "MCC": 0.9198662110077999,
+      "Spec": 0.9583333333333333,
+      "LogLoss": 0.12284580084664011
+    },
+    {
+      "Model": "SVM",
+      "Train": "0.287",
+      "Test": "0.344",
+      "AUC": 1.0,
+      "CA": 0.9583333333333334,
+      "F1": 0.9582608695652174,
+      "Prec": 0.9615384615384616,
+      "Recall": 0.9583333333333334,
+      "MCC": 0.9198662110077999,
+      "Spec": 0.9583333333333333,
+      "LogLoss": 0.10890012167889744
+    }
+  ],
+  "confusion_test": {
+    "Neural Network": {
+      "classes": [
+        "cats",
+        "dogs"
+      ],
+      "counts": [
+        [
+          11,
+          1
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "wrong": [
+        {
+          "picture": "cat_test_07",
+          "actual": "cats",
+          "predicted": "dogs"
+        }
+      ]
+    },
+    "Random Forest": {
+      "classes": [
+        "cats",
+        "dogs"
+      ],
+      "counts": [
+        [
+          11,
+          1
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "wrong": [
+        {
+          "picture": "cat_test_07",
+          "actual": "cats",
+          "predicted": "dogs"
+        }
+      ]
+    },
+    "Logistic Regression": {
+      "classes": [
+        "cats",
+        "dogs"
+      ],
+      "counts": [
+        [
+          11,
+          1
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "wrong": [
+        {
+          "picture": "cat_test_07",
+          "actual": "cats",
+          "predicted": "dogs"
+        }
+      ]
+    },
+    "kNN": {
+      "classes": [
+        "cats",
+        "dogs"
+      ],
+      "counts": [
+        [
+          11,
+          1
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "wrong": [
+        {
+          "picture": "cat_test_07",
+          "actual": "cats",
+          "predicted": "dogs"
+        }
+      ]
+    },
+    "SVM": {
+      "classes": [
+        "cats",
+        "dogs"
+      ],
+      "counts": [
+        [
+          11,
+          1
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "wrong": [
+        {
+          "picture": "cat_test_07",
+          "actual": "cats",
+          "predicted": "dogs"
+        }
+      ]
+    }
+  },
+  "tuned_settings": {
+    "Neural Network": {
+      "hidden_layers_input": "100,",
+      "activation_index": 3,
+      "solver_index": 2,
+      "max_iterations": 200,
+      "replicable": true
+    },
+    "Random Forest": {
+      "n_estimators": 50,
+      "use_random_state": true
+    },
+    "Logistic Regression": {
+      "penalty_type": 1,
+      "C_index": 61
+    },
+    "kNN": {
+      "n_neighbors": 5,
+      "metric_index": 0,
+      "weight_index": 0
+    },
+    "SVM": {
+      "kernel_type": 0,
+      "C": 1.0
+    }
+  },
+  "experiments": {
+    "features": {
+      "SqueezeNet": 1000,
+      "Inception v3": 2048,
+      "VGG-16": 4096,
+      "VGG-19": 4096,
+      "Painters": 2048,
+      "DeepLoc": 512
+    },
+    "rows": [
+      {
+        "embedder": "SqueezeNet",
+        "model": "Logistic Regression",
+        "setting": "Ridge (L2), C=1 (default)",
+        "ca": 0.7916666666666666,
+        "auc": 0.9236111111111112,
+        "f1": 0.7913043478260869
+      },
+      {
+        "embedder": "SqueezeNet",
+        "model": "Logistic Regression",
+        "setting": "Lasso (L1), C=1",
+        "ca": 0.7916666666666666,
+        "auc": 0.9166666666666667,
+        "f1": 0.7913043478260869
+      },
+      {
+        "embedder": "SqueezeNet",
+        "model": "Logistic Regression",
+        "setting": "Ridge (L2), C=0.01",
+        "ca": 0.7916666666666666,
+        "auc": 0.9444444444444444,
+        "f1": 0.7913043478260869
+      },
+      {
+        "embedder": "SqueezeNet",
+        "model": "Logistic Regression",
+        "setting": "Ridge (L2), C=100",
+        "ca": 0.7916666666666666,
+        "auc": 0.9097222222222222,
+        "f1": 0.7913043478260869
+      },
+      {
+        "embedder": "SqueezeNet",
+        "model": "Neural Network",
+        "setting": "100 neurons, ReLu, Adam (default)",
+        "ca": 0.7916666666666666,
+        "auc": 0.9444444444444444,
+        "f1": 0.7913043478260869
+      },
+      {
+        "embedder": "SqueezeNet",
+        "model": "Neural Network",
+        "setting": "10 neurons, ReLu, Adam",
+        "ca": 0.7916666666666666,
+        "auc": 0.9374999999999999,
+        "f1": 0.7913043478260869
+      },
+      {
+        "embedder": "SqueezeNet",
+        "model": "Neural Network",
+        "setting": "100,50 neurons, ReLu, Adam",
+        "ca": 0.7916666666666666,
+        "auc": 0.9305555555555556,
+        "f1": 0.7913043478260869
+      },
+      {
+        "embedder": "SqueezeNet",
+        "model": "Neural Network",
+        "setting": "100 neurons, tanh, Adam",
+        "ca": 0.8333333333333334,
+        "auc": 0.9305555555555556,
+        "f1": 0.8321678321678322
+      },
+      {
+        "embedder": "SqueezeNet",
+        "model": "Neural Network",
+        "setting": "100 neurons, ReLu, L-BFGS-B",
+        "ca": 0.7916666666666666,
+        "auc": 0.9444444444444444,
+        "f1": 0.7913043478260869
+      },
+      {
+        "embedder": "SqueezeNet",
+        "model": "Random Forest",
+        "setting": "10 trees (default)",
+        "ca": 0.75,
+        "auc": 0.7847222222222223,
+        "f1": 0.7482517482517483
+      },
+      {
+        "embedder": "SqueezeNet",
+        "model": "Random Forest",
+        "setting": "50 trees",
+        "ca": 0.75,
+        "auc": 0.8854166666666666,
+        "f1": 0.7482517482517483
+      },
+      {
+        "embedder": "SqueezeNet",
+        "model": "Random Forest",
+        "setting": "100 trees",
+        "ca": 0.75,
+        "auc": 0.9270833333333333,
+        "f1": 0.7482517482517483
+      },
+      {
+        "embedder": "SqueezeNet",
+        "model": "Random Forest",
+        "setting": "200 trees",
+        "ca": 0.7916666666666666,
+        "auc": 0.9166666666666667,
+        "f1": 0.7913043478260869
+      },
+      {
+        "embedder": "SqueezeNet",
+        "model": "kNN",
+        "setting": "5 neighbors, Euclidean (default)",
+        "ca": 0.8333333333333334,
+        "auc": 0.9409722222222223,
+        "f1": 0.8321678321678322
+      },
+      {
+        "embedder": "SqueezeNet",
+        "model": "kNN",
+        "setting": "1 neighbor, Euclidean",
+        "ca": 0.7916666666666666,
+        "auc": 0.7916666666666667,
+        "f1": 0.7913043478260869
+      },
+      {
+        "embedder": "SqueezeNet",
+        "model": "kNN",
+        "setting": "3 neighbors, Euclidean",
+        "ca": 0.7916666666666666,
+        "auc": 0.8819444444444444,
+        "f1": 0.7883597883597883
+      },
+      {
+        "embedder": "SqueezeNet",
+        "model": "kNN",
+        "setting": "5 neighbors, Manhattan, by distances",
+        "ca": 0.8333333333333334,
+        "auc": 0.9131944444444443,
+        "f1": 0.8321678321678322
+      },
+      {
+        "embedder": "SqueezeNet",
+        "model": "SVM",
+        "setting": "RBF kernel, C=1 (default)",
+        "ca": 0.875,
+        "auc": 0.9027777777777778,
+        "f1": 0.8747826086956522
+      },
+      {
+        "embedder": "SqueezeNet",
+        "model": "SVM",
+        "setting": "Linear kernel, C=1",
+        "ca": 0.875,
+        "auc": 0.9305555555555556,
+        "f1": 0.8747826086956522
+      },
+      {
+        "embedder": "SqueezeNet",
+        "model": "SVM",
+        "setting": "RBF kernel, C=10",
+        "ca": 0.875,
+        "auc": 0.923611111111111,
+        "f1": 0.8747826086956522
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "Logistic Regression",
+        "setting": "Ridge (L2), C=1 (default)",
+        "ca": 1.0,
+        "auc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "Logistic Regression",
+        "setting": "Lasso (L1), C=1",
+        "ca": 1.0,
+        "auc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "Logistic Regression",
+        "setting": "Ridge (L2), C=0.01",
+        "ca": 1.0,
+        "auc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "Logistic Regression",
+        "setting": "Ridge (L2), C=100",
+        "ca": 1.0,
+        "auc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "Neural Network",
+        "setting": "100 neurons, ReLu, Adam (default)",
+        "ca": 1.0,
+        "auc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "Neural Network",
+        "setting": "10 neurons, ReLu, Adam",
+        "ca": 1.0,
+        "auc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "Neural Network",
+        "setting": "100,50 neurons, ReLu, Adam",
+        "ca": 1.0,
+        "auc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "Neural Network",
+        "setting": "100 neurons, tanh, Adam",
+        "ca": 1.0,
+        "auc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "Neural Network",
+        "setting": "100 neurons, ReLu, L-BFGS-B",
+        "ca": 1.0,
+        "auc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "Random Forest",
+        "setting": "10 trees (default)",
+        "ca": 0.9583333333333334,
+        "auc": 0.9965277777777778,
+        "f1": 0.9582608695652174
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "Random Forest",
+        "setting": "50 trees",
+        "ca": 1.0,
+        "auc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "Random Forest",
+        "setting": "100 trees",
+        "ca": 1.0,
+        "auc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "Random Forest",
+        "setting": "200 trees",
+        "ca": 1.0,
+        "auc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "kNN",
+        "setting": "5 neighbors, Euclidean (default)",
+        "ca": 1.0,
+        "auc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "kNN",
+        "setting": "1 neighbor, Euclidean",
+        "ca": 1.0,
+        "auc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "kNN",
+        "setting": "3 neighbors, Euclidean",
+        "ca": 1.0,
+        "auc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "kNN",
+        "setting": "5 neighbors, Manhattan, by distances",
+        "ca": 1.0,
+        "auc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "SVM",
+        "setting": "RBF kernel, C=1 (default)",
+        "ca": 0.9583333333333334,
+        "auc": 1.0,
+        "f1": 0.9582608695652174
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "SVM",
+        "setting": "Linear kernel, C=1",
+        "ca": 1.0,
+        "auc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "embedder": "Inception v3",
+        "model": "SVM",
+        "setting": "RBF kernel, C=10",
+        "ca": 0.9583333333333334,
+        "auc": 1.0,
+        "f1": 0.9582608695652174
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "Logistic Regression",
+        "setting": "Ridge (L2), C=1 (default)",
+        "ca": 0.9583333333333334,
+        "auc": 0.9861111111111112,
+        "f1": 0.9582608695652174
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "Logistic Regression",
+        "setting": "Lasso (L1), C=1",
+        "ca": 0.8333333333333334,
+        "auc": 0.9722222222222223,
+        "f1": 0.8333333333333334
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "Logistic Regression",
+        "setting": "Ridge (L2), C=0.01",
+        "ca": 0.875,
+        "auc": 0.9861111111111112,
+        "f1": 0.8747826086956522
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "Logistic Regression",
+        "setting": "Ridge (L2), C=100",
+        "ca": 0.9166666666666666,
+        "auc": 0.9861111111111112,
+        "f1": 0.9166666666666666
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "Neural Network",
+        "setting": "100 neurons, ReLu, Adam (default)",
+        "ca": 0.9583333333333334,
+        "auc": 0.9930555555555555,
+        "f1": 0.9582608695652174
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "Neural Network",
+        "setting": "10 neurons, ReLu, Adam",
+        "ca": 0.8333333333333334,
+        "auc": 0.8958333333333333,
+        "f1": 0.8321678321678322
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "Neural Network",
+        "setting": "100,50 neurons, ReLu, Adam",
+        "ca": 0.9583333333333334,
+        "auc": 0.9791666666666666,
+        "f1": 0.9582608695652174
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "Neural Network",
+        "setting": "100 neurons, tanh, Adam",
+        "ca": 0.9166666666666666,
+        "auc": 0.9652777777777778,
+        "f1": 0.9166666666666666
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "Neural Network",
+        "setting": "100 neurons, ReLu, L-BFGS-B",
+        "ca": 0.9166666666666666,
+        "auc": 0.9583333333333334,
+        "f1": 0.9166666666666666
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "Random Forest",
+        "setting": "10 trees (default)",
+        "ca": 0.6666666666666666,
+        "auc": 0.8611111111111112,
+        "f1": 0.6444444444444444
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "Random Forest",
+        "setting": "50 trees",
+        "ca": 0.875,
+        "auc": 0.9791666666666667,
+        "f1": 0.8747826086956522
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "Random Forest",
+        "setting": "100 trees",
+        "ca": 0.875,
+        "auc": 0.9861111111111112,
+        "f1": 0.8747826086956522
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "Random Forest",
+        "setting": "200 trees",
+        "ca": 0.9583333333333334,
+        "auc": 0.986111111111111,
+        "f1": 0.9582608695652174
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "kNN",
+        "setting": "5 neighbors, Euclidean (default)",
+        "ca": 0.75,
+        "auc": 0.9236111111111112,
+        "f1": 0.7333333333333334
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "kNN",
+        "setting": "1 neighbor, Euclidean",
+        "ca": 0.6666666666666666,
+        "auc": 0.6666666666666666,
+        "f1": 0.625
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "kNN",
+        "setting": "3 neighbors, Euclidean",
+        "ca": 0.7083333333333334,
+        "auc": 0.875,
+        "f1": 0.6812144212523719
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "kNN",
+        "setting": "5 neighbors, Manhattan, by distances",
+        "ca": 0.7083333333333334,
+        "auc": 0.9652777777777778,
+        "f1": 0.6812144212523719
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "SVM",
+        "setting": "RBF kernel, C=1 (default)",
+        "ca": 0.8333333333333334,
+        "auc": 0.9444444444444444,
+        "f1": 0.8285714285714286
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "SVM",
+        "setting": "Linear kernel, C=1",
+        "ca": 0.7916666666666666,
+        "auc": 0.9166666666666666,
+        "f1": 0.7883597883597883
+      },
+      {
+        "embedder": "VGG-16",
+        "model": "SVM",
+        "setting": "RBF kernel, C=10",
+        "ca": 0.8333333333333334,
+        "auc": 0.9166666666666667,
+        "f1": 0.8285714285714286
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "Logistic Regression",
+        "setting": "Ridge (L2), C=1 (default)",
+        "ca": 1.0,
+        "auc": 1.0,
+        "f1": 1.0
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "Logistic Regression",
+        "setting": "Lasso (L1), C=1",
+        "ca": 0.9583333333333334,
+        "auc": 0.986111111111111,
+        "f1": 0.9582608695652174
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "Logistic Regression",
+        "setting": "Ridge (L2), C=0.01",
+        "ca": 0.9583333333333334,
+        "auc": 1.0,
+        "f1": 0.9582608695652174
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "Logistic Regression",
+        "setting": "Ridge (L2), C=100",
+        "ca": 0.9583333333333334,
+        "auc": 1.0,
+        "f1": 0.9582608695652174
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "Neural Network",
+        "setting": "100 neurons, ReLu, Adam (default)",
+        "ca": 0.9166666666666666,
+        "auc": 0.9166666666666666,
+        "f1": 0.9166666666666666
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "Neural Network",
+        "setting": "10 neurons, ReLu, Adam",
+        "ca": 0.9583333333333334,
+        "auc": 0.9166666666666666,
+        "f1": 0.9582608695652174
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "Neural Network",
+        "setting": "100,50 neurons, ReLu, Adam",
+        "ca": 0.875,
+        "auc": 0.9097222222222221,
+        "f1": 0.8747826086956522
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "Neural Network",
+        "setting": "100 neurons, tanh, Adam",
+        "ca": 0.9166666666666666,
+        "auc": 0.9930555555555555,
+        "f1": 0.9166666666666666
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "Neural Network",
+        "setting": "100 neurons, ReLu, L-BFGS-B",
+        "ca": 0.9166666666666666,
+        "auc": 0.9166666666666666,
+        "f1": 0.9166666666666666
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "Random Forest",
+        "setting": "10 trees (default)",
+        "ca": 0.7916666666666666,
+        "auc": 0.923611111111111,
+        "f1": 0.7913043478260869
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "Random Forest",
+        "setting": "50 trees",
+        "ca": 0.9583333333333334,
+        "auc": 0.9861111111111112,
+        "f1": 0.9582608695652174
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "Random Forest",
+        "setting": "100 trees",
+        "ca": 0.9583333333333334,
+        "auc": 1.0,
+        "f1": 0.9582608695652174
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "Random Forest",
+        "setting": "200 trees",
+        "ca": 0.9166666666666666,
+        "auc": 0.9930555555555555,
+        "f1": 0.9166666666666666
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "kNN",
+        "setting": "5 neighbors, Euclidean (default)",
+        "ca": 0.8333333333333334,
+        "auc": 1.0,
+        "f1": 0.8285714285714286
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "kNN",
+        "setting": "1 neighbor, Euclidean",
+        "ca": 0.7916666666666666,
+        "auc": 0.7916666666666666,
+        "f1": 0.7883597883597883
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "kNN",
+        "setting": "3 neighbors, Euclidean",
+        "ca": 0.7916666666666666,
+        "auc": 0.9826388888888888,
+        "f1": 0.7822141560798549
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "kNN",
+        "setting": "5 neighbors, Manhattan, by distances",
+        "ca": 0.8333333333333334,
+        "auc": 1.0,
+        "f1": 0.8285714285714286
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "SVM",
+        "setting": "RBF kernel, C=1 (default)",
+        "ca": 0.7916666666666666,
+        "auc": 0.8472222222222222,
+        "f1": 0.7822141560798549
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "SVM",
+        "setting": "Linear kernel, C=1",
+        "ca": 0.9166666666666666,
+        "auc": 0.9513888888888888,
+        "f1": 0.9160839160839161
+      },
+      {
+        "embedder": "VGG-19",
+        "model": "SVM",
+        "setting": "RBF kernel, C=10",
+        "ca": 0.7916666666666666,
+        "auc": 0.8680555555555556,
+        "f1": 0.7822141560798549
+      },
+      {
+        "embedder": "Painters",
+        "model": "Logistic Regression",
+        "setting": "Ridge (L2), C=1 (default)",
+        "ca": 0.6666666666666666,
+        "auc": 0.6527777777777779,
+        "f1": 0.6571428571428571
+      },
+      {
+        "embedder": "Painters",
+        "model": "Logistic Regression",
+        "setting": "Lasso (L1), C=1",
+        "ca": 0.5833333333333334,
+        "auc": 0.6041666666666666,
+        "f1": 0.5804195804195804
+      },
+      {
+        "embedder": "Painters",
+        "model": "Logistic Regression",
+        "setting": "Ridge (L2), C=0.01",
+        "ca": 0.6666666666666666,
+        "auc": 0.5833333333333333,
+        "f1": 0.6571428571428571
+      },
+      {
+        "embedder": "Painters",
+        "model": "Logistic Regression",
+        "setting": "Ridge (L2), C=100",
+        "ca": 0.6666666666666666,
+        "auc": 0.6180555555555557,
+        "f1": 0.6643356643356643
+      },
+      {
+        "embedder": "Painters",
+        "model": "Neural Network",
+        "setting": "100 neurons, ReLu, Adam (default)",
+        "ca": 0.5833333333333334,
+        "auc": 0.6736111111111112,
+        "f1": 0.5804195804195804
+      },
+      {
+        "embedder": "Painters",
+        "model": "Neural Network",
+        "setting": "10 neurons, ReLu, Adam",
+        "ca": 0.7916666666666666,
+        "auc": 0.736111111111111,
+        "f1": 0.7913043478260869
+      },
+      {
+        "embedder": "Painters",
+        "model": "Neural Network",
+        "setting": "100,50 neurons, ReLu, Adam",
+        "ca": 0.5416666666666666,
+        "auc": 0.6319444444444445,
+        "f1": 0.5343915343915343
+      },
+      {
+        "embedder": "Painters",
+        "model": "Neural Network",
+        "setting": "100 neurons, tanh, Adam",
+        "ca": 0.7083333333333334,
+        "auc": 0.6458333333333334,
+        "f1": 0.7037037037037037
+      },
+      {
+        "embedder": "Painters",
+        "model": "Neural Network",
+        "setting": "100 neurons, ReLu, L-BFGS-B",
+        "ca": 0.5833333333333334,
+        "auc": 0.6388888888888888,
+        "f1": 0.5804195804195804
+      },
+      {
+        "embedder": "Painters",
+        "model": "Random Forest",
+        "setting": "10 trees (default)",
+        "ca": 0.5833333333333334,
+        "auc": 0.6875000000000001,
+        "f1": 0.5804195804195804
+      },
+      {
+        "embedder": "Painters",
+        "model": "Random Forest",
+        "setting": "50 trees",
+        "ca": 0.5833333333333334,
+        "auc": 0.5381944444444444,
+        "f1": 0.5714285714285715
+      },
+      {
+        "embedder": "Painters",
+        "model": "Random Forest",
+        "setting": "100 trees",
+        "ca": 0.625,
+        "auc": 0.5694444444444445,
+        "f1": 0.6079854809437387
+      },
+      {
+        "embedder": "Painters",
+        "model": "Random Forest",
+        "setting": "200 trees",
+        "ca": 0.5833333333333334,
+        "auc": 0.5277777777777778,
+        "f1": 0.5555555555555555
+      },
+      {
+        "embedder": "Painters",
+        "model": "kNN",
+        "setting": "5 neighbors, Euclidean (default)",
+        "ca": 0.5833333333333334,
+        "auc": 0.6805555555555556,
+        "f1": 0.4957983193277311
+      },
+      {
+        "embedder": "Painters",
+        "model": "kNN",
+        "setting": "1 neighbor, Euclidean",
+        "ca": 0.625,
+        "auc": 0.6249999999999999,
+        "f1": 0.5901328273244781
+      },
+      {
+        "embedder": "Painters",
+        "model": "kNN",
+        "setting": "3 neighbors, Euclidean",
+        "ca": 0.625,
+        "auc": 0.59375,
+        "f1": 0.5636363636363636
+      },
+      {
+        "embedder": "Painters",
+        "model": "kNN",
+        "setting": "5 neighbors, Manhattan, by distances",
+        "ca": 0.5416666666666666,
+        "auc": 0.6805555555555556,
+        "f1": 0.4666666666666666
+      },
+      {
+        "embedder": "Painters",
+        "model": "SVM",
+        "setting": "RBF kernel, C=1 (default)",
+        "ca": 0.6666666666666666,
+        "auc": 0.375,
+        "f1": 0.6571428571428571
+      },
+      {
+        "embedder": "Painters",
+        "model": "SVM",
+        "setting": "Linear kernel, C=1",
+        "ca": 0.6666666666666666,
+        "auc": 0.4375,
+        "f1": 0.6643356643356643
+      },
+      {
+        "embedder": "Painters",
+        "model": "SVM",
+        "setting": "RBF kernel, C=10",
+        "ca": 0.5833333333333334,
+        "auc": 0.4652777777777778,
+        "f1": 0.5555555555555555
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "Logistic Regression",
+        "setting": "Ridge (L2), C=1 (default)",
+        "ca": 0.4166666666666667,
+        "auc": 0.4305555555555556,
+        "f1": 0.41258741258741255
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "Logistic Regression",
+        "setting": "Lasso (L1), C=1",
+        "ca": 0.5,
+        "auc": 0.375,
+        "f1": 0.4965034965034965
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "Logistic Regression",
+        "setting": "Ridge (L2), C=0.01",
+        "ca": 0.5833333333333334,
+        "auc": 0.4722222222222222,
+        "f1": 0.5833333333333334
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "Logistic Regression",
+        "setting": "Ridge (L2), C=100",
+        "ca": 0.4166666666666667,
+        "auc": 0.4375,
+        "f1": 0.41258741258741255
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "Neural Network",
+        "setting": "100 neurons, ReLu, Adam (default)",
+        "ca": 0.3333333333333333,
+        "auc": 0.33333333333333337,
+        "f1": 0.3286713286713287
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "Neural Network",
+        "setting": "10 neurons, ReLu, Adam",
+        "ca": 0.4166666666666667,
+        "auc": 0.4305555555555556,
+        "f1": 0.41258741258741255
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "Neural Network",
+        "setting": "100,50 neurons, ReLu, Adam",
+        "ca": 0.375,
+        "auc": 0.4027777777777778,
+        "f1": 0.37391304347826093
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "Neural Network",
+        "setting": "100 neurons, tanh, Adam",
+        "ca": 0.2916666666666667,
+        "auc": 0.3333333333333333,
+        "f1": 0.2804232804232804
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "Neural Network",
+        "setting": "100 neurons, ReLu, L-BFGS-B",
+        "ca": 0.2916666666666667,
+        "auc": 0.2986111111111111,
+        "f1": 0.2804232804232804
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "Random Forest",
+        "setting": "10 trees (default)",
+        "ca": 0.4583333333333333,
+        "auc": 0.4583333333333333,
+        "f1": 0.4573913043478261
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "Random Forest",
+        "setting": "50 trees",
+        "ca": 0.5,
+        "auc": 0.4930555555555556,
+        "f1": 0.5
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "Random Forest",
+        "setting": "100 trees",
+        "ca": 0.4166666666666667,
+        "auc": 0.44444444444444453,
+        "f1": 0.4166666666666667
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "Random Forest",
+        "setting": "200 trees",
+        "ca": 0.5416666666666666,
+        "auc": 0.5,
+        "f1": 0.5408695652173913
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "kNN",
+        "setting": "5 neighbors, Euclidean (default)",
+        "ca": 0.3333333333333333,
+        "auc": 0.33333333333333337,
+        "f1": 0.3286713286713287
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "kNN",
+        "setting": "1 neighbor, Euclidean",
+        "ca": 0.20833333333333334,
+        "auc": 0.20833333333333334,
+        "f1": 0.2069565217391304
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "kNN",
+        "setting": "3 neighbors, Euclidean",
+        "ca": 0.3333333333333333,
+        "auc": 0.3229166666666667,
+        "f1": 0.3286713286713287
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "kNN",
+        "setting": "5 neighbors, Manhattan, by distances",
+        "ca": 0.375,
+        "auc": 0.3263888888888889,
+        "f1": 0.37391304347826093
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "SVM",
+        "setting": "RBF kernel, C=1 (default)",
+        "ca": 0.25,
+        "auc": 0.6388888888888888,
+        "f1": 0.25
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "SVM",
+        "setting": "Linear kernel, C=1",
+        "ca": 0.375,
+        "auc": 0.4375,
+        "f1": 0.36507936507936506
+      },
+      {
+        "embedder": "DeepLoc",
+        "model": "SVM",
+        "setting": "RBF kernel, C=10",
+        "ca": 0.2916666666666667,
+        "auc": 0.6111111111111112,
+        "f1": 0.29043478260869565
+      }
+    ]
+  },
+  "checks": {
+    "widget_problems": {},
+    "folders_have_12_each": true,
+    "paths_relative_to_workflow": true,
+    "train_24_test_24": true,
+    "no_picture_in_both": true,
+    "squeezenet_for_steps_2_to_5": true,
+    "same_best_embedder_train_and_test": true,
+    "no_picture_skipped": true,
+    "ten_fold_cv_saved": true,
+    "saved_as_test_on_test_data": true,
+    "five_models_each": true,
+    "cv_sorted_by_accuracy": true,
+    "my_cv_matches_widget": true,
+    "matrix_totals": true
+  }
+}

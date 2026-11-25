@@ -1,0 +1,153 @@
+{
+  "sizes": {
+    "canvas.png": [
+      3180,
+      3920
+    ],
+    "confusion_best_cv_knn.png": [
+      640,
+      330
+    ],
+    "confusion_best_cv_logistic_regression.png": [
+      640,
+      330
+    ],
+    "confusion_best_cv_neural_network.png": [
+      640,
+      330
+    ],
+    "confusion_best_cv_random_forest.png": [
+      640,
+      330
+    ],
+    "confusion_best_cv_svm.png": [
+      640,
+      330
+    ],
+    "confusion_best_test_knn.png": [
+      640,
+      330
+    ],
+    "confusion_best_test_logistic_regression.png": [
+      640,
+      330
+    ],
+    "confusion_best_test_neural_network.png": [
+      640,
+      330
+    ],
+    "confusion_best_test_random_forest.png": [
+      640,
+      330
+    ],
+    "confusion_best_test_svm.png": [
+      640,
+      330
+    ],
+    "confusion_squeezenet_cv_knn.png": [
+      640,
+      330
+    ],
+    "confusion_squeezenet_cv_logistic_regression.png": [
+      640,
+      330
+    ],
+    "confusion_squeezenet_cv_neural_network.png": [
+      640,
+      330
+    ],
+    "confusion_squeezenet_cv_random_forest.png": [
+      640,
+      330
+    ],
+    "confusion_squeezenet_cv_svm.png": [
+      640,
+      330
+    ],
+    "examples.jpg": [
+      1200,
+      400
+    ],
+    "image_embedding.png": [
+      306,
+      239
+    ],
+    "image_embedding_best.png": [
+      320,
+      209
+    ],
+    "import_images.png": [
+      366,
+      141
+    ],
+    "import_images_test.png": [
+      366,
+      141
+    ],
+    "missed.jpg": [
+      1800,
+      300
+    ],
+    "missed_cv.jpg": [
+      1931,
+      260
+    ],
+    "missed_test.jpg": [
+      372,
+      260
+    ],
+    "model_knn.png": [
+      240,
+      248
+    ],
+    "model_logistic_regression.png": [
+      246,
+      285
+    ],
+    "model_neural_network.png": [
+      314,
+      315
+    ],
+    "model_random_forest.png": [
+      417,
+      372
+    ],
+    "model_svm.png": [
+      341,
+      534
+    ],
+    "test_and_score_1_cv.png": [
+      1100,
+      560
+    ],
+    "test_and_score_1_test.png": [
+      1100,
+      560
+    ],
+    "test_and_score_cv.png": [
+      1100,
+      560
+    ],
+    "training_data.png": [
+      1300,
+      480
+    ]
+  },
+  "missed_cv": [
+    "cat_train_01",
+    "cat_train_11",
+    "dog_train_03",
+    "dog_train_04",
+    "dog_train_05"
+  ],
+  "missed_cv_counts": {
+    "cat_train_01": 5,
+    "cat_train_11": 3,
+    "dog_train_03": 3,
+    "dog_train_04": 4,
+    "dog_train_05": 5
+  },
+  "missed_test": [
+    "cat_test_07"
+  ]
+}
