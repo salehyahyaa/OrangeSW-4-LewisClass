@@ -140,7 +140,7 @@ c192YXJzlCmMEm1vZGlmaWVkX3ZhcmlhYmxlc5RdlHViYXUu
 </properties>
 		<properties node_id="1" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x05\x9f\x00\x00\x03\x83\x00\x00\x016\x00\x00\x00\xcb\x00\x00\x04U\x00\x00\x02\xbe\x00\x00\x00\x00\x00\x04\x00\x00\x05\xa0\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x05\x9f\x00\x00\x03\x83', 'select_rows': True, 'show_attribute_labels': True, 'show_distributions': False, 'stored_selection': {'rows': [], 'columns': []}, 'stored_sort': [], '__version__': 1}</properties>
 		<properties node_id="2" format="literal">{'compatibility_mode': False, 'controlAreaVisible': True, 'number_of_folds': 10, 'replacement': False, 'sampleSizeNumber': 1, 'sampleSizePercentage': 10, 'sampleSizeSqlPercentage': 0.1, 'sampleSizeSqlTime': 1, 'sampling_type': 0, 'savedWidgetGeometry': None, 'selectedFold': 1, 'sql_dl': False, 'stratify': False, 'use_seed': True, '__version__': 2}</properties>
-		<properties node_id="3" format="pickle">gASVZwIAAAAAAAB9lCiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjAxyZWNlbnRfZmlsZXOUXZQojBFi
+		<properties node_id="3" format="pickle">gASVcAIAAAAAAAB9lCiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjAxyZWNlbnRfZmlsZXOUXZQojBFi
 b29rLWV4Y2VycHRzLnRhYpSMGGdyaW1tLXRhbGVzLXNlbGVjdGVkLnRhYpSMGGVsZWN0aW9uLXR3
 ZWV0cy0yMDE2LnRhYpSMF2ZyaWVuZHMtdHJhbnNjcmlwdHMudGFilIwMYW5kZXJzZW4udGFilGWM
 E3NhdmVkV2lkZ2V0R2VvbWV0cnmUTowLX192ZXJzaW9uX1+USwKMEGNvbnRleHRfc2V0dGluZ3OU
@@ -148,9 +148,10 @@ XZQojBVvcmFuZ2V3aWRnZXQuc2V0dGluZ3OUjAdDb250ZXh0lJOUKYGUfZQojAZ2YWx1ZXOUfZQo
 jAhsYW5ndWFnZZSMAmVulEr+////hpSMDnRpdGxlX3ZhcmlhYmxllIwNdHdlZXRfY3JlYXRlZJRL
 Z4aUjAp1c2VkX2F0dHJzlF2UjAR0ZXh0lEtnhpRhSv3///+GlGgKSwJ1jAphdHRyaWJ1dGVzlH2U
 jAVtZXRhc5R9lCiMBG5hbWWUSwNoHEsDjAt0d2VldF9jb29yZJRLA2gYSwOMDnR3ZWV0X2xvY2F0
-aW9ulEsDdYwOZG9jdW1lbnRzX2hhc2iUihFae985TcmnIA4I8ZzH5tjJAGgUTnViaA8pgZR9lCho
-En2UKGgUjAJlbpRK/v///4aUaBdOSv7///+GlGgaXZSMBFRleHSUS2eGlGFK/f///4aUaApLAnVo
-H32UjAhDYXRlZ29yeZRLAXNoIX2UaC5LA3NoJooRrDUHBBm0CEu3uuR22q6RlwBoFGgqdWJldS4=
+aW9ulEsDdYwOZG9jdW1lbnRzX2hhc2iUihFae985TcmnIA4I8ZzH5tjJAIwIbGFuZ3VhZ2WUTnVi
+aA8pgZR9lChoEn2UKGgUjAJlbpRK/v///4aUaBdOSv7///+GlGgaXZSMBFRleHSUS2eGlGFK/f//
+/4aUaApLAnVoH32UjAhDYXRlZ29yeZRLAXNoIX2UaC9LA3NoJooRrDUHBBm0CEu3uuR22q6RlwBo
+J2grdWJldS4=
 </properties>
 		<properties node_id="4" format="literal">{'autocommit': True, 'controlAreaVisible': True, 'savedWidgetGeometry': None, 'storedsettings': {'name': '', 'preprocessors': [('preprocess.transform', {'methods': [0, 1, 3]}), ('preprocess.tokenize', {}), ('preprocess.filter', {'language': 'en', 'lx_list': [], 'lx_path': None, 'methods': [0, 3, 6], 'n_tokens': 100, 'sw_list': [], 'sw_path': None}), ('preprocess.ngrams', {'end': 2, 'start': 1})]}, '__version__': 4}</properties>
 		<properties node_id="5" format="pickle">gASVcwAAAAAAAAB9lCiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNzYXZlZFdpZGdldEdlb21ldHJ5
@@ -158,7 +159,7 @@ lE6MDnNlbGVjdGVkX3dvcmRzlI+UjAt3b3Jkc19jb2xvcpSIjAp3b3Jkc190aWx0lEsAjAtfX3Zl
 cnNpb25fX5RLAXUu
 </properties>
 		<properties node_id="6" format="literal">{'autocommit': True, 'controlAreaVisible': True, 'hidden_cb': True, 'normalization': '(None)', 'savedWidgetGeometry': None, 'wglobal': 'Smooth IDF', 'wlocal': 'Count', '__version__': 1}</properties>
-		<properties node_id="7" format="literal">{'controlAreaVisible': True, 'regions': [], 'savedWidgetGeometry': None, 'selected_attr': 'tweet_location', 'selected_map': 2, '__version__': 1}</properties>
+		<properties node_id="7" format="literal">{'controlAreaVisible': True, 'regions': [], 'savedWidgetGeometry': None, 'selected_attr': 'name', 'selected_map': 2, '__version__': 1}</properties>
 		<properties node_id="8" format="literal">{'autocommit': True, 'axis': 0, 'controlAreaVisible': True, 'metric_id': 11, 'savedWidgetGeometry': None, '__version__': 4}</properties>
 		<properties node_id="9" format="pickle">gASVZpwAAAAAAAB9lCiMF2Fubm90YXRpb25faWZfZW51bWVyYXRllIwLRW51bWVyYXRpb26UjBNh
 bm5vdGF0aW9uX2lmX25hbWVzlIwETmFtZZSMCmF1dG9jb21taXSUiIwSY29udHJvbEFyZWFWaXNp
